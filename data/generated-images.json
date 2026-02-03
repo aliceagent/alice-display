@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-03T17:43:49Z",
-  "total_images": 30,
+  "generated_at": "2026-02-03T17:53:31Z",
+  "total_images": 32,
   "base_path": "images/generated/",
   "time_periods": [
     "Morning",
@@ -19,6 +19,14 @@
     "Clear Night"
   ],
   "images": [
+    {
+      "id": "afternoon-clear-night",
+      "filename": "afternoon-clear-night.png",
+      "path": "images/generated/afternoon-clear-night.png",
+      "weather": "Clear Night",
+      "time_period": "Afternoon",
+      "generated": true
+    },
     {
       "id": "afternoon-cloudy",
       "filename": "afternoon-cloudy.png",
@@ -240,6 +248,14 @@
       "filename": "night-rainy.png",
       "path": "images/generated/night-rainy.png",
       "weather": "Rainy",
+      "time_period": "Night",
+      "generated": true
+    },
+    {
+      "id": "night-snowy",
+      "filename": "night-snowy.png",
+      "path": "images/generated/night-snowy.png",
+      "weather": "Snowy",
       "time_period": "Night",
       "generated": true
     },
