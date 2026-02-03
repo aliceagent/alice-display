@@ -1,60 +1,263 @@
 {
-  "generated_at": "2026-02-03T14:45:00Z",
+  "generated_at": "2026-02-03T17:43:49Z",
+  "total_images": 30,
   "base_path": "images/generated/",
+  "time_periods": [
+    "Morning",
+    "Afternoon",
+    "Evening",
+    "Night"
+  ],
+  "weather_conditions": [
+    "Sunny",
+    "Cloudy",
+    "Rainy",
+    "Snowy",
+    "Overcast",
+    "Foggy",
+    "Stormy",
+    "Clear Night"
+  ],
   "images": [
     {
-      "id": "morning-sunny",
-      "filename": "morning-sunny.png",
-      "weather": "Sunny",
-      "time_period": "Morning"
-    },
-    {
-      "id": "morning-cloudy",
-      "filename": "morning-cloudy.png",
+      "id": "afternoon-cloudy",
+      "filename": "afternoon-cloudy.png",
+      "path": "images/generated/afternoon-cloudy.png",
       "weather": "Cloudy",
-      "time_period": "Morning"
+      "time_period": "Afternoon",
+      "generated": true
     },
     {
-      "id": "afternoon-sunny",
-      "filename": "afternoon-sunny.png",
-      "weather": "Sunny",
-      "time_period": "Afternoon"
+      "id": "afternoon-foggy",
+      "filename": "afternoon-foggy.png",
+      "path": "images/generated/afternoon-foggy.png",
+      "weather": "Foggy",
+      "time_period": "Afternoon",
+      "generated": true
+    },
+    {
+      "id": "afternoon-overcast",
+      "filename": "afternoon-overcast.png",
+      "path": "images/generated/afternoon-overcast.png",
+      "weather": "Overcast",
+      "time_period": "Afternoon",
+      "generated": true
     },
     {
       "id": "afternoon-rainy",
       "filename": "afternoon-rainy.png",
+      "path": "images/generated/afternoon-rainy.png",
       "weather": "Rainy",
-      "time_period": "Afternoon"
+      "time_period": "Afternoon",
+      "generated": true
     },
     {
-      "id": "night-clear-night",
-      "filename": "night-clear-night.png",
+      "id": "afternoon-snowy",
+      "filename": "afternoon-snowy.png",
+      "path": "images/generated/afternoon-snowy.png",
+      "weather": "Snowy",
+      "time_period": "Afternoon",
+      "generated": true
+    },
+    {
+      "id": "afternoon-stormy",
+      "filename": "afternoon-stormy.png",
+      "path": "images/generated/afternoon-stormy.png",
+      "weather": "Stormy",
+      "time_period": "Afternoon",
+      "generated": true
+    },
+    {
+      "id": "afternoon-sunny",
+      "filename": "afternoon-sunny.png",
+      "path": "images/generated/afternoon-sunny.png",
+      "weather": "Sunny",
+      "time_period": "Afternoon",
+      "generated": true
+    },
+    {
+      "id": "evening-clear-night",
+      "filename": "evening-clear-night.png",
+      "path": "images/generated/evening-clear-night.png",
       "weather": "Clear Night",
-      "time_period": "Night"
-    },
-    {
-      "id": "morning-rainy",
-      "filename": "morning-rainy.png",
-      "weather": "Rainy",
-      "time_period": "Morning"
+      "time_period": "Evening",
+      "generated": true
     },
     {
       "id": "evening-cloudy",
       "filename": "evening-cloudy.png",
+      "path": "images/generated/evening-cloudy.png",
       "weather": "Cloudy",
-      "time_period": "Evening"
+      "time_period": "Evening",
+      "generated": true
     },
     {
-      "id": "night-rainy",
-      "filename": "night-rainy.png",
+      "id": "evening-foggy",
+      "filename": "evening-foggy.png",
+      "path": "images/generated/evening-foggy.png",
+      "weather": "Foggy",
+      "time_period": "Evening",
+      "generated": true
+    },
+    {
+      "id": "evening-overcast",
+      "filename": "evening-overcast.png",
+      "path": "images/generated/evening-overcast.png",
+      "weather": "Overcast",
+      "time_period": "Evening",
+      "generated": true
+    },
+    {
+      "id": "evening-rainy",
+      "filename": "evening-rainy.png",
+      "path": "images/generated/evening-rainy.png",
       "weather": "Rainy",
-      "time_period": "Night"
+      "time_period": "Evening",
+      "generated": true
+    },
+    {
+      "id": "evening-snowy",
+      "filename": "evening-snowy.png",
+      "path": "images/generated/evening-snowy.png",
+      "weather": "Snowy",
+      "time_period": "Evening",
+      "generated": true
+    },
+    {
+      "id": "evening-stormy",
+      "filename": "evening-stormy.png",
+      "path": "images/generated/evening-stormy.png",
+      "weather": "Stormy",
+      "time_period": "Evening",
+      "generated": true
+    },
+    {
+      "id": "evening-sunny",
+      "filename": "evening-sunny.png",
+      "path": "images/generated/evening-sunny.png",
+      "weather": "Sunny",
+      "time_period": "Evening",
+      "generated": true
+    },
+    {
+      "id": "morning-clear-night",
+      "filename": "morning-clear-night.png",
+      "path": "images/generated/morning-clear-night.png",
+      "weather": "Clear Night",
+      "time_period": "Morning",
+      "generated": true
+    },
+    {
+      "id": "morning-cloudy",
+      "filename": "morning-cloudy.png",
+      "path": "images/generated/morning-cloudy.png",
+      "weather": "Cloudy",
+      "time_period": "Morning",
+      "generated": true
+    },
+    {
+      "id": "morning-foggy",
+      "filename": "morning-foggy.png",
+      "path": "images/generated/morning-foggy.png",
+      "weather": "Foggy",
+      "time_period": "Morning",
+      "generated": true
+    },
+    {
+      "id": "morning-overcast",
+      "filename": "morning-overcast.png",
+      "path": "images/generated/morning-overcast.png",
+      "weather": "Overcast",
+      "time_period": "Morning",
+      "generated": true
+    },
+    {
+      "id": "morning-rainy",
+      "filename": "morning-rainy.png",
+      "path": "images/generated/morning-rainy.png",
+      "weather": "Rainy",
+      "time_period": "Morning",
+      "generated": true
+    },
+    {
+      "id": "morning-snowy",
+      "filename": "morning-snowy.png",
+      "path": "images/generated/morning-snowy.png",
+      "weather": "Snowy",
+      "time_period": "Morning",
+      "generated": true
+    },
+    {
+      "id": "morning-stormy",
+      "filename": "morning-stormy.png",
+      "path": "images/generated/morning-stormy.png",
+      "weather": "Stormy",
+      "time_period": "Morning",
+      "generated": true
+    },
+    {
+      "id": "morning-sunny",
+      "filename": "morning-sunny.png",
+      "path": "images/generated/morning-sunny.png",
+      "weather": "Sunny",
+      "time_period": "Morning",
+      "generated": true
+    },
+    {
+      "id": "night-clear-night",
+      "filename": "night-clear-night.png",
+      "path": "images/generated/night-clear-night.png",
+      "weather": "Clear Night",
+      "time_period": "Night",
+      "generated": true
     },
     {
       "id": "night-cloudy",
       "filename": "night-cloudy.png",
+      "path": "images/generated/night-cloudy.png",
       "weather": "Cloudy",
-      "time_period": "Night"
+      "time_period": "Night",
+      "generated": true
+    },
+    {
+      "id": "night-foggy",
+      "filename": "night-foggy.png",
+      "path": "images/generated/night-foggy.png",
+      "weather": "Foggy",
+      "time_period": "Night",
+      "generated": true
+    },
+    {
+      "id": "night-overcast",
+      "filename": "night-overcast.png",
+      "path": "images/generated/night-overcast.png",
+      "weather": "Overcast",
+      "time_period": "Night",
+      "generated": true
+    },
+    {
+      "id": "night-rainy",
+      "filename": "night-rainy.png",
+      "path": "images/generated/night-rainy.png",
+      "weather": "Rainy",
+      "time_period": "Night",
+      "generated": true
+    },
+    {
+      "id": "night-stormy",
+      "filename": "night-stormy.png",
+      "path": "images/generated/night-stormy.png",
+      "weather": "Stormy",
+      "time_period": "Night",
+      "generated": true
+    },
+    {
+      "id": "night-sunny",
+      "filename": "night-sunny.png",
+      "path": "images/generated/night-sunny.png",
+      "weather": "Sunny",
+      "time_period": "Night",
+      "generated": true
     }
   ]
 }
