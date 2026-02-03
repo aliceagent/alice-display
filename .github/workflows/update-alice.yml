@@ -1,0 +1,26 @@
+name: Update Alice Display
+
+on:
+schedule:
+- cron: '0 * * * *'
+workflow_dispatch:
+
+jobs:
+update:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v4
+- uses: actions/setup-python@v5
+with:
+python-version: '3.11'
+- name: Update display
+env:
+OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+run: python scripts/update_alice.py --force
+- name: Commit and push
+run: |
+git config user.name "Alice Bot"
+git config user.email "alice@bot.local"
+git add display-control.json
+git diff --staged --quiet || git commit -m "🦜 Hourly update"
+git push
