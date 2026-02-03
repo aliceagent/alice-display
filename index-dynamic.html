@@ -34,7 +34,20 @@
             align-items: center;
         }
         
-        #alice-image {
+        /* Dual image layers for crossfade */
+        .image-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .image-layer img {
             max-width: 100%;
             max-height: 100%;
             width: auto;
@@ -42,17 +55,16 @@
             object-fit: contain;
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            transition: opacity 0.8s ease-in-out, transform 0.3s ease;
         }
         
-        #alice-image.loading {
-            opacity: 0.3;
-            filter: blur(5px);
-        }
-        
-        #alice-image.loaded {
+        .image-layer.active {
             opacity: 1;
-            filter: blur(0);
+            z-index: 2;
+        }
+        
+        .image-layer.inactive {
+            opacity: 0;
+            z-index: 1;
         }
         
         /* Weather/Time overlay */
@@ -72,13 +84,10 @@
             font-size: 14px;
             opacity: 0;
             transition: opacity 0.3s ease;
+            z-index: 10;
         }
         
         .status-overlay.visible {
-            opacity: 1;
-        }
-        
-        .status-overlay:hover {
             opacity: 1;
         }
         
@@ -101,6 +110,27 @@
             font-weight: 500;
         }
         
+        /* Update indicator */
+        .update-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 200, 100, 0.8);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 10;
+        }
+        
+        .update-indicator.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         /* Loading spinner */
         .loading-spinner {
             position: fixed;
@@ -108,6 +138,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             display: none;
+            z-index: 5;
         }
         
         .loading-spinner.active {
@@ -144,6 +175,7 @@
             transition: opacity 0.5s ease;
             text-align: center;
             max-width: 80%;
+            z-index: 10;
         }
         
         .title-overlay.visible {
@@ -154,7 +186,7 @@
         .debug-panel {
             position: fixed;
             top: 10px;
-            right: 10px;
+            left: 10px;
             background: rgba(0, 0, 0, 0.9);
             color: #00ff00;
             padding: 10px;
@@ -163,6 +195,7 @@
             font-size: 11px;
             display: none;
             max-width: 300px;
+            z-index: 20;
         }
         
         .debug-panel.show {
@@ -191,8 +224,9 @@
             align-items: center;
             justify-content: center;
             font-size: 20px;
-            opacity: 0.5;
+            opacity: 0.3;
             transition: opacity 0.3s, transform 0.2s;
+            z-index: 10;
         }
         
         .fullscreen-btn:hover {
@@ -213,16 +247,39 @@
             border-radius: 10px;
             text-align: center;
             display: none;
+            z-index: 15;
         }
         
         .error-message.show {
             display: block;
         }
+        
+        /* Next update countdown */
+        .countdown {
+            position: fixed;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 11px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 10;
+        }
+        
+        .countdown.visible {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <div class="display-container">
-        <img id="alice-image" class="loading" src="" alt="Alice">
+        <div class="image-layer active" id="layer-a">
+            <img src="" alt="Alice">
+        </div>
+        <div class="image-layer inactive" id="layer-b">
+            <img src="" alt="Alice">
+        </div>
     </div>
     
     <div class="title-overlay" id="title-overlay"></div>
@@ -231,24 +288,28 @@
         <div class="status-item">
             <span class="icon" id="weather-icon">☀️</span>
             <div>
-                <div class="value" id="weather-condition">Sunny</div>
-                <div class="label" id="temperature">20°C</div>
+                <div class="value" id="weather-condition">Loading...</div>
+                <div class="label" id="temperature">--°C</div>
             </div>
         </div>
         <div class="status-item">
             <span class="icon">🕐</span>
             <div>
-                <div class="value" id="time-period">Afternoon</div>
-                <div class="label" id="current-time">14:00</div>
+                <div class="value" id="time-period">--</div>
+                <div class="label" id="current-time">--:--</div>
             </div>
         </div>
         <div class="status-item">
             <span class="icon">🎨</span>
             <div>
-                <div class="value" id="activity">Creative</div>
+                <div class="value" id="activity">--</div>
             </div>
         </div>
     </div>
+    
+    <div class="countdown" id="countdown"></div>
+    
+    <div class="update-indicator" id="update-indicator">✨ Updated!</div>
     
     <div class="loading-spinner" id="loading-spinner">
         <div class="spinner"></div>
@@ -269,19 +330,24 @@
         class AliceDisplay {
             constructor() {
                 this.controlFile = 'display-control.json';
-                this.pollInterval = 60000; // Check every minute
-                this.retryInterval = 5000;  // Retry on error every 5 seconds
+                this.pollInterval = 5 * 60 * 1000;  // Poll every 5 minutes
+                this.retryInterval = 10 * 1000;      // Retry on error every 10 seconds
+                this.lastUpdated = null;
                 this.currentData = null;
+                this.activeLayer = 'a';
                 this.isDebugMode = new URLSearchParams(window.location.search).has('debug');
                 
                 // DOM elements
-                this.imageEl = document.getElementById('alice-image');
+                this.layerA = document.getElementById('layer-a');
+                this.layerB = document.getElementById('layer-b');
                 this.titleEl = document.getElementById('title-overlay');
                 this.statusEl = document.getElementById('status-overlay');
                 this.spinnerEl = document.getElementById('loading-spinner');
                 this.errorEl = document.getElementById('error-message');
                 this.debugEl = document.getElementById('debug-panel');
                 this.debugContent = document.getElementById('debug-content');
+                this.updateIndicator = document.getElementById('update-indicator');
+                this.countdownEl = document.getElementById('countdown');
                 
                 // Weather icons mapping
                 this.weatherIcons = {
@@ -306,7 +372,8 @@
                 }
                 
                 this.setupEventListeners();
-                await this.loadDisplay();
+                this.spinnerEl.classList.add('active');
+                await this.loadDisplay(true);  // Initial load
                 this.startPolling();
                 
                 // Show status bar briefly on load
@@ -322,17 +389,21 @@
                     this.toggleFullscreen();
                 });
                 
-                // Show status on mouse move
+                // Show status on mouse move / touch
                 let hideTimeout;
-                document.addEventListener('mousemove', () => {
+                const showOverlays = () => {
                     this.statusEl.classList.add('visible');
                     this.titleEl.classList.add('visible');
+                    this.countdownEl.classList.add('visible');
                     clearTimeout(hideTimeout);
                     hideTimeout = setTimeout(() => {
                         this.statusEl.classList.remove('visible');
                         this.titleEl.classList.remove('visible');
-                    }, 3000);
-                });
+                        this.countdownEl.classList.remove('visible');
+                    }, 4000);
+                };
+                document.addEventListener('mousemove', showOverlays);
+                document.addEventListener('touchstart', showOverlays);
                 
                 // Debug toggle with Ctrl+D
                 document.addEventListener('keydown', (e) => {
@@ -340,13 +411,13 @@
                         e.preventDefault();
                         this.debugEl.classList.toggle('show');
                     }
-                    // Refresh with R
+                    // Manual refresh with R
                     if (e.key === 'r' && !e.ctrlKey) {
-                        this.loadDisplay();
+                        this.loadDisplay(true);
                     }
                 });
                 
-                // Reload on visibility change
+                // Check for updates when page becomes visible again
                 document.addEventListener('visibilitychange', () => {
                     if (!document.hidden) {
                         this.loadDisplay();
@@ -354,35 +425,53 @@
                 });
             }
             
-            async loadDisplay() {
-                this.spinnerEl.classList.add('active');
-                this.errorEl.classList.remove('show');
-                
+            async loadDisplay(forceUpdate = false) {
                 try {
                     const response = await fetch(`${this.controlFile}?t=${Date.now()}`);
                     if (!response.ok) throw new Error(`HTTP ${response.status}`);
                     
                     const data = await response.json();
-                    this.updateDisplay(data);
-                    this.currentData = data;
-                    this.updateDebug(data);
+                    
+                    // Check if data has changed
+                    const newLastUpdated = data.lastUpdated;
+                    const hasChanged = forceUpdate || (newLastUpdated !== this.lastUpdated);
+                    
+                    if (hasChanged && newLastUpdated) {
+                        console.log('🦜 Update detected:', newLastUpdated);
+                        this.lastUpdated = newLastUpdated;
+                        this.currentData = data;
+                        await this.updateDisplay(data, !forceUpdate);
+                        this.updateDebug(data);
+                        
+                        // Show update indicator (not on initial load)
+                        if (!forceUpdate && this.lastUpdated) {
+                            this.showUpdateIndicator();
+                        }
+                    } else {
+                        this.updateDebug({ ...data, _status: 'No changes detected' });
+                    }
+                    
+                    this.errorEl.classList.remove('show');
                     
                 } catch (error) {
                     console.error('Error loading display:', error);
-                    this.showError();
                     this.updateDebug({ error: error.message });
+                    
+                    if (!this.currentData) {
+                        this.showError();
+                    }
                     
                     // Retry sooner on error
                     setTimeout(() => this.loadDisplay(), this.retryInterval);
                 }
             }
             
-            updateDisplay(data) {
+            async updateDisplay(data, animate = true) {
                 const { currentImage, weather, time } = data;
                 
-                // Update image
+                // Update image with crossfade
                 if (currentImage && currentImage.url) {
-                    this.loadImage(currentImage.url, currentImage.title);
+                    await this.crossfadeImage(currentImage.url, currentImage.title, animate);
                 }
                 
                 // Update title
@@ -397,57 +486,87 @@
                     document.getElementById('weather-condition').textContent = 
                         weather.condition || 'Unknown';
                     document.getElementById('temperature').textContent = 
-                        weather.temperature ? `${weather.temperature}°C` : '';
+                        weather.temperature ? `${Math.round(weather.temperature)}°C` : '';
                 }
                 
                 // Update time
                 if (time) {
                     document.getElementById('time-period').textContent = 
                         time.period || 'Unknown';
+                    const now = new Date();
                     document.getElementById('current-time').textContent = 
-                        time.hour !== undefined ? `${time.hour}:00` : '';
+                        now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
                 }
                 
                 // Update activity
                 if (currentImage && currentImage.activity) {
                     document.getElementById('activity').textContent = currentImage.activity;
                 }
+                
+                this.spinnerEl.classList.remove('active');
             }
             
-            loadImage(url, title) {
-                this.imageEl.classList.add('loading');
-                this.spinnerEl.classList.add('active');
-                
-                const newImg = new Image();
-                newImg.onload = () => {
-                    this.imageEl.src = url;
-                    this.imageEl.alt = title || 'Alice';
-                    this.imageEl.classList.remove('loading');
-                    this.imageEl.classList.add('loaded');
-                    this.spinnerEl.classList.remove('active');
-                    this.errorEl.classList.remove('show');
-                };
-                
-                newImg.onerror = () => {
-                    console.error('Failed to load image:', url);
-                    this.spinnerEl.classList.remove('active');
-                    // Keep showing previous image on error
-                    this.imageEl.classList.remove('loading');
-                };
-                
-                newImg.src = url;
+            crossfadeImage(url, title, animate = true) {
+                return new Promise((resolve) => {
+                    // Determine which layer to load into
+                    const nextLayer = this.activeLayer === 'a' ? 'b' : 'a';
+                    const nextLayerEl = nextLayer === 'a' ? this.layerA : this.layerB;
+                    const currentLayerEl = this.activeLayer === 'a' ? this.layerA : this.layerB;
+                    const nextImg = nextLayerEl.querySelector('img');
+                    
+                    // Preload the image
+                    const preloader = new Image();
+                    preloader.onload = () => {
+                        nextImg.src = url;
+                        nextImg.alt = title || 'Alice';
+                        
+                        if (animate) {
+                            // Crossfade: show new layer, hide old
+                            nextLayerEl.classList.remove('inactive');
+                            nextLayerEl.classList.add('active');
+                            currentLayerEl.classList.remove('active');
+                            currentLayerEl.classList.add('inactive');
+                        } else {
+                            // Instant switch (initial load)
+                            nextLayerEl.classList.remove('inactive');
+                            nextLayerEl.classList.add('active');
+                            currentLayerEl.classList.remove('active');
+                            currentLayerEl.classList.add('inactive');
+                        }
+                        
+                        this.activeLayer = nextLayer;
+                        resolve();
+                    };
+                    
+                    preloader.onerror = () => {
+                        console.error('Failed to load image:', url);
+                        resolve();
+                    };
+                    
+                    preloader.src = url;
+                });
+            }
+            
+            showUpdateIndicator() {
+                this.updateIndicator.classList.add('show');
+                setTimeout(() => {
+                    this.updateIndicator.classList.remove('show');
+                }, 3000);
             }
             
             showError() {
                 this.spinnerEl.classList.remove('active');
-                if (!this.imageEl.src) {
-                    this.errorEl.classList.add('show');
-                }
+                this.errorEl.classList.add('show');
             }
             
             updateDebug(data) {
                 if (!this.isDebugMode) return;
-                this.debugContent.textContent = JSON.stringify(data, null, 2);
+                const debugInfo = {
+                    ...data,
+                    _pollInterval: `${this.pollInterval / 1000}s`,
+                    _lastChecked: new Date().toISOString()
+                };
+                this.debugContent.textContent = JSON.stringify(debugInfo, null, 2);
             }
             
             toggleFullscreen() {
@@ -461,12 +580,26 @@
             }
             
             startPolling() {
+                // Update countdown display
+                let nextPoll = Date.now() + this.pollInterval;
+                
+                const updateCountdown = () => {
+                    const remaining = Math.max(0, Math.ceil((nextPoll - Date.now()) / 1000));
+                    const mins = Math.floor(remaining / 60);
+                    const secs = remaining % 60;
+                    this.countdownEl.textContent = `Next check in ${mins}:${secs.toString().padStart(2, '0')}`;
+                };
+                
+                setInterval(updateCountdown, 1000);
+                
+                // Main polling loop
                 setInterval(() => {
                     this.loadDisplay();
+                    nextPoll = Date.now() + this.pollInterval;
                 }, this.pollInterval);
                 
                 console.log('🦜 Alice Display initialized');
-                console.log(`📡 Polling every ${this.pollInterval / 1000} seconds`);
+                console.log(`📡 Auto-refresh every ${this.pollInterval / 1000 / 60} minutes`);
             }
         }
         
