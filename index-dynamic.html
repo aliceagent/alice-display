@@ -163,17 +163,19 @@
             padding: 20px;
             color: white;
             min-width: 180px;
-            opacity: 0;
-            transform: translateY(-10px);
+            opacity: 1;
+            transform: translateY(0);
             transition: opacity 0.4s ease, transform 0.4s ease;
             z-index: 15;
             border: 1px solid rgba(255,255,255,0.1);
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            cursor: pointer;
         }
         
-        .weather-widget.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .weather-widget.hidden {
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
         }
         
         .weather-widget-header {
@@ -1337,6 +1339,11 @@
                     this.toggleFullscreen();
                 });
                 
+                // Weather widget click to hide
+                document.getElementById('weather-widget').addEventListener('click', () => {
+                    this.toggleWeatherWidget();
+                });
+                
                 // Show status on mouse move / touch
                 let hideTimeout;
                 const showOverlays = () => {
@@ -1463,6 +1470,8 @@
                         this.lastGoodData = data;  // Cache for fallback
                         await this.updateDisplay(data, !forceUpdate);
                         this.updateDebug(data);
+                        this.updateWeatherWidget();
+                        this.startWidgetClock();
                         
                         // Show update indicator (not on initial load)
                         if (!forceUpdate && this.lastUpdated) {
@@ -1744,10 +1753,8 @@
             
             toggleWeatherWidget() {
                 const widget = document.getElementById('weather-widget');
-                widget.classList.toggle('visible');
-                if (widget.classList.contains('visible')) {
-                    this.updateWeatherWidget();
-                    this.startWidgetClock();
+                widget.classList.toggle('hidden');
+                if (!widget.classList.contains('hidden')) {
                     this.showToast('🌤️ Weather overlay on');
                 } else {
                     this.showToast('🌤️ Weather overlay off');
@@ -1809,7 +1816,7 @@
             closeAllPanels() {
                 document.getElementById('help-overlay').classList.remove('show');
                 document.getElementById('image-info').classList.remove('show');
-                document.getElementById('weather-widget').classList.remove('visible');
+                document.getElementById('weather-widget').classList.add('hidden');
                 this.debugEl.classList.remove('show');
             }
             
