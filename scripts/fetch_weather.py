@@ -57,25 +57,29 @@ def normalize_weather(weather_id: int) -> str:
     return CODE_TO_WEATHER.get(weather_id, "Sunny")
 
 
-def get_time_period(hour: int, sunrise_hour: int, sunset_hour: int) -> str:
+def get_time_period(hour: int, sunrise_hour: int = 6, sunset_hour: int = 18) -> str:
     """
-    Determine time period based on current hour and sun position.
+    Determine time period based on current hour.
+    Uses fixed boundaries for consistent behavior in Israel timezone.
     
-    Returns one of: Dawn, Morning, Afternoon, Evening, Night
+    Returns one of: Dawn, Morning, Afternoon, Evening, Night, Late Night
     """
-    # Dawn: around sunrise (±1 hour)
-    if sunrise_hour - 1 <= hour < sunrise_hour + 1:
+    # Late Night: 23:00-4:59 (sleep time)
+    if hour >= 23 or hour < 5:
+        return "Late Night"
+    # Dawn: 5:00-6:59 (sunrise)
+    elif 5 <= hour < 7:
         return "Dawn"
-    # Morning: after dawn until noon
-    elif sunrise_hour + 1 <= hour < 12:
+    # Morning: 7:00-11:59 (bright daylight)
+    elif 7 <= hour < 12:
         return "Morning"
-    # Afternoon: noon until 2 hours before sunset
-    elif 12 <= hour < sunset_hour - 2:
+    # Afternoon: 12:00-16:59 (full daylight)
+    elif 12 <= hour < 17:
         return "Afternoon"
-    # Evening: around sunset (±2 hours)
-    elif sunset_hour - 2 <= hour < sunset_hour + 1:
+    # Evening: 17:00-19:59 (golden hour, sunset)
+    elif 17 <= hour < 20:
         return "Evening"
-    # Night: after evening until dawn
+    # Night: 20:00-22:59 (dark, evening activities)
     else:
         return "Night"
 
