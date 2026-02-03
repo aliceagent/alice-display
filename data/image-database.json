@@ -18,7 +18,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308102a64afb6eb15f7023",
@@ -60,7 +62,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308104b03de283f1ff6f19",
@@ -70,7 +74,9 @@
       "time_period": "Afternoon",
       "activity": "Exercise",
       "location": "Martial Arts space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308106b320fe78becea4d8",
@@ -102,7 +108,9 @@
       "time_period": "Afternoon",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308107984cc13452dd28e7",
@@ -112,7 +120,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308107ae73c71564114c3d",
@@ -134,7 +144,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081088d3cefdeeeb6fe3a",
@@ -166,7 +178,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081098db8e18af8b0f1b2",
@@ -188,7 +202,9 @@
       "time_period": "Night",
       "activity": "Sleeping",
       "location": "Cozy bedroom with large windows overlooking cloudy landscape",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30810cb13febe735393441",
@@ -198,7 +214,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30810d9258e92b724a5e64",
@@ -240,7 +258,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30810ebe9ac25c302b1507",
@@ -314,7 +334,9 @@
       "time_period": "Morning",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308112a89af23d2d567761",
@@ -334,7 +356,9 @@
       "time_period": "Afternoon",
       "activity": "Exercise",
       "location": "Running space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308113988fc2cb659e610b",
@@ -344,7 +368,9 @@
       "time_period": "Morning",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308113aa0cd7cd58be6b68",
@@ -354,7 +380,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308114b9b9e074c85c191d",
@@ -396,7 +424,9 @@
       "time_period": "Afternoon",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30811c87bdd6c68cf47f75",
@@ -418,7 +448,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30811c9993dac210f18555",
@@ -428,7 +460,9 @@
       "time_period": "Evening",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30811e88a6da1724539687",
@@ -460,7 +494,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308121a4c5f98b067878e1",
@@ -470,7 +506,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308121b23ff4c241e71206",
@@ -480,7 +518,9 @@
       "time_period": "Morning",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308121ba2deba22be65a01",
@@ -500,7 +540,9 @@
       "time_period": "Night",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308122b7ede269fc1a9fd1",
@@ -522,7 +564,9 @@
       "time_period": "Afternoon",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308123ab87d26d7bac3225",
@@ -532,7 +576,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308124b3b7ca49ed923b05",
@@ -542,7 +588,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308124b861e61794ef2e30",
@@ -562,7 +610,9 @@
       "time_period": "Night",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30812591e9de2e6d7d2bc4",
@@ -680,7 +730,9 @@
       "time_period": "Afternoon",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30812dae0dffbb807a3974",
@@ -742,7 +794,9 @@
       "time_period": "Night",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30813190effa4124b47444",
@@ -774,7 +828,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30813286afd9e954e0477f",
@@ -796,7 +852,9 @@
       "time_period": "Evening",
       "activity": "Exercise",
       "location": "Dancing space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308132b1a3c2d0de2444a9",
@@ -806,7 +864,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308133803bedc7bdb61222",
@@ -850,7 +910,9 @@
       "time_period": "Morning",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308136a7c9e6105d126e2a",
@@ -860,7 +922,9 @@
       "time_period": "Afternoon",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308137ba30cb2c17541348",
@@ -870,7 +934,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308137bb55f84686af9788",
@@ -880,7 +946,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081399632dc466584cbe1",
@@ -910,7 +978,9 @@
       "time_period": "Afternoon",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30813a97acd136eb0894d0",
@@ -930,7 +1000,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30813c90e0f97bde1ad14f",
@@ -962,7 +1034,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30813e879ef38b454f749a",
@@ -972,7 +1046,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30813f9777e7471878cf4d",
@@ -982,7 +1058,9 @@
       "time_period": "Morning",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30813fbb93f469544abe2f",
@@ -1026,7 +1104,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30814197baf5bb47b6229c",
@@ -1036,7 +1116,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081448d07d7d33f9a0631",
@@ -1078,7 +1160,9 @@
       "time_period": "Evening",
       "activity": "Exercise",
       "location": "Swimming space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308146ac3aeb1e0dc50b71",
@@ -1110,7 +1194,9 @@
       "time_period": "Evening",
       "activity": "Exercise",
       "location": "Dancing space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308147a9e4c120b3fa3708",
@@ -1184,7 +1270,9 @@
       "time_period": "Morning",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30814a8288f4b159b32d28",
@@ -1204,7 +1292,9 @@
       "time_period": "Afternoon",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30814b87cce570e939d0b9",
@@ -1236,7 +1326,9 @@
       "time_period": "Night",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30814cafc7df863f5065dc",
@@ -1266,7 +1358,9 @@
       "time_period": "Evening",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30814f974dcea8c6f272ae",
@@ -1276,7 +1370,9 @@
       "time_period": "Evening",
       "activity": "Exercise",
       "location": "Dancing space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30814fa818cefa5948697d",
@@ -1296,7 +1392,9 @@
       "time_period": "Night",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308150a496fe3dc6235ff1",
@@ -1318,7 +1416,9 @@
       "time_period": "Afternoon",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308151a190dfecd378c619",
@@ -1374,7 +1474,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308155a659c965df12f2fc",
@@ -1384,7 +1486,9 @@
       "time_period": "Evening",
       "activity": "Exercise",
       "location": "Dancing space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308156810fedba50a0af95",
@@ -1414,7 +1518,9 @@
       "time_period": "Afternoon",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308158a490e5e9a6ec8da0",
@@ -1434,7 +1540,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308159af92c62ef33f2cfd",
@@ -1456,7 +1564,9 @@
       "time_period": "Afternoon",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30815c8e62fa6e7925363b",
@@ -1486,7 +1596,9 @@
       "time_period": "Evening",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30815dab15fdc3098d1607",
@@ -1496,7 +1608,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30815dac66f853de0382c7",
@@ -1516,7 +1630,9 @@
       "time_period": "Night",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308160a539ef1f4afc5951",
@@ -1548,7 +1664,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308161b186ec27bc0b000a",
@@ -1558,7 +1676,9 @@
       "time_period": "Night",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308161bd35ec649be50f45",
@@ -1580,7 +1700,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30816295eed02d4f1515ab",
@@ -1632,7 +1754,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081679875c971becf54aa",
@@ -1664,7 +1788,9 @@
       "time_period": "Morning",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30816885eac8ebc1885e5c",
@@ -1708,7 +1834,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308169bfb9ff7a2ce91e27",
@@ -1738,7 +1866,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30816a93e4ef6148c6cb74",
@@ -1748,7 +1878,9 @@
       "time_period": "Night",
       "activity": "Sleeping",
       "location": "Cozy bedroom with large windows overlooking cloudy landscape",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30816b930fd818c87b5268",
@@ -1758,7 +1890,9 @@
       "time_period": "Night",
       "activity": "Sleeping",
       "location": "Cozy bedroom with large windows overlooking cloudy landscape",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30816b955bc18fd0601a82",
@@ -1790,7 +1924,9 @@
       "time_period": "Afternoon",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30816c9695d5c0a48bbf43",
@@ -1800,7 +1936,9 @@
       "time_period": "Evening",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30816da236dfbec577f6a6",
@@ -1810,7 +1948,9 @@
       "time_period": "Afternoon",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30816dbba6e1c9eeaf3763",
@@ -1820,7 +1960,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30816f8aaad4010ddd0a5a",
@@ -1830,7 +1972,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30816f904ed930ef685cd7",
@@ -1840,7 +1984,9 @@
       "time_period": "Morning",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30817083bae57567151cad",
@@ -1850,7 +1996,9 @@
       "time_period": "Night",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30817195fce50f6ac632df",
@@ -1870,7 +2018,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308173acf3d267d583ad31",
@@ -1902,7 +2052,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081759823f504b7352d43",
@@ -1912,7 +2064,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308175b438f98a592a62a5",
@@ -1922,7 +2076,9 @@
       "time_period": "Night",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30817680c9d0a4218feeec",
@@ -1980,7 +2136,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30817b8378e297ae349091",
@@ -1990,7 +2148,9 @@
       "time_period": "Night",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30817b95dac9c23aa08933",
@@ -2000,7 +2160,9 @@
       "time_period": "Afternoon",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30817bb7d3e46bce2d3f0c",
@@ -2032,7 +2194,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30817d8f95f25ced396a76",
@@ -2076,7 +2240,9 @@
       "time_period": "Afternoon",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308180a429c19b975b6a81",
@@ -2106,7 +2272,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308182ad15dbd803e1e036",
@@ -2126,7 +2294,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081839ce0eb5c2e7c72fc",
@@ -2146,7 +2316,9 @@
       "time_period": "Night",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30818498e5c9d88283828b",
@@ -2190,7 +2362,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308187b090e88bbdcfa4d7",
@@ -2210,7 +2384,9 @@
       "time_period": "Afternoon",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30818981dad97d33bf7905",
@@ -2242,7 +2418,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30818a90def8a15c7d11b7",
@@ -2252,7 +2430,9 @@
       "time_period": "Afternoon",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30818aa6b3cb1e9093f64f",
@@ -2272,7 +2452,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30818b8637e6f8136fd779",
@@ -2294,7 +2476,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30818c9ad4d9add9c4f988",
@@ -2304,7 +2488,9 @@
       "time_period": "Afternoon",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30818cacd0d3a8437b1c25",
@@ -2314,7 +2500,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30818cbf8edb4b3ef27c31",
@@ -2324,7 +2512,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30818da2b4e3dcfbde11ac",
@@ -2346,7 +2536,9 @@
       "time_period": "Morning",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30818eafcfcf6316b88acb",
@@ -2368,7 +2560,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30819292ecee05d9facd02",
@@ -2378,7 +2572,9 @@
       "time_period": "Afternoon",
       "activity": "Exercise",
       "location": "Dancing space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308192b7bfdcc75d3a5715",
@@ -2424,7 +2620,9 @@
       "time_period": "Evening",
       "activity": "Exercise",
       "location": "Swimming space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081979a48e5e64988441a",
@@ -2434,7 +2632,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30819885c1cac674d81622",
@@ -2466,7 +2666,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308198954cdfc472bbdbdc",
@@ -2520,7 +2722,9 @@
       "time_period": "Morning",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308199a861c719dcb552d5",
@@ -2530,7 +2734,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d308199bf59f8283351dca7",
@@ -2540,7 +2746,9 @@
       "time_period": "Morning",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30819b87e2e1442bee4c1b",
@@ -2580,7 +2788,9 @@
       "time_period": "Morning",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30819cbfa8e16fa32ad71b",
@@ -2600,7 +2810,9 @@
       "time_period": "Evening",
       "activity": "Exercise",
       "location": "Yoga space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30819e90c4cf10f3d16929",
@@ -2622,7 +2834,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d30819ea5aaf82ed952eba4",
@@ -2656,7 +2870,9 @@
       "time_period": "Morning",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081a08e43d387173539d2",
@@ -2742,7 +2958,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081a4bb35d3a8a30cf82a",
@@ -2762,7 +2980,9 @@
       "time_period": "Afternoon",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081a68b87eec69c897772",
@@ -2794,7 +3014,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081a8a48bf0a199a788ae",
@@ -2814,7 +3036,9 @@
       "time_period": "Evening",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081aa83bef1afdcf86efe",
@@ -2834,7 +3058,9 @@
       "time_period": "Night",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081ad81b6f2a187bc86ef",
@@ -2844,7 +3070,9 @@
       "time_period": "Afternoon",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081aeaf3dc51f0ec44d45",
@@ -2886,7 +3114,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081b19d12f7b698d57dc0",
@@ -2928,7 +3158,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081b293a5cc2db656510a",
@@ -2948,7 +3180,9 @@
       "time_period": "Afternoon",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081b48226f0ff1bca7576",
@@ -2968,7 +3202,9 @@
       "time_period": "Night",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081b6a321c7e173a25df9",
@@ -2990,7 +3226,9 @@
       "time_period": "Morning",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081b79e36c6c360b3ba8e",
@@ -3022,7 +3260,9 @@
       "time_period": "Morning",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081b8b42ff5c4aca1ef26",
@@ -3052,7 +3292,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081b9b959fc4d72ab827d",
@@ -3062,7 +3304,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081bc8e8cd94d880ed4ff",
@@ -3072,7 +3316,9 @@
       "time_period": "Morning",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081bcbd31f237ae1c8e3d",
@@ -3092,7 +3338,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081bd8f80d693d9ae05cd",
@@ -3126,7 +3374,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081bfbc6dc30a9cae0af9",
@@ -3136,7 +3386,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081c08fbfd20296dc495d",
@@ -3168,7 +3420,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081c58092e9e23150d1e0",
@@ -3178,7 +3432,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081c59e92dcc1d9df97d2",
@@ -3188,7 +3444,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081c69161e491776e8796",
@@ -3198,7 +3456,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081c7a264cb56b139281a",
@@ -3240,7 +3500,9 @@
       "time_period": "Afternoon",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081cbb9eee05ec995cb55",
@@ -3250,7 +3512,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081cca392fb70c25f4bbc",
@@ -3260,7 +3524,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081ccb469c03be8791441",
@@ -3310,7 +3576,9 @@
       "time_period": "Morning",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081cf9ea0c6595a657d3d",
@@ -3320,7 +3588,9 @@
       "time_period": "Night",
       "activity": "Sleeping",
       "location": "Cozy bedroom with large window overlooking rain-soaked garden",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081d181c5c013191eca41",
@@ -3382,7 +3652,9 @@
       "time_period": "Night",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081d384bee7913b07ce9b",
@@ -3392,7 +3664,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081d5a03ec2606dd134fe",
@@ -3436,7 +3710,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081d8ba1df74a8e9f0e37",
@@ -3456,7 +3732,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081dbb736daf6a3ab4003",
@@ -3466,7 +3744,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081dc8041f877d38a856f",
@@ -3476,7 +3756,9 @@
       "time_period": "Night",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081dc9b7cf9197279b11e",
@@ -3520,7 +3802,9 @@
       "time_period": "Morning",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081deb5d9d9087359bc06",
@@ -3552,7 +3836,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081e1ab12e97a77041b1b",
@@ -3562,7 +3848,9 @@
       "time_period": "Afternoon",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081e295d4c7e1a9985739",
@@ -3572,7 +3860,9 @@
       "time_period": "Evening",
       "activity": "Exercise",
       "location": "Swimming space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081e38f1bce2e366333c3",
@@ -3626,7 +3916,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081e6b1ebd2c844abd16e",
@@ -3636,7 +3928,9 @@
       "time_period": "Night",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081e7b68cfc9086d2d2e7",
@@ -3646,7 +3940,9 @@
       "time_period": "Evening",
       "activity": "Exercise",
       "location": "Martial Arts space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081e899a8eeacbd2a2741",
@@ -3656,7 +3952,9 @@
       "time_period": "Evening",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081e8a2b8ed4e7869d80b",
@@ -3666,7 +3964,9 @@
       "time_period": "Morning",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-rainy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081e98761fca06a5324a3",
@@ -3730,7 +4030,9 @@
       "time_period": "Night",
       "activity": "Leisure",
       "location": "Cozy living space with comfortable seating and warm atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/night-clear-night.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081eba5b5d24337fe76e9",
@@ -3760,7 +4062,9 @@
       "time_period": "Afternoon",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081ee9ccdfa1b4c854626",
@@ -3770,7 +4074,9 @@
       "time_period": "Evening",
       "activity": "Learning",
       "location": "Study space with books, resources, and focused learning environment",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081eeb28acdb7125083ee",
@@ -3780,7 +4086,9 @@
       "time_period": "Evening",
       "activity": "Work",
       "location": "Modern home office with large windows and city view",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081eeb479c868bbbe5f08",
@@ -3814,7 +4122,9 @@
       "time_period": "Evening",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081f2921ce988e30f556d",
@@ -3968,7 +4278,9 @@
       "time_period": "Afternoon",
       "activity": "Social",
       "location": "Social venue with elegant atmosphere and gathering space",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081fe8f69dd14c2df31aa",
@@ -3978,7 +4290,9 @@
       "time_period": "Afternoon",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081fe900ce6d9fe2344c4",
@@ -3988,7 +4302,9 @@
       "time_period": "Evening",
       "activity": "Creative",
       "location": "Artistic studio space with natural lighting and creative atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/afternoon-sunny.png",
+      "generated": true
     },
     {
       "id": "2fc419064d3081fe9722ce1c9b460b19",
@@ -4020,7 +4336,9 @@
       "time_period": "Evening",
       "activity": "Exercise",
       "location": "Swimming space with proper equipment and motivating atmosphere",
-      "style": "Anime"
+      "style": "Anime",
+      "cloudinary_url": "images/generated/morning-cloudy.png",
+      "generated": true
     },
     {
       "id": "e468c2d410644f2aba1517421fa8cc98",
