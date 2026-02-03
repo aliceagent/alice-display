@@ -1,47 +1,36 @@
 {
-  "generated_at": "2026-02-03T14:15:00Z",
+  "generated_at": "2026-02-03T14:45:00Z",
   "base_path": "images/generated/",
   "images": [
     {
       "id": "morning-sunny",
       "filename": "morning-sunny.png",
       "weather": "Sunny",
-      "time_period": "Morning",
-      "title": "Alice Morning Yoga - Sunny",
-      "description": "Alice does morning yoga on her sunny balcony with her parrot companion",
-      "activity": "Exercise",
-      "cloudinary_url": "images/generated/morning-sunny.png"
+      "time_period": "Morning"
+    },
+    {
+      "id": "morning-cloudy",
+      "filename": "morning-cloudy.png",
+      "weather": "Cloudy",
+      "time_period": "Morning"
+    },
+    {
+      "id": "afternoon-sunny",
+      "filename": "afternoon-sunny.png",
+      "weather": "Sunny",
+      "time_period": "Afternoon"
     },
     {
       "id": "afternoon-rainy",
       "filename": "afternoon-rainy.png",
       "weather": "Rainy",
-      "time_period": "Afternoon",
-      "title": "Alice Reading - Rainy Afternoon",
-      "description": "Alice reads by the window on a cozy rainy afternoon",
-      "activity": "Leisure",
-      "cloudinary_url": "images/generated/afternoon-rainy.png"
+      "time_period": "Afternoon"
     },
     {
       "id": "night-clear-night",
       "filename": "night-clear-night.png",
       "weather": "Clear Night",
-      "time_period": "Night",
-      "title": "Alice Stargazing - Clear Night",
-      "description": "Alice gazes at the stars from her balcony with her parrot companion",
-      "activity": "Leisure",
-      "cloudinary_url": "images/generated/night-clear-night.png"
+      "time_period": "Night"
     }
-  ],
-  "time_fallbacks": {
-    "Morning": "morning-sunny.png",
-    "Dawn": "morning-sunny.png",
-    "Early Morning": "morning-sunny.png",
-    "Afternoon": "afternoon-rainy.png",
-    "Golden Hour": "afternoon-rainy.png",
-    "Evening": "night-clear-night.png",
-    "Night": "night-clear-night.png",
-    "Late Night": "night-clear-night.png"
-  },
-  "default_image": "afternoon-rainy.png"
+  ]
 }
