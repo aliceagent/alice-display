@@ -27,3 +27,7 @@ tmp/
 !config_example.py
 number_database_rows.py
 quick_number.py
+
+# Runtime data
+data/selection-history.json
+data/update-history.json
