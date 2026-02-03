@@ -542,6 +542,172 @@
                 flex: 1;
             }
         }
+        
+        /* Help overlay */
+        .help-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .help-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .help-content {
+            background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+            border-radius: 20px;
+            padding: 30px 40px;
+            max-width: 500px;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .help-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .help-shortcuts {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 12px 20px;
+        }
+        
+        .help-key {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 14px;
+            text-align: center;
+            min-width: 60px;
+        }
+        
+        .help-desc {
+            font-size: 14px;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+        }
+        
+        .help-close {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+        
+        /* Toast notifications */
+        .toast {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.2s, transform 0.2s;
+            z-index: 300;
+            pointer-events: none;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        /* Pause indicator */
+        .pause-indicator {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 150, 0, 0.9);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            display: none;
+            z-index: 15;
+        }
+        
+        .pause-indicator.show {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Image info panel */
+        .image-info {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 16px;
+            color: white;
+            max-width: 300px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 50;
+        }
+        
+        .image-info.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .image-info h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .image-info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+        
+        .image-info-row:last-child {
+            border-bottom: none;
+        }
+        
+        .image-info-label {
+            opacity: 0.6;
+        }
+        
+        .image-info-value {
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -635,6 +801,72 @@
         </div>
     </div>
     
+    <!-- Help Overlay -->
+    <div class="help-overlay" id="help-overlay">
+        <div class="help-content">
+            <div class="help-title">⌨️ Keyboard Shortcuts</div>
+            <div class="help-shortcuts">
+                <span class="help-key">R</span>
+                <span class="help-desc">Refresh display</span>
+                
+                <span class="help-key">F</span>
+                <span class="help-desc">Toggle fullscreen</span>
+                
+                <span class="help-key">S</span>
+                <span class="help-desc">Toggle status overlay</span>
+                
+                <span class="help-key">Space</span>
+                <span class="help-desc">Pause/resume auto-refresh</span>
+                
+                <span class="help-key">I</span>
+                <span class="help-desc">Show image info</span>
+                
+                <span class="help-key">Ctrl+D</span>
+                <span class="help-desc">Toggle debug panel</span>
+                
+                <span class="help-key">H / ?</span>
+                <span class="help-desc">Show this help</span>
+                
+                <span class="help-key">Esc</span>
+                <span class="help-desc">Close panels</span>
+            </div>
+            <div class="help-close">Press any key to close</div>
+        </div>
+    </div>
+    
+    <!-- Toast notification -->
+    <div class="toast" id="toast"></div>
+    
+    <!-- Pause indicator -->
+    <div class="pause-indicator" id="pause-indicator">
+        ⏸️ Auto-refresh paused — Press Space to resume
+    </div>
+    
+    <!-- Image info panel -->
+    <div class="image-info" id="image-info">
+        <h3>🖼️ Image Info</h3>
+        <div class="image-info-row">
+            <span class="image-info-label">Title</span>
+            <span class="image-info-value" id="info-title">--</span>
+        </div>
+        <div class="image-info-row">
+            <span class="image-info-label">Weather</span>
+            <span class="image-info-value" id="info-weather">--</span>
+        </div>
+        <div class="image-info-row">
+            <span class="image-info-label">Time</span>
+            <span class="image-info-value" id="info-time">--</span>
+        </div>
+        <div class="image-info-row">
+            <span class="image-info-label">Activity</span>
+            <span class="image-info-value" id="info-activity">--</span>
+        </div>
+        <div class="image-info-row">
+            <span class="image-info-label">Updated</span>
+            <span class="image-info-value" id="info-updated">--</span>
+        </div>
+    </div>
+    
     <script>
         class AliceDisplay {
             constructor() {
@@ -652,6 +884,7 @@
                 this.isOnline = navigator.onLine;
                 this.errorCountdownInterval = null;
                 this.usingFallback = false;
+                this.isPaused = false;  // For pause/resume functionality
                 
                 // Fallback image (base64 placeholder or default)
                 this.fallbackImageUrl = 'images/generated/morning-sunny.png';
@@ -782,15 +1015,58 @@
                 document.addEventListener('mousemove', showOverlays);
                 document.addEventListener('touchstart', showOverlays);
                 
-                // Debug toggle with Ctrl+D
+                // Keyboard shortcuts
                 document.addEventListener('keydown', (e) => {
-                    if (e.ctrlKey && e.key === 'd') {
-                        e.preventDefault();
-                        this.debugEl.classList.toggle('show');
-                    }
-                    // Manual refresh with R
-                    if (e.key === 'r' && !e.ctrlKey) {
-                        this.loadDisplay(true);
+                    // Ignore if typing in an input
+                    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+                    
+                    switch(e.key.toLowerCase()) {
+                        case 'd':
+                            if (e.ctrlKey) {
+                                e.preventDefault();
+                                this.debugEl.classList.toggle('show');
+                            }
+                            break;
+                        case 'r':
+                            if (!e.ctrlKey) {
+                                e.preventDefault();
+                                this.loadDisplay(true);
+                                this.showToast('🔄 Refreshing...');
+                            }
+                            break;
+                        case 'f':
+                            e.preventDefault();
+                            this.toggleFullscreen();
+                            break;
+                        case 's':
+                            e.preventDefault();
+                            this.statusEl.classList.toggle('visible');
+                            this.titleEl.classList.toggle('visible');
+                            break;
+                        case ' ':
+                            e.preventDefault();
+                            this.togglePause();
+                            break;
+                        case 'h':
+                        case '?':
+                            e.preventDefault();
+                            this.toggleHelp();
+                            break;
+                        case 'i':
+                            e.preventDefault();
+                            this.showImageInfo();
+                            break;
+                        case 'escape':
+                            this.closeAllPanels();
+                            break;
+                        case 'arrowleft':
+                            e.preventDefault();
+                            this.showToast('⏮️ Previous (not implemented)');
+                            break;
+                        case 'arrowright':
+                            e.preventDefault();
+                            this.showToast('⏭️ Next (not implemented)');
+                            break;
                     }
                 });
                 
@@ -1087,9 +1363,56 @@
                     document.documentElement.requestFullscreen().catch(err => {
                         console.log('Fullscreen error:', err);
                     });
+                    this.showToast('🖥️ Fullscreen');
                 } else {
                     document.exitFullscreen();
+                    this.showToast('🪟 Windowed');
                 }
+            }
+            
+            togglePause() {
+                this.isPaused = !this.isPaused;
+                const pauseIndicator = document.getElementById('pause-indicator');
+                if (this.isPaused) {
+                    pauseIndicator.classList.add('show');
+                    this.showToast('⏸️ Paused');
+                } else {
+                    pauseIndicator.classList.remove('show');
+                    this.showToast('▶️ Resumed');
+                    this.loadDisplay();  // Refresh immediately when unpausing
+                }
+            }
+            
+            toggleHelp() {
+                const helpOverlay = document.getElementById('help-overlay');
+                helpOverlay.classList.toggle('show');
+            }
+            
+            showImageInfo() {
+                const infoPanel = document.getElementById('image-info');
+                if (this.currentData) {
+                    document.getElementById('info-title').textContent = this.currentData.title || '--';
+                    document.getElementById('info-weather').textContent = this.currentData.weather || '--';
+                    document.getElementById('info-time').textContent = this.currentData.time || '--';
+                    document.getElementById('info-activity').textContent = this.currentData.activity || '--';
+                    document.getElementById('info-updated').textContent = this.currentData.updated || '--';
+                }
+                infoPanel.classList.toggle('show');
+            }
+            
+            closeAllPanels() {
+                document.getElementById('help-overlay').classList.remove('show');
+                document.getElementById('image-info').classList.remove('show');
+                this.debugEl.classList.remove('show');
+            }
+            
+            showToast(message) {
+                const toast = document.getElementById('toast');
+                toast.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 1500);
             }
             
             startPolling() {
@@ -1107,7 +1430,9 @@
                 
                 // Main polling loop
                 setInterval(() => {
-                    this.loadDisplay();
+                    if (!this.isPaused) {
+                        this.loadDisplay();
+                    }
                     nextPoll = Date.now() + this.pollInterval;
                 }, this.pollInterval);
                 

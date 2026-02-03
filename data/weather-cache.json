@@ -1,0 +1,16 @@
+{
+  "temperature": 11,
+  "feels_like": 10,
+  "humidity": 80,
+  "wind_speed": 37,
+  "weather_id": 500,
+  "condition": "Rainy",
+  "description": "light rain",
+  "icon": "10d",
+  "sunrise_hour": 6,
+  "sunset_hour": 17,
+  "time_period": "Afternoon",
+  "current_hour": 15,
+  "timestamp": "2026-02-03T13:57:34.520425+00:00",
+  "source": "OpenWeatherMap"
+}
