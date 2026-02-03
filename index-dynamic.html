@@ -240,17 +240,113 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(255, 0, 0, 0.2);
-            border: 1px solid rgba(255, 0, 0, 0.5);
+            background: rgba(30, 30, 50, 0.95);
+            border: 1px solid rgba(255, 100, 100, 0.3);
             color: white;
-            padding: 20px 30px;
-            border-radius: 10px;
+            padding: 30px 40px;
+            border-radius: 16px;
             text-align: center;
             display: none;
             z-index: 15;
+            backdrop-filter: blur(10px);
+            max-width: 90%;
+            width: 320px;
         }
         
         .error-message.show {
+            display: block;
+        }
+        
+        .error-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .error-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .error-detail {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-bottom: 15px;
+        }
+        
+        .error-retry {
+            font-size: 12px;
+            opacity: 0.5;
+        }
+        
+        .error-retry .countdown {
+            font-weight: 600;
+            color: #64b5f6;
+        }
+        
+        /* Connection status indicator */
+        .connection-status {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 10;
+        }
+        
+        .connection-status.visible {
+            opacity: 1;
+        }
+        
+        .connection-status.error {
+            background: rgba(255, 80, 80, 0.8);
+        }
+        
+        .connection-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4caf50;
+        }
+        
+        .connection-status.error .connection-dot {
+            background: #fff;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        /* Fallback image styling */
+        .fallback-active .image-layer img {
+            filter: grayscale(30%) brightness(0.8);
+        }
+        
+        .fallback-badge {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 150, 0, 0.9);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 15px;
+            font-size: 11px;
+            display: none;
+            z-index: 10;
+        }
+        
+        .fallback-badge.show {
             display: block;
         }
         
@@ -316,9 +412,18 @@
     </div>
     
     <div class="error-message" id="error-message">
-        <p>Unable to load display data</p>
-        <p style="font-size: 12px; opacity: 0.7;">Retrying...</p>
+        <div class="error-icon">🦜</div>
+        <div class="error-title" id="error-title">Connection Issue</div>
+        <div class="error-detail" id="error-detail">Unable to load display data</div>
+        <div class="error-retry">Retrying in <span class="countdown" id="error-countdown">10</span>s</div>
     </div>
+    
+    <div class="connection-status" id="connection-status">
+        <div class="connection-dot"></div>
+        <span id="connection-text">Connected</span>
+    </div>
+    
+    <div class="fallback-badge" id="fallback-badge">⚠️ Showing cached image</div>
     
     <div class="debug-panel" id="debug-panel">
         <pre id="debug-content"></pre>
@@ -331,11 +436,21 @@
             constructor() {
                 this.controlFile = 'display-control.json';
                 this.pollInterval = 5 * 60 * 1000;  // Poll every 5 minutes
-                this.retryInterval = 10 * 1000;      // Retry on error every 10 seconds
+                this.baseRetryInterval = 10 * 1000;  // Base retry interval
+                this.maxRetryInterval = 5 * 60 * 1000;  // Max 5 minutes between retries
+                this.retryCount = 0;
+                this.maxRetries = 10;
                 this.lastUpdated = null;
                 this.currentData = null;
+                this.lastGoodData = null;  // Cache last successful data
                 this.activeLayer = 'a';
                 this.isDebugMode = new URLSearchParams(window.location.search).has('debug');
+                this.isOnline = navigator.onLine;
+                this.errorCountdownInterval = null;
+                this.usingFallback = false;
+                
+                // Fallback image (base64 placeholder or default)
+                this.fallbackImageUrl = 'images/generated/morning-sunny.png';
                 
                 // DOM elements
                 this.layerA = document.getElementById('layer-a');
@@ -344,10 +459,16 @@
                 this.statusEl = document.getElementById('status-overlay');
                 this.spinnerEl = document.getElementById('loading-spinner');
                 this.errorEl = document.getElementById('error-message');
+                this.errorTitleEl = document.getElementById('error-title');
+                this.errorDetailEl = document.getElementById('error-detail');
+                this.errorCountdownEl = document.getElementById('error-countdown');
                 this.debugEl = document.getElementById('debug-panel');
                 this.debugContent = document.getElementById('debug-content');
                 this.updateIndicator = document.getElementById('update-indicator');
                 this.countdownEl = document.getElementById('countdown');
+                this.connectionStatusEl = document.getElementById('connection-status');
+                this.connectionTextEl = document.getElementById('connection-text');
+                this.fallbackBadgeEl = document.getElementById('fallback-badge');
                 
                 // Weather icons mapping
                 this.weatherIcons = {
@@ -372,6 +493,7 @@
                 }
                 
                 this.setupEventListeners();
+                this.setupNetworkListeners();
                 this.spinnerEl.classList.add('active');
                 await this.loadDisplay(true);  // Initial load
                 this.startPolling();
@@ -381,6 +503,57 @@
                 setTimeout(() => {
                     this.statusEl.classList.remove('visible');
                 }, 5000);
+            }
+            
+            setupNetworkListeners() {
+                window.addEventListener('online', () => {
+                    this.isOnline = true;
+                    this.showConnectionStatus('Back online', false);
+                    this.retryCount = 0;  // Reset retry count
+                    this.loadDisplay(true);  // Immediately try to load
+                });
+                
+                window.addEventListener('offline', () => {
+                    this.isOnline = false;
+                    this.showConnectionStatus('Offline', true);
+                    this.showFallbackImage();
+                });
+            }
+            
+            showConnectionStatus(text, isError) {
+                this.connectionTextEl.textContent = text;
+                this.connectionStatusEl.classList.toggle('error', isError);
+                this.connectionStatusEl.classList.add('visible');
+                
+                // Auto-hide success messages
+                if (!isError) {
+                    setTimeout(() => {
+                        this.connectionStatusEl.classList.remove('visible');
+                    }, 3000);
+                }
+            }
+            
+            showFallbackImage() {
+                if (this.lastGoodData) {
+                    // Show last known good image
+                    this.updateDisplay(this.lastGoodData, true);
+                    this.usingFallback = true;
+                    this.fallbackBadgeEl.classList.add('show');
+                    document.body.classList.add('fallback-active');
+                } else if (this.fallbackImageUrl) {
+                    // Show default fallback
+                    this.crossfadeImage(this.fallbackImageUrl, 'Alice (Fallback)', true);
+                    this.usingFallback = true;
+                    this.fallbackBadgeEl.classList.add('show');
+                    document.body.classList.add('fallback-active');
+                }
+            }
+            
+            clearFallbackState() {
+                this.usingFallback = false;
+                this.fallbackBadgeEl.classList.remove('show');
+                document.body.classList.remove('fallback-active');
+                this.connectionStatusEl.classList.remove('visible');
             }
             
             setupEventListeners() {
@@ -426,11 +599,36 @@
             }
             
             async loadDisplay(forceUpdate = false) {
+                // Check if offline
+                if (!navigator.onLine) {
+                    this.handleError('offline', 'You appear to be offline');
+                    return;
+                }
+                
                 try {
-                    const response = await fetch(`${this.controlFile}?t=${Date.now()}`);
-                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    const controller = new AbortController();
+                    const timeout = setTimeout(() => controller.abort(), 15000);  // 15s timeout
+                    
+                    const response = await fetch(`${this.controlFile}?t=${Date.now()}`, {
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeout);
+                    
+                    if (!response.ok) {
+                        throw new Error(`Server returned ${response.status}`);
+                    }
                     
                     const data = await response.json();
+                    
+                    // Validate data structure
+                    if (!data || !data.currentImage) {
+                        throw new Error('Invalid data format');
+                    }
+                    
+                    // Success! Reset error state
+                    this.retryCount = 0;
+                    this.clearError();
+                    this.clearFallbackState();
                     
                     // Check if data has changed
                     const newLastUpdated = data.lastUpdated;
@@ -440,6 +638,7 @@
                         console.log('🦜 Update detected:', newLastUpdated);
                         this.lastUpdated = newLastUpdated;
                         this.currentData = data;
+                        this.lastGoodData = data;  // Cache for fallback
                         await this.updateDisplay(data, !forceUpdate);
                         this.updateDebug(data);
                         
@@ -451,18 +650,105 @@
                         this.updateDebug({ ...data, _status: 'No changes detected' });
                     }
                     
-                    this.errorEl.classList.remove('show');
-                    
                 } catch (error) {
                     console.error('Error loading display:', error);
-                    this.updateDebug({ error: error.message });
                     
-                    if (!this.currentData) {
-                        this.showError();
+                    // Categorize the error
+                    let errorType = 'unknown';
+                    let errorMessage = error.message;
+                    
+                    if (error.name === 'AbortError') {
+                        errorType = 'timeout';
+                        errorMessage = 'Request timed out';
+                    } else if (error.message.includes('Failed to fetch')) {
+                        errorType = 'network';
+                        errorMessage = 'Network connection failed';
+                    } else if (error.message.includes('Server returned')) {
+                        errorType = 'server';
+                    } else if (error.message.includes('Invalid data')) {
+                        errorType = 'data';
+                        errorMessage = 'Received invalid data';
                     }
                     
-                    // Retry sooner on error
-                    setTimeout(() => this.loadDisplay(), this.retryInterval);
+                    this.handleError(errorType, errorMessage);
+                }
+            }
+            
+            handleError(type, message) {
+                this.retryCount++;
+                this.updateDebug({ error: message, type, retryCount: this.retryCount });
+                
+                // Calculate retry interval with exponential backoff
+                const retryInterval = Math.min(
+                    this.baseRetryInterval * Math.pow(1.5, this.retryCount - 1),
+                    this.maxRetryInterval
+                );
+                
+                // Set error message based on type
+                const errorMessages = {
+                    offline: { title: 'You\'re Offline', icon: '📡' },
+                    timeout: { title: 'Connection Slow', icon: '⏱️' },
+                    network: { title: 'Connection Failed', icon: '🔌' },
+                    server: { title: 'Server Issue', icon: '🖥️' },
+                    data: { title: 'Data Error', icon: '⚠️' },
+                    image: { title: 'Image Load Failed', icon: '🖼️' },
+                    unknown: { title: 'Something Went Wrong', icon: '🦜' }
+                };
+                
+                const errorInfo = errorMessages[type] || errorMessages.unknown;
+                
+                // Show fallback if we have one and this isn't the first load
+                if (this.lastGoodData || this.currentData) {
+                    this.showFallbackImage();
+                }
+                
+                // Show error UI
+                this.showError(errorInfo.title, message, retryInterval);
+                
+                // Schedule retry (unless we've exceeded max retries)
+                if (this.retryCount <= this.maxRetries) {
+                    setTimeout(() => this.loadDisplay(), retryInterval);
+                } else {
+                    this.errorDetailEl.textContent = 'Max retries exceeded. Tap to retry.';
+                    this.errorEl.onclick = () => {
+                        this.retryCount = 0;
+                        this.loadDisplay(true);
+                    };
+                }
+            }
+            
+            showError(title = 'Connection Issue', detail = 'Unable to load display', retryIn = 10000) {
+                this.spinnerEl.classList.remove('active');
+                this.errorTitleEl.textContent = title;
+                this.errorDetailEl.textContent = detail;
+                this.errorEl.classList.add('show');
+                
+                // Show connection status
+                this.showConnectionStatus(`Retry ${this.retryCount}/${this.maxRetries}`, true);
+                
+                // Update countdown
+                if (this.errorCountdownInterval) {
+                    clearInterval(this.errorCountdownInterval);
+                }
+                
+                let remaining = Math.ceil(retryIn / 1000);
+                this.errorCountdownEl.textContent = remaining;
+                
+                this.errorCountdownInterval = setInterval(() => {
+                    remaining--;
+                    if (remaining > 0) {
+                        this.errorCountdownEl.textContent = remaining;
+                    } else {
+                        clearInterval(this.errorCountdownInterval);
+                    }
+                }, 1000);
+            }
+            
+            clearError() {
+                this.errorEl.classList.remove('show');
+                this.errorEl.onclick = null;
+                if (this.errorCountdownInterval) {
+                    clearInterval(this.errorCountdownInterval);
                 }
             }
             
@@ -514,32 +800,34 @@
                     const currentLayerEl = this.activeLayer === 'a' ? this.layerA : this.layerB;
                     const nextImg = nextLayerEl.querySelector('img');
                     
-                    // Preload the image
+                    // Preload the image with timeout
                     const preloader = new Image();
+                    const loadTimeout = setTimeout(() => {
+                        console.warn('Image load timeout:', url);
+                        this.handleImageError(url, 'timeout');
+                        resolve();
+                    }, 30000);  // 30s timeout for image load
+                    
                     preloader.onload = () => {
+                        clearTimeout(loadTimeout);
                         nextImg.src = url;
                         nextImg.alt = title || 'Alice';
                         
-                        if (animate) {
-                            // Crossfade: show new layer, hide old
-                            nextLayerEl.classList.remove('inactive');
-                            nextLayerEl.classList.add('active');
-                            currentLayerEl.classList.remove('active');
-                            currentLayerEl.classList.add('inactive');
-                        } else {
-                            // Instant switch (initial load)
-                            nextLayerEl.classList.remove('inactive');
-                            nextLayerEl.classList.add('active');
-                            currentLayerEl.classList.remove('active');
-                            currentLayerEl.classList.add('inactive');
-                        }
+                        // Crossfade: show new layer, hide old
+                        nextLayerEl.classList.remove('inactive');
+                        nextLayerEl.classList.add('active');
+                        currentLayerEl.classList.remove('active');
+                        currentLayerEl.classList.add('inactive');
                         
                         this.activeLayer = nextLayer;
+                        this.spinnerEl.classList.remove('active');
                         resolve();
                     };
                     
                     preloader.onerror = () => {
+                        clearTimeout(loadTimeout);
                         console.error('Failed to load image:', url);
+                        this.handleImageError(url, 'load');
                         resolve();
                     };
                     
@@ -547,16 +835,37 @@
                 });
             }
             
+            handleImageError(url, reason) {
+                console.warn(`Image error (${reason}):`, url);
+                
+                // Try fallback image if main image fails
+                if (!this.usingFallback && url !== this.fallbackImageUrl) {
+                    console.log('Attempting fallback image...');
+                    this.usingFallback = true;
+                    this.fallbackBadgeEl.textContent = '⚠️ Image unavailable';
+                    this.fallbackBadgeEl.classList.add('show');
+                    
+                    // Try fallback
+                    if (this.lastGoodData && this.lastGoodData.currentImage) {
+                        this.crossfadeImage(
+                            this.lastGoodData.currentImage.url,
+                            this.lastGoodData.currentImage.title + ' (cached)',
+                            true
+                        );
+                    } else {
+                        this.crossfadeImage(this.fallbackImageUrl, 'Alice (Fallback)', true);
+                    }
+                } else {
+                    // Even fallback failed - show error state
+                    this.handleError('image', 'Unable to load images');
+                }
+            }
+            
             showUpdateIndicator() {
                 this.updateIndicator.classList.add('show');
                 setTimeout(() => {
                     this.updateIndicator.classList.remove('show');
                 }, 3000);
-            }
-            
-            showError() {
-                this.spinnerEl.classList.remove('active');
-                this.errorEl.classList.add('show');
             }
             
             updateDebug(data) {
