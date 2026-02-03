@@ -366,6 +366,182 @@
         .countdown.visible {
             opacity: 1;
         }
+        
+        /* PWA Install Banner */
+        .install-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .install-banner.show {
+            transform: translateY(0);
+        }
+        
+        .install-banner-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+        
+        .install-banner-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+        
+        .install-banner-text {
+            color: white;
+        }
+        
+        .install-banner-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .install-banner-subtitle {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+        
+        .install-banner-actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        
+        .install-btn {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .install-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+        
+        .install-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .dismiss-btn {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        
+        .dismiss-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        /* iOS Install Instructions Modal */
+        .ios-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .ios-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .ios-modal-content {
+            background: #2d2d44;
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 320px;
+            text-align: center;
+            color: white;
+        }
+        
+        .ios-modal-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .ios-modal-steps {
+            text-align: left;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .ios-modal-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .ios-modal-close {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .install-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .install-banner-content {
+                flex-direction: column;
+            }
+            
+            .install-banner-actions {
+                width: 100%;
+            }
+            
+            .install-btn, .dismiss-btn {
+                flex: 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -430,6 +606,34 @@
     </div>
     
     <button class="fullscreen-btn" id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
+    
+    <!-- PWA Install Banner -->
+    <div class="install-banner" id="install-banner">
+        <div class="install-banner-content">
+            <div class="install-banner-icon">🦜</div>
+            <div class="install-banner-text">
+                <div class="install-banner-title">Install Alice Display</div>
+                <div class="install-banner-subtitle">Add to home screen for fullscreen experience</div>
+            </div>
+        </div>
+        <div class="install-banner-actions">
+            <button class="dismiss-btn" id="install-dismiss">Maybe Later</button>
+            <button class="install-btn" id="install-btn">Install</button>
+        </div>
+    </div>
+    
+    <!-- iOS Install Instructions -->
+    <div class="ios-modal" id="ios-modal">
+        <div class="ios-modal-content">
+            <div class="ios-modal-title">📱 Install on iOS</div>
+            <div class="ios-modal-steps">
+                <div class="ios-modal-step">1️⃣ Tap the <strong>Share</strong> button ⬆️</div>
+                <div class="ios-modal-step">2️⃣ Scroll down and tap <strong>Add to Home Screen</strong></div>
+                <div class="ios-modal-step">3️⃣ Tap <strong>Add</strong> in the top right</div>
+            </div>
+            <button class="ios-modal-close" id="ios-modal-close">Got it!</button>
+        </div>
+    </div>
     
     <script>
         class AliceDisplay {
@@ -916,6 +1120,132 @@
         document.addEventListener('DOMContentLoaded', () => {
             new AliceDisplay();
         });
+        
+        // PWA Install Prompt Handler
+        class InstallPrompt {
+            constructor() {
+                this.deferredPrompt = null;
+                this.banner = document.getElementById('install-banner');
+                this.installBtn = document.getElementById('install-btn');
+                this.dismissBtn = document.getElementById('install-dismiss');
+                this.iosModal = document.getElementById('ios-modal');
+                this.iosModalClose = document.getElementById('ios-modal-close');
+                
+                this.init();
+            }
+            
+            init() {
+                // Check if already installed or dismissed
+                if (this.isInstalled() || this.isDismissed()) {
+                    return;
+                }
+                
+                // Check for iOS
+                if (this.isIOS()) {
+                    this.setupIOSPrompt();
+                    return;
+                }
+                
+                // Listen for beforeinstallprompt (Chrome/Edge)
+                window.addEventListener('beforeinstallprompt', (e) => {
+                    e.preventDefault();
+                    this.deferredPrompt = e;
+                    this.showBanner();
+                });
+                
+                // Handle install button click
+                this.installBtn.addEventListener('click', () => this.handleInstall());
+                this.dismissBtn.addEventListener('click', () => this.handleDismiss());
+                
+                // Listen for successful install
+                window.addEventListener('appinstalled', () => {
+                    console.log('🦜 App installed successfully!');
+                    this.hideBanner();
+                    this.deferredPrompt = null;
+                });
+            }
+            
+            isInstalled() {
+                // Check if running as installed PWA
+                return window.matchMedia('(display-mode: standalone)').matches ||
+                       window.navigator.standalone === true;
+            }
+            
+            isDismissed() {
+                const dismissed = localStorage.getItem('installDismissed');
+                if (!dismissed) return false;
+                
+                // Allow re-prompting after 7 days
+                const dismissedTime = parseInt(dismissed, 10);
+                const sevenDays = 7 * 24 * 60 * 60 * 1000;
+                return (Date.now() - dismissedTime) < sevenDays;
+            }
+            
+            isIOS() {
+                return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            }
+            
+            setupIOSPrompt() {
+                // Show banner after a short delay on iOS
+                setTimeout(() => {
+                    this.showBanner();
+                }, 3000);
+                
+                this.installBtn.addEventListener('click', () => {
+                    this.iosModal.classList.add('show');
+                    this.hideBanner();
+                });
+                
+                this.dismissBtn.addEventListener('click', () => this.handleDismiss());
+                this.iosModalClose.addEventListener('click', () => {
+                    this.iosModal.classList.remove('show');
+                    localStorage.setItem('installDismissed', Date.now().toString());
+                });
+                
+                // Close modal on backdrop click
+                this.iosModal.addEventListener('click', (e) => {
+                    if (e.target === this.iosModal) {
+                        this.iosModal.classList.remove('show');
+                    }
+                });
+            }
+            
+            showBanner() {
+                // Delay showing to not interrupt initial experience
+                setTimeout(() => {
+                    this.banner.classList.add('show');
+                }, 5000);
+            }
+            
+            hideBanner() {
+                this.banner.classList.remove('show');
+            }
+            
+            async handleInstall() {
+                if (!this.deferredPrompt) {
+                    console.log('No install prompt available');
+                    return;
+                }
+                
+                // Show the install prompt
+                this.deferredPrompt.prompt();
+                
+                // Wait for user response
+                const { outcome } = await this.deferredPrompt.userChoice;
+                console.log(`Install prompt outcome: ${outcome}`);
+                
+                this.deferredPrompt = null;
+                this.hideBanner();
+            }
+            
+            handleDismiss() {
+                localStorage.setItem('installDismissed', Date.now().toString());
+                this.hideBanner();
+            }
+        }
+        
+        // Initialize install prompt
+        new InstallPrompt();
         
         // Register service worker for offline support
         if ('serviceWorker' in navigator) {
