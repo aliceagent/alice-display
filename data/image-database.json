@@ -3969,6 +3969,66 @@
       "activity": "Exercise",
       "location": "Swimming space with proper equipment and motivating atmosphere",
       "style": "Anime"
+    },
+    {
+      "id": "e468c2d410644f2aba1517421fa8cc98",
+      "notion_id": "e468c2d4-1064-4f2a-ba15-17421fa8cc98",
+      "title": "Alice Reading - Foggy Morning",
+      "weather": "Foggy",
+      "time_period": "Morning",
+      "activity": "Reading",
+      "location": "Cozy living space with comfortable seating and warm atmosphere",
+      "style": "Anime"
+    },
+    {
+      "id": "4e161dc936b04acaaa3eee9b9470c72f",
+      "notion_id": "4e161dc9-36b0-4aca-aa3e-ee9b9470c72f",
+      "title": "Alice Working - Stormy Morning",
+      "weather": "Stormy",
+      "time_period": "Morning",
+      "activity": "Work",
+      "location": "Modern home office with large windows overlooking stormy landscape",
+      "style": "Anime"
+    },
+    {
+      "id": "f053a6c5198a42d68e3bea06b5a004a5",
+      "notion_id": "f053a6c5-198a-42d6-8e3b-ea06b5a004a5",
+      "title": "Alice Painting - Foggy Afternoon",
+      "weather": "Foggy",
+      "time_period": "Afternoon",
+      "activity": "Creative",
+      "location": "Artistic studio space with diffused natural lighting",
+      "style": "Anime"
+    },
+    {
+      "id": "1bfb279ecb7b4d43942333988b2643c6",
+      "notion_id": "1bfb279e-cb7b-4d43-9423-33988b2643c6",
+      "title": "Alice Relaxing - Stormy Afternoon",
+      "weather": "Stormy",
+      "time_period": "Afternoon",
+      "activity": "Leisure",
+      "location": "Cozy living space with comfortable seating watching storm outside",
+      "style": "Anime"
+    },
+    {
+      "id": "e55c69e335054066aba54de70fbae44f",
+      "notion_id": "e55c69e3-3505-4066-aba5-4de70fbae44f",
+      "title": "Alice Sleeping - Stormy Night",
+      "weather": "Stormy",
+      "time_period": "Night",
+      "activity": "Sleeping",
+      "location": "Cozy bedroom with large windows overlooking stormy landscape",
+      "style": "Anime"
+    },
+    {
+      "id": "f05e5254c0b64ea98f47d2b0731b489c",
+      "notion_id": "f05e5254-c0b6-4ea9-8f47-d2b0731b489c",
+      "title": "Alice Coding - Overcast Night",
+      "weather": "Overcast",
+      "time_period": "Night",
+      "activity": "Work",
+      "location": "Modern home office with large windows and city view",
+      "style": "Anime"
     }
   ],
   "exported_at": "2026-02-03T13:59:19.956225"
