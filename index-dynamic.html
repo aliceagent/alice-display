@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Alice Display</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            overflow: hidden;
+        }
+        
+        .display-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #alice-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transition: opacity 0.8s ease-in-out, transform 0.3s ease;
+        }
+        
+        #alice-image.loading {
+            opacity: 0.3;
+            filter: blur(5px);
+        }
+        
+        #alice-image.loaded {
+            opacity: 1;
+            filter: blur(0);
+        }
+        
+        /* Weather/Time overlay */
+        .status-overlay {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .status-overlay.visible {
+            opacity: 1;
+        }
+        
+        .status-overlay:hover {
+            opacity: 1;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-item .icon {
+            font-size: 18px;
+        }
+        
+        .status-item .label {
+            opacity: 0.7;
+            font-size: 12px;
+        }
+        
+        .status-item .value {
+            font-weight: 500;
+        }
+        
+        /* Loading spinner */
+        .loading-spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        
+        .loading-spinner.active {
+            display: block;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Image title overlay */
+        .title-overlay {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-align: center;
+            max-width: 80%;
+        }
+        
+        .title-overlay.visible {
+            opacity: 1;
+        }
+        
+        /* Debug panel */
+        .debug-panel {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 11px;
+            display: none;
+            max-width: 300px;
+        }
+        
+        .debug-panel.show {
+            display: block;
+        }
+        
+        .debug-panel pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        
+        /* Fullscreen button */
+        .fullscreen-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0.5;
+            transition: opacity 0.3s, transform 0.2s;
+        }
+        
+        .fullscreen-btn:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        /* Error state */
+        .error-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="display-container">
+        <img id="alice-image" class="loading" src="" alt="Alice">
+    </div>
+    
+    <div class="title-overlay" id="title-overlay"></div>
+    
+    <div class="status-overlay" id="status-overlay">
+        <div class="status-item">
+            <span class="icon" id="weather-icon">☀️</span>
+            <div>
+                <div class="value" id="weather-condition">Sunny</div>
+                <div class="label" id="temperature">20°C</div>
+            </div>
+        </div>
+        <div class="status-item">
+            <span class="icon">🕐</span>
+            <div>
+                <div class="value" id="time-period">Afternoon</div>
+                <div class="label" id="current-time">14:00</div>
+            </div>
+        </div>
+        <div class="status-item">
+            <span class="icon">🎨</span>
+            <div>
+                <div class="value" id="activity">Creative</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+    
+    <div class="error-message" id="error-message">
+        <p>Unable to load display data</p>
+        <p style="font-size: 12px; opacity: 0.7;">Retrying...</p>
+    </div>
+    
+    <div class="debug-panel" id="debug-panel">
+        <pre id="debug-content"></pre>
+    </div>
+    
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
+    
+    <script>
+        class AliceDisplay {
+            constructor() {
+                this.controlFile = 'display-control.json';
+                this.pollInterval = 60000; // Check every minute
+                this.retryInterval = 5000;  // Retry on error every 5 seconds
+                this.currentData = null;
+                this.isDebugMode = new URLSearchParams(window.location.search).has('debug');
+                
+                // DOM elements
+                this.imageEl = document.getElementById('alice-image');
+                this.titleEl = document.getElementById('title-overlay');
+                this.statusEl = document.getElementById('status-overlay');
+                this.spinnerEl = document.getElementById('loading-spinner');
+                this.errorEl = document.getElementById('error-message');
+                this.debugEl = document.getElementById('debug-panel');
+                this.debugContent = document.getElementById('debug-content');
+                
+                // Weather icons mapping
+                this.weatherIcons = {
+                    'Sunny': '☀️',
+                    'Partly Cloudy': '⛅',
+                    'Cloudy': '☁️',
+                    'Overcast': '🌥️',
+                    'Rainy': '🌧️',
+                    'Stormy': '⛈️',
+                    'Snowy': '❄️',
+                    'Foggy': '🌫️',
+                    'Clear Night': '🌙',
+                    'Windy': '💨'
+                };
+                
+                this.init();
+            }
+            
+            async init() {
+                if (this.isDebugMode) {
+                    this.debugEl.classList.add('show');
+                }
+                
+                this.setupEventListeners();
+                await this.loadDisplay();
+                this.startPolling();
+                
+                // Show status bar briefly on load
+                this.statusEl.classList.add('visible');
+                setTimeout(() => {
+                    this.statusEl.classList.remove('visible');
+                }, 5000);
+            }
+            
+            setupEventListeners() {
+                // Fullscreen button
+                document.getElementById('fullscreen-btn').addEventListener('click', () => {
+                    this.toggleFullscreen();
+                });
+                
+                // Show status on mouse move
+                let hideTimeout;
+                document.addEventListener('mousemove', () => {
+                    this.statusEl.classList.add('visible');
+                    this.titleEl.classList.add('visible');
+                    clearTimeout(hideTimeout);
+                    hideTimeout = setTimeout(() => {
+                        this.statusEl.classList.remove('visible');
+                        this.titleEl.classList.remove('visible');
+                    }, 3000);
+                });
+                
+                // Debug toggle with Ctrl+D
+                document.addEventListener('keydown', (e) => {
+                    if (e.ctrlKey && e.key === 'd') {
+                        e.preventDefault();
+                        this.debugEl.classList.toggle('show');
+                    }
+                    // Refresh with R
+                    if (e.key === 'r' && !e.ctrlKey) {
+                        this.loadDisplay();
+                    }
+                });
+                
+                // Reload on visibility change
+                document.addEventListener('visibilitychange', () => {
+                    if (!document.hidden) {
+                        this.loadDisplay();
+                    }
+                });
+            }
+            
+            async loadDisplay() {
+                this.spinnerEl.classList.add('active');
+                this.errorEl.classList.remove('show');
+                
+                try {
+                    const response = await fetch(`${this.controlFile}?t=${Date.now()}`);
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    
+                    const data = await response.json();
+                    this.updateDisplay(data);
+                    this.currentData = data;
+                    this.updateDebug(data);
+                    
+                } catch (error) {
+                    console.error('Error loading display:', error);
+                    this.showError();
+                    this.updateDebug({ error: error.message });
+                    
+                    // Retry sooner on error
+                    setTimeout(() => this.loadDisplay(), this.retryInterval);
+                }
+            }
+            
+            updateDisplay(data) {
+                const { currentImage, weather, time } = data;
+                
+                // Update image
+                if (currentImage && currentImage.url) {
+                    this.loadImage(currentImage.url, currentImage.title);
+                }
+                
+                // Update title
+                if (currentImage && currentImage.title) {
+                    this.titleEl.textContent = currentImage.title;
+                }
+                
+                // Update weather
+                if (weather) {
+                    document.getElementById('weather-icon').textContent = 
+                        this.weatherIcons[weather.condition] || '🌡️';
+                    document.getElementById('weather-condition').textContent = 
+                        weather.condition || 'Unknown';
+                    document.getElementById('temperature').textContent = 
+                        weather.temperature ? `${weather.temperature}°C` : '';
+                }
+                
+                // Update time
+                if (time) {
+                    document.getElementById('time-period').textContent = 
+                        time.period || 'Unknown';
+                    document.getElementById('current-time').textContent = 
+                        time.hour !== undefined ? `${time.hour}:00` : '';
+                }
+                
+                // Update activity
+                if (currentImage && currentImage.activity) {
+                    document.getElementById('activity').textContent = currentImage.activity;
+                }
+            }
+            
+            loadImage(url, title) {
+                this.imageEl.classList.add('loading');
+                this.spinnerEl.classList.add('active');
+                
+                const newImg = new Image();
+                newImg.onload = () => {
+                    this.imageEl.src = url;
+                    this.imageEl.alt = title || 'Alice';
+                    this.imageEl.classList.remove('loading');
+                    this.imageEl.classList.add('loaded');
+                    this.spinnerEl.classList.remove('active');
+                    this.errorEl.classList.remove('show');
+                };
+                
+                newImg.onerror = () => {
+                    console.error('Failed to load image:', url);
+                    this.spinnerEl.classList.remove('active');
+                    // Keep showing previous image on error
+                    this.imageEl.classList.remove('loading');
+                };
+                
+                newImg.src = url;
+            }
+            
+            showError() {
+                this.spinnerEl.classList.remove('active');
+                if (!this.imageEl.src) {
+                    this.errorEl.classList.add('show');
+                }
+            }
+            
+            updateDebug(data) {
+                if (!this.isDebugMode) return;
+                this.debugContent.textContent = JSON.stringify(data, null, 2);
+            }
+            
+            toggleFullscreen() {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen().catch(err => {
+                        console.log('Fullscreen error:', err);
+                    });
+                } else {
+                    document.exitFullscreen();
+                }
+            }
+            
+            startPolling() {
+                setInterval(() => {
+                    this.loadDisplay();
+                }, this.pollInterval);
+                
+                console.log('🦜 Alice Display initialized');
+                console.log(`📡 Polling every ${this.pollInterval / 1000} seconds`);
+            }
+        }
+        
+        // Initialize on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new AliceDisplay();
+        });
+    </script>
+</body>
+</html>

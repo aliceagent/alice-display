@@ -1,0 +1,36 @@
+{
+    "currentRow": 1,
+    "currentStyle": "anime",
+    "lastUpdated": "2026-02-03T12:48:00Z",
+    "message": "Alice Gallery - 5 Style System Active",
+    "styles": [
+        {
+            "id": "anime", 
+            "name": "Anime Style",
+            "description": "Hand-painted watercolor animation with soft textures"
+        },
+        {
+            "id": "comic-90s",
+            "name": "90s Comic Book", 
+            "description": "Bold comic book style with vibrant colors"
+        },
+        {
+            "id": "realistic",
+            "name": "Realistic",
+            "description": "Photorealistic photography style"  
+        },
+        {
+            "id": "renaissance", 
+            "name": "Renaissance",
+            "description": "Classical oil painting, old master techniques"
+        },
+        {
+            "id": "disney",
+            "name": "Disney Animation",
+            "description": "Classic Disney animation style"
+        }
+    ],
+    "totalRows": 420,
+    "availableStyles": 5,
+    "totalImages": 2100
+}

@@ -1,0 +1,14 @@
+# Alice Display System - Python Dependencies
+
+# Core (standard library only for main scripts)
+# No external dependencies required for core functionality
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Optional: Image processing (for image generation phase)
+# Pillow>=10.0.0
+
+# Optional: Cloudinary uploads
+# cloudinary>=1.36.0

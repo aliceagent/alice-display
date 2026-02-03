@@ -1,0 +1,169 @@
+{
+  "generated_at": "2026-02-03T14:08:53.031715",
+  "style": "anime",
+  "count": 18,
+  "prompts": [
+    {
+      "id": "2fc419064d308102bfadcfa0dd683341",
+      "title": "Alice Coffee Date #35",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is socialing, Setting: Social venue with elegant atmosphere and gathering space, bright natural sunlight, warm golden tones, clear blue sky, cheerful atmosphere, warm afternoon light, peak daylight, active atmosphere, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Sunny",
+      "time_period": "Afternoon",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d308104b03de283f1ff6f19",
+      "title": "Alice Martial Arts Session #2",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is exerciseing, Setting: Martial Arts space with proper equipment and motivating atmosphere, soft diffused light, gray sky, gentle shadows, calm atmosphere, warm afternoon light, peak daylight, active atmosphere, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Cloudy",
+      "time_period": "Afternoon",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d308107911cfa1d261f4fad",
+      "title": "Alice Gallery Visit #9",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is socialing, Setting: Social venue with elegant atmosphere and gathering space, moonlight, stars, peaceful night scene, soft blue lighting, warm afternoon light, peak daylight, active atmosphere, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Clear Night",
+      "time_period": "Afternoon",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d308107ae73c71564114c3d",
+      "title": "Alice Sleeping - Clear Night Night #4",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is sleepinging, Setting: Cozy bedroom with large windows overlooking clear night landscape, moonlight, stars, peaceful night scene, soft blue lighting, artificial warm lighting, cozy indoor scene, peaceful darkness outside, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Clear Night",
+      "time_period": "Night",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d30810892d5f9c7934439e0",
+      "title": "Alice Puzzles Time #80",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is leisureing, Setting: Cozy living space with comfortable seating and warm atmosphere, rain drops, wet surfaces, reflections, cozy indoor or umbrella scene, moody blue tones, warm afternoon light, peak daylight, active atmosphere, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Rainy",
+      "time_period": "Afternoon",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d30810a9298d6e7dbf8d65a",
+      "title": "Alice Sleeping - Cloudy Night #2",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is sleepinging, Setting: Cozy bedroom with large windows overlooking cloudy landscape, soft diffused light, gray sky, gentle shadows, calm atmosphere, artificial warm lighting, cozy indoor scene, peaceful darkness outside, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Cloudy",
+      "time_period": "Night",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d30810d9258e92b724a5e64",
+      "title": "Alice Writing Session #56",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is creativeing, Setting: Artistic studio space with natural lighting and creative atmosphere, bright natural sunlight, warm golden tones, clear blue sky, cheerful atmosphere, bright morning sun, energetic atmosphere, fresh start, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Sunny",
+      "time_period": "Morning",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d30810d9a63d63b086873da",
+      "title": "Alice Debugging Session #9",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is working, Setting: Modern home office with large windows and city view, moonlight, stars, peaceful night scene, soft blue lighting, bright morning sun, energetic atmosphere, fresh start, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Clear Night",
+      "time_period": "Morning",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d30810ebe9ac25c302b1507",
+      "title": "Alice Cooking Time #50",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is leisureing, Setting: Cozy living space with comfortable seating and warm atmosphere, falling snowflakes, white winter landscape, warm indoor glow, cozy winter scene, warm afternoon light, peak daylight, active atmosphere, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Snowy",
+      "time_period": "Afternoon",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d308110ad4bc5e371162a5d",
+      "title": "Alice Gardening Time #7",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is leisureing, Setting: Cozy living space with comfortable seating and warm atmosphere, falling snowflakes, white winter landscape, warm indoor glow, cozy winter scene, bright morning sun, energetic atmosphere, fresh start, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Snowy",
+      "time_period": "Morning",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d308112a3c7f59ed6909cd0",
+      "title": "Alice Planning Session #40",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is working, Setting: Modern home office with large windows and city view, rain drops, wet surfaces, reflections, cozy indoor or umbrella scene, moody blue tones, bright morning sun, energetic atmosphere, fresh start, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Rainy",
+      "time_period": "Morning",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d3081208edcc304d4846898",
+      "title": "Alice Reading Time #32",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is leisureing, Setting: Cozy living space with comfortable seating and warm atmosphere, falling snowflakes, white winter landscape, warm indoor glow, cozy winter scene, artificial warm lighting, cozy indoor scene, peaceful darkness outside, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Snowy",
+      "time_period": "Night",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d3081228d36deacfb11fb88",
+      "title": "Alice Networking #12",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is socialing, Setting: Social venue with elegant atmosphere and gathering space, bright natural sunlight, warm golden tones, clear blue sky, cheerful atmosphere, artificial warm lighting, cozy indoor scene, peaceful darkness outside, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Sunny",
+      "time_period": "Night",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d3081268f47f80b828502ab",
+      "title": "Alice Yoga Session #3",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is exerciseing, Setting: Yoga space with proper equipment and motivating atmosphere, soft diffused light, gray sky, gentle shadows, calm atmosphere, bright morning sun, energetic atmosphere, fresh start, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Cloudy",
+      "time_period": "Morning",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d30812a9984dc44378aefba",
+      "title": "Alice Sleeping - Foggy Night #12",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is sleepinging, Setting: Cozy bedroom with large windows overlooking foggy landscape, misty atmosphere, soft edges, mysterious mood, muted colors, artificial warm lighting, cozy indoor scene, peaceful darkness outside, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Foggy",
+      "time_period": "Night",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d30812c8643e3c37f0bd5d1",
+      "title": "Alice Writing Session #2",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is working, Setting: Modern home office with large windows and city view, flat gray lighting, subdued colors, contemplative mood, bright morning sun, energetic atmosphere, fresh start, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Overcast",
+      "time_period": "Morning",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d30815eb29af9b10944391a",
+      "title": "Alice Video Conference Session #26",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is working, Setting: Modern home office with large windows and city view, rain drops, wet surfaces, reflections, cozy indoor or umbrella scene, moody blue tones, artificial warm lighting, cozy indoor scene, peaceful darkness outside, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Rainy",
+      "time_period": "Night",
+      "style": "anime"
+    },
+    {
+      "id": "2fc419064d3081f39075f6b73ca7b9af",
+      "title": "Alice Video Conference Session #36",
+      "prompt": "Alice, a beautiful 20-year-old woman with long wavy blonde hair and bright green eyes. \nShe has a gentle, warm expression and an elegant yet approachable appearance. \nShe wears modest clothing with long sleeves, preferring skirts or dresses in soft, feminine colors.\nHer loyal companion is a large, vibrant green parrot with a distinctive red beak, always nearby., Alice is working, Setting: Modern home office with large windows and city view, flat gray lighting, subdued colors, contemplative mood, warm afternoon light, peak daylight, active atmosphere, high quality anime artwork, detailed character design, vibrant colors, professional anime style, Studio Ghibli influence, masterpiece, best quality, highly detailed, 4k resolution",
+      "negative_prompt": "deformed, ugly, blurry, low quality, text, watermark, signature, extra limbs, bad anatomy",
+      "weather": "Overcast",
+      "time_period": "Afternoon",
+      "style": "anime"
+    }
+  ]
+}

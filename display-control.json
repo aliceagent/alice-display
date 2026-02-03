@@ -1,0 +1,24 @@
+{
+  "currentImage": {
+    "id": "2fc419064d30810892d5f9c7934439e0",
+    "url": "images/generated/afternoon-rainy.png",
+    "title": "Alice Puzzles Time #80",
+    "description": "",
+    "activity": "Leisure",
+    "mood": ""
+  },
+  "weather": {
+    "condition": "Rainy",
+    "temperature": 18,
+    "humidity": 65,
+    "description": "light rain",
+    "icon": "01d"
+  },
+  "time": {
+    "period": "Afternoon",
+    "hour": 14,
+    "timezone": "Asia/Hebron"
+  },
+  "lastUpdated": "2026-02-03T12:15:26.796814+00:00",
+  "nextUpdate": "2026-02-03T13:00:00+00:00"
+}
