@@ -2,9 +2,14 @@
 
 A dynamic, weather-responsive display system that shows Alice in different scenarios based on real-time weather conditions and time of day.
 
-![Status](https://img.shields.io/badge/status-in%20development-yellow)
+![Status](https://img.shields.io/badge/status-live-brightgreen)
 ![Tests](https://img.shields.io/badge/tests-36%20passing-green)
 ![Python](https://img.shields.io/badge/python-3.9+-blue)
+![PWA](https://img.shields.io/badge/PWA-offline%20ready-purple)
+
+**🔗 Live Demo:** https://aliceagent.github.io/alice-display/index-dynamic.html
+
+**📖 Operations Guide:** [OPERATIONS.md](OPERATIONS.md)
 
 ## 🎯 Overview
 
