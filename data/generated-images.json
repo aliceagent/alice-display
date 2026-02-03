@@ -31,6 +31,30 @@
       "filename": "night-clear-night.png",
       "weather": "Clear Night",
       "time_period": "Night"
+    },
+    {
+      "id": "morning-rainy",
+      "filename": "morning-rainy.png",
+      "weather": "Rainy",
+      "time_period": "Morning"
+    },
+    {
+      "id": "evening-cloudy",
+      "filename": "evening-cloudy.png",
+      "weather": "Cloudy",
+      "time_period": "Evening"
+    },
+    {
+      "id": "night-rainy",
+      "filename": "night-rainy.png",
+      "weather": "Rainy",
+      "time_period": "Night"
+    },
+    {
+      "id": "night-cloudy",
+      "filename": "night-cloudy.png",
+      "weather": "Cloudy",
+      "time_period": "Night"
     }
   ]
 }
