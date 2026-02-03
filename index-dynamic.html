@@ -467,7 +467,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -475,6 +475,8 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s, visibility 0.3s;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         
         .ios-modal.show {
@@ -483,43 +485,167 @@
         }
         
         .ios-modal-content {
-            background: #2d2d44;
-            border-radius: 16px;
-            padding: 24px;
-            max-width: 320px;
+            background: linear-gradient(145deg, #2d2d44 0%, #1a1a2e 100%);
+            border-radius: 24px;
+            padding: 32px 28px;
+            max-width: 340px;
             text-align: center;
             color: white;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: modalSlideIn 0.4s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(30px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .ios-modal-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
         
         .ios-modal-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 16px;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .ios-modal-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 24px;
         }
         
         .ios-modal-steps {
             text-align: left;
-            font-size: 14px;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 24px;
         }
         
         .ios-modal-step {
             display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 16px;
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: background 0.2s;
+        }
+        
+        .ios-modal-step:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .ios-step-number {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .ios-step-content {
+            flex: 1;
+        }
+        
+        .ios-step-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .ios-step-desc {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .ios-share-icon {
+            display: inline-block;
+            background: #007AFF;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            vertical-align: middle;
+        }
+        
+        .ios-modal-buttons {
+            display: flex;
+            flex-direction: column;
             gap: 10px;
-            margin-bottom: 8px;
         }
         
         .ios-modal-close {
-            background: #6366f1;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
             color: white;
             border: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-size: 14px;
+            padding: 14px 30px;
+            border-radius: 12px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+        
+        .ios-modal-close:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        .ios-modal-close:active {
+            transform: translateY(0);
+        }
+        
+        .ios-modal-dismiss {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .ios-modal-dismiss:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .ios-safari-note {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .ios-safari-note strong {
+            color: rgba(255, 255, 255, 0.6);
         }
         
         /* Mobile adjustments */
@@ -791,13 +917,42 @@
     <!-- iOS Install Instructions -->
     <div class="ios-modal" id="ios-modal">
         <div class="ios-modal-content">
-            <div class="ios-modal-title">📱 Install on iOS</div>
+            <div class="ios-modal-icon">🦜</div>
+            <div class="ios-modal-title">Install Alice Display</div>
+            <div class="ios-modal-subtitle">Add to your home screen for the best experience</div>
+            
             <div class="ios-modal-steps">
-                <div class="ios-modal-step">1️⃣ Tap the <strong>Share</strong> button ⬆️</div>
-                <div class="ios-modal-step">2️⃣ Scroll down and tap <strong>Add to Home Screen</strong></div>
-                <div class="ios-modal-step">3️⃣ Tap <strong>Add</strong> in the top right</div>
+                <div class="ios-modal-step">
+                    <span class="ios-step-number">1</span>
+                    <div class="ios-step-content">
+                        <div class="ios-step-title">Tap <span class="ios-share-icon">⬆️ Share</span></div>
+                        <div class="ios-step-desc">Find it at the bottom of Safari</div>
+                    </div>
+                </div>
+                <div class="ios-modal-step">
+                    <span class="ios-step-number">2</span>
+                    <div class="ios-step-content">
+                        <div class="ios-step-title">Add to Home Screen</div>
+                        <div class="ios-step-desc">Scroll down in the share menu</div>
+                    </div>
+                </div>
+                <div class="ios-modal-step">
+                    <span class="ios-step-number">3</span>
+                    <div class="ios-step-content">
+                        <div class="ios-step-title">Tap "Add"</div>
+                        <div class="ios-step-desc">Confirm in the top right corner</div>
+                    </div>
+                </div>
             </div>
-            <button class="ios-modal-close" id="ios-modal-close">Got it!</button>
+            
+            <div class="ios-modal-buttons">
+                <button class="ios-modal-close" id="ios-modal-close">Got it!</button>
+                <button class="ios-modal-dismiss" id="ios-modal-dismiss">Don't show again</button>
+            </div>
+            
+            <div class="ios-safari-note">
+                <strong>Note:</strong> Must be opened in Safari. Other browsers don't support home screen apps.
+            </div>
         </div>
     </div>
     
@@ -1510,7 +1665,46 @@
                 return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
             }
             
+            isIPad() {
+                return /iPad/.test(navigator.userAgent) || 
+                       (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            }
+            
+            isIOSSafari() {
+                const ua = navigator.userAgent;
+                const iOS = /iPad|iPhone|iPod/.test(ua);
+                const webkit = /WebKit/.test(ua);
+                const notChrome = !/CriOS/.test(ua);
+                const notFirefox = !/FxiOS/.test(ua);
+                const notEdge = !/EdgiOS/.test(ua);
+                return iOS && webkit && notChrome && notFirefox && notEdge;
+            }
+            
             setupIOSPrompt() {
+                // Get additional iOS modal elements
+                const iosModalDismiss = document.getElementById('ios-modal-dismiss');
+                const safariNote = this.iosModal.querySelector('.ios-safari-note');
+                
+                // Update note if not in Safari
+                if (!this.isIOSSafari() && safariNote) {
+                    safariNote.innerHTML = `
+                        <strong>⚠️ Open in Safari</strong><br>
+                        You're not in Safari. Copy this link and open it in Safari to install:
+                        <div style="margin-top:8px;padding:8px;background:rgba(255,255,255,0.1);border-radius:6px;font-size:11px;word-break:break-all;">
+                            ${window.location.href}
+                        </div>
+                    `;
+                    safariNote.style.color = 'rgba(255, 200, 100, 0.8)';
+                }
+                
+                // Update text for iPad
+                if (this.isIPad()) {
+                    const stepDesc = this.iosModal.querySelector('.ios-step-desc');
+                    if (stepDesc) {
+                        stepDesc.textContent = 'Find it at the top of Safari';
+                    }
+                }
+                
                 // Show banner after a short delay on iOS
                 setTimeout(() => {
                     this.showBanner();
@@ -1522,14 +1716,32 @@
                 });
                 
                 this.dismissBtn.addEventListener('click', () => this.handleDismiss());
+                
+                // "Got it" button - just closes modal
                 this.iosModalClose.addEventListener('click', () => {
                     this.iosModal.classList.remove('show');
-                    localStorage.setItem('installDismissed', Date.now().toString());
                 });
+                
+                // "Don't show again" button - closes and permanently dismisses
+                if (iosModalDismiss) {
+                    iosModalDismiss.addEventListener('click', () => {
+                        this.iosModal.classList.remove('show');
+                        // Set a very long dismissal (365 days)
+                        const oneYear = 365 * 24 * 60 * 60 * 1000;
+                        localStorage.setItem('installDismissed', (Date.now() + oneYear).toString());
+                    });
+                }
                 
                 // Close modal on backdrop click
                 this.iosModal.addEventListener('click', (e) => {
                     if (e.target === this.iosModal) {
+                        this.iosModal.classList.remove('show');
+                    }
+                });
+                
+                // Close modal with Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.iosModal.classList.contains('show')) {
                         this.iosModal.classList.remove('show');
                     }
                 });
