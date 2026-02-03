@@ -55,6 +55,47 @@
             object-fit: contain;
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            /* Ken Burns base - slightly larger to allow movement */
+            transform-origin: center center;
+        }
+        
+        /* Ken Burns effect animations */
+        @keyframes kenburns-1 {
+            0% { transform: scale(1.0) translate(0, 0); }
+            100% { transform: scale(1.08) translate(-1%, -1%); }
+        }
+        
+        @keyframes kenburns-2 {
+            0% { transform: scale(1.0) translate(0, 0); }
+            100% { transform: scale(1.08) translate(1%, -0.5%); }
+        }
+        
+        @keyframes kenburns-3 {
+            0% { transform: scale(1.05) translate(-0.5%, 0.5%); }
+            100% { transform: scale(1.0) translate(0, 0); }
+        }
+        
+        @keyframes kenburns-4 {
+            0% { transform: scale(1.08) translate(0.5%, -1%); }
+            100% { transform: scale(1.02) translate(-0.5%, 0.5%); }
+        }
+        
+        .image-layer.active img.kenburns {
+            animation-duration: 20s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        
+        .image-layer.active img.kenburns-1 { animation-name: kenburns-1; }
+        .image-layer.active img.kenburns-2 { animation-name: kenburns-2; }
+        .image-layer.active img.kenburns-3 { animation-name: kenburns-3; }
+        .image-layer.active img.kenburns-4 { animation-name: kenburns-4; }
+        
+        /* Pause Ken Burns when user prefers reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .image-layer.active img.kenburns {
+                animation: none;
+            }
         }
         
         .image-layer.active {
@@ -1447,6 +1488,18 @@
                         clearTimeout(loadTimeout);
                         nextImg.src = url;
                         nextImg.alt = title || 'Alice';
+                        
+                        // Apply random Ken Burns effect
+                        const kbVariants = ['kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4'];
+                        const randomKB = kbVariants[Math.floor(Math.random() * kbVariants.length)];
+                        
+                        // Remove old Ken Burns classes and add new one
+                        nextImg.classList.remove('kenburns', 'kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4');
+                        nextImg.classList.add('kenburns', randomKB);
+                        
+                        // Also remove from the old layer's image to reset it
+                        const currentImg = currentLayerEl.querySelector('img');
+                        currentImg.classList.remove('kenburns', 'kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4');
                         
                         // Crossfade: show new layer, hide old
                         nextLayerEl.classList.remove('inactive');
