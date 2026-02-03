@@ -108,7 +108,7 @@
             z-index: 1;
         }
         
-        /* Weather/Time overlay */
+        /* Weather/Time overlay (bottom bar) */
         .status-overlay {
             position: fixed;
             bottom: 20px;
@@ -149,6 +149,116 @@
         
         .status-item .value {
             font-weight: 500;
+        }
+        
+        /* Weather widget overlay (corner) */
+        .weather-widget {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(30,30,50,0.9) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 20px;
+            color: white;
+            min-width: 180px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            z-index: 15;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        .weather-widget.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .weather-widget-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .weather-widget-icon {
+            font-size: 42px;
+            line-height: 1;
+        }
+        
+        .weather-widget-temp {
+            font-size: 32px;
+            font-weight: 300;
+        }
+        
+        .weather-widget-temp .unit {
+            font-size: 18px;
+            opacity: 0.7;
+        }
+        
+        .weather-widget-condition {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        
+        .weather-widget-description {
+            font-size: 12px;
+            opacity: 0.6;
+            text-transform: capitalize;
+        }
+        
+        .weather-widget-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 12px 0;
+        }
+        
+        .weather-widget-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+        
+        .weather-widget-detail {
+            text-align: center;
+        }
+        
+        .weather-widget-detail-value {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .weather-widget-detail-label {
+            opacity: 0.5;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .weather-widget-time {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .weather-widget-clock {
+            font-size: 24px;
+            font-weight: 300;
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .weather-widget-period {
+            font-size: 14px;
+            opacity: 0.8;
+            background: rgba(255,255,255,0.1);
+            padding: 4px 10px;
+            border-radius: 10px;
         }
         
         /* Update indicator */
@@ -889,6 +999,35 @@
     
     <div class="title-overlay" id="title-overlay"></div>
     
+    <!-- Weather Widget Overlay -->
+    <div class="weather-widget" id="weather-widget">
+        <div class="weather-widget-header">
+            <span class="weather-widget-icon" id="widget-weather-icon">☀️</span>
+            <div>
+                <div class="weather-widget-temp">
+                    <span id="widget-temp">--</span><span class="unit">°C</span>
+                </div>
+            </div>
+        </div>
+        <div class="weather-widget-condition" id="widget-condition">Loading...</div>
+        <div class="weather-widget-description" id="widget-description">--</div>
+        <div class="weather-widget-divider"></div>
+        <div class="weather-widget-details">
+            <div class="weather-widget-detail">
+                <div class="weather-widget-detail-value" id="widget-humidity">--%</div>
+                <div class="weather-widget-detail-label">Humidity</div>
+            </div>
+            <div class="weather-widget-detail">
+                <div class="weather-widget-detail-value" id="widget-activity">--</div>
+                <div class="weather-widget-detail-label">Activity</div>
+            </div>
+        </div>
+        <div class="weather-widget-time">
+            <span class="weather-widget-clock" id="widget-clock">--:--</span>
+            <span class="weather-widget-period" id="widget-period">--</span>
+        </div>
+    </div>
+    
     <div class="status-overlay" id="status-overlay">
         <div class="status-item">
             <span class="icon" id="weather-icon">☀️</span>
@@ -1016,6 +1155,9 @@
                 
                 <span class="help-key">I</span>
                 <span class="help-desc">Show image info</span>
+                
+                <span class="help-key">W</span>
+                <span class="help-desc">Toggle weather overlay</span>
                 
                 <span class="help-key">Ctrl+D</span>
                 <span class="help-desc">Toggle debug panel</span>
@@ -1238,6 +1380,10 @@
                             e.preventDefault();
                             this.statusEl.classList.toggle('visible');
                             this.titleEl.classList.toggle('visible');
+                            break;
+                        case 'w':
+                            e.preventDefault();
+                            this.toggleWeatherWidget();
                             break;
                         case ' ':
                             e.preventDefault();
@@ -1596,6 +1742,58 @@
                 helpOverlay.classList.toggle('show');
             }
             
+            toggleWeatherWidget() {
+                const widget = document.getElementById('weather-widget');
+                widget.classList.toggle('visible');
+                if (widget.classList.contains('visible')) {
+                    this.updateWeatherWidget();
+                    this.startWidgetClock();
+                    this.showToast('🌤️ Weather overlay on');
+                } else {
+                    this.showToast('🌤️ Weather overlay off');
+                }
+            }
+            
+            updateWeatherWidget() {
+                if (!this.currentData) return;
+                
+                const data = this.currentData;
+                document.getElementById('widget-weather-icon').textContent = 
+                    this.weatherIcons[data.weather?.condition] || '🌡️';
+                document.getElementById('widget-temp').textContent = 
+                    data.weather?.temperature ?? '--';
+                document.getElementById('widget-condition').textContent = 
+                    data.weather?.condition || 'Unknown';
+                document.getElementById('widget-description').textContent = 
+                    data.weather?.description || '';
+                document.getElementById('widget-humidity').textContent = 
+                    (data.weather?.humidity ?? '--') + '%';
+                document.getElementById('widget-period').textContent = 
+                    data.time?.period || '--';
+                document.getElementById('widget-activity').textContent = 
+                    data.activity || '--';
+            }
+            
+            startWidgetClock() {
+                // Update clock immediately and every second
+                const updateClock = () => {
+                    const now = new Date();
+                    const timeStr = now.toLocaleTimeString('en-US', { 
+                        hour: '2-digit', 
+                        minute: '2-digit',
+                        hour12: false,
+                        timeZone: 'Asia/Hebron'
+                    });
+                    document.getElementById('widget-clock').textContent = timeStr;
+                };
+                updateClock();
+                
+                // Only set interval if not already running
+                if (!this.clockInterval) {
+                    this.clockInterval = setInterval(updateClock, 1000);
+                }
+            }
+            
             showImageInfo() {
                 const infoPanel = document.getElementById('image-info');
                 if (this.currentData) {
@@ -1611,6 +1809,7 @@
             closeAllPanels() {
                 document.getElementById('help-overlay').classList.remove('show');
                 document.getElementById('image-info').classList.remove('show');
+                document.getElementById('weather-widget').classList.remove('visible');
                 this.debugEl.classList.remove('show');
             }
             
