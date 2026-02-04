@@ -1,0 +1,1579 @@
+/Users/agentcaras/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+🚀 Starting Batch Upload (Starting at index 50)
+☁️  Target: dfzowmhfp
+============================================================
+📁 Found 590 valid images (excluded 36 Purim/orphan files)
+📥 Fetching metadata from Notion database...
+   Fetching page 1... got 100 rows
+   Fetching page 2... got 100 rows
+   Fetching page 3... got 100 rows
+   Fetching page 4... got 100 rows
+   Fetching page 5... got 100 rows
+   Fetching page 6... got 10 rows
+✅ Fetched metadata for 510 images
+
+📤 Uploading batch: 459 images (indices 50-508)
+📤  51: 003_Alice_Sleeping_-_Rainy_Night_with_Window
+     Activity: Sleeping | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature dedb57ec0b1019459b3ea5f789c3db96bea06daf. String to sign - 'folder=alice-gallery/anime&public_id=003_Alice_Sleeping_-_Rainy_Night_with_Window&timestamp=177022906
+📤  52: Alice_Snowman_Building_-_Snowy_Evening
+     Activity: Leisure | Weather: Snowy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 749dc9b673acb884a7a361376fbdc32579f48e55. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Snowman_Building_-_Snowy_Evening&timestamp=1770229080'
+📤  53: 085_Alice_Presenting_Session__24
+     Activity: Work | Weather: Rainy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 80cd30ec9bee81c6591b3da68470cdf9606ee3df. String to sign - 'folder=alice-gallery/anime&public_id=085_Alice_Presenting_Session__24&timestamp=1770229092'."}}
+📤  54: Alice_Networking__25
+     Activity: Social | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0b869ee18f39d4ead516e42e19fb16f77fab5bc7. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Networking__25&timestamp=1770229102'."}}
+📤  55: Alice_Photography_-_Cloudy_Midday
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 885c2fa7403c5d4d216aba95f2592273f02074ed. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Photography_-_Cloudy_Midday&timestamp=1770229111'."}}
+📤  56: Alice_Puzzles_Time__28
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ddda557333a9aecd46d2be74f0a673f327d34760. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__28&timestamp=1770229120'."}}
+📤  57: Alice_Reading_Time__71
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e666bba629de86b72d94ee6ae8e9aab160e65789. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_Time__71&timestamp=1770229130'."}}
+📤  58: Alice_Reading_Time__59
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 41f2c7240d2946a5cf6ff2f2954f02166582cf65. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_Time__59&timestamp=1770229139'."}}
+📤  59: Alice_Celebration__4
+     Activity: Social | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b5021feebbe78feeac11474f6d0f4c6e62eb6aa8. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Celebration__4&timestamp=1770229148'."}}
+📤  60: 004_Alice_Sleeping_-_Rainy_Early_Morning__21
+     Activity: Sleeping | Weather: Rainy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e06845d389f7c66d9285d8b63d41dc287819279d. String to sign - 'folder=alice-gallery/anime&public_id=004_Alice_Sleeping_-_Rainy_Early_Morning__21&timestamp=177022915
+
+📊 Batch Progress: 10/459 images
+✅ Success: 0, ❌ Failed: 10
+⏱️  Elapsed: 1.8 minutes
+--------------------------------------------------
+📤  61: Alice_Umbrella_Walk_-_Rainy_Midday
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 26744741b57f96880060ce2073823a3d2001a366. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Umbrella_Walk_-_Rainy_Midday&timestamp=1770229172'."}}
+📤  62: Alice_Gaming_Time__9
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ed704c14bd56061e9d04085686f3ecd17d64a71d. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__9&timestamp=1770229181'."}}
+📤  63: Alice_Gaming_-_Overcast_Morning
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8a8379555390fa8c3482364550dac81348f99030. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_-_Overcast_Morning&timestamp=1770229190'."}}
+📤  64: 091_Alice_Video_Conference_Session__12
+     Activity: Work | Weather: Clear Night | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 84689767f986991c84aa1258354b22be58173ff0. String to sign - 'folder=alice-gallery/anime&public_id=091_Alice_Video_Conference_Session__12&timestamp=1770229201'."}}
+⚠️   65: Alice_Decorating_Home_-_Yom_HaAtzmaut_Overcast_Evening - No metadata found, skipping
+📤  66: Alice_Tea_Time_Time__38
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6616fab55068c73512c8bd2d62ac03b96e271534. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_Time__38&timestamp=1770229217'."}}
+📤  67: Alice_Research__22
+     Activity: Learning | Weather: Rainy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4ff021866f8d315394547d5c791dda2ab05f4af7. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Research__22&timestamp=1770229227'."}}
+📤  68: 019_Alice_Sleeping_-_Foggy_Night__18
+     Activity: Sleeping | Weather: Foggy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 729709926b6e6fcde8ecb41d00b5f4ffa5c9fecf. String to sign - 'folder=alice-gallery/anime&public_id=019_Alice_Sleeping_-_Foggy_Night__18&timestamp=1770229237'."}}
+📤  69: 062_Alice_Presenting_Session__33
+     Activity: Work | Weather: Sunny | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 45a2646e6366d2c36c62f7689408912923ec0d99. String to sign - 'folder=alice-gallery/anime&public_id=062_Alice_Presenting_Session__33&timestamp=1770229246'."}}
+📤  70: Alice_Baking_-_Cloudy_Afternoon
+     Activity: Leisure | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a24563343a20bc6e15639f8c91bf15722157785d. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Baking_-_Cloudy_Afternoon&timestamp=1770229257'."}}
+
+📊 Batch Progress: 20/459 images
+✅ Success: 0, ❌ Failed: 20
+⏱️  Elapsed: 3.4 minutes
+--------------------------------------------------
+📤  71: 070_Alice_Presenting_Session__62
+     Activity: Work | Weather: Overcast | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 60fb0c70a7c40b828e3d39851a5151737cee2ff3. String to sign - 'folder=alice-gallery/anime&public_id=070_Alice_Presenting_Session__62&timestamp=1770229268'."}}
+📤  72: Alice_Reading_-_Cloudy_Evening
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 7b47397f3d810221a1680de09abcea294b89f7ac. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_-_Cloudy_Evening&timestamp=1770229277'."}}
+📤  73: Alice_Tea_Time_Time__14
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e8ca27ef7bef17af9a3a65782e2a604f2b57b18c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_Time__14&timestamp=1770229287'."}}
+📤  74: Alice_Hot_Cocoa_Outside_-_Snowy_Night
+     Activity: Leisure | Weather: Snowy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a9d5fcd4822612ba059f3267ef04146a37f38fc0. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Hot_Cocoa_Outside_-_Snowy_Night&timestamp=1770229301'.
+📤  75: 064_Alice_Analyzing_Session__18
+     Activity: Work | Weather: Rainy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5e01ea335d2f0651777c30d70f99132ef4df3637. String to sign - 'folder=alice-gallery/anime&public_id=064_Alice_Analyzing_Session__18&timestamp=1770229310'."}}
+📤  76: Alice_Pottery_Session__75
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 519bb59e495d114679384ff4a920db6342d3db71. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Pottery_Session__75&timestamp=1770229319'."}}
+⚠️   77: Alice_Having_Mangal_BBQ_-_Yom_HaAtzmaut_Sunny_Night - No metadata found, skipping
+📤  78: 143_Alice_Video_Conference_Session__71
+     Activity: Work | Weather: Clear Night | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c506de706f0191c5a7e50789c0af57026a2990ca. String to sign - 'folder=alice-gallery/anime&public_id=143_Alice_Video_Conference_Session__71&timestamp=1770229329'."}}
+📤  79: Alice_Swimming_Session__37
+     Activity: Exercise | Weather: Sunny | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 7c78f6d67bdfbf977efa9710df3afe22ab4b800e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Swimming_Session__37&timestamp=1770229338'."}}
+📤  80: Alice_Leading_Passover_Seder_-_Pesach_Foggy_Evening
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 21df3714d11c3c0d7987f8780391bb4e2f8bd458. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Leading_Passover_Seder_-_Pesach_Foggy_Evening&timestam
+
+📊 Batch Progress: 30/459 images
+✅ Success: 0, ❌ Failed: 30
+⏱️  Elapsed: 4.9 minutes
+--------------------------------------------------
+📤  81: 115_Alice_Drawing_Session__37
+     Activity: Creative | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6127cb816bd06cd8fc26ead9f6cd7193ba340768. String to sign - 'folder=alice-gallery/anime&public_id=115_Alice_Drawing_Session__37&timestamp=1770229357'."}}
+📤  82: 079_Alice_Coding_Session__15
+     Activity: Work | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0b021afb479b4d28c624c894426ca6d65653f19b. String to sign - 'folder=alice-gallery/anime&public_id=079_Alice_Coding_Session__15&timestamp=1770229366'."}}
+📤  83: Alice_Networking__21
+     Activity: Social | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d026d4a26f2c592f7a42d1263504d388c5cd5a02. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Networking__21&timestamp=1770229381'."}}
+📤  84: Alice_Reading_Names_-_Yom_HaShoah_Overcast_Evening
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature bf8a648d37baeba3a30a7adac5b3685788935468. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_Names_-_Yom_HaShoah_Overcast_Evening&timestamp=177
+📤  85: 048_Alice_Sleeping_-_Foggy_Early_Morning__26
+     Activity: Sleeping | Weather: Foggy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4af347c6d993f92a4c8d9310251ea7eaac2cbd55. String to sign - 'folder=alice-gallery/anime&public_id=048_Alice_Sleeping_-_Foggy_Early_Morning__26&timestamp=177022940
+📤  86: Alice_Analyzing_Session__67
+     Activity: Work | Weather: Sunny | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 95b6fab7aa2e1c226000fb63d24c02ae92afd46d. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Analyzing_Session__67&timestamp=1770229409'."}}
+📤  87: Alice_Building_Bonfire_Structure_Carefully_-_Lag_BaOmer_Foggy_Morning
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2f4312b44f695a5622a479e529c02b8812c747da. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Building_Bonfire_Structure_Carefully_-_Lag_BaOmer_Fogg
+📤  88: Alice_Crafting_Session__5
+     Activity: Creative | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 750cfb0e4e7e6511804510acb6ad1013d5e59136. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Crafting_Session__5&timestamp=1770229428'."}}
+📤  89: 069_Alice_Coding_Session__49
+     Activity: Work | Weather: Sunny | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a3bc558b601b9052334bfe4e2fcf0c175a3b23a1. String to sign - 'folder=alice-gallery/anime&public_id=069_Alice_Coding_Session__49&timestamp=1770229437'."}}
+📤  90: 011_Alice_Sleeping_-_Cloudy_Late_Night__19
+     Activity: Sleeping | Weather: Cloudy | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature efc0d5ecd4c2c742f03f7f321c2268575823680f. String to sign - 'folder=alice-gallery/anime&public_id=011_Alice_Sleeping_-_Cloudy_Late_Night__19&timestamp=1770229447'
+
+📊 Batch Progress: 40/459 images
+✅ Success: 0, ❌ Failed: 40
+⏱️  Elapsed: 6.6 minutes
+--------------------------------------------------
+📤  91: 054_Alice_Debugging_Session__45
+     Activity: Work | Weather: Cloudy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 16bc89b589210c3c10b73397b5051b4245a55ef7. String to sign - 'folder=alice-gallery/anime&public_id=054_Alice_Debugging_Session__45&timestamp=1770229456'."}}
+📤  92: Alice_Celebration__1
+     Activity: Social | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 7835508c5837a304c97b9f11766f044ab7ec5a50. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Celebration__1&timestamp=1770229466'."}}
+📤  93: 017_Alice_Sleeping_-_Snowy_Dawn__5
+     Activity: Sleeping | Weather: Snowy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d15e0025963d3569c1e78ff459fa57c22ea386a3. String to sign - 'folder=alice-gallery/anime&public_id=017_Alice_Sleeping_-_Snowy_Dawn__5&timestamp=1770229475'."}}
+📤  94: Alice_Swimming_Session__36
+     Activity: Exercise | Weather: Sunny | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 827812990f88b6c2e65acabf299c47026b3b1381. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Swimming_Session__36&timestamp=1770229490'."}}
+📤  95: 078_Alice_Analyzing_Session__50
+     Activity: Work | Weather: Cloudy | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature dddafbe45c32bdbb20ff2ccc5f2eada1bed65395. String to sign - 'folder=alice-gallery/anime&public_id=078_Alice_Analyzing_Session__50&timestamp=1770229505'."}}
+📤  96: Alice_Placing_Small_Stone_-_Yom_HaShoah_Rainy_Afternoon
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0578c2e13170fc694943cdb6fc18a77451939301. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Placing_Small_Stone_-_Yom_HaShoah_Rainy_Afternoon&time
+📤  97: Alice_Baking_Hamantaschen_-_Shushan_Purim_Cloudy_Morning
+     Activity: Leisure | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3ed932b54d169fe565f56915541f041af16b991b. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Baking_Hamantaschen_-_Shushan_Purim_Cloudy_Morning&tim
+📤  98: Alice_Collecting_Wood_-_Lag_BaOmer_Rainy_Morning
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 71be1a73bbb495aee5a11bf4a219c37f3755c995. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Collecting_Wood_-_Lag_BaOmer_Rainy_Morning&timestamp=1
+📤  99: 113_Alice_Drawing_Session__4
+     Activity: Creative | Weather: Sunny | Time: Golden Hour
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature afc55d3b8f02391b365c0f903d9235d68ddb2663. String to sign - 'folder=alice-gallery/anime&public_id=113_Alice_Drawing_Session__4&timestamp=1770229543'."}}
+📤 100: Alice_Picnicking_Under_Blue_-_Yom_HaAtzmaut_Foggy_Night
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 930725a5318e6f896fa8b1eb83824cf88c9ba266. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Picnicking_Under_Blue_-_Yom_HaAtzmaut_Foggy_Night&time
+
+📊 Batch Progress: 50/459 images
+✅ Success: 0, ❌ Failed: 50
+⏱️  Elapsed: 8.3 minutes
+--------------------------------------------------
+📤 101: 112_Alice_Crafting_Session__6
+     Activity: Creative | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8d0f23a90a32a3a651649decd88f543bec644c02. String to sign - 'folder=alice-gallery/anime&public_id=112_Alice_Crafting_Session__6&timestamp=1770229562'."}}
+📤 102: Alice_Coding_-_Stormy_Dawn
+     Activity: Work | Weather: Rainy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c5fafedfade8c0538115302394cbf9ab56bd8838. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Coding_-_Stormy_Dawn&timestamp=1770229572'."}}
+📤 103: Alice_Movie_Watching_Time__72
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 21dfb8a8956f6ec38a7306061117840a7fb9c8a5. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Movie_Watching_Time__72&timestamp=1770229581'."}}
+📤 104: Alice_Gaming_-_Foggy_Afternoon
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5111967c56a10aa8884bc0906f1981b68c874274. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_-_Foggy_Afternoon&timestamp=1770229590'."}}
+📤 105: Alice_Pottery_Session__48
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e9ec0b4044690aef94119d184df47d3fe9848dc4. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Pottery_Session__48&timestamp=1770229599'."}}
+📤 106: Alice_Crafting_-_Stormy_Afternoon
+     Activity: Creative | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b4081f3330ea7a042c49fbf925cef79204b8287c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Crafting_-_Stormy_Afternoon&timestamp=1770229609'."}}
+📤 107: Alice_Umbrella_Walk_-_Rainy_Evening
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ba7cabf7ff1caeb6204fa1eeaab3a756657b8b67. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Umbrella_Walk_-_Rainy_Evening&timestamp=1770229618'."}
+📤 108: 088_Alice_Coding_Session__31
+     Activity: Work | Weather: Sunny | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b618717349e06d274fc4bb9c9bc69171df06e654. String to sign - 'folder=alice-gallery/anime&public_id=088_Alice_Coding_Session__31&timestamp=1770229627'."}}
+📤 109: 138_Alice_Drawing_Session__26
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature cea442c1a39cd6b294e9cf3a71ee6395116930be. String to sign - 'folder=alice-gallery/anime&public_id=138_Alice_Drawing_Session__26&timestamp=1770229638'."}}
+📤 110: Alice_Coffee_Date__17
+     Activity: Social | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 13e1f12e9c6a856daf9ce3fdfcffd6ec4aad664e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Coffee_Date__17&timestamp=1770229648'."}}
+
+📊 Batch Progress: 60/459 images
+✅ Success: 0, ❌ Failed: 60
+⏱️  Elapsed: 10.1 minutes
+--------------------------------------------------
+📤 111: Alice_Gaming_Time__19
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 1e116b08ec9d4a57902046ccee2c9946dbd5ee58. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__19&timestamp=1770229665'."}}
+📤 112: Alice_Picnicking_Under_Blue_-_Yom_HaAtzmaut_Cloudy_Evening
+     Activity: Social | Weather: Overcast | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 77e81074340202293ce26dfdd08dc359333a33bb. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Picnicking_Under_Blue_-_Yom_HaAtzmaut_Cloudy_Evening&t
+📤 113: 117_Alice_Writing_Session__11
+     Activity: Creative | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2e35114928619bd9adc1c48d3756284acfa440b8. String to sign - 'folder=alice-gallery/anime&public_id=117_Alice_Writing_Session__11&timestamp=1770229684'."}}
+📤 114: 006_Alice_Sleeping_-_Cloudy_Night__2
+     Activity: Sleeping | Weather: Cloudy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8a5e9326cb5c89e6315732515ea960cff9cd24ef. String to sign - 'folder=alice-gallery/anime&public_id=006_Alice_Sleeping_-_Cloudy_Night__2&timestamp=1770229693'."}}
+⚠️  115: Alice_Collecting_Wood_-_Lag_BaOmer_Sunny_Afternoon - No metadata found, skipping
+📤 116: 102_Alice_Digital_Art_Session__20
+     Activity: Creative | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 9529eedd39729776c54f36750c1cd7f2327f4595. String to sign - 'folder=alice-gallery/anime&public_id=102_Alice_Digital_Art_Session__20&timestamp=1770229703'."}}
+⚠️  117: Alice_Standing_With_Head_Bowed_-_Yom_HaZikaron_Overcast_Night - No metadata found, skipping
+📤 118: Alice_Yoga_-_Cloudy_Morning
+     Activity: Exercise | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 87d8f3ead3335540e3bf2d4300acd65703fe697f. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Yoga_-_Cloudy_Morning&timestamp=1770229712'."}}
+📤 119: Alice_Joining_Costume_Parade_-_Shushan_Purim_Rainy_Midday
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 70d4f7ae46a183a57d56185c417b26efbcd9ff93. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Joining_Costume_Parade_-_Shushan_Purim_Rainy_Midday&ti
+📤 120: Alice_Bench_Reading_-_Sunny_Evening
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5598d6c3ea0d4cdecad65f44632819a2f4dbb63e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Bench_Reading_-_Sunny_Evening&timestamp=1770229730'."}}
+
+📊 Batch Progress: 70/459 images
+✅ Success: 0, ❌ Failed: 70
+⏱️  Elapsed: 11.3 minutes
+--------------------------------------------------
+⚠️  121: Alice_Having_Mangal_BBQ_-_Yom_HaAtzmaut_Overcast_Evening - No metadata found, skipping
+📤 122: Alice_Reading_Time__76
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 878ecaf5f7bceee74b4488c4068dc71ed4c5be8d. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_Time__76&timestamp=1770229739'."}}
+📤 123: Alice_Cooking_Time__22
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 69c9ae0f3acf6af40762aab56f35ad55fcf2a775. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_Time__22&timestamp=1770229749'."}}
+⚠️  124: Alice_Standing_With_Head_Bowed_-_Yom_HaZikaron_Overcast_Afternoon - No metadata found, skipping
+📤 125: Alice_Placing_Flowers_-_Yom_HaZikaron_Rainy_Midday
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a3f9b0f1a72ac3bcdb13328c14f64452f9fec868. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Placing_Flowers_-_Yom_HaZikaron_Rainy_Midday&timestamp
+📤 126: Alice_Flower_Picking_-_Sunny_Midday
+     Activity: Leisure | Weather: Sunny | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b72dd109e7c0425a95cab32587292d77bfe080ca. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Flower_Picking_-_Sunny_Midday&timestamp=1770229768'."}
+📤 127: Alice_Watching_Storm_-_Foggy_Midday
+     Activity: Leisure | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c455777f0ac16317fbf7bf05c6c1b7ca3313eb9a. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Watching_Storm_-_Foggy_Midday&timestamp=1770229777'."}
+📤 128: Alice_Watching_Brilliant_Fireworks_Light_-_Yom_HaAtzmaut_Sunny_Dawn
+     Activity: Leisure | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a0e8328e21b78f93c7c7aab709284bcb9b1abf2a. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Watching_Brilliant_Fireworks_Light_-_Yom_HaAtzmaut_Sun
+📤 129: Alice_Martial_Arts_Session__15
+     Activity: Exercise | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 041bb5c97200bac71dae62d97c35470553f5c44a. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Martial_Arts_Session__15&timestamp=1770229803'."}}
+📤 130: Alice_Networking__23
+     Activity: Social | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 977a670dd18ea91510466db839b6a925bb351860. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Networking__23&timestamp=1770229814'."}}
+
+📊 Batch Progress: 80/459 images
+✅ Success: 0, ❌ Failed: 80
+⏱️  Elapsed: 12.7 minutes
+--------------------------------------------------
+📤 131: Alice_Bicycle_Ride_-_Cloudy_Midday
+     Activity: Exercise | Weather: Cloudy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 62599fb08d304c80772259aa66fbbf6a5131ce7f. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Bicycle_Ride_-_Cloudy_Midday&timestamp=1770229824'."}}
+📤 132: 033_Alice_Debugging_Session__37
+     Activity: Work | Weather: Sunny | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 70abf784604b7e8b3efda9e0dbaa663d154964b6. String to sign - 'folder=alice-gallery/anime&public_id=033_Alice_Debugging_Session__37&timestamp=1770229838'."}}
+📤 133: Alice_Dancing_Session__13
+     Activity: Exercise | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 25d90b5723f5d21a8f14b77d5087663222518106. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dancing_Session__13&timestamp=1770229847'."}}
+📤 134: Alice_Crafting_Session__49
+     Activity: Creative | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 86e1b220a4be61fc31017ae993ce7e72dd25d8ff. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Crafting_Session__49&timestamp=1770229856'."}}
+📤 135: Alice_Reading_Time__63
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4aacb8b7814168e382cf7296d7890460d0adf705. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_Time__63&timestamp=1770229868'."}}
+📤 136: 111_Alice_Photography_Session__7
+     Activity: Creative | Weather: Rainy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e583160ab524f7aea9331d9e9a49a77ce6f3530e. String to sign - 'folder=alice-gallery/anime&public_id=111_Alice_Photography_Session__7&timestamp=1770229877'."}}
+📤 137: Alice_Market_Visit_-_Foggy_Dawn
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e7a627f8562e9e59dcd9c5b25741a13a413da90d. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Market_Visit_-_Foggy_Dawn&timestamp=1770229886'."}}
+📤 138: Alice_Buying_White_Memorial_Candles_-_Yom_HaShoah_Rainy_Dawn
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2e3affda0c267a944bb10b99620acd325d7d23cd. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Buying_White_Memorial_Candles_-_Yom_HaShoah_Rainy_Dawn
+📤 139: Alice_Coding_-_Sunny_Midday
+     Activity: Work | Weather: Rainy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5de8fb581d93f02c8b25feafbc633bd8ed515c96. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Coding_-_Sunny_Midday&timestamp=1770229906'."}}
+📤 140: Alice_Running_Session__27
+     Activity: Exercise | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 96d4397de7b8b994e378f2fa0b367da4f9c00425. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Running_Session__27&timestamp=1770229916'."}}
+
+📊 Batch Progress: 90/459 images
+✅ Success: 0, ❌ Failed: 90
+⏱️  Elapsed: 14.4 minutes
+--------------------------------------------------
+📤 141: Alice_Research__30
+     Activity: Learning | Weather: Rainy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f603b5f3a9cd805b9365baf968c53a2c2f505cc1. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Research__30&timestamp=1770229925'."}}
+📤 142: Alice_Tea_Time_Time__16
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 583d528c153bc534c9b789783b08e18f12086da2. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_Time__16&timestamp=1770229941'."}}
+📤 143: 066_Alice_Sleeping_-_Foggy_Late_Night__25
+     Activity: Sleeping | Weather: Foggy | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d1ef91f6449ccaf3f7f0da255aa4fc83398e4613. String to sign - 'folder=alice-gallery/anime&public_id=066_Alice_Sleeping_-_Foggy_Late_Night__25&timestamp=1770229951'.
+📤 144: Alice_Celebration__37
+     Activity: Social | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b2aefda9973bd7ae924542648d705c63abb5cdf9. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Celebration__37&timestamp=1770229961'."}}
+📤 145: 005_Alice_Sleeping_-_Clear_Night_Night__4
+     Activity: Sleeping | Weather: Clear Night | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 883b23a45dee4125dd1bf338e001d766bc0f5a5c. String to sign - 'folder=alice-gallery/anime&public_id=005_Alice_Sleeping_-_Clear_Night_Night__4&timestamp=1770229971'.
+📤 146: Alice_Cooking_-_Rainy_Midday
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2f571b88b7c84c8b560fce2cd3a97e0e4d1531f3. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_-_Rainy_Midday&timestamp=1770229980'."}}
+📤 147: 043_Alice_Video_Conference_Session__34
+     Activity: Work | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e0fd91426520b18a631e619efeacee23451b53f9. String to sign - 'folder=alice-gallery/anime&public_id=043_Alice_Video_Conference_Session__34&timestamp=1770229989'."}}
+📤 148: 098_Alice_Writing_Session__14
+     Activity: Creative | Weather: Rainy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature cd114fad1d6f61067843728d6bb4b651fdf30109. String to sign - 'folder=alice-gallery/anime&public_id=098_Alice_Writing_Session__14&timestamp=1770229999'."}}
+📤 149: 146_Alice_Digital_Art_Session__34
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature aacc835c7bbf1d7b702f1cd1ecc2569099340064. String to sign - 'folder=alice-gallery/anime&public_id=146_Alice_Digital_Art_Session__34&timestamp=1770230010'."}}
+📤 150: Alice_Cooking_-_Stormy_Morning
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4874b8ced1ad8f4c19e999d7c17652053832404b. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_-_Stormy_Morning&timestamp=1770230019'."}}
+
+📊 Batch Progress: 100/459 images
+✅ Success: 0, ❌ Failed: 100
+⏱️  Elapsed: 16.1 minutes
+--------------------------------------------------
+📤 151: 127_Alice_Drawing_Session__23
+     Activity: Creative | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature fdf3c45e750aebbbcf7ee2a703e87f9ac52a686a. String to sign - 'folder=alice-gallery/anime&public_id=127_Alice_Drawing_Session__23&timestamp=1770230029'."}}
+📤 152: Alice_Running_Session__40
+     Activity: Exercise | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 636c829711c35a05faa82b40327f7dc46531995d. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Running_Session__40&timestamp=1770230038'."}}
+📤 153: Alice_Coffee_Date__5
+     Activity: Social | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8cd111df938f0880c2800a5ca99d0e205e0facea. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Coffee_Date__5&timestamp=1770230051'."}}
+📤 154: Alice_Language_Study__7
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8bb2b16e16993e780ae84403a059889610b2bf42. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Language_Study__7&timestamp=1770230062'."}}
+📤 155: Alice_Gallery_Visit__11
+     Activity: Social | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8587b8b651dbf64d0ef1cd6c9041d5169c275f2d. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gallery_Visit__11&timestamp=1770230071'."}}
+📤 156: Alice_Dinner_Party__27
+     Activity: Social | Weather: Clear Night | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c8919d6b4e13b724df579b970d2035ef69bf2fb8. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dinner_Party__27&timestamp=1770230080'."}}
+📤 157: 155_Alice_Analyzing_Session__70
+     Activity: Work | Weather: Overcast | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d25c951d7f93728653f080a16163835da62cb4d3. String to sign - 'folder=alice-gallery/anime&public_id=155_Alice_Analyzing_Session__70&timestamp=1770230090'."}}
+📤 158: Alice_Gallery_Visit__39
+     Activity: Social | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6776876b9a8c03391d6a0bd51d2e8ac53201db7a. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gallery_Visit__39&timestamp=1770230099'."}}
+📤 159: Alice_Sitting_On_Bench_-_Yom_HaZikaron_Rainy_Midday
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3951ce508ed81e5dce836be83d080dae0fa730cf. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Sitting_On_Bench_-_Yom_HaZikaron_Rainy_Midday&timestam
+📤 160: Alice_Writing_-_Rainy_Morning
+     Activity: Creative | Weather: Sunny | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2d5ce9cfaf3dd32d70c1fcd66bb83895796fd86f. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Writing_-_Rainy_Morning&timestamp=1770230118'."}}
+
+📊 Batch Progress: 110/459 images
+✅ Success: 0, ❌ Failed: 110
+⏱️  Elapsed: 17.9 minutes
+--------------------------------------------------
+📤 161: Alice_Digital_Art_Session__50
+     Activity: Creative | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8b09b89c55aecf204375571b4adc35119fc79b35. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Digital_Art_Session__50&timestamp=1770230135'."}}
+📤 162: Alice_Language_Study__14
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature efa13ed194005dc283ea4d186624ddc1013d76fd. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Language_Study__14&timestamp=1770230145'."}}
+⚠️  163: Alice_Collecting_Stacks_-_Lag_BaOmer_Overcast_Night - No metadata found, skipping
+📤 164: Alice_Storm_Watching_-_Stormy_Night
+     Activity: Leisure | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f2db87914246cd86e38c60eef88f342ec77e6d1a. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Storm_Watching_-_Stormy_Night&timestamp=1770230154'."}
+📤 165: Alice_Drawing_Session__57
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 76a0a0ea6aa09f3ee3a28803e90bbf109b5ef2b1. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Drawing_Session__57&timestamp=1770230164'."}}
+📤 166: Alice_Cooking_Time__50
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 9f656d091cd70bd4aebfcaa3b16729b3e1442d58. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_Time__50&timestamp=1770230176'."}}
+📤 167: Alice_Rain_Window_-_Rainy_Afternoon
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f6acee497b7f0fe50fe433cce6035fadbdd33787. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Rain_Window_-_Rainy_Afternoon&timestamp=1770230186'."}
+📤 168: Alice_Puzzles_Time__49
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 98cc79847bf4889421f0d5c5f3712cd38eae09b2. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__49&timestamp=1770230196'."}}
+📤 169: Alice_Martial_Arts_Session__9
+     Activity: Exercise | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature fbee0ba28fbc3c1efa562287ad9ade09a9814c14. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Martial_Arts_Session__9&timestamp=1770230205'."}}
+📤 170: Alice_Yoga_Session__3
+     Activity: Exercise | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ae9fb87c759bb699fd931b7494f18bd5a80516d5. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Yoga_Session__3&timestamp=1770230215'."}}
+
+📊 Batch Progress: 120/459 images
+✅ Success: 0, ❌ Failed: 120
+⏱️  Elapsed: 19.4 minutes
+--------------------------------------------------
+📤 171: Alice_Puzzles_Time__48
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ae12df1e9d478b4aaead2b44ce1259a0993eda70. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__48&timestamp=1770230226'."}}
+📤 172: Alice_Picnic_-_Sunny_Afternoon
+     Activity: Social | Weather: Overcast | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 241bbd7da9558f8ca0ad3d49ef2b135215fc4c8e. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Picnic_-_Sunny_Afternoon&timestamp=1770230237'."}}
+📤 173: Alice_Networking__2
+     Activity: Social | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 28090779ea813ecfef796877f071cbd1acc4e35a. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Networking__2&timestamp=1770230246'."}}
+📤 174: Alice_Reading_Time__11
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 1592449a5bfb0f6967c0e77f20c6f16f9ef699a9. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_Time__11&timestamp=1770230256'."}}
+📤 175: Alice_Watching_Storm_-_Overcast_Midday
+     Activity: Leisure | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ba88298647c0db6aac6ecbddb92a2a021f9d73ac. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Watching_Storm_-_Overcast_Midday&timestamp=1770230265'
+📤 176: Alice_Foggy_Exploration_-_Foggy_Afternoon
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 02d045fe2fd7620517176bf237c392a21a15cf5b. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Foggy_Exploration_-_Foggy_Afternoon&timestamp=17702302
+📤 177: 040_Alice_Writing_Session__2
+     Activity: Work | Weather: Overcast | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a87ad1876af96756d2ca4066c731d2975a1f56ea. String to sign - 'folder=alice-gallery/anime&public_id=040_Alice_Writing_Session__2&timestamp=1770230287'."}}
+📤 178: Alice_Reclining_On_Cushions_-_Pesach_Foggy_Dawn
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b519a2e3311beb3abf5e2a4c18a5a460c13f6e69. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Reclining_On_Cushions_-_Pesach_Foggy_Dawn&timestamp=17
+📤 179: Alice_Gallery_Visit__10
+     Activity: Social | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 09e3464bcb30aa84f649c343cacaca535d21c38e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gallery_Visit__10&timestamp=1770230308'."}}
+📤 180: Alice_Watching_Storm_-_Rainy_Night
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0e6d082d6af02a9d07c0a00a2b821123dd976d49. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Watching_Storm_-_Rainy_Night&timestamp=1770230317'."}}
+
+📊 Batch Progress: 130/459 images
+✅ Success: 0, ❌ Failed: 130
+⏱️  Elapsed: 21.1 minutes
+--------------------------------------------------
+📤 181: Alice_Rain_Window_-_Rainy_Morning
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 467e39c927cac516d1ff57a3293ce813cc9cfe05. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Rain_Window_-_Rainy_Morning&timestamp=1770230326'."}}
+📤 182: Alice_Playing_Piano_-_Foggy_Morning
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature fdb290c87d4ba4eec5fd2968fd4ed34cf128623b. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Playing_Piano_-_Foggy_Morning&timestamp=1770230335'."}
+📤 183: 084_Alice_Analyzing_Session__58
+     Activity: Work | Weather: Clear Night | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 53fbfba152ea771e128938a52f36cda16d208e1a. String to sign - 'folder=alice-gallery/anime&public_id=084_Alice_Analyzing_Session__58&timestamp=1770230346'."}}
+📤 184: Alice_Gaming_Time__56
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d802d9ac6ad58c85a5935adf9411e7323d0076e6. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__56&timestamp=1770230355'."}}
+📤 185: Alice_Sketching_Outdoors_-_Sunny_Dawn
+     Activity: Creative | Weather: Sunny | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a343628932d9927fd9919308b4f30fae99a395c3. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Sketching_Outdoors_-_Sunny_Dawn&timestamp=1770230367'.
+📤 186: Alice_Preparing_For_Memorial_Ceremonies_-_Yom_HaZikaron_Stormy_Night
+     Activity: Leisure | Weather: Stormy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e577ffe0a2168150bc52d964fa4254cbbe89ef9c. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Preparing_For_Memorial_Ceremonies_-_Yom_HaZikaron_Stor
+📤 187: Alice_Collecting_Wood_-_Lag_BaOmer_Stormy_Morning
+     Activity: Leisure | Weather: Stormy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8c6aaec71b8fb8b284d17cd57f516f0c18a676e7. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Collecting_Wood_-_Lag_BaOmer_Stormy_Morning&timestamp=
+📤 188: Alice_Gaming_Time__54
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c7476c09c069562d7e89b5b71496db668952ebfa. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__54&timestamp=1770230398'."}}
+📤 189: Alice_Bird_Feeding_-_Overcast_Dawn
+     Activity: Leisure | Weather: Overcast | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 7c6253b46aa58596ba883efe8db58f0a9eff77f1. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Bird_Feeding_-_Overcast_Dawn&timestamp=1770230407'."}}
+📤 190: Alice_Reading__6
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 7ed958ac406fa86e7e4fb15543c225a529932e38. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading__6&timestamp=1770230419'."}}
+
+📊 Batch Progress: 140/459 images
+✅ Success: 0, ❌ Failed: 140
+⏱️  Elapsed: 22.8 minutes
+--------------------------------------------------
+📤 191: 018_Alice_Sleeping_-_Stormy_Dawn__1
+     Activity: Sleeping | Weather: Stormy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 33a64136733549b624a9967b78091319ad262deb. String to sign - 'folder=alice-gallery/anime&public_id=018_Alice_Sleeping_-_Stormy_Dawn__1&timestamp=1770230428'."}}
+📤 192: Alice_Movie_Watching_Time__15
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 78b3d4426e3d95c4b99b1b80d49318d4433c9c25. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Movie_Watching_Time__15&timestamp=1770230438'."}}
+📤 193: 104_Alice_Writing_Session__19
+     Activity: Creative | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 62150185c025f002e8abec0f480572d12dbd5b4f. String to sign - 'folder=alice-gallery/anime&public_id=104_Alice_Writing_Session__19&timestamp=1770230447'."}}
+📤 194: Alice_Preparing_Costumes_-_Shushan_Purim_Foggy_Dawn
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 85247935955c492496c7130b3fbb606ddcd889a9. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Preparing_Costumes_-_Shushan_Purim_Foggy_Dawn&timestam
+📤 195: Alice_Tea_Time_Time__66
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 568a7ca0acd0c8c863275b0078669cf6fbc8495d. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_Time__66&timestamp=1770230473'."}}
+📤 196: Alice_Placing_Flowers_-_Yom_HaZikaron_Rainy_Morning
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0aafcf841e16646e8bbeab8f6290004ad5458ce9. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Placing_Flowers_-_Yom_HaZikaron_Rainy_Morning&timestam
+📤 197: Alice_Language_Study__4
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 249bfaebae9dd76af424b3254f9a19f1d45c7827. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Language_Study__4&timestamp=1770230495'."}}
+📤 198: Alice_Reading_-_Sunny_Afternoon
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3e987a52939336c33e5fc232317446ca3afbdac6. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_-_Sunny_Afternoon&timestamp=1770230506'."}}
+📤 199: Alice_Dinner_Party__3
+     Activity: Social | Weather: Clear Night | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c926d01d79bdadb8d975e5a5c3a4c639f3eb441c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dinner_Party__3&timestamp=1770230515'."}}
+📤 200: 099_Alice_Crafting_Session__24
+     Activity: Creative | Weather: Sunny | Time: Golden Hour
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 06d60e30adaab242290d6a2c75bcda49b1cb6656. String to sign - 'folder=alice-gallery/anime&public_id=099_Alice_Crafting_Session__24&timestamp=1770230525'."}}
+
+📊 Batch Progress: 150/459 images
+✅ Success: 0, ❌ Failed: 150
+⏱️  Elapsed: 24.5 minutes
+--------------------------------------------------
+📤 201: Alice_Cooking_-_Cloudy_Dawn
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 215b6bb6b9fc8f35b43e74acce1adaadf413b83f. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_-_Cloudy_Dawn&timestamp=1770230535'."}}
+📤 202: Alice_Market_Visit_-_Cloudy_Midday
+     Activity: Social | Weather: Overcast | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f117e716e51d3905973f6f5a9cfbd99de85f2cd9. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Market_Visit_-_Cloudy_Midday&timestamp=1770230544'."}}
+📤 203: 075_Alice_Debugging_Session__23
+     Activity: Work | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5a3a7eeb59d43303ae58f7138d8734e6a0a8c24b. String to sign - 'folder=alice-gallery/anime&public_id=075_Alice_Debugging_Session__23&timestamp=1770230557'."}}
+📤 204: Alice_Picnic_-_Cloudy_Evening
+     Activity: Social | Weather: Overcast | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2062febd27a4509bf112029ea8ff363767d118de. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Picnic_-_Cloudy_Evening&timestamp=1770230566'."}}
+📤 205: Alice_Language_Study__17
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 494bc0a9fad61612f08f4de696f42efabae6a334. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Language_Study__17&timestamp=1770230575'."}}
+📤 206: Alice_Cooking_Time__53
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 718aac495f34cb73a52f4296cba0759aba150696. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_Time__53&timestamp=1770230585'."}}
+📤 207: Alice_Park_Walk_-_Sunny_Evening
+     Activity: Exercise | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 04458a9e7c2591296dd5a3d256e82e662c1a0ea8. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Park_Walk_-_Sunny_Evening&timestamp=1770230595'."}}
+📤 208: Alice_Cooking_-_Cloudy_Night
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ed8d6f8a368e12ff360cabe558b06295486cd13f. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_-_Cloudy_Night&timestamp=1770230604'."}}
+📤 209: Alice_Snowman_Building_-_Snowy_Night
+     Activity: Leisure | Weather: Snowy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature bd68d8b512c81685cd7ec9ca19833f929a9d82d6. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Snowman_Building_-_Snowy_Night&timestamp=1770230617'."
+📤 210: 047_Alice_Sleeping_-_Snowy_Dawn__29
+     Activity: Sleeping | Weather: Snowy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 52ab3c81ad8dc9ad51529fe014b7c2fe74c60dae. String to sign - 'folder=alice-gallery/anime&public_id=047_Alice_Sleeping_-_Snowy_Dawn__29&timestamp=1770230627'."}}
+
+📊 Batch Progress: 160/459 images
+✅ Success: 0, ❌ Failed: 160
+⏱️  Elapsed: 26.2 minutes
+--------------------------------------------------
+📤 211: Alice_Yoga_Session__1
+     Activity: Exercise | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 649706f84fe1c9d1d6d49450a279afb041e7d5c6. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Yoga_Session__1&timestamp=1770230636'."}}
+📤 212: 030_Alice_Coding_Session__11
+     Activity: Work | Weather: Rainy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ea515840b80ef8c0b1bcb025f60f31e34baf3dd7. String to sign - 'folder=alice-gallery/anime&public_id=030_Alice_Coding_Session__11&timestamp=1770230646'."}}
+📤 213: 124_Alice_Painting_Session__38
+     Activity: Creative | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b49d4c3f7f0237f67b95986aca6b2b5f2d26089e. String to sign - 'folder=alice-gallery/anime&public_id=124_Alice_Painting_Session__38&timestamp=1770230655'."}}
+📤 214: 142_Alice_Debugging_Session__75
+     Activity: Work | Weather: Overcast | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 291bcf8025be448e6bb50e6c9a5422be1dd830e9. String to sign - 'folder=alice-gallery/anime&public_id=142_Alice_Debugging_Session__75&timestamp=1770230667'."}}
+📤 215: 061_Alice_Analyzing_Session__54
+     Activity: Work | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 57b59d384da8040d839f9ed09ce44b49691fb1cc. String to sign - 'folder=alice-gallery/anime&public_id=061_Alice_Analyzing_Session__54&timestamp=1770230678'."}}
+📤 216: Alice_Digital_Art_Session__52
+     Activity: Creative | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 158685744cbd16ed7431f6df66b2816b34014d08. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Digital_Art_Session__52&timestamp=1770230687'."}}
+📤 217: Alice_Market_Visit_-_Sunny_Dawn
+     Activity: Social | Weather: Overcast | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8822d9da88916f3dde66188aa5b86370681c0020. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Market_Visit_-_Sunny_Dawn&timestamp=1770230696'."}}
+📤 218: Alice_Experimentation__11
+     Activity: Learning | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 554c246ad65f07991a32bc1d079efc4616debfe2. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Experimentation__11&timestamp=1770230705'."}}
+📤 219: 038_Alice_Coding_Session__61
+     Activity: Work | Weather: Cloudy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature aa6b8ab9df27e3cd579ba7724a8d0ad42302253e. String to sign - 'folder=alice-gallery/anime&public_id=038_Alice_Coding_Session__61&timestamp=1770230715'."}}
+📤 220: 150_Alice_Music_Session__30
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d4a724943644fa8588407640cd96a0b86722ae71. String to sign - 'folder=alice-gallery/anime&public_id=150_Alice_Music_Session__30&timestamp=1770230726'."}}
+
+📊 Batch Progress: 170/459 images
+✅ Success: 0, ❌ Failed: 170
+⏱️  Elapsed: 28.0 minutes
+--------------------------------------------------
+📤 221: Alice_Dinner_Party__31
+     Activity: Social | Weather: Clear Night | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3d7c2e25745d400c180f7b2b0781904f80dedfff. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dinner_Party__31&timestamp=1770230742'."}}
+📤 222: Alice_Gallery_Visit__13
+     Activity: Social | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 51d01cc3d9722698e9049eb27fd50010b1ff259c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gallery_Visit__13&timestamp=1770230751'."}}
+📤 223: 074_Alice_Analyzing_Session__38
+     Activity: Work | Weather: Overcast | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8de63c647b66b3e8bdc19fde993ab9beef28f513. String to sign - 'folder=alice-gallery/anime&public_id=074_Alice_Analyzing_Session__38&timestamp=1770230760'."}}
+📤 224: Alice_Language_Study__5
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a3571c4b5a93d21faffdf66dc338ab3749c73efc. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Language_Study__5&timestamp=1770230770'."}}
+📤 225: Alice_Coffee_Date__7
+     Activity: Social | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 706cb713788dae635bc52116f4e73a3a3a7865ce. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Coffee_Date__7&timestamp=1770230780'."}}
+📤 226: 046_Alice_Video_Conference_Session__42
+     Activity: Work | Weather: Cloudy | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 033a8901cee7eb79cd499c4e703071cd6732ff6b. String to sign - 'folder=alice-gallery/anime&public_id=046_Alice_Video_Conference_Session__42&timestamp=1770230789'."}}
+⚠️  227: Alice_Collecting_Stacks_-_Lag_BaOmer_Sunny_Morning - No metadata found, skipping
+📤 228: Alice_Gaming_Time__45
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 782f5159a464489b492277bb7ca6b4fe080f5470. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__45&timestamp=1770230798'."}}
+📤 229: Alice_Roasting_Foil-wrapped_Potatoes_-_Lag_BaOmer_Foggy_Evening
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 203041a6d3fd04975320ceda121ec557e42509e9. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Roasting_Foil-wrapped_Potatoes_-_Lag_BaOmer_Foggy_Even
+📤 230: Alice_Dinner_Party__6
+     Activity: Social | Weather: Clear Night | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6c1376cdbd812fd8c9f464f16dfa82ad9e47f938. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dinner_Party__6&timestamp=1770230816'."}}
+
+📊 Batch Progress: 180/459 images
+✅ Success: 0, ❌ Failed: 180
+⏱️  Elapsed: 29.4 minutes
+--------------------------------------------------
+📤 231: Alice_Flower_Picking_-_Sunny_Afternoon
+     Activity: Leisure | Weather: Sunny | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 446161d873ebfc374e0f946c76d26873d5aadac1. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Flower_Picking_-_Sunny_Afternoon&timestamp=1770230827'
+📤 232: Alice_Catching_Snowflakes_-_Snowy_Evening
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3b07d17e0e90f42a80b37125dac804e004f27148. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Catching_Snowflakes_-_Snowy_Evening&timestamp=17702308
+📤 233: Alice_Reading__10
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0e2c84ae59defdf3d178b6620794cf2a1cd676d5. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading__10&timestamp=1770230853'."}}
+📤 234: Alice_Rain_Window_-_Rainy_Night
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 57be5f1761d983dbb326d05f624597f31e5bd602. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Rain_Window_-_Rainy_Night&timestamp=1770230862'."}}
+📤 235: 068_Alice_Planning_Session__3
+     Activity: Work | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a8f4a3b11a7041c7bc579a28d3dcfa80b4dbede5. String to sign - 'folder=alice-gallery/anime&public_id=068_Alice_Planning_Session__3&timestamp=1770230872'."}}
+📤 236: Alice_Storm_Watching_-_Stormy_Morning
+     Activity: Leisure | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 17b8bd6710078b10ff795aac5a37e01aec6d46d3. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Storm_Watching_-_Stormy_Morning&timestamp=1770230881'.
+📤 237: Alice_Preparing_For_Memorial_Ceremonies_-_Yom_HaZikaron_Rainy_Afternoon
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5d5ec3ab67b30e06a964a8e96bcc0a36d822135e. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Preparing_For_Memorial_Ceremonies_-_Yom_HaZikaron_Rain
+📤 238: 013_Alice_Sleeping_-_Cloudy_Night__14
+     Activity: Sleeping | Weather: Cloudy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature fc423b69f399431559d674546eb9b2d07b495038. String to sign - 'folder=alice-gallery/anime&public_id=013_Alice_Sleeping_-_Cloudy_Night__14&timestamp=1770230900'."}}
+📤 239: 125_Alice_Writing_Session__28
+     Activity: Creative | Weather: Rainy | Time: Golden Hour
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 52ccda55b86c9be121f4e26d9773059a7094c9e3. String to sign - 'folder=alice-gallery/anime&public_id=125_Alice_Writing_Session__28&timestamp=1770230910'."}}
+📤 240: Alice_Bicycle_Ride_-_Foggy_Dawn
+     Activity: Exercise | Weather: Cloudy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 9c0b42bf04f22eb4607c24b8ca957ca4cec93453. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Bicycle_Ride_-_Foggy_Dawn&timestamp=1770230920'."}}
+
+📊 Batch Progress: 190/459 images
+✅ Success: 0, ❌ Failed: 190
+⏱️  Elapsed: 31.2 minutes
+--------------------------------------------------
+📤 241: Alice_Online_Course__26
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 77e14a07eb64921c4555997ee56e0fe4f7027701. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Online_Course__26&timestamp=1770230932'."}}
+📤 242: Alice_Language_Study__12
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6eeaf66d03a66c3686b555f73c8c57bde0a30fb4. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Language_Study__12&timestamp=1770230941'."}}
+📤 243: Alice_Painting_Session__64
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ea6883edbc2b35b0643a11097982e870ed1f82d9. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Painting_Session__64&timestamp=1770230954'."}}
+📤 244: Alice_Photography_Session__51
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f932ed29cb34ac8cc70e25f8c6cb74a3954bb55f. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Photography_Session__51&timestamp=1770230964'."}}
+📤 245: Alice_Foggy_Exploration_-_Foggy_Morning
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e7f04060a47ce30faa06288e1a85b2aaee888b41. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Foggy_Exploration_-_Foggy_Morning&timestamp=1770230973
+📤 246: 071_Alice_Presenting_Session__8
+     Activity: Work | Weather: Clear Night | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c1bb1ddfbae184366b21e74634d21a31a5c4c904. String to sign - 'folder=alice-gallery/anime&public_id=071_Alice_Presenting_Session__8&timestamp=1770230983'."}}
+📤 247: Alice_Decorating_Home_-_Yom_HaAtzmaut_Stormy_Midday
+     Activity: Leisure | Weather: Stormy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ed585332598182aee69b7e5d86d3697d56a8054a. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Decorating_Home_-_Yom_HaAtzmaut_Stormy_Midday&timestam
+📤 248: 042_Alice_Sleeping_-_Foggy_Early_Morning__27
+     Activity: Sleeping | Weather: Foggy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 1e9fbdb6c0656ee4be0764d8c454f9108ff4121a. String to sign - 'folder=alice-gallery/anime&public_id=042_Alice_Sleeping_-_Foggy_Early_Morning__27&timestamp=177023100
+📤 249: Alice_Hiding_Afikomen__wrapped_Matzah_-_Pesach_Foggy_Evening
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a00e5c32b1d855dc7eabb4c6a53925e21318db38. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Hiding_Afikomen__wrapped_Matzah_-_Pesach_Foggy_Evening
+📤 250: Alice_Painting_Session__71
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 7a516a48179efd0626049fd8e55d152a77fed354. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Painting_Session__71&timestamp=1770231023'."}}
+
+📊 Batch Progress: 200/459 images
+✅ Success: 0, ❌ Failed: 200
+⏱️  Elapsed: 32.8 minutes
+--------------------------------------------------
+📤 251: Alice_Painting_Session__59
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 41664fb5bd7d98063102638be099ee203efe404c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Painting_Session__59&timestamp=1770231033'."}}
+📤 252: 073_Alice_Debugging_Session__6
+     Activity: Work | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5862a669bbd31d30d02703fc13d00e25014ee62b. String to sign - 'folder=alice-gallery/anime&public_id=073_Alice_Debugging_Session__6&timestamp=1770231044'."}}
+📤 253: Alice_Relaxing_Time__3
+     Activity: Leisure | Weather: Snowy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 973d000664efed175d2e2044abfc99489705368c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Relaxing_Time__3&timestamp=1770231060'."}}
+📤 254: Alice_Dinner_Party__34
+     Activity: Social | Weather: Clear Night | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 305bcef4db2c85e0b61dc79ac67a0e70ab033a2c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dinner_Party__34&timestamp=1770231069'."}}
+📤 255: 148_Alice_Writing_Session__79
+     Activity: Work | Weather: Sunny | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5fb81fddeca9714353d25a7cf4949bcf9a216d41. String to sign - 'folder=alice-gallery/anime&public_id=148_Alice_Writing_Session__79&timestamp=1770231080'."}}
+📤 256: 051_Alice_Coding_Session__55
+     Activity: Work | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6cce3404f5a4e353b678a5218a2d3a64280d214f. String to sign - 'folder=alice-gallery/anime&public_id=051_Alice_Coding_Session__55&timestamp=1770231093'."}}
+⚠️  257: Alice_Decorating_Home_-_Yom_HaAtzmaut_Cloudy_Night - No metadata found, skipping
+📤 258: Alice_Reading__2
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature eb37011712bd6adaeab02bb6045451a1dd5df76b. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading__2&timestamp=1770231103'."}}
+📤 259: Alice_Tea_Time_Time__62
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 03d3af8656d74b1907c6581f50ff50460d592b02. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_Time__62&timestamp=1770231112'."}}
+📤 260: Alice_Gaming_Time__52
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature fd940794c9f93b97c2caef4f939b8a1d27a301f5. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__52&timestamp=1770231123'."}}
+
+📊 Batch Progress: 210/459 images
+✅ Success: 0, ❌ Failed: 210
+⏱️  Elapsed: 34.5 minutes
+--------------------------------------------------
+📤 261: 041_Alice_Coding_Session__22
+     Activity: Work | Weather: Overcast | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 37d4fd3a7fe7af6d3bb2c58f145e549b623e5f99. String to sign - 'folder=alice-gallery/anime&public_id=041_Alice_Coding_Session__22&timestamp=1770231132'."}}
+📤 262: 089_Alice_Debugging_Session__60
+     Activity: Work | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 579f14d834838e402a6ffa5a0dd88058389583ce. String to sign - 'folder=alice-gallery/anime&public_id=089_Alice_Debugging_Session__60&timestamp=1770231142'."}}
+📤 263: Alice_Movie_Watching_Time__13
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c6f07a613691c69288fff26548f32500941f514e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Movie_Watching_Time__13&timestamp=1770231151'."}}
+⚠️  264: Alice_Buying_BBQ_Supplies_-_Yom_HaAtzmaut_Cloudy_Dawn - No metadata found, skipping
+📤 265: Alice_Yoga_-_Overcast_Midday
+     Activity: Exercise | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 60cf44168602b494fe844f8a05381f6f1c152ad2. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Yoga_-_Overcast_Midday&timestamp=1770231160'."}}
+📤 266: Alice_Dinner_Party__22
+     Activity: Social | Weather: Clear Night | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 23ae1fff85d8c08134e406e1c17c36f5add5d9e7. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dinner_Party__22&timestamp=1770231169'."}}
+📤 267: Alice_Music_Session__80
+     Activity: Creative | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 86973c0b3c86380d7f2f9223cd8f92a7549587be. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Music_Session__80&timestamp=1770231180'."}}
+📤 268: 144_Alice_Pottery_Session__47
+     Activity: Creative | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c7b2d1e1274f12d26ddb878ab7df33daaf4ee97e. String to sign - 'folder=alice-gallery/anime&public_id=144_Alice_Pottery_Session__47&timestamp=1770231189'."}}
+📤 269: 010_Alice_Sleeping_-_Foggy_Late_Night__13
+     Activity: Sleeping | Weather: Foggy | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c00dd4ac675e7ffc4dc9e4737616ce125033d85f. String to sign - 'folder=alice-gallery/anime&public_id=010_Alice_Sleeping_-_Foggy_Late_Night__13&timestamp=1770231198'.
+📤 270: Alice_Digital_Art_Session__55
+     Activity: Creative | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e1daa0d6b1b7dd7b682010f67b629c81a06c4ec2. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Digital_Art_Session__55&timestamp=1770231212'."}}
+
+📊 Batch Progress: 220/459 images
+✅ Success: 0, ❌ Failed: 220
+⏱️  Elapsed: 36.0 minutes
+--------------------------------------------------
+📤 271: Alice_Kite_Flying_-_Overcast_Dawn
+     Activity: Leisure | Weather: Overcast | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8eaa734f0cf2705986483d100f66c6d4641298f9. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Kite_Flying_-_Overcast_Dawn&timestamp=1770231221'."}}
+📤 272: 151_Alice_Drawing_Session__22
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5399090c9b0db40b529832b1d3557908ace29780. String to sign - 'folder=alice-gallery/anime&public_id=151_Alice_Drawing_Session__22&timestamp=1770231232'."}}
+📤 273: Alice_Hiding_Afikomen__wrapped_Matzah_-_Pesach_Stormy_Evening
+     Activity: Leisure | Weather: Stormy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6ab2085f83e410eb043decd000a340ccc146d0f7. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Hiding_Afikomen__wrapped_Matzah_-_Pesach_Stormy_Evenin
+📤 274: 140_Alice_Coding_Session__66
+     Activity: Work | Weather: Sunny | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b3c8ab1c6cf65af53479ca83dbb8ff05fdeb8762. String to sign - 'folder=alice-gallery/anime&public_id=140_Alice_Coding_Session__66&timestamp=1770231260'."}}
+📤 275: Alice_Networking__40
+     Activity: Social | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 92d60a409e75d81ff0826fa07d359f3d2fe2824e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Networking__40&timestamp=1770231270'."}}
+📤 276: Alice_Preparing_For_Memorial_Ceremony_-_Yom_HaShoah_Foggy_Midday
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 77d565cece90491540dcb09f845b6f7003f05c48. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Preparing_For_Memorial_Ceremony_-_Yom_HaShoah_Foggy_Mi
+📤 277: Alice_Hot_Cocoa_Outside_-_Snowy_Afternoon
+     Activity: Leisure | Weather: Snowy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e5f4a7b6b06200399f52b5f0f7453f1287bf3325. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Hot_Cocoa_Outside_-_Snowy_Afternoon&timestamp=17702312
+📤 278: Alice_Cooking_Time__40
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature eebc93221a175e7a7047c5f710f0bcb88be7f5f1. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_Time__40&timestamp=1770231297'."}}
+📤 279: Alice_Online_Course__18
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8b15cdfb9e11497551f2f3055b6752cd953849cc. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Online_Course__18&timestamp=1770231308'."}}
+📤 280: Alice_Preparing_Costumes_-_Shushan_Purim_Rainy_Morning
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 86114563983ebfbc2c8d257b358902b13d29d2d7. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Preparing_Costumes_-_Shushan_Purim_Rainy_Morning&times
+
+📊 Batch Progress: 230/459 images
+✅ Success: 0, ❌ Failed: 230
+⏱️  Elapsed: 37.9 minutes
+--------------------------------------------------
+📤 281: Alice_Photography_Session__53
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 9bce1c0a07d5f1baea31c13b75ed91e787735cf9. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Photography_Session__53&timestamp=1770231336'."}}
+📤 282: Alice_Playing_Piano_-_Stormy_Evening
+     Activity: Creative | Weather: Foggy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature fd90826453e33356651d5758f08b7acd3c0b5276. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Playing_Piano_-_Stormy_Evening&timestamp=1770231350'."
+📤 283: 107_Alice_Presenting_Session__68
+     Activity: Work | Weather: Overcast | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature fb0f0fe604e99f254b9062be14b7e6d243cfb776. String to sign - 'folder=alice-gallery/anime&public_id=107_Alice_Presenting_Session__68&timestamp=1770231359'."}}
+📤 284: Alice_Standing_In_Absolute_Silence_-_Yom_HaShoah_Rainy_Dawn
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 94130f4215ebc0ec4f7cb121278717206113f966. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Standing_In_Absolute_Silence_-_Yom_HaShoah_Rainy_Dawn&
+📤 285: Alice_Gallery_Visit__15
+     Activity: Social | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature fda512acf5bb99d944947f88f9fa01c03328178b. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gallery_Visit__15&timestamp=1770231379'."}}
+📤 286: Alice_Yoga_Session__29
+     Activity: Exercise | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 37de9ea395388351a667393e33b555e19c585a65. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Yoga_Session__29&timestamp=1770231389'."}}
+📤 287: Alice_Celebrating_In_Jerusalem_s_Old_-_Shushan_Purim_Foggy_Evening
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 9e3bec8e7fec9f5ec90dcbe0f8f45fa5f7d0558b. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Celebrating_In_Jerusalem_s_Old_-_Shushan_Purim_Foggy_E
+📤 288: 053_Alice_Analyzing_Session__59
+     Activity: Work | Weather: Cloudy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 18d28d544de68251d52de51e7f4d33149cb7a2be. String to sign - 'folder=alice-gallery/anime&public_id=053_Alice_Analyzing_Session__59&timestamp=1770231409'."}}
+📤 289: Alice_Gardening_Time__21
+     Activity: Leisure | Weather: Snowy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 24b6922b82522b4d0b2229cfe85dde3499eadea5. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gardening_Time__21&timestamp=1770231420'."}}
+📤 290: 035_Alice_Writing_Session__43
+     Activity: Work | Weather: Overcast | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f457b0051ef08c10ffd7206f563c9c43ac5d21a8. String to sign - 'folder=alice-gallery/anime&public_id=035_Alice_Writing_Session__43&timestamp=1770231430'."}}
+
+📊 Batch Progress: 240/459 images
+✅ Success: 0, ❌ Failed: 240
+⏱️  Elapsed: 39.6 minutes
+--------------------------------------------------
+📤 291: Alice_Hot_Cocoa_Outside_-_Snowy_Midday
+     Activity: Leisure | Weather: Snowy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 03f413481cafb9900fd7e1a73f3312209327daf5. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Hot_Cocoa_Outside_-_Snowy_Midday&timestamp=1770231439'
+📤 292: Alice_Stargazing_-_Sunny_Night
+     Activity: Leisure | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 08fa0b9b43058d4c179ad76e4565afb905d3dcfe. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Stargazing_-_Sunny_Night&timestamp=1770231449'."}}
+⚠️  293: Alice_Leading_Passover_Seder_-_Pesach_Cloudy_Afternoon - No metadata found, skipping
+📤 294: 101_Alice_Pottery_Session__8
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 042720b2763c6fa907ef4ee45b2fd60e10783e9c. String to sign - 'folder=alice-gallery/anime&public_id=101_Alice_Pottery_Session__8&timestamp=1770231457'."}}
+📤 295: Alice_Tea_Time_Time__78
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d9483eebdd7187fcea98a28d7c25a995c4db5346. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_Time__78&timestamp=1770231467'."}}
+📤 296: 025_Alice_Sleeping_-_Rainy_Late_Night__20
+     Activity: Sleeping | Weather: Rainy | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a55ce6f7a82e7dba597b9ee590442441d5ff7073. String to sign - 'folder=alice-gallery/anime&public_id=025_Alice_Sleeping_-_Rainy_Late_Night__20&timestamp=1770231477'.
+📤 297: Alice_Rain_Window_-_Rainy_Evening
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 25a655a23e75a472174819d086be666b3c12e256. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Rain_Window_-_Rainy_Evening&timestamp=1770231486'."}}
+📤 298: Alice_Hot_Cocoa_Outside_-_Snowy_Dawn
+     Activity: Leisure | Weather: Snowy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature cbe0da41640b9e34f54ad47e88f8e8d75f743055. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Hot_Cocoa_Outside_-_Snowy_Dawn&timestamp=1770231495'."
+📤 299: Alice_Collecting_Wood_-_Lag_BaOmer_Stormy_Evening
+     Activity: Leisure | Weather: Stormy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b120de74a8926cc4da3079d00e8492f3a933cab6. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Collecting_Wood_-_Lag_BaOmer_Stormy_Evening&timestamp=
+📤 300: 100_Alice_Drawing_Session__45
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature eb45c8e5792a412a836700ea4b1c6f55cc9de7b9. String to sign - 'folder=alice-gallery/anime&public_id=100_Alice_Drawing_Session__45&timestamp=1770231517'."}}
+
+📊 Batch Progress: 250/459 images
+✅ Success: 0, ❌ Failed: 250
+⏱️  Elapsed: 41.1 minutes
+--------------------------------------------------
+📤 301: Alice_Gardening_Time__10
+     Activity: Leisure | Weather: Snowy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f9255976058f83819647c5b5fb77c629c91be0b4. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gardening_Time__10&timestamp=1770231526'."}}
+📤 302: Alice_Yoga_Session__30
+     Activity: Exercise | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 49533ebed830d30d977975b7d97bcf613561c0dc. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Yoga_Session__30&timestamp=1770231541'."}}
+📤 303: Alice_Gallery_Visit__30
+     Activity: Social | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8e24de075b2ea8e432c4ecd3ef8d7e4da60334bb. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gallery_Visit__30&timestamp=1770231551'."}}
+📤 304: Alice_Photography_-_Overcast_Afternoon
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5f36aee17eb3ed2ee01a100915618f55b27f5fc2. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Photography_-_Overcast_Afternoon&timestamp=1770231560'."}}
+📤 305: 093_Alice_Writing_Session__17
+     Activity: Work | Weather: Overcast | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b4d636825f3e39778ff2b60bd53915f803765ec8. String to sign - 'folder=alice-gallery/anime&public_id=093_Alice_Writing_Session__17&timestamp=1770231570'."}}
+📤 306: Alice_Online_Course__29
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 134118d12570b5a9a2e64ea953d7cb5dec099d84. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Online_Course__29&timestamp=1770231579'."}}
+📤 307: Alice_Language_Study__21
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 1c9f96bf3a69c652a0ca2152afc1feb3039c6f33. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Language_Study__21&timestamp=1770231589'."}}
+📤 308: 058_Alice_Video_Conference_Session__35
+     Activity: Work | Weather: Clear Night | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5447b8476b167a8ab8ef1d40cc6d4250723a9ea3. String to sign - 'folder=alice-gallery/anime&public_id=058_Alice_Video_Conference_Session__35&timestamp=1770231598'."}}
+📤 309: Alice_Online_Course__15
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4259f30fca8bb5c502c15cdc93526db70252859c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Online_Course__15&timestamp=1770231607'."}}
+📤 310: Alice_Dancing_Session__7
+     Activity: Exercise | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature bb8713ac512590f24902470c6af5c5d02dea7036. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dancing_Session__7&timestamp=1770231622'."}}
+
+📊 Batch Progress: 260/459 images
+✅ Success: 0, ❌ Failed: 260
+⏱️  Elapsed: 42.8 minutes
+--------------------------------------------------
+📤 311: Alice_Reading_Time__25
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5fda39c6f02866b69a918c6d175c56aaa59f9e60. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_Time__25&timestamp=1770231632'."}}
+📤 312: 096_Alice_Painting_Session__42
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f16b75f72b7d57d453f758db8350ed227be74be0. String to sign - 'folder=alice-gallery/anime&public_id=096_Alice_Painting_Session__42&timestamp=1770231641'."}}
+📤 313: 130_Alice_Photography_Session__2
+     Activity: Creative | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 31bef83d2d966173ae8c6aca29e58a511d31d7d2. String to sign - 'folder=alice-gallery/anime&public_id=130_Alice_Photography_Session__2&timestamp=1770231651'."}}
+📤 314: 020_Alice_Sleeping_-_Rainy_Early_Morning__23
+     Activity: Sleeping | Weather: Rainy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6e62f3ce0afec434694ab4451eba262088e78893. String to sign - 'folder=alice-gallery/anime&public_id=020_Alice_Sleeping_-_Rainy_Early_Morning__23&timestamp=177023166
+📤 315: Alice_Drawing_Session__76
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 848a676340ce5dd62c78373dbb4e563e2d10475e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Drawing_Session__76&timestamp=1770231669'."}}
+📤 316: Alice_Puzzles_Time__68
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 34040b04fdab25a8643eb0364bf936218abc0402. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__68&timestamp=1770231683'."}}
+📤 317: 056_Alice_Planning_Session__28
+     Activity: Work | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d267bda94a0bfcd3fdaa30a7a90cd7649f1bfc93. String to sign - 'folder=alice-gallery/anime&public_id=056_Alice_Planning_Session__28&timestamp=1770231693'."}}
+📤 318: Alice_Playing_Piano_-_Foggy_Afternoon
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 59ea74ec43720cef26baae2ad942e5c1486e6d35. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Playing_Piano_-_Foggy_Afternoon&timestamp=1770231702'.
+📤 319: Alice_Baking_Hamantaschen_-_Shushan_Purim_Snowy_Dawn
+     Activity: Leisure | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d947242a44c30e1c52f82746e587fe9a111452ef. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Baking_Hamantaschen_-_Shushan_Purim_Snowy_Dawn&timesta
+📤 320: Alice_Reading_From_Megillah_-_Shushan_Purim_Cloudy_Morning
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 32d82ea8c9fcbffafe76ecdbdfca787d8b47e723. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_From_Megillah_-_Shushan_Purim_Cloudy_Morning&times
+
+📊 Batch Progress: 270/459 images
+✅ Success: 0, ❌ Failed: 270
+⏱️  Elapsed: 44.5 minutes
+--------------------------------------------------
+📤 321: Alice_Drawing_Session__77
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4d9a7e3ebd32b838e58031262b1004af06891242. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Drawing_Session__77&timestamp=1770231730'."}}
+📤 322: Alice_Drawing_Session__63
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 64af8a21d3141ba35609f3ead2d8d63863f04b36. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Drawing_Session__63&timestamp=1770231739'."}}
+📤 323: Alice_Online_Course__28
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 645cd1b0f4e5d6b1828eee6157d64746093bdbbd. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Online_Course__28&timestamp=1770231749'."}}
+📤 324: Alice_Experimentation__27
+     Activity: Learning | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 39daf3868490a805ee1c9270eb193349ef53a718. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Experimentation__27&timestamp=1770231759'."}}
+📤 325: Alice_Placing_Small_Stone_-_Yom_HaShoah_Stormy_Dawn
+     Activity: Leisure | Weather: Stormy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 47379c345dc3a1a47fb33193817bd2a85ebf30ab. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Placing_Small_Stone_-_Yom_HaShoah_Stormy_Dawn&timestam
+📤 326: Alice_Dinner_Party__8
+     Activity: Social | Weather: Clear Night | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 93761d02a6941c6dde0fe4ab4c202ea0b46f3863. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dinner_Party__8&timestamp=1770231780'."}}
+📤 327: Alice_Gardening_Time__39
+     Activity: Leisure | Weather: Snowy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2c5ab188ee8366540cc3a4a8f8ab7466689f56ec. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gardening_Time__39&timestamp=1770231790'."}}
+📤 328: Alice_Gaming_Time__77
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 146c3f232d3ebd851872e2885e13b45ab6f23d92. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__77&timestamp=1770231799'."}}
+📤 329: Alice_Cooking_-_Overcast_Morning
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d1ba8746f00d90b5c2f7d68f9bc9326a9dfe9403. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_-_Overcast_Morning&timestamp=1770231816'."}}
+📤 330: Alice_Playing_Piano_-_Cloudy_Night
+     Activity: Creative | Weather: Foggy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ad618b9568acc78940506300931c7cbbe7e26443. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Playing_Piano_-_Cloudy_Night&timestamp=1770231832'."}}
+
+📊 Batch Progress: 280/459 images
+✅ Success: 0, ❌ Failed: 280
+⏱️  Elapsed: 46.3 minutes
+--------------------------------------------------
+📤 331: Alice_Movie_Watching_Time__34
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e3331b32bbff852628fe922e4318838a244c4c4d. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Movie_Watching_Time__34&timestamp=1770231842'."}}
+📤 332: 049_Alice_Video_Conference_Session__10
+     Activity: Work | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature bdf1fc6a3f9cb5db7cf9e5c86eb919b591b86697. String to sign - 'folder=alice-gallery/anime&public_id=049_Alice_Video_Conference_Session__10&timestamp=1770231851'."}}
+📤 333: Alice_Picnic_-_Overcast_Night
+     Activity: Social | Weather: Overcast | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 1f44ca543241b9115ee50a59c76e37a92a7db030. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Picnic_-_Overcast_Night&timestamp=1770231860'."}}
+📤 334: Alice_Gallery_Visit__33
+     Activity: Social | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 75f4d2ae2f641d7677558f8f96e98560bbcabee9. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gallery_Visit__33&timestamp=1770231870'."}}
+📤 335: 095_Alice_Writing_Session__5
+     Activity: Work | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature cdc486b8dead175e2b20ba4e674cb81f0a1d6d6d. String to sign - 'folder=alice-gallery/anime&public_id=095_Alice_Writing_Session__5&timestamp=1770231879'."}}
+📤 336: 023_Alice_Sleeping_-_Clear_Night_Dawn__10
+     Activity: Sleeping | Weather: Clear Night | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 099904184fb9eaad7c884f96a6f8672cb60fa89d. String to sign - 'folder=alice-gallery/anime&public_id=023_Alice_Sleeping_-_Clear_Night_Dawn__10&timestamp=1770231889'.
+📤 337: 076_Alice_Presenting_Session__39
+     Activity: Work | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8c1614f2a7ea70c76011e432fc8384b0978c70b0. String to sign - 'folder=alice-gallery/anime&public_id=076_Alice_Presenting_Session__39&timestamp=1770231898'."}}
+📤 338: 082_Alice_Planning_Session__52
+     Activity: Work | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature fa6648779d4875d5e4158107d644f39b1ebeecf0. String to sign - 'folder=alice-gallery/anime&public_id=082_Alice_Planning_Session__52&timestamp=1770231907'."}}
+📤 339: Alice_Reading_Time__32
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature daf8414d327278d990c47961d00bd6dfcc1afec2. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_Time__32&timestamp=1770231916'."}}
+📤 340: Alice_Reading_Time__26
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d9b18cd7115a8b3032e747330f8c21b72e53fe5f. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_Time__26&timestamp=1770231926'."}}
+
+📊 Batch Progress: 290/459 images
+✅ Success: 0, ❌ Failed: 290
+⏱️  Elapsed: 47.9 minutes
+--------------------------------------------------
+📤 341: Alice_Online_Course__16
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ba7f03ec938ca90e71e60cc81f947dc88aac14fb. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Online_Course__16&timestamp=1770231935'."}}
+📤 342: Alice_Puzzles_Time__80
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0e9d59058963f79f556c5dc7d20dd6b14b77e1b6. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__80&timestamp=1770231949'."}}
+📤 343: Alice_Puzzles_Time__57
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e842e679e46368141be99903258da1f4c0555e16. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__57&timestamp=1770231959'."}}
+📤 344: Alice_Catching_Snowflakes_-_Snowy_Midday
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d706e31d259131f6df35cf11ae4f0262b7205a4f. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Catching_Snowflakes_-_Snowy_Midday&timestamp=177023196
+📤 345: 044_Alice_Analyzing_Session__41
+     Activity: Work | Weather: Sunny | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 334da2d22a38c2c4a374224678c215e54c3385bb. String to sign - 'folder=alice-gallery/anime&public_id=044_Alice_Analyzing_Session__41&timestamp=1770231977'."}}
+⚠️  346: Alice_Standing_With_Head_Bowed_-_Yom_HaZikaron_Snowy_Night - No metadata found, skipping
+📤 347: 131_Alice_Video_Conference_Session__64
+     Activity: Work | Weather: Clear Night | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e8c1c4b38c881fc7f58d7f83b4d8b14b918a1f9a. String to sign - 'folder=alice-gallery/anime&public_id=131_Alice_Video_Conference_Session__64&timestamp=1770231987'."}}
+📤 348: Alice_Martial_Arts_Session__2
+     Activity: Exercise | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2008b294a4ab048c32be9302a9eaad34133754c3. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Martial_Arts_Session__2&timestamp=1770231997'."}}
+📤 349: 114_Alice_Designing_Session__73
+     Activity: Work | Weather: Cloudy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ab136e52fe5a25828853b656842c6a7cbe27638a. String to sign - 'folder=alice-gallery/anime&public_id=114_Alice_Designing_Session__73&timestamp=1770232006'."}}
+📤 350: Alice_Reading_Time__27
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a4d5a15e076d11943f16c0fbe4be8ae32171263f. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading_Time__27&timestamp=1770232015'."}}
+
+📊 Batch Progress: 300/459 images
+✅ Success: 0, ❌ Failed: 300
+⏱️  Elapsed: 49.4 minutes
+--------------------------------------------------
+📤 351: Alice_Language_Study__23
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 73171580ff3309a89bbbf407c7b2c8008e54b376. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Language_Study__23&timestamp=1770232025'."}}
+📤 352: Alice_Baking_-_Cloudy_Morning
+     Activity: Leisure | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b04fa73149e54c6f4b43cc500e78ec025bf9f54e. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Baking_-_Cloudy_Morning&timestamp=1770232035'."}}
+📤 353: 103_Alice_Photography_Session__29
+     Activity: Creative | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0c975e8ddc48e7227315d5685133552b86d26f97. String to sign - 'folder=alice-gallery/anime&public_id=103_Alice_Photography_Session__29&timestamp=1770232045'."}}
+📤 354: Alice_Snowman_Building_-_Snowy_Afternoon
+     Activity: Leisure | Weather: Snowy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3837271869802cf2d664cb5f02d8b5e3ab2fad1a. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Snowman_Building_-_Snowy_Afternoon&timestamp=177023206
+📤 355: 036_Alice_Designing_Session__48
+     Activity: Work | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f3e93fdaf8c217c97d11d36fa183aa33ab278151. String to sign - 'folder=alice-gallery/anime&public_id=036_Alice_Designing_Session__48&timestamp=1770232072'."}}
+⚠️  356: Alice_Reclining_On_Cushions_-_Pesach_Cloudy_Dawn - No metadata found, skipping
+📤 357: Alice_Yoga_Session__26
+     Activity: Exercise | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 900bb69ca772fd932d2734ad256a9cc43069a93e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Yoga_Session__26&timestamp=1770232081'."}}
+📤 358: Alice_Tea_Time_Time__46
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8ce0ddc5339cb13cb8f4a99c722b0598e0a1156d. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_Time__46&timestamp=1770232094'."}}
+📤 359: Alice_Movie_Watching_Time__35
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature eb7e12e89271450508d07d65c85fa55aac813d67. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Movie_Watching_Time__35&timestamp=1770232103'."}}
+📤 360: Alice_Celebrating_In_Jerusalem_s_Old_-_Shushan_Purim_Rainy_Midday
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 583d5d75dec496fe72fe1a1f18c91e65c450847c. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Celebrating_In_Jerusalem_s_Old_-_Shushan_Purim_Rainy_M
+
+📊 Batch Progress: 310/459 images
+✅ Success: 0, ❌ Failed: 310
+⏱️  Elapsed: 51.0 minutes
+--------------------------------------------------
+📤 361: Alice_Puzzles_Time__5
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 73b46a72d0e6bfe0fe886ffd45b71be9dff33b5b. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__5&timestamp=1770232124'."}}
+📤 362: Alice_Gaming_Time__74
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature bfcf78f5de66014ce92115204a661a3a5c819b83. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__74&timestamp=1770232134'."}}
+📤 363: Alice_Gaming_Time__70
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 898b985f530374f2697eea5414d5a29f8ce0b31f. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__70&timestamp=1770232147'."}}
+📤 364: Alice_Gaming_Time__58
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 19b8a3b75458ae57977c205022b10634ffeb2409. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__58&timestamp=1770232156'."}}
+📤 365: Alice_Gaming_-_Stormy_Evening
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 22b4ed433fb876ba2132725f6a0d7a18145a38b8. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_-_Stormy_Evening&timestamp=1770232165'."}}
+📤 366: Alice_Puzzles_Time__1
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2a66f8c92ed04eaded0e72c0ac19a374ce44637c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__1&timestamp=1770232174'."}}
+📤 367: 015_Alice_Sleeping_-_Stormy_Early_Morning__22
+     Activity: Sleeping | Weather: Stormy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d027df83478e446e67975037ca7b28a380e69d65. String to sign - 'folder=alice-gallery/anime&public_id=015_Alice_Sleeping_-_Stormy_Early_Morning__22&timestamp=17702321
+📤 368: Alice_Reading__25
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3d25e1537eab7be880bc03cca51e457e7727b2c1. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading__25&timestamp=1770232194'."}}
+📤 369: Alice_Gallery_Visit__36
+     Activity: Social | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4dc93b17dc34b6e23fabb538cf14d23c36c7de2f. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gallery_Visit__36&timestamp=1770232211'."}}
+📤 370: 086_Alice_Debugging_Session__29
+     Activity: Work | Weather: Rainy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a305a4f813fbbfb60cdd2581038ca2ecd4122ead. String to sign - 'folder=alice-gallery/anime&public_id=086_Alice_Debugging_Session__29&timestamp=1770232220'."}}
+
+📊 Batch Progress: 320/459 images
+✅ Success: 0, ❌ Failed: 320
+⏱️  Elapsed: 52.8 minutes
+--------------------------------------------------
+📤 371: Alice_Yoga_Session__22
+     Activity: Exercise | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature bdfd0e2be2655a5609b9192727b6a03765591268. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Yoga_Session__22&timestamp=1770232230'."}}
+📤 372: Alice_Dinner_Party__14
+     Activity: Social | Weather: Clear Night | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a2d2b445b1693f24c7c6e5d86e8ba1d52a41a072. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dinner_Party__14&timestamp=1770232239'."}}
+📤 373: Alice_Experimentation__20
+     Activity: Learning | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a90f5ec219546ff863c67a1641694574403f82d1. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Experimentation__20&timestamp=1770232248'."}}
+📤 374: Alice_Photography_Session__58
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2e4b3da023ae0a497d24e9bd140f041e94d03cab. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Photography_Session__58&timestamp=1770232257'."}}
+📤 375: Alice_Music_Session__61
+     Activity: Creative | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 12d5826febe55ba1d9010829b52fd51d74ceae82. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Music_Session__61&timestamp=1770232266'."}}
+📤 376: Alice_Painting_Session__79
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ce1cb33be58f6659959f0e38487674d5eb918a3d. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Painting_Session__79&timestamp=1770232276'."}}
+📤 377: 132_Alice_Music_Session__21
+     Activity: Creative | Weather: Rainy | Time: Golden Hour
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5f2a46cee4958a91e2a2dba717acaa8a618621ee. String to sign - 'folder=alice-gallery/anime&public_id=132_Alice_Music_Session__21&timestamp=1770232285'."}}
+📤 378: 012_Alice_Sleeping_-_Clear_Night_Early_Morning__17
+     Activity: Sleeping | Weather: Clear Night | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0eeb974d29feaf43dcdfa9c23db4b71f39013612. String to sign - 'folder=alice-gallery/anime&public_id=012_Alice_Sleeping_-_Clear_Night_Early_Morning__17&timestamp=177
+📤 379: 108_Alice_Pottery_Session__15
+     Activity: Creative | Weather: Sunny | Time: Golden Hour
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d704a7aff3fc7a8dfb9a4d835a47da7eff52c1b7. String to sign - 'folder=alice-gallery/anime&public_id=108_Alice_Pottery_Session__15&timestamp=1770232304'."}}
+📤 380: Alice_Collecting_Wood_-_Lag_BaOmer_Foggy_Morning
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 9c011b22c22c2e4f801a5d17eb9940bee732cff7. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Collecting_Wood_-_Lag_BaOmer_Foggy_Morning&timestamp=1
+
+📊 Batch Progress: 330/459 images
+✅ Success: 0, ❌ Failed: 330
+⏱️  Elapsed: 54.4 minutes
+--------------------------------------------------
+📤 381: 083_Alice_Debugging_Session__16
+     Activity: Work | Weather: Clear Night | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a3f4674fbc10334f280424729f9884f61271ffbf. String to sign - 'folder=alice-gallery/anime&public_id=083_Alice_Debugging_Session__16&timestamp=1770232325'."}}
+📤 382: Alice_Bicycle_Ride_-_Overcast_Afternoon
+     Activity: Exercise | Weather: Cloudy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 69c673fd89b162d32884f7d90b6d491f1c10c115. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Bicycle_Ride_-_Overcast_Afternoon&timestamp=1770232339
+📤 383: 156_Alice_Painting_Session__31
+     Activity: Creative | Weather: Sunny | Time: Golden Hour
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 574b50ac1b03bb750777fc30d22fe61e0f33f912. String to sign - 'folder=alice-gallery/anime&public_id=156_Alice_Painting_Session__31&timestamp=1770232349'."}}
+📤 384: Alice_Foggy_Exploration_-_Foggy_Evening
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 25dfc6c4ce785285612e14f7b02daf3a205dacc2. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Foggy_Exploration_-_Foggy_Evening&timestamp=1770232358
+📤 385: 052_Alice_Video_Conference_Session__47
+     Activity: Work | Weather: Sunny | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 73b0a154744ea601beb2a4df75a614d4deaa0426. String to sign - 'folder=alice-gallery/anime&public_id=052_Alice_Video_Conference_Session__47&timestamp=1770232367'."}}
+📤 386: Alice_Watching_Brilliant_Fireworks_Light_-_Yom_HaAtzmaut_Stormy_Night
+     Activity: Leisure | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 86bc558a384767c0bb71b16605489c694bdf7f1c. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Watching_Brilliant_Fireworks_Light_-_Yom_HaAtzmaut_Sto
+⚠️  387: Alice_Preparing_For_Memorial_Ceremonies_-_Yom_HaZikaron_Snowy_Dawn - No metadata found, skipping
+📤 388: 139_Alice_Crafting_Session__12
+     Activity: Creative | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6ce34007caf0733b3767f4d0a050929a99b0fd65. String to sign - 'folder=alice-gallery/anime&public_id=139_Alice_Crafting_Session__12&timestamp=1770232386'."}}
+📤 389: Alice_Online_Course__1
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c9f8d18d136413060d085e8fdefe2aa5b4477132. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Online_Course__1&timestamp=1770232395'."}}
+⚠️  390: Alice_Placing_Small_Stone_-_Yom_HaShoah_Sunny_Evening - No metadata found, skipping
+📤 391: Alice_Picnicking_Under_Blue_-_Yom_HaAtzmaut_Foggy_Afternoon
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 85cab16502496c0a9c0f9e4f9b2c750af32b69b5. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Picnicking_Under_Blue_-_Yom_HaAtzmaut_Foggy_Afternoon&
+📤 392: Alice_Baking_Hamantaschen_-_Shushan_Purim_Rainy_Night
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 683077cc83f086f080d5f950d23ed030835824d6. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Baking_Hamantaschen_-_Shushan_Purim_Rainy_Night&timest
+📤 393: Alice_Photography_Session__65
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b83703e067785470ed4314c1e8fdc7866107f229. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Photography_Session__65&timestamp=1770232436'."}}
+📤 394: Alice_Picnic_-_Foggy_Evening
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature cc08eb36ef7bc5b486e24457b15c0da7b1eb4eda. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Picnic_-_Foggy_Evening&timestamp=1770232445'."}}
+📤 395: 063_Alice_Debugging_Session__4
+     Activity: Work | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 86583be3599159492b19f3ae5c037308c830d194. String to sign - 'folder=alice-gallery/anime&public_id=063_Alice_Debugging_Session__4&timestamp=1770232454'."}}
+📤 396: Alice_Movie_Watching_Time__2
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature abab7aa7306767cc49e6d5e7e60e7e5aae242540. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Movie_Watching_Time__2&timestamp=1770232464'."}}
+📤 397: 126_Alice_Crafting_Session__39
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 60269617150e6c1c4b30f2733d51fc0bdb1605f0. String to sign - 'folder=alice-gallery/anime&public_id=126_Alice_Crafting_Session__39&timestamp=1770232477'."}}
+📤 398: Alice_Storm_Watching_-_Stormy_Evening
+     Activity: Leisure | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 1f2bf41fe74e741bf76f0796edbc27f2e9932fe7. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Storm_Watching_-_Stormy_Evening&timestamp=1770232490'.
+📤 399: Alice_Leading_Passover_Seder_-_Pesach_Rainy_Evening
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 19bc07fbe865a638469c19fc2050362dba929bf5. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Leading_Passover_Seder_-_Pesach_Rainy_Evening&timestam
+📤 400: 021_Alice_Sleeping_-_Rainy_Early_Morning__16
+     Activity: Sleeping | Weather: Rainy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0998689427ca5c4f0ce2859889a084d1e5d5ade1. String to sign - 'folder=alice-gallery/anime&public_id=021_Alice_Sleeping_-_Rainy_Early_Morning__16&timestamp=177023251
+
+📊 Batch Progress: 350/459 images
+✅ Success: 0, ❌ Failed: 350
+⏱️  Elapsed: 57.7 minutes
+--------------------------------------------------
+📤 401: 149_Alice_Presenting_Session__72
+     Activity: Work | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 56abbc914503e0400029ad8a0ca1eea57e21f995. String to sign - 'folder=alice-gallery/anime&public_id=149_Alice_Presenting_Session__72&timestamp=1770232526'."}}
+📤 402: Alice_Tea_Time_Time__43
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 93ecd7efbac07c9ca986b79dd4936dbc4cd26aea. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_Time__43&timestamp=1770232535'."}}
+📤 403: Alice_Movie_Watching_Time__24
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 990cb2836eb9d7aff8814b8a96b550b6896045f5. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Movie_Watching_Time__24&timestamp=1770232544'."}}
+📤 404: Alice_Movie_Watching_Time__30
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6d6593dd0190a30e049efde099d9c391bd0c5219. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Movie_Watching_Time__30&timestamp=1770232557'."}}
+📤 405: Alice_Playing_Piano_-_Overcast_Morning
+     Activity: Creative | Weather: Foggy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0b4196725c76ece2c3a96bc220853818bd5edede. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Playing_Piano_-_Overcast_Morning&timestamp=1770232570'
+📤 406: Alice_Catching_Snowflakes_-_Snowy_Morning
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 31340cc21bc8023e79dbe571c357f1a184b64432. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Catching_Snowflakes_-_Snowy_Morning&timestamp=17702325
+📤 407: Alice_Catching_Snowflakes_-_Snowy_Afternoon
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6ac2a52b613f1dd086725ad29fbbd4adb6fa476e. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Catching_Snowflakes_-_Snowy_Afternoon&timestamp=177023
+📤 408: Alice_Gaming_Time__73
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 1f231b3ef738c9c1e6177ee1a2b764ec1dc0744b. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__73&timestamp=1770232599'."}}
+📤 409: Alice_Reading__9
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 1c494830712e87fe8aac14287a4704d412e7f01a. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Reading__9&timestamp=1770232608'."}}
+📤 410: Alice_Experimentation__3
+     Activity: Learning | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f17bad50916f50e1cdf49d1ef02cceea28e4f79d. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Experimentation__3&timestamp=1770232620'."}}
+
+📊 Batch Progress: 360/459 images
+✅ Success: 0, ❌ Failed: 360
+⏱️  Elapsed: 59.5 minutes
+--------------------------------------------------
+📤 411: Alice_Gardening_Time__29
+     Activity: Leisure | Weather: Snowy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3b088029118ff02d06d05b53b2f96775e2885ea8. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gardening_Time__29&timestamp=1770232635'."}}
+📤 412: Alice_Rain_Window_-_Rainy_Midday
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature bc7b1492a5ce306cb01dffb19bd764c6276e35e5. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Rain_Window_-_Rainy_Midday&timestamp=1770232645'."}}
+📤 413: Alice_Relaxing_Time__8
+     Activity: Leisure | Weather: Snowy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e8e02f0e4e48b2d5f072933aa307c580dc897f47. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Relaxing_Time__8&timestamp=1770232654'."}}
+📤 414: Alice_Drawing_Session__73
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e35cff8f721245a2a75f39889ad8f61862f18cd8. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Drawing_Session__73&timestamp=1770232663'."}}
+📤 415: Alice_Language_Study__24
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 19b7d9ac2a7a1aa0821cd2c892180ad6bd7659fe. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Language_Study__24&timestamp=1770232673'."}}
+📤 416: Alice_Catching_Snowflakes_-_Snowy_Dawn
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 9301b9f2563a760a0fa95f722cc4a80919eb4aa7. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Catching_Snowflakes_-_Snowy_Dawn&timestamp=1770232682'
+📤 417: Alice_Yoga_-_Overcast_Evening
+     Activity: Exercise | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f4b495de6052ebf909e90ab8ec5572305cc96e45. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Yoga_-_Overcast_Evening&timestamp=1770232691'."}}
+📤 418: Alice_Digital_Art_Session__60
+     Activity: Creative | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a482c465d809297660504bb40ce9c275d406d996. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Digital_Art_Session__60&timestamp=1770232702'."}}
+📤 419: 072_Alice_Sleeping_-_Clear_Night_Early_Morning__28
+     Activity: Sleeping | Weather: Clear Night | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0cd0267ff6f010422446c09c108d51bb7b83fa3a. String to sign - 'folder=alice-gallery/anime&public_id=072_Alice_Sleeping_-_Clear_Night_Early_Morning__28&timestamp=177
+📤 420: Alice_Market_Visit_-_Overcast_Afternoon
+     Activity: Social | Weather: Overcast | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 06cce1939ced0b3f53f1566363e25c85c37d5acc. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Market_Visit_-_Overcast_Afternoon&timestamp=1770232724
+
+📊 Batch Progress: 370/459 images
+✅ Success: 0, ❌ Failed: 370
+⏱️  Elapsed: 61.2 minutes
+--------------------------------------------------
+📤 421: Alice_Rooftop_Gazing_-_Foggy_Night
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d1fc573440130b9cf79f4edbe6eb642684d2e766. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Rooftop_Gazing_-_Foggy_Night&timestamp=1770232733'."}}
+📤 422: Alice_Puzzles_Time__51
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e507992c3149e2247709d013d3b5de2fc844c3ce. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__51&timestamp=1770232746'."}}
+📤 423: Alice_Watching_Storm_-_Stormy_Afternoon
+     Activity: Leisure | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 610e632f3e3fbca748b255e5c65f0a834fb36b78. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Watching_Storm_-_Stormy_Afternoon&timestamp=1770232755
+📤 424: Alice_Playing_Piano_-_Stormy_Morning
+     Activity: Creative | Weather: Foggy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6bb51ef7d8cd2ab53cadcb483cd97ddad98fe546. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Playing_Piano_-_Stormy_Morning&timestamp=1770232765'."
+📤 425: Alice_Puzzles_Time__79
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 871c3cad9063068a143f8a7f3ce63f82f3f896ad. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__79&timestamp=1770232776'."}}
+📤 426: 045_Alice_Coding_Session__44
+     Activity: Work | Weather: Clear Night | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 292200e220af8e39b8ce4ef51273af7cde91bfd5. String to sign - 'folder=alice-gallery/anime&public_id=045_Alice_Coding_Session__44&timestamp=1770232786'."}}
+📤 427: Alice_Martial_Arts_Session__5
+     Activity: Exercise | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 43c4771e25f9a1324f4b1a06621ef31f04ce7ee2. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Martial_Arts_Session__5&timestamp=1770232795'."}}
+📤 428: Alice_Martial_Arts_Session__4
+     Activity: Exercise | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f6a1cf6bd6a7ebccb0c6412aa407d74b2dccc7f0. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Martial_Arts_Session__4&timestamp=1770232805'."}}
+📤 429: Alice_Baking_-_Overcast_Midday
+     Activity: Leisure | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8089581a112b111975545ea13dba1f43443999fc. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Baking_-_Overcast_Midday&timestamp=1770232814'."}}
+📤 430: Alice_Puzzles_Time__44
+     Activity: Leisure | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a1ecdc8dbb1cbbc7e858deb1541b0785eb495638. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Puzzles_Time__44&timestamp=1770232824'."}}
+
+📊 Batch Progress: 380/459 images
+✅ Success: 0, ❌ Failed: 380
+⏱️  Elapsed: 62.8 minutes
+--------------------------------------------------
+📤 431: Alice_Cooking_Time__61
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature afa8aa8c82e38315f8976203d6e1a5fd87c13e28. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_Time__61&timestamp=1770232833'."}}
+📤 432: Alice_Celebrating_In_Jerusalem_s_Old_-_Shushan_Purim_Foggy_Midday
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2c80e806a6bde8331d88b847aec8de1da4a2b49c. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Celebrating_In_Jerusalem_s_Old_-_Shushan_Purim_Foggy_M
+📤 433: Alice_Language_Study__19
+     Activity: Learning | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 79287165029de6a0a8ce251b41281447f2861418. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Language_Study__19&timestamp=1770232853'."}}
+📤 434: Alice_Hiding_Afikomen__wrapped_Matzah_-_Pesach_Stormy_Afternoon
+     Activity: Leisure | Weather: Stormy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature f2f958cd255741149a8a44b7667b9c3397ca3009. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Hiding_Afikomen__wrapped_Matzah_-_Pesach_Stormy_Aftern
+📤 435: Alice_Stargazing_-_Overcast_Night
+     Activity: Leisure | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 5ebd5d57fc0e4a2c0861b1caab48772c0d46442c. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Stargazing_-_Overcast_Night&timestamp=1770232873'."}}
+📤 436: 027_Alice_Sleeping_-_Rainy_Dawn__15
+     Activity: Sleeping | Weather: Rainy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature cf5237ec558f3886feec38321ec38ba165ac4f8c. String to sign - 'folder=alice-gallery/anime&public_id=027_Alice_Sleeping_-_Rainy_Dawn__15&timestamp=1770232883'."}}
+📤 437: 002_Alice_Coding_at_Golden_Hour
+     Activity: Work | Weather: Clear Night | Time: Golden Hour
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3dd4cfaeb19cebd1fef53a5d6419efa3b839d1a0. String to sign - 'folder=alice-gallery/anime&public_id=002_Alice_Coding_at_Golden_Hour&timestamp=1770232892'."}}
+📤 438: 094_Alice_Video_Conference_Session__36
+     Activity: Work | Weather: Overcast | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8fbe29b755b93c10c34b22f30cd84b524b1cb209. String to sign - 'folder=alice-gallery/anime&public_id=094_Alice_Video_Conference_Session__36&timestamp=1770232902'."}}
+📤 439: 007_Alice_Sleeping_-_Stormy_Late_Night__3
+     Activity: Sleeping | Weather: Stormy | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4e7558d3050501aa710e9070b9803ec3624749b8. String to sign - 'folder=alice-gallery/anime&public_id=007_Alice_Sleeping_-_Stormy_Late_Night__3&timestamp=1770232913'.
+📤 440: Alice_Yoga_-_Foggy_Midday
+     Activity: Exercise | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 69fd907da31179f2c2e57bc43a89ad4fac592917. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Yoga_-_Foggy_Midday&timestamp=1770232926'."}}
+
+📊 Batch Progress: 390/459 images
+✅ Success: 0, ❌ Failed: 390
+⏱️  Elapsed: 64.5 minutes
+--------------------------------------------------
+⚠️  441: Alice_Roasting_Foil-wrapped_Potatoes_-_Lag_BaOmer_Cloudy_Midday - No metadata found, skipping
+📤 442: Alice_Running_Session__16
+     Activity: Exercise | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 75124820ba5387746e1e435aa60d540425e8503c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Running_Session__16&timestamp=1770232935'."}}
+📤 443: 116_Alice_Crafting_Session__10
+     Activity: Creative | Weather: Rainy | Time: Golden Hour
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a1bb68253fdb63c3818f7b3f3ab9630c132c158d. String to sign - 'folder=alice-gallery/anime&public_id=116_Alice_Crafting_Session__10&timestamp=1770232944'."}}
+📤 444: Alice_Snowman_Building_-_Snowy_Dawn
+     Activity: Leisure | Weather: Snowy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2a0eaffc10551f12ac5ef7aa781b5d291a223c13. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Snowman_Building_-_Snowy_Dawn&timestamp=1770232954'."}
+📤 445: Alice_Watching_Brilliant_Fireworks_Light_-_Yom_HaAtzmaut_Snowy_Afternoon
+     Activity: Leisure | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b147a0e5446325bb704804ceb395ef3e2a5fa5d7. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Watching_Brilliant_Fireworks_Light_-_Yom_HaAtzmaut_Sno
+📤 446: 059_Alice_Planning_Session__57
+     Activity: Work | Weather: Sunny | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4e1d33695b129df3e8d33ceba5d4a2e84e9e196d. String to sign - 'folder=alice-gallery/anime&public_id=059_Alice_Planning_Session__57&timestamp=1770232974'."}}
+📤 447: Alice_Swimming_Session__38
+     Activity: Exercise | Weather: Sunny | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 29e52ea1dc360b067d807f4189b011f226869215. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Swimming_Session__38&timestamp=1770232988'."}}
+📤 448: Alice_Snowman_Building_-_Snowy_Midday
+     Activity: Leisure | Weather: Snowy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 732f37661a32a5c1379e526702ff859e868c26c0. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Snowman_Building_-_Snowy_Midday&timestamp=1770232998'.
+📤 449: Alice_Writing_Session__62
+     Activity: Creative | Weather: Sunny | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d39e2111d7b798233a0d7ed75af7471e52a4b372. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Writing_Session__62&timestamp=1770233007'."}}
+📤 450: Alice_Foggy_Exploration_-_Foggy_Dawn
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e08d1680ebc873bd8ceaf57bb7b4ba3e4aaa9a02. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Foggy_Exploration_-_Foggy_Dawn&timestamp=1770233016'."
+
+📊 Batch Progress: 400/459 images
+✅ Success: 0, ❌ Failed: 400
+⏱️  Elapsed: 66.1 minutes
+--------------------------------------------------
+📤 451: Alice_Cooking_Time__12
+     Activity: Leisure | Weather: Snowy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a5949a6847261af09ab410f7b3248583128bfdb0. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Cooking_Time__12&timestamp=1770233025'."}}
+📤 452: 097_Alice_Drawing_Session__36
+     Activity: Creative | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6a53deaab67ef87edd601da1db515a1d378bfb9f. String to sign - 'folder=alice-gallery/anime&public_id=097_Alice_Drawing_Session__36&timestamp=1770233039'."}}
+📤 453: Alice_Networking__12
+     Activity: Social | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 74013896d34f69f75e9610df8657864f6e1b9bfb. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Networking__12&timestamp=1770233048'."}}
+📤 454: 141_Alice_Pottery_Session__40
+     Activity: Creative | Weather: Rainy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a59c74c15245ad6fe2a014b484e2d822b116a17a. String to sign - 'folder=alice-gallery/anime&public_id=141_Alice_Pottery_Session__40&timestamp=1770233064'."}}
+📤 455: Alice_Having_Mangal_BBQ_-_Yom_HaAtzmaut_Stormy_Afternoon
+     Activity: Leisure | Weather: Stormy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 25965b9edaa181d6373f85175f549259fa262c23. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Having_Mangal_BBQ_-_Yom_HaAtzmaut_Stormy_Afternoon&tim
+📤 456: 077_Alice_Designing_Session__20
+     Activity: Work | Weather: Cloudy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3d479f20363738f18e8e0e3a6033574febc4cafa. String to sign - 'folder=alice-gallery/anime&public_id=077_Alice_Designing_Session__20&timestamp=1770233083'."}}
+📤 457: 152_Alice_Music_Session__35
+     Activity: Creative | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 7f622d1cbc0f6ad3f406e41fbdc2dfed64392d07. String to sign - 'folder=alice-gallery/anime&public_id=152_Alice_Music_Session__35&timestamp=1770233092'."}}
+📤 458: Alice_Flower_Picking_-_Cloudy_Evening
+     Activity: Leisure | Weather: Sunny | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4e6a5a539c7423e07ddbfb1860bcb8c9dcfe1f6e. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Flower_Picking_-_Cloudy_Evening&timestamp=1770233101'.
+📤 459: Alice_Martial_Arts_Session__19
+     Activity: Exercise | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ff1f01d57eae6d3f72fbdf492745727b57fe8b51. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Martial_Arts_Session__19&timestamp=1770233112'."}}
+📤 460: Alice_Dancing_Session__23
+     Activity: Exercise | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 734e2f9ee19808d1223fa8ad3c922d474a27f5c1. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dancing_Session__23&timestamp=1770233122'."}}
+
+📊 Batch Progress: 410/459 images
+✅ Success: 0, ❌ Failed: 410
+⏱️  Elapsed: 67.8 minutes
+--------------------------------------------------
+📤 461: Alice_Storm_Watching_-_Stormy_Dawn
+     Activity: Leisure | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 394f0388a8ab7e67133b044462d471593375963e. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Storm_Watching_-_Stormy_Dawn&timestamp=1770233131'."}}
+📤 462: Alice_Tea_Time_-_Sunny_Morning
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6c51b7f7feb62fb1467ebaae817fd7e1dfaf8529. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_-_Sunny_Morning&timestamp=1770233140'."}}
+📤 463: Alice_Rooftop_Gazing_-_Sunny_Night
+     Activity: Leisure | Weather: Foggy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0b32c6230efeeb34a6f778f696493eddb3614af9. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Rooftop_Gazing_-_Sunny_Night&timestamp=1770233150'."}}
+📤 464: 134_Alice_Crafting_Session__16
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 543edfd85f4df1a834fce730506b5a561c0aef05. String to sign - 'folder=alice-gallery/anime&public_id=134_Alice_Crafting_Session__16&timestamp=1770233159'."}}
+📤 465: Alice_Tea_Time_-_Stormy_Midday
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 4c2e5548ec6d914e7803cf4520515ecd37581209. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_-_Stormy_Midday&timestamp=1770233172'."}}
+📤 466: Alice_Flower_Picking_-_Foggy_Evening
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 61e21a6ac65a090be8f6c18aa79bb850cd176a2a. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Flower_Picking_-_Foggy_Evening&timestamp=1770233181'."
+📤 467: Alice_Umbrella_Walk_-_Rainy_Dawn
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 604a20c8f2486fce59e65052b4b86078cabbf025. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Umbrella_Walk_-_Rainy_Dawn&timestamp=1770233191'."}}
+📤 468: Alice_Sitting_On_Bench_-_Yom_HaZikaron_Sunny_Afternoon
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b56e80bc13c8d04a2ed0d4f6350330245c1ebe31. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Sitting_On_Bench_-_Yom_HaZikaron_Sunny_Afternoon&times
+📤 469: 060_Alice_Debugging_Session__27
+     Activity: Work | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 82b722623615127e5291efe5b05f640a4693ba83. String to sign - 'folder=alice-gallery/anime&public_id=060_Alice_Debugging_Session__27&timestamp=1770233219'."}}
+📤 470: 135_Alice_Drawing_Session__44
+     Activity: Creative | Weather: Sunny | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e3e27905be857cc7c0d9f204932161e68310194c. String to sign - 'folder=alice-gallery/anime&public_id=135_Alice_Drawing_Session__44&timestamp=1770233232'."}}
+
+📊 Batch Progress: 420/459 images
+✅ Success: 0, ❌ Failed: 420
+⏱️  Elapsed: 69.7 minutes
+--------------------------------------------------
+📤 471: 145_Alice_Drawing_Session__33
+     Activity: Creative | Weather: Sunny | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c4098681f42400717bccbe54349c96a3ecfe2a69. String to sign - 'folder=alice-gallery/anime&public_id=145_Alice_Drawing_Session__33&timestamp=1770233246'."}}
+📤 472: Alice_Relaxing_Time__33
+     Activity: Leisure | Weather: Snowy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 98d7eead4d7593e65fb7ba2ddad8befbeb0b3a4c. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Relaxing_Time__33&timestamp=1770233255'."}}
+📤 473: 105_Alice_Coding_Session__74
+     Activity: Work | Weather: Overcast | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e28402816a339a4b5fcfc8a3696a0687a72bf59a. String to sign - 'folder=alice-gallery/anime&public_id=105_Alice_Coding_Session__74&timestamp=1770233266'."}}
+⚠️  474: Alice_Preparing_For_Memorial_Ceremonies_-_Yom_HaZikaron_Cloudy_Night - No metadata found, skipping
+📤 475: 087_Alice_Presenting_Session__19
+     Activity: Work | Weather: Clear Night | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 60d3213798bab55b374571a4535446a1b7b5c32d. String to sign - 'folder=alice-gallery/anime&public_id=087_Alice_Presenting_Session__19&timestamp=1770233276'."}}
+📤 476: Alice_Gaming_-_Stormy_Midday
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 0132fa851085753e62a261f1ca8244ffbad87dd2. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_-_Stormy_Midday&timestamp=1770233286'."}}
+📤 477: Alice_Coffee_Date__26
+     Activity: Social | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 63df74fbdea78ea00b9d97aa720eedd951dfd735. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Coffee_Date__26&timestamp=1770233295'."}}
+⚠️  478: Alice_Having_Mangal_BBQ_-_Yom_HaAtzmaut_Snowy_Dawn - No metadata found, skipping
+📤 479: Alice_Hot_Cocoa_Outside_-_Snowy_Morning
+     Activity: Leisure | Weather: Snowy | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e5505096e1d42fcf596eefe1cc9e538066295388. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Hot_Cocoa_Outside_-_Snowy_Morning&timestamp=1770233304
+📤 480: Alice_Coffee_Date__18
+     Activity: Social | Weather: Sunny | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d0dc616b35f17f05eec4b7c8bd78186466b1f738. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Coffee_Date__18&timestamp=1770233314'."}}
+
+📊 Batch Progress: 430/459 images
+✅ Success: 0, ❌ Failed: 430
+⏱️  Elapsed: 71.1 minutes
+--------------------------------------------------
+📤 481: 137_Alice_Presenting_Session__76
+     Activity: Work | Weather: Clear Night | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d55405f17749db2e30fa2ab154b78ab66f2943bf. String to sign - 'folder=alice-gallery/anime&public_id=137_Alice_Presenting_Session__76&timestamp=1770233327'."}}
+📤 482: Alice_Tea_Time_Time__18
+     Activity: Leisure | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e81ebfee68213561ef9792d10ff8354c5b69ca7a. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Tea_Time_Time__18&timestamp=1770233343'."}}
+📤 483: 128_Alice_Photography_Session__13
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 8ac468d472fe009858d736990d7280fa8e348115. String to sign - 'folder=alice-gallery/anime&public_id=128_Alice_Photography_Session__13&timestamp=1770233357'."}}
+📤 484: 024_Alice_Sleeping_-_Rainy_Late_Night__7
+     Activity: Sleeping | Weather: Rainy | Time: Late Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 9617800f7869deb8ff5e3988b4cfd31383e295cc. String to sign - 'folder=alice-gallery/anime&public_id=024_Alice_Sleeping_-_Rainy_Late_Night__7&timestamp=1770233369'."
+⚠️  485: Alice_Decorating_Home_-_Yom_HaAtzmaut_Overcast_Morning - No metadata found, skipping
+📤 486: Alice_Foggy_Exploration_-_Foggy_Night
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 691233de3ec9deea1fca9e64e5408ca406f980c4. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Foggy_Exploration_-_Foggy_Night&timestamp=1770233382'.
+📤 487: Alice_Crafting_-_Rainy_Afternoon
+     Activity: Creative | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 38c88fdf60c367c927898dd5c1b2611b88e300c2. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Crafting_-_Rainy_Afternoon&timestamp=1770233391'."}}
+⚠️  488: Alice_Deep_Cleaning_Kitchen_Scrubbing_-_Pesach_Overcast_Evening - No metadata found, skipping
+📤 489: Alice_Rain_Window_-_Rainy_Dawn
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 53db97db9579d017d589ff53d042871facde4886. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Rain_Window_-_Rainy_Dawn&timestamp=1770233400'."}}
+📤 490: 092_Alice_Video_Conference_Session__30
+     Activity: Work | Weather: Rainy | Time: Early Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature a7d4ffa89ad25187496cd035401ff1dba799b064. String to sign - 'folder=alice-gallery/anime&public_id=092_Alice_Video_Conference_Session__30&timestamp=1770233409'."}}
+
+📊 Batch Progress: 440/459 images
+✅ Success: 0, ❌ Failed: 440
+⏱️  Elapsed: 72.6 minutes
+--------------------------------------------------
+📤 491: Alice_Painting_-_Cloudy_Dawn
+     Activity: Creative | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3847ba6ae1a301710fc4d9374b39cfeec6ecc39e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Painting_-_Cloudy_Dawn&timestamp=1770233419'."}}
+📤 492: Alice_Lantern_Walk_-_Sunny_Night
+     Activity: Leisure | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e2d9231523afc7b874a290099d78b60b2d10072e. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Lantern_Walk_-_Sunny_Night&timestamp=1770233431'."}}
+📤 493: 037_Alice_Designing_Session__21
+     Activity: Work | Weather: Sunny | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 70b4e31b4d797153dd2b91a38f299baa2c5f1a43. String to sign - 'folder=alice-gallery/anime&public_id=037_Alice_Designing_Session__21&timestamp=1770233440'."}}
+📤 494: Alice_Placing_Flowers_-_Yom_HaZikaron_Cloudy_Dawn
+     Activity: Leisure | Weather: Sunny | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 7a208f2ebefede598a3476afe97c34da96b7711f. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Placing_Flowers_-_Yom_HaZikaron_Cloudy_Dawn&timestamp=
+📤 495: Alice_Dancing_Session__21
+     Activity: Exercise | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 19cca4cdda842c225d9045e853ee72131ce1f1d5. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dancing_Session__21&timestamp=1770233459'."}}
+📤 496: Alice_Dancing_Session__35
+     Activity: Exercise | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 6f4ccc3af285931f6c832377b527ba87d484a689. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dancing_Session__35&timestamp=1770233469'."}}
+📤 497: Alice_Martial_Arts_Session__33
+     Activity: Exercise | Weather: Cloudy | Time: Afternoon
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature ed6d024ab02478b759ae6d456b505568f7a354d3. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Martial_Arts_Session__33&timestamp=1770233478'."}}
+📤 498: Alice_Having_Mangal_BBQ_-_Yom_HaAtzmaut_Foggy_Dawn
+     Activity: Leisure | Weather: Foggy | Time: Midday
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 2954031f75268eda4d81f282fee5c0e8c2b52efd. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Having_Mangal_BBQ_-_Yom_HaAtzmaut_Foggy_Dawn&timestamp
+📤 499: Alice_Networking__38
+     Activity: Social | Weather: Sunny | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature d4b52decd8048cddb1418da37a0f57beb8ca0ab4. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Networking__38&timestamp=1770233497'."}}
+⚠️  500: Alice_Buying_BBQ_Supplies_-_Yom_HaAtzmaut_Overcast_Night - No metadata found, skipping
+📤 501: Alice_Dancing_Session__34
+     Activity: Exercise | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b3f5a953031a290ebafe86e5baf37a959c17d729. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Dancing_Session__34&timestamp=1770233506'."}}
+📤 502: Alice_Umbrella_Walk_-_Rainy_Night
+     Activity: Leisure | Weather: Rainy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature e78c8daf0280a797e6c9bfdbf7e6b4e93ac4ce0a. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Umbrella_Walk_-_Rainy_Night&timestamp=1770233515'."}}
+📤 503: 118_Alice_Drawing_Session__43
+     Activity: Creative | Weather: Sunny | Time: Golden Hour
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 675bab0e3cb4e86af1b8bada194b0b3fc73e6ebe. String to sign - 'folder=alice-gallery/anime&public_id=118_Alice_Drawing_Session__43&timestamp=1770233526'."}}
+📤 504: 057_Alice_Video_Conference_Session__26
+     Activity: Work | Weather: Rainy | Time: Night
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature c457a56e30432827dade85cc46c4ef119ee5f6ea. String to sign - 'folder=alice-gallery/anime&public_id=057_Alice_Video_Conference_Session__26&timestamp=1770233535'."}}
+📤 505: Alice_Picnic_-_Overcast_Dawn
+     Activity: Social | Weather: Overcast | Time: Dawn
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 683e3db048dea2fadb58752a3523264e0fb2b3bc. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Picnic_-_Overcast_Dawn&timestamp=1770233544'."}}
+📤 506: Alice_Writing_Session__74
+     Activity: Creative | Weather: Sunny | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 52e7799b66457cb385c6ce0a8cae8da463a27e6e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Writing_Session__74&timestamp=1770233554'."}}
+📤 507: Alice_Bench_Reading_-_Cloudy_Afternoon
+     Activity: Leisure | Weather: Cloudy | Time: Evening
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature b2a1ee6427ff2c04818560c9d08777fb276fb73e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Bench_Reading_-_Cloudy_Afternoon&timestamp=1770233563'."}}
+📤 508: Alice_Snowman_Building_-_Snowy_Morning
+     Activity: Leisure | Weather: Snowy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature eeededc3068164308c18a01261ebbdf90d11e47c. String to sign - 'folder=alice-gallery/pixel-art&public_id=Alice_Snowman_Building_-_Snowy_Morning&timestamp=1770233572'
+📤 509: 123_Alice_Planning_Session__69
+     Activity: Work | Weather: Cloudy | Time: Morning
+     ❌ Failed: HTTP 401: {"error":{"message":"Invalid Signature 3c76b2ec908dc53278fd617e7cdb89890ca050ac. String to sign - 'folder=alice-gallery/anime&public_id=123_Alice_Planning_Session__69&timestamp=1770233582'."}}
+
+🎉 BATCH COMPLETE!
+✅ Successful uploads: 0
+❌ Failed uploads: 459
+⏱️  Total time: 75.5 minutes
+📝 Batch log: upload_log_batch_50_20260204_213312.json
+📁 URL mapping: data/cloudinary-urls.json (631 total URLs)
+
+📈 Final Results:
+   Batch: 50-508
+   Successful: 0
+   Failed: 459
+   Total URLs: 0
