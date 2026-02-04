@@ -186,7 +186,7 @@
             transform: translateX(-50%) translateY(0);
         }
         
-        /* Weather widget overlay (corner) */
+        /* Weather widget overlay (corner) - now in bottom-right for mobile */
         .weather-widget {
             position: fixed;
             top: 20px;
@@ -200,11 +200,41 @@
             min-width: 180px;
             opacity: 1;
             transform: translateY(0);
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            transition: opacity 0.4s ease, transform 0.4s ease, width 0.4s ease, height 0.4s ease, padding 0.4s ease;
             z-index: 15;
             border: 1px solid rgba(255,255,255,0.1);
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             cursor: pointer;
+        }
+        
+        /* Collapsed state - shows only a small weather icon */
+        .weather-widget.collapsed {
+            width: 60px;
+            height: 60px;
+            padding: 16px;
+            border-radius: 50%;
+            min-width: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(30,30,50,0.8) 100%);
+        }
+        
+        /* Hide expanded content when collapsed */
+        .weather-widget.collapsed .weather-widget-header > div,
+        .weather-widget.collapsed .weather-widget-condition,
+        .weather-widget.collapsed .weather-widget-description,
+        .weather-widget.collapsed .weather-widget-divider,
+        .weather-widget.collapsed .weather-widget-details,
+        .weather-widget.collapsed .weather-widget-time {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Weather icon gets bigger and centered when collapsed */
+        .weather-widget.collapsed .weather-widget-icon {
+            font-size: 28px !important;
         }
         
         .weather-widget.hidden {
@@ -308,46 +338,49 @@
         
         /* ═══════════════════════════════════════════════════════════
            MOBILE PORTRAIT LAYOUT
-           On portrait phones, the 1024×1024 square image leaves
-           dead space (dark bars) at top and bottom. We reposition
-           the weather widget into that top dead space so it doesn't
-           overlay the image itself.
+           On portrait phones, we position the weather widget in the
+           bottom-right corner where it can toggle on/off smoothly.
+           When expanded, the image gets slightly shrunk to avoid overlap.
+           When collapsed, image uses full space.
            
            Detection: max-width 480px AND portrait orientation.
-           The image top edge sits at roughly (100vh - 100vw) / 2
-           from the top. We position the widget above that line.
            ═══════════════════════════════════════════════════════════ */
         @media (max-width: 480px) and (orientation: portrait) {
-            /* ── Image push-down ──────────────────────────────────
-               .image-layer is position:absolute, so parent padding
-               has NO effect. We override top/height directly on the
-               layers to push the image below the weather-widget band
-               (~130 px accounts for widget + portrait-clock).
-               ──────────────────────────────────────────────────── */
+            /* ── Image container adjustment for expanded widget ──── */
             .image-layer {
-                top: 130px;
-                height: calc(100% - 130px);
-                transition: top 0.5s ease, height 0.5s ease;
+                transition: padding-bottom 0.4s ease;
             }
             
-            /* When the widget is tapped away, reclaim the full viewport */
-            .display-container.widget-hidden .image-layer {
-                top: 0;
-                height: 100%;
+            /* When widget is expanded, add padding to avoid overlap */
+            .display-container:not(.widget-collapsed) .image-layer {
+                padding-bottom: 200px; /* Space for expanded widget */
             }
+            
+            /* When widget is collapsed, image uses full space */
+            .display-container.widget-collapsed .image-layer {
+                padding-bottom: 80px; /* Small space for collapsed widget */
+            }
+            
             .weather-widget {
-                /* Reposition to top-center, fitting in the dead space bar */
-                top: 8px;
-                left: 50%;
-                transform: translateX(-50%);
-                right: auto;
+                /* Reposition to bottom-right corner */
+                top: auto;
+                bottom: 20px;
+                right: 20px;
+                left: auto;
+                transform: none;
                 
-                /* Make it more compact / horizontal to fit the narrow bar */
+                /* More compact for mobile */
                 min-width: auto;
-                width: calc(100vw - 32px);
-                max-width: 360px;
-                padding: 10px 16px;
-                border-radius: 14px;
+                max-width: 280px;
+                width: auto;
+                padding: 16px;
+                border-radius: 16px;
+            }
+            
+            /* Collapsed state positioning */
+            .weather-widget.collapsed {
+                bottom: 20px;
+                right: 20px;
             }
             
             /* Horizontal layout for the header (icon + temp side by side with condition) */
@@ -1542,6 +1575,7 @@
                 
                 this.setupEventListeners();
                 this.setupNetworkListeners();
+                this.initializeWeatherWidget();
                 this.spinnerEl.classList.add('active');
                 await this.loadDisplay(true);  // Initial load
                 this.startPolling();
@@ -1551,6 +1585,37 @@
                 setTimeout(() => {
                     this.statusEl.classList.remove('visible');
                 }, 5000);
+            }
+            
+            initializeWeatherWidget() {
+                // Start collapsed on mobile portrait to avoid overlap
+                const isMobilePortrait = window.innerWidth <= 480 && window.innerHeight > window.innerWidth;
+                if (isMobilePortrait) {
+                    const widget = document.getElementById('weather-widget');
+                    const displayContainer = document.querySelector('.display-container');
+                    
+                    widget.classList.add('collapsed');
+                    displayContainer.classList.add('widget-collapsed');
+                }
+            }
+            
+            handleOrientationChange() {
+                const widget = document.getElementById('weather-widget');
+                const displayContainer = document.querySelector('.display-container');
+                const isMobilePortrait = window.innerWidth <= 480 && window.innerHeight > window.innerWidth;
+                
+                if (isMobilePortrait) {
+                    // On mobile portrait, ensure proper collapsed state handling
+                    if (!widget.classList.contains('collapsed')) {
+                        displayContainer.classList.remove('widget-collapsed');
+                    } else {
+                        displayContainer.classList.add('widget-collapsed');
+                    }
+                } else {
+                    // On desktop/landscape, remove mobile-specific classes
+                    widget.classList.remove('collapsed');
+                    displayContainer.classList.remove('widget-collapsed');
+                }
             }
             
             setupNetworkListeners() {
@@ -1731,6 +1796,19 @@
                     if (!document.hidden) {
                         this.loadDisplay();
                     }
+                });
+                
+                // Handle orientation changes for weather widget positioning
+                window.addEventListener('orientationchange', () => {
+                    // Delay to allow orientation change to complete
+                    setTimeout(() => {
+                        this.handleOrientationChange();
+                    }, 100);
+                });
+                
+                // Also handle window resize for responsive behavior
+                window.addEventListener('resize', () => {
+                    this.handleOrientationChange();
                 });
             }
             
@@ -2059,9 +2137,15 @@
              * Creates a temporary textarea, selects the text, and uses execCommand.
              */
             fallbackCopy(text) {
+                // Use a hidden textarea to copy text to clipboard.
+                // We set readOnly and move the textarea offscreen to prevent
+                // the iOS keyboard from appearing when we call select().
                 const textarea = document.createElement('textarea');
                 textarea.value = text;
+                textarea.setAttribute('readonly', '');  // Prevent keyboard on iOS
                 textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';  // Move offscreen
+                textarea.style.top = '-9999px';
                 textarea.style.opacity = '0';
                 document.body.appendChild(textarea);
                 textarea.select();
@@ -2097,20 +2181,19 @@
                 const displayContainer = document.querySelector('.display-container');
                 const portraitClock = document.getElementById('portrait-clock');
                 
-                widget.classList.toggle('hidden');
+                // Toggle between expanded and collapsed states
+                widget.classList.toggle('collapsed');
                 
-                // Toggle display container class for mobile portrait image push-down
-                displayContainer.classList.toggle('widget-hidden', widget.classList.contains('hidden'));
+                // Update display container class for image spacing
+                displayContainer.classList.toggle('widget-collapsed', widget.classList.contains('collapsed'));
                 
-                // Toggle portrait clock visibility (they're a pair on mobile portrait)
-                if (portraitClock) {
-                    portraitClock.style.display = widget.classList.contains('hidden') ? 'none' : '';
-                }
+                // On mobile portrait, portrait clock is independent of weather widget state
+                // (no need to hide/show it based on weather widget state)
                 
-                if (!widget.classList.contains('hidden')) {
-                    this.showToast('🌤️ Weather overlay on');
+                if (widget.classList.contains('collapsed')) {
+                    this.showToast('🌤️ Weather minimized');
                 } else {
-                    this.showToast('🌤️ Weather overlay off');
+                    this.showToast('🌤️ Weather expanded');
                 }
             }
             
