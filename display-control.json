@@ -1,35 +1,24 @@
 {
   "currentImage": {
-    "id": "2fc419064d3081a58a75d889106beba7",
-    "url": "images/generated/afternoon-cloudy.png",
-    "title": "Alice Language Study #19",
-    "description": "Alice, a beautiful 20-year-old blonde woman with long wavy hair and green eyes, accompanied by her loyal green parrot companion with a red beak in scholarly long-sleeved attire, engaged in language study. Her parrot observes the learning process. Focused anime study environment.",
-    "activity": "Learning",
-    "location": "Study space with books, resources, and focused learning environment",
-    "mood": "",
-    "weather_context": "Cloudy",
-    "time_context": "Afternoon",
-    "verified": true,
-    "style_notes": "Anime style with scholarly atmosphere, cloudy study lighting"
+    "id": "2fc41906-4d30-810a-9298-d6e7dbf8d65a",
+    "url": "images/generated/006_Alice_Sleeping_-_Cloudy_Night__2.png",
+    "title": "Alice Sleeping - Cloudy Night #2",
+    "description": "",
+    "activity": "Sleeping",
+    "mood": ""
   },
   "weather": {
     "condition": "Cloudy",
-    "temperature": 22,
+    "temperature": 18,
     "humidity": 65,
-    "description": "clear sky",
+    "description": "scattered clouds",
     "icon": "01d"
   },
   "time": {
-    "period": "Afternoon",
-    "hour": 17,
+    "period": "Night",
+    "hour": 20,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-04T15:29:31.974820+00:00",
-  "nextUpdate": "2026-02-04T15:00:00+00:00",
-  "gallery_integration": {
-    "enabled": true,
-    "cloudinary_url": false,
-    "database_version": "enhanced",
-    "selection_algorithm": "gallery-integrated"
-  }
+  "lastUpdated": "2026-02-04T18:19:39.068806+00:00",
+  "nextUpdate": "2026-02-04T19:00:00+00:00"
 }

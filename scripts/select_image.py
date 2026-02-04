@@ -32,13 +32,19 @@ WEATHER_FALLBACKS = {
     "Windy": ["Cloudy", "Partly Cloudy"],
 }
 
-# Time period fallback chains
+# Time period fallback chains (matching gallery DB values:
+# Dawn, Morning, Midday, Afternoon, Evening, Night, Early Morning, Late Night, Golden Hour)
 TIME_FALLBACKS = {
-    "Dawn": ["Morning", "Evening"],
-    "Morning": ["Dawn", "Afternoon"],
-    "Afternoon": ["Morning", "Evening"],
-    "Evening": ["Afternoon", "Night"],
-    "Night": ["Evening", "Dawn"],
+    "Dawn": ["Early Morning", "Morning", "Golden Hour"],
+    "Early Morning": ["Dawn", "Morning"],
+    "Morning": ["Dawn", "Midday", "Early Morning"],
+    "Midday": ["Afternoon", "Morning"],
+    "Afternoon": ["Midday", "Evening", "Golden Hour"],
+    "Golden Hour": ["Afternoon", "Evening"],
+    "Evening": ["Golden Hour", "Afternoon", "Night"],
+    "Night": ["Late Night", "Evening", "Dawn"],
+    "Late Night": ["Night", "Dawn"],
+    "Clear Night": ["Night", "Late Night", "Evening"],
 }
 
 
