@@ -351,14 +351,14 @@
                 transition: padding-bottom 0.4s ease;
             }
             
-            /* When widget is expanded, add padding to avoid overlap */
-            .display-container:not(.widget-collapsed) .image-layer {
-                padding-bottom: 200px; /* Space for expanded widget */
+            /* When status overlay is visible and expanded, add padding to avoid overlap */
+            .display-container:not(.status-collapsed) .image-layer {
+                padding-bottom: 120px; /* Space for expanded status overlay */
             }
             
-            /* When widget is collapsed, image uses full space */
-            .display-container.widget-collapsed .image-layer {
-                padding-bottom: 80px; /* Small space for collapsed widget */
+            /* When status overlay is collapsed, image uses full space */
+            .display-container.status-collapsed .image-layer {
+                padding-bottom: 20px; /* Minimal space for collapsed indicator */
             }
             
             .weather-widget {
@@ -1463,7 +1463,7 @@
                 <span class="help-desc">Show image info</span>
                 
                 <span class="help-key">W</span>
-                <span class="help-desc">Toggle weather overlay</span>
+                <span class="help-desc">Toggle status overlay</span>
                 
                 <span class="help-key">Ctrl+D</span>
                 <span class="help-desc">Toggle debug panel</span>
@@ -1575,7 +1575,7 @@
                 
                 this.setupEventListeners();
                 this.setupNetworkListeners();
-                this.initializeWeatherWidget();
+                this.initializeStatusOverlay();
                 this.spinnerEl.classList.add('active');
                 await this.loadDisplay(true);  // Initial load
                 this.startPolling();
@@ -1587,34 +1587,33 @@
                 }, 5000);
             }
             
-            initializeWeatherWidget() {
+            initializeStatusOverlay() {
                 // Start collapsed on mobile portrait to avoid overlap
                 const isMobilePortrait = window.innerWidth <= 480 && window.innerHeight > window.innerWidth;
                 if (isMobilePortrait) {
-                    const widget = document.getElementById('weather-widget');
+                    const statusOverlay = document.getElementById('status-overlay');
                     const displayContainer = document.querySelector('.display-container');
                     
-                    widget.classList.add('collapsed');
-                    displayContainer.classList.add('widget-collapsed');
+                    statusOverlay.classList.add('collapsed');
+                    displayContainer.classList.add('status-collapsed');
                 }
             }
             
             handleOrientationChange() {
-                const widget = document.getElementById('weather-widget');
+                const statusOverlay = document.getElementById('status-overlay');
                 const displayContainer = document.querySelector('.display-container');
                 const isMobilePortrait = window.innerWidth <= 480 && window.innerHeight > window.innerWidth;
                 
                 if (isMobilePortrait) {
                     // On mobile portrait, ensure proper collapsed state handling
-                    if (!widget.classList.contains('collapsed')) {
-                        displayContainer.classList.remove('widget-collapsed');
-                    } else {
-                        displayContainer.classList.add('widget-collapsed');
+                    if (!statusOverlay.classList.contains('collapsed')) {
+                        statusOverlay.classList.add('collapsed');
+                        displayContainer.classList.add('status-collapsed');
                     }
                 } else {
-                    // On desktop/landscape, remove mobile-specific classes
-                    widget.classList.remove('collapsed');
-                    displayContainer.classList.remove('widget-collapsed');
+                    // On desktop/landscape, remove mobile-specific classes and show expanded
+                    statusOverlay.classList.remove('collapsed');
+                    displayContainer.classList.remove('status-collapsed');
                 }
             }
             
@@ -1675,9 +1674,9 @@
                     this.toggleFullscreen();
                 });
                 
-                // Weather widget click to hide
-                document.getElementById('weather-widget').addEventListener('click', () => {
-                    this.toggleWeatherWidget();
+                // Status overlay click to toggle
+                document.getElementById('status-overlay').addEventListener('click', () => {
+                    this.toggleStatusOverlay();
                 });
                 
                 // Show status on mouse move / touch
@@ -1750,7 +1749,7 @@
                             break;
                         case 'w':
                             e.preventDefault();
-                            this.toggleWeatherWidget();
+                            this.toggleStatusOverlay();
                             break;
                         case ' ':
                             e.preventDefault();
@@ -2176,24 +2175,20 @@
                 helpOverlay.classList.toggle('show');
             }
             
-            toggleWeatherWidget() {
-                const widget = document.getElementById('weather-widget');
+            toggleStatusOverlay() {
+                const statusOverlay = document.getElementById('status-overlay');
                 const displayContainer = document.querySelector('.display-container');
-                const portraitClock = document.getElementById('portrait-clock');
                 
                 // Toggle between expanded and collapsed states
-                widget.classList.toggle('collapsed');
+                statusOverlay.classList.toggle('collapsed');
                 
                 // Update display container class for image spacing
-                displayContainer.classList.toggle('widget-collapsed', widget.classList.contains('collapsed'));
+                displayContainer.classList.toggle('status-collapsed', statusOverlay.classList.contains('collapsed'));
                 
-                // On mobile portrait, portrait clock is independent of weather widget state
-                // (no need to hide/show it based on weather widget state)
-                
-                if (widget.classList.contains('collapsed')) {
-                    this.showToast('🌤️ Weather minimized');
+                if (statusOverlay.classList.contains('collapsed')) {
+                    this.showToast('📍 Status minimized');
                 } else {
-                    this.showToast('🌤️ Weather expanded');
+                    this.showToast('📍 Status expanded');
                 }
             }
             
@@ -2260,7 +2255,7 @@
             closeAllPanels() {
                 document.getElementById('help-overlay').classList.remove('show');
                 document.getElementById('image-info').classList.remove('show');
-                document.getElementById('weather-widget').classList.add('hidden');
+                // Note: status overlay toggle is separate - not included in close all panels
                 this.debugEl.classList.remove('show');
             }
             
