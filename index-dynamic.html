@@ -298,6 +298,97 @@
             border-radius: 10px;
         }
         
+        /* ═══════════════════════════════════════════════════════════
+           MOBILE PORTRAIT LAYOUT
+           On portrait phones, the 1024×1024 square image leaves
+           dead space (dark bars) at top and bottom. We reposition
+           the weather widget into that top dead space so it doesn't
+           overlay the image itself.
+           
+           Detection: max-width 480px AND portrait orientation.
+           The image top edge sits at roughly (100vh - 100vw) / 2
+           from the top. We position the widget above that line.
+           ═══════════════════════════════════════════════════════════ */
+        @media (max-width: 480px) and (orientation: portrait) {
+            .weather-widget {
+                /* Reposition to top-center, fitting in the dead space bar */
+                top: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                right: auto;
+                
+                /* Make it more compact / horizontal to fit the narrow bar */
+                min-width: auto;
+                width: calc(100vw - 32px);
+                max-width: 360px;
+                padding: 10px 16px;
+                border-radius: 14px;
+            }
+            
+            /* Horizontal layout for the header (icon + temp side by side with condition) */
+            .weather-widget-header {
+                margin-bottom: 6px;
+                gap: 8px;
+            }
+            
+            .weather-widget-icon {
+                font-size: 28px;
+            }
+            
+            .weather-widget-temp {
+                font-size: 22px;
+            }
+            
+            .weather-widget-temp .unit {
+                font-size: 14px;
+            }
+            
+            .weather-widget-condition {
+                font-size: 13px;
+                margin-bottom: 2px;
+            }
+            
+            .weather-widget-description {
+                font-size: 10px;
+            }
+            
+            .weather-widget-divider {
+                margin: 6px 0;
+            }
+            
+            .weather-widget-details {
+                font-size: 11px;
+            }
+            
+            .weather-widget-detail-value {
+                font-size: 13px;
+            }
+            
+            .weather-widget-detail-label {
+                font-size: 9px;
+            }
+            
+            .weather-widget-time {
+                margin-top: 6px;
+                padding-top: 6px;
+            }
+            
+            .weather-widget-clock {
+                font-size: 18px;
+            }
+            
+            .weather-widget-period {
+                font-size: 12px;
+                padding: 3px 8px;
+            }
+            
+            /* Title also repositions to avoid image overlap */
+            .title-overlay {
+                top: auto;
+                /* Push just below the weather widget in the top dead space */
+            }
+        }
+        
         /* Update indicator */
         .update-indicator {
             position: fixed;
