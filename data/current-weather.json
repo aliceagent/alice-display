@@ -1,1 +1,16 @@
-{"condition": "Cloudy", "time_period": "Afternoon", "temperature": 22, "humidity": 65}
+{
+  "temperature": 9,
+  "feels_like": 8,
+  "humidity": 77,
+  "wind_speed": 7,
+  "weather_id": 802,
+  "condition": "Cloudy",
+  "description": "scattered clouds",
+  "icon": "03n",
+  "sunrise_hour": 6,
+  "sunset_hour": 17,
+  "time_period": "Night",
+  "current_hour": 22,
+  "timestamp": "2026-02-04T20:39:26.578556+00:00",
+  "source": "OpenWeatherMap"
+}

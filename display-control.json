@@ -1,24 +1,24 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81be-8de4-c3a440fd53eb",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233584/alice-gallery/pixel-art/Alice_Yoga_-_Overcast_Evening.png",
-    "title": "Alice Yoga - Overcast Evening",
+    "id": "2fc41906-4d30-8141-80ac-e8e70cd0c66b",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233153/alice-gallery/anime/Alice_Reading_Time__42.png",
+    "title": "Alice Reading Time #42",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Leisure",
     "mood": ""
   },
   "weather": {
-    "condition": "Overcast",
-    "temperature": 10,
-    "humidity": 85,
-    "description": "broken clouds",
-    "icon": "04n"
+    "condition": "Cloudy",
+    "temperature": 9,
+    "humidity": 77,
+    "description": "scattered clouds",
+    "icon": "03n"
   },
   "time": {
-    "period": "Evening",
-    "hour": 19,
+    "period": "Night",
+    "hour": 22,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-04T20:33:38.108863+00:00",
+  "lastUpdated": "2026-02-04T20:39:26.592944+00:00",
   "nextUpdate": "2026-02-04T21:00:00+00:00"
 }
