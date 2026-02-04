@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-02-04T17:23:21.981972",
+  "database_stats": {
+    "total_images": 5,
+    "verified_images": 0,
+    "with_cloudinary_url": 0,
+    "by_weather": {
+      "Rainy": 1,
+      "Cloudy": 1,
+      "Sunny": 2,
+      "Snowy": 1
+    },
+    "by_time": {
+      "Unknown": 5
+    },
+    "by_activity": {
+      "Sleeping": 1,
+      "Leisure": 2,
+      "Work": 1,
+      "Social": 1
+    },
+    "recent_selections_24h": 4
+  },
+  "selection_results": {
+    "Sunny_Morning": {
+      "success": true,
+      "name": "Unknown",
+      "activity": "Work",
+      "verified": false,
+      "has_cloudinary_url": false
+    },
+    "Rainy_Evening": {
+      "success": true,
+      "name": "Unknown",
+      "activity": "Social",
+      "verified": false,
+      "has_cloudinary_url": false
+    },
+    "Snowy_Dawn": {
+      "success": true,
+      "name": "Unknown",
+      "activity": "Leisure",
+      "verified": false,
+      "has_cloudinary_url": false
+    },
+    "Cloudy_Afternoon": {
+      "success": true,
+      "name": "Unknown",
+      "activity": "Social",
+      "verified": false,
+      "has_cloudinary_url": false
+    },
+    "Stormy_Night": {
+      "success": true,
+      "name": "Unknown",
+      "activity": "Sleeping",
+      "verified": false,
+      "has_cloudinary_url": false
+    },
+    "Foggy_Midday": {
+      "success": true,
+      "name": "Unknown",
+      "activity": "Work",
+      "verified": false,
+      "has_cloudinary_url": false
+    },
+    "Overcast_Morning": {
+      "success": true,
+      "name": "Unknown",
+      "activity": "Sleeping",
+      "verified": false,
+      "has_cloudinary_url": false
+    }
+  },
+  "summary": {
+    "success_rate": 100.0,
+    "with_cloudinary_urls": 0,
+    "verified_selections": 0
+  }
+}

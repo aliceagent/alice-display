@@ -1,0 +1,112 @@
+[
+  {
+    "global_index": 1,
+    "filename": "Alice_Gaming_Time__20",
+    "image_path": "/Users/agentcaras/alice-gallery-images/Alice_Gaming_Time__20.png",
+    "notion_id": "2fc41906-4d30-8107-984c-c13452dd28e7",
+    "folder": "alice-gallery/anime",
+    "public_id": "Alice_Gaming_Time__20",
+    "success": true,
+    "result": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770218823/alice-gallery/anime/Alice_Gaming_Time__20.png",
+    "timestamp": "2026-02-04T15:27:03.858048",
+    "metadata": {
+      "notion_id": "2fc41906-4d30-8107-984c-c13452dd28e7",
+      "name": "Alice Gaming Time #17",
+      "style_notes": "Anime style with cozy atmosphere, cloudy mood, relaxed setting",
+      "weather": "Cloudy",
+      "time_of_day": "Evening",
+      "activity": "Leisure",
+      "location": "Cozy living space with comfortable seating and warm atmosphere",
+      "row_number": null,
+      "verified": true
+    }
+  },
+  {
+    "global_index": 2,
+    "filename": "Alice_Hot_Cocoa_Outside_-_Snowy_Evening",
+    "image_path": "/Users/agentcaras/alice-gallery-images/Alice_Hot_Cocoa_Outside_-_Snowy_Evening.png",
+    "notion_id": "2fd41906-4d30-8137-b538-ddda704deb46",
+    "folder": "alice-gallery/pixel-art",
+    "public_id": "Alice_Hot_Cocoa_Outside_-_Snowy_Evening",
+    "success": true,
+    "result": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770218832/alice-gallery/pixel-art/Alice_Hot_Cocoa_Outside_-_Snowy_Evening.png",
+    "timestamp": "2026-02-04T15:27:13.534307",
+    "metadata": {
+      "notion_id": "2fd41906-4d30-8137-b538-ddda704deb46",
+      "name": "Alice Hot Cocoa Outside - Snowy Dawn",
+      "style_notes": "Pixel Art, 16-bit retro game aesthetic",
+      "weather": "Snowy",
+      "time_of_day": "Dawn",
+      "activity": "Leisure",
+      "location": "a snowy park with frosted lampposts and snow-covered benches",
+      "row_number": null,
+      "verified": true
+    }
+  },
+  {
+    "global_index": 3,
+    "filename": "Alice_Baking_-_Overcast_Evening",
+    "image_path": "/Users/agentcaras/alice-gallery-images/Alice_Baking_-_Overcast_Evening.png",
+    "notion_id": "2fd41906-4d30-8108-914e-f7624c04e71a",
+    "folder": "alice-gallery/pixel-art",
+    "public_id": "Alice_Baking_-_Overcast_Evening",
+    "success": true,
+    "result": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770218842/alice-gallery/pixel-art/Alice_Baking_-_Overcast_Evening.png",
+    "timestamp": "2026-02-04T15:27:23.343129",
+    "metadata": {
+      "notion_id": "2fd41906-4d30-8108-914e-f7624c04e71a",
+      "name": "Alice Baking - Cloudy Morning",
+      "style_notes": "Pixel Art, 16-bit retro game aesthetic",
+      "weather": "Cloudy",
+      "time_of_day": "Morning",
+      "activity": "Leisure",
+      "location": "a cheerful bakery-style kitchen with pastel tiles and hanging utensils",
+      "row_number": null,
+      "verified": true
+    }
+  },
+  {
+    "global_index": 4,
+    "filename": "029_Alice_Sleeping_-_Stormy_Early_Morning__30",
+    "image_path": "/Users/agentcaras/alice-gallery-images/029_Alice_Sleeping_-_Stormy_Early_Morning__30.png",
+    "notion_id": "2fc41906-4d30-8106-b320-fe78becea4d8",
+    "folder": "alice-gallery/anime",
+    "public_id": "029_Alice_Sleeping_-_Stormy_Early_Morning__30",
+    "success": true,
+    "result": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770218853/alice-gallery/anime/029_Alice_Sleeping_-_Stormy_Early_Morning__30.png",
+    "timestamp": "2026-02-04T15:27:34.095220",
+    "metadata": {
+      "notion_id": "2fc41906-4d30-8106-b320-fe78becea4d8",
+      "name": "Alice Sleeping - Stormy Early Morning #30",
+      "style_notes": "Anime style with peaceful sleeping atmosphere, stormy weather effects visible through window",
+      "weather": "Stormy",
+      "time_of_day": "Early Morning",
+      "activity": "Sleeping",
+      "location": "Cozy bedroom with large windows overlooking stormy landscape",
+      "row_number": 29,
+      "verified": true
+    }
+  },
+  {
+    "global_index": 5,
+    "filename": "Alice_Swimming_Session__25",
+    "image_path": "/Users/agentcaras/alice-gallery-images/Alice_Swimming_Session__25.png",
+    "notion_id": "2fc41906-4d30-8111-afbc-d0f37747e689",
+    "folder": "alice-gallery/anime",
+    "public_id": "Alice_Swimming_Session__25",
+    "success": true,
+    "result": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770218863/alice-gallery/anime/Alice_Swimming_Session__25.png",
+    "timestamp": "2026-02-04T15:27:43.760231",
+    "metadata": {
+      "notion_id": "2fc41906-4d30-8111-afbc-d0f37747e689",
+      "name": "Alice Swimming Session #18",
+      "style_notes": "Anime style with dynamic energy, sunny lighting, athletic atmosphere",
+      "weather": "Sunny",
+      "time_of_day": "Early Morning",
+      "activity": "Exercise",
+      "location": "Swimming space with proper equipment and motivating atmosphere",
+      "row_number": null,
+      "verified": true
+    }
+  }
+]

@@ -1,0 +1,2083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Alice Display</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            overflow: hidden;
+        }
+        
+        .display-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Dual image layers for crossfade */
+        .image-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .image-layer img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            /* Ken Burns base - slightly larger to allow movement */
+            transform-origin: center center;
+        }
+        
+        /* Ken Burns effect animations */
+        @keyframes kenburns-1 {
+            0% { transform: scale(1.0) translate(0, 0); }
+            100% { transform: scale(1.08) translate(-1%, -1%); }
+        }
+        
+        @keyframes kenburns-2 {
+            0% { transform: scale(1.0) translate(0, 0); }
+            100% { transform: scale(1.08) translate(1%, -0.5%); }
+        }
+        
+        @keyframes kenburns-3 {
+            0% { transform: scale(1.05) translate(-0.5%, 0.5%); }
+            100% { transform: scale(1.0) translate(0, 0); }
+        }
+        
+        @keyframes kenburns-4 {
+            0% { transform: scale(1.08) translate(0.5%, -1%); }
+            100% { transform: scale(1.02) translate(-0.5%, 0.5%); }
+        }
+        
+        .image-layer.active img.kenburns {
+            animation-duration: 20s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        
+        .image-layer.active img.kenburns-1 { animation-name: kenburns-1; }
+        .image-layer.active img.kenburns-2 { animation-name: kenburns-2; }
+        .image-layer.active img.kenburns-3 { animation-name: kenburns-3; }
+        .image-layer.active img.kenburns-4 { animation-name: kenburns-4; }
+        
+        /* Pause Ken Burns when user prefers reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .image-layer.active img.kenburns {
+                animation: none;
+            }
+        }
+        
+        .image-layer.active {
+            opacity: 1;
+            z-index: 2;
+        }
+        
+        .image-layer.inactive {
+            opacity: 0;
+            z-index: 1;
+        }
+        
+        /* Weather/Time overlay (bottom bar) */
+        .status-overlay {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+        
+        .status-overlay.visible {
+            opacity: 1;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-item .icon {
+            font-size: 18px;
+        }
+        
+        .status-item .label {
+            opacity: 0.7;
+            font-size: 12px;
+        }
+        
+        .status-item .value {
+            font-weight: 500;
+        }
+        
+        /* Weather widget overlay (corner) */
+        .weather-widget {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(30,30,50,0.9) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 20px;
+            color: white;
+            min-width: 180px;
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            z-index: 15;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+        
+        .weather-widget.hidden {
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+        
+        .weather-widget-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .weather-widget-icon {
+            font-size: 42px;
+            line-height: 1;
+        }
+        
+        .weather-widget-temp {
+            font-size: 32px;
+            font-weight: 300;
+        }
+        
+        .weather-widget-temp .unit {
+            font-size: 18px;
+            opacity: 0.7;
+        }
+        
+        .weather-widget-condition {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        
+        .weather-widget-description {
+            font-size: 12px;
+            opacity: 0.6;
+            text-transform: capitalize;
+        }
+        
+        .weather-widget-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 12px 0;
+        }
+        
+        .weather-widget-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+        
+        .weather-widget-detail {
+            text-align: center;
+        }
+        
+        .weather-widget-detail-value {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .weather-widget-detail-label {
+            opacity: 0.5;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .weather-widget-time {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .weather-widget-clock {
+            font-size: 24px;
+            font-weight: 300;
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .weather-widget-period {
+            font-size: 14px;
+            opacity: 0.8;
+            background: rgba(255,255,255,0.1);
+            padding: 4px 10px;
+            border-radius: 10px;
+        }
+        
+        /* Update indicator */
+        .update-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 200, 100, 0.8);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 10;
+        }
+        
+        .update-indicator.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Loading spinner */
+        .loading-spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 5;
+        }
+        
+        .loading-spinner.active {
+            display: block;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Image title overlay */
+        .title-overlay {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-align: center;
+            max-width: 80%;
+            z-index: 10;
+        }
+        
+        .title-overlay.visible {
+            opacity: 1;
+        }
+        
+        /* Debug panel */
+        .debug-panel {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 11px;
+            display: none;
+            max-width: 300px;
+            z-index: 20;
+        }
+        
+        .debug-panel.show {
+            display: block;
+        }
+        
+        .debug-panel pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        
+        /* Fullscreen button */
+        .fullscreen-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            opacity: 0.3;
+            transition: opacity 0.3s, transform 0.2s;
+            z-index: 10;
+        }
+        
+        .fullscreen-btn:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        /* Error state */
+        .error-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 30, 50, 0.95);
+            border: 1px solid rgba(255, 100, 100, 0.3);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 16px;
+            text-align: center;
+            display: none;
+            z-index: 15;
+            backdrop-filter: blur(10px);
+            max-width: 90%;
+            width: 320px;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .error-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .error-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .error-detail {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-bottom: 15px;
+        }
+        
+        .error-retry {
+            font-size: 12px;
+            opacity: 0.5;
+        }
+        
+        .error-retry .countdown {
+            font-weight: 600;
+            color: #64b5f6;
+        }
+        
+        /* Connection status indicator */
+        .connection-status {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 10;
+        }
+        
+        .connection-status.visible {
+            opacity: 1;
+        }
+        
+        .connection-status.error {
+            background: rgba(255, 80, 80, 0.8);
+        }
+        
+        .connection-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4caf50;
+        }
+        
+        .connection-status.error .connection-dot {
+            background: #fff;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        /* Fallback image styling */
+        .fallback-active .image-layer img {
+            filter: grayscale(30%) brightness(0.8);
+        }
+        
+        .fallback-badge {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 150, 0, 0.9);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 15px;
+            font-size: 11px;
+            display: none;
+            z-index: 10;
+        }
+        
+        .fallback-badge.show {
+            display: block;
+        }
+        
+        /* Next update countdown */
+        .countdown {
+            position: fixed;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 11px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 10;
+        }
+        
+        .countdown.visible {
+            opacity: 1;
+        }
+        
+        /* PWA Install Banner */
+        .install-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .install-banner.show {
+            transform: translateY(0);
+        }
+        
+        .install-banner-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+        
+        .install-banner-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+        
+        .install-banner-text {
+            color: white;
+        }
+        
+        .install-banner-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .install-banner-subtitle {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+        
+        .install-banner-actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        
+        .install-btn {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .install-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+        
+        .install-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .dismiss-btn {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        
+        .dismiss-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        /* iOS Install Instructions Modal */
+        .ios-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .ios-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .ios-modal-content {
+            background: linear-gradient(145deg, #2d2d44 0%, #1a1a2e 100%);
+            border-radius: 24px;
+            padding: 32px 28px;
+            max-width: 340px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: modalSlideIn 0.4s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(30px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .ios-modal-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .ios-modal-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .ios-modal-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 24px;
+        }
+        
+        .ios-modal-steps {
+            text-align: left;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        
+        .ios-modal-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 16px;
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: background 0.2s;
+        }
+        
+        .ios-modal-step:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .ios-step-number {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .ios-step-content {
+            flex: 1;
+        }
+        
+        .ios-step-title {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .ios-step-desc {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .ios-share-icon {
+            display: inline-block;
+            background: #007AFF;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            vertical-align: middle;
+        }
+        
+        .ios-modal-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .ios-modal-close {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+        
+        .ios-modal-close:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        .ios-modal-close:active {
+            transform: translateY(0);
+        }
+        
+        .ios-modal-dismiss {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .ios-modal-dismiss:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .ios-safari-note {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .ios-safari-note strong {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .install-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .install-banner-content {
+                flex-direction: column;
+            }
+            
+            .install-banner-actions {
+                width: 100%;
+            }
+            
+            .install-btn, .dismiss-btn {
+                flex: 1;
+            }
+        }
+        
+        /* Help overlay */
+        .help-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .help-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .help-content {
+            background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+            border-radius: 20px;
+            padding: 30px 40px;
+            max-width: 500px;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .help-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .help-shortcuts {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 12px 20px;
+        }
+        
+        .help-key {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 14px;
+            text-align: center;
+            min-width: 60px;
+        }
+        
+        .help-desc {
+            font-size: 14px;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+        }
+        
+        .help-close {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+        
+        /* Toast notifications */
+        .toast {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.2s, transform 0.2s;
+            z-index: 300;
+            pointer-events: none;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        /* Pause indicator */
+        .pause-indicator {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 150, 0, 0.9);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            display: none;
+            z-index: 15;
+        }
+        
+        .pause-indicator.show {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Image info panel */
+        .image-info {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 16px;
+            color: white;
+            max-width: 300px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 50;
+        }
+        
+        .image-info.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .image-info h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .image-info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+        
+        .image-info-row:last-child {
+            border-bottom: none;
+        }
+        
+        .image-info-label {
+            opacity: 0.6;
+        }
+        
+        .image-info-value {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="display-container">
+        <div class="image-layer active" id="layer-a">
+            <img src="" alt="Alice">
+        </div>
+        <div class="image-layer inactive" id="layer-b">
+            <img src="" alt="Alice">
+        </div>
+    </div>
+    
+    <div class="title-overlay" id="title-overlay"></div>
+    
+    <!-- Weather Widget Overlay -->
+    <div class="weather-widget" id="weather-widget">
+        <div class="weather-widget-header">
+            <span class="weather-widget-icon" id="widget-weather-icon">☀️</span>
+            <div>
+                <div class="weather-widget-temp">
+                    <span id="widget-temp">--</span><span class="unit">°C</span>
+                </div>
+            </div>
+        </div>
+        <div class="weather-widget-condition" id="widget-condition">Loading...</div>
+        <div class="weather-widget-description" id="widget-description">--</div>
+        <div class="weather-widget-divider"></div>
+        <div class="weather-widget-details">
+            <div class="weather-widget-detail">
+                <div class="weather-widget-detail-value" id="widget-humidity">--%</div>
+                <div class="weather-widget-detail-label">Humidity</div>
+            </div>
+            <div class="weather-widget-detail">
+                <div class="weather-widget-detail-value" id="widget-activity">--</div>
+                <div class="weather-widget-detail-label">Activity</div>
+            </div>
+        </div>
+        <div class="weather-widget-time">
+            <span class="weather-widget-clock" id="widget-clock">--:--</span>
+            <span class="weather-widget-period" id="widget-period">--</span>
+        </div>
+    </div>
+    
+    <div class="status-overlay" id="status-overlay">
+        <div class="status-item">
+            <span class="icon" id="weather-icon">☀️</span>
+            <div>
+                <div class="value" id="weather-condition">Loading...</div>
+                <div class="label" id="temperature">--°C</div>
+            </div>
+        </div>
+        <div class="status-item">
+            <span class="icon">🕐</span>
+            <div>
+                <div class="value" id="time-period">--</div>
+                <div class="label" id="current-time">--:--</div>
+            </div>
+        </div>
+        <div class="status-item">
+            <span class="icon">🎨</span>
+            <div>
+                <div class="value" id="activity">--</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="countdown" id="countdown"></div>
+    
+    <div class="update-indicator" id="update-indicator">✨ Updated!</div>
+    
+    <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+    
+    <div class="error-message" id="error-message">
+        <div class="error-icon">🦜</div>
+        <div class="error-title" id="error-title">Connection Issue</div>
+        <div class="error-detail" id="error-detail">Unable to load display data</div>
+        <div class="error-retry">Retrying in <span class="countdown" id="error-countdown">10</span>s</div>
+    </div>
+    
+    <div class="connection-status" id="connection-status">
+        <div class="connection-dot"></div>
+        <span id="connection-text">Connected</span>
+    </div>
+    
+    <div class="fallback-badge" id="fallback-badge">⚠️ Showing cached image</div>
+    
+    <div class="debug-panel" id="debug-panel">
+        <pre id="debug-content"></pre>
+    </div>
+    
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
+    
+    <!-- PWA Install Banner -->
+    <div class="install-banner" id="install-banner">
+        <div class="install-banner-content">
+            <div class="install-banner-icon">🦜</div>
+            <div class="install-banner-text">
+                <div class="install-banner-title">Install Alice Display</div>
+                <div class="install-banner-subtitle">Add to home screen for fullscreen experience</div>
+            </div>
+        </div>
+        <div class="install-banner-actions">
+            <button class="dismiss-btn" id="install-dismiss">Maybe Later</button>
+            <button class="install-btn" id="install-btn">Install</button>
+        </div>
+    </div>
+    
+    <!-- iOS Install Instructions -->
+    <div class="ios-modal" id="ios-modal">
+        <div class="ios-modal-content">
+            <div class="ios-modal-icon">🦜</div>
+            <div class="ios-modal-title">Install Alice Display</div>
+            <div class="ios-modal-subtitle">Add to your home screen for the best experience</div>
+            
+            <div class="ios-modal-steps">
+                <div class="ios-modal-step">
+                    <span class="ios-step-number">1</span>
+                    <div class="ios-step-content">
+                        <div class="ios-step-title">Tap <span class="ios-share-icon">⬆️ Share</span></div>
+                        <div class="ios-step-desc">Find it at the bottom of Safari</div>
+                    </div>
+                </div>
+                <div class="ios-modal-step">
+                    <span class="ios-step-number">2</span>
+                    <div class="ios-step-content">
+                        <div class="ios-step-title">Add to Home Screen</div>
+                        <div class="ios-step-desc">Scroll down in the share menu</div>
+                    </div>
+                </div>
+                <div class="ios-modal-step">
+                    <span class="ios-step-number">3</span>
+                    <div class="ios-step-content">
+                        <div class="ios-step-title">Tap "Add"</div>
+                        <div class="ios-step-desc">Confirm in the top right corner</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ios-modal-buttons">
+                <button class="ios-modal-close" id="ios-modal-close">Got it!</button>
+                <button class="ios-modal-dismiss" id="ios-modal-dismiss">Don't show again</button>
+            </div>
+            
+            <div class="ios-safari-note">
+                <strong>Note:</strong> Must be opened in Safari. Other browsers don't support home screen apps.
+            </div>
+        </div>
+    </div>
+    
+    <!-- Help Overlay -->
+    <div class="help-overlay" id="help-overlay">
+        <div class="help-content">
+            <div class="help-title">⌨️ Keyboard Shortcuts</div>
+            <div class="help-shortcuts">
+                <span class="help-key">R</span>
+                <span class="help-desc">Refresh display</span>
+                
+                <span class="help-key">F</span>
+                <span class="help-desc">Toggle fullscreen</span>
+                
+                <span class="help-key">S</span>
+                <span class="help-desc">Toggle status overlay</span>
+                
+                <span class="help-key">Space</span>
+                <span class="help-desc">Pause/resume auto-refresh</span>
+                
+                <span class="help-key">I</span>
+                <span class="help-desc">Show image info</span>
+                
+                <span class="help-key">W</span>
+                <span class="help-desc">Toggle weather overlay</span>
+                
+                <span class="help-key">Ctrl+D</span>
+                <span class="help-desc">Toggle debug panel</span>
+                
+                <span class="help-key">H / ?</span>
+                <span class="help-desc">Show this help</span>
+                
+                <span class="help-key">Esc</span>
+                <span class="help-desc">Close panels</span>
+            </div>
+            <div class="help-close">Press any key to close</div>
+        </div>
+    </div>
+    
+    <!-- Toast notification -->
+    <div class="toast" id="toast"></div>
+    
+    <!-- Pause indicator -->
+    <div class="pause-indicator" id="pause-indicator">
+        ⏸️ Auto-refresh paused — Press Space to resume
+    </div>
+    
+    <!-- Image info panel -->
+    <div class="image-info" id="image-info">
+        <h3>🖼️ Image Info</h3>
+        <div class="image-info-row">
+            <span class="image-info-label">Title</span>
+            <span class="image-info-value" id="info-title">--</span>
+        </div>
+        <div class="image-info-row">
+            <span class="image-info-label">Weather</span>
+            <span class="image-info-value" id="info-weather">--</span>
+        </div>
+        <div class="image-info-row">
+            <span class="image-info-label">Time</span>
+            <span class="image-info-value" id="info-time">--</span>
+        </div>
+        <div class="image-info-row">
+            <span class="image-info-label">Activity</span>
+            <span class="image-info-value" id="info-activity">--</span>
+        </div>
+        <div class="image-info-row">
+            <span class="image-info-label">Updated</span>
+            <span class="image-info-value" id="info-updated">--</span>
+        </div>
+    </div>
+    
+    <script>
+        class AliceDisplay {
+            constructor() {
+                this.controlFile = 'display-control.json';
+                this.pollInterval = 5 * 60 * 1000;  // Poll every 5 minutes
+                this.baseRetryInterval = 10 * 1000;  // Base retry interval
+                this.maxRetryInterval = 5 * 60 * 1000;  // Max 5 minutes between retries
+                this.retryCount = 0;
+                this.maxRetries = 10;
+                this.lastUpdated = null;
+                this.currentData = null;
+                this.lastGoodData = null;  // Cache last successful data
+                this.activeLayer = 'a';
+                this.isDebugMode = new URLSearchParams(window.location.search).has('debug');
+                this.isOnline = navigator.onLine;
+                this.errorCountdownInterval = null;
+                this.usingFallback = false;
+                this.isPaused = false;  // For pause/resume functionality
+                
+                // Fallback image (base64 placeholder or default)
+                this.fallbackImageUrl = 'images/generated/morning-sunny.png';
+                
+                // DOM elements
+                this.layerA = document.getElementById('layer-a');
+                this.layerB = document.getElementById('layer-b');
+                this.titleEl = document.getElementById('title-overlay');
+                this.statusEl = document.getElementById('status-overlay');
+                this.spinnerEl = document.getElementById('loading-spinner');
+                this.errorEl = document.getElementById('error-message');
+                this.errorTitleEl = document.getElementById('error-title');
+                this.errorDetailEl = document.getElementById('error-detail');
+                this.errorCountdownEl = document.getElementById('error-countdown');
+                this.debugEl = document.getElementById('debug-panel');
+                this.debugContent = document.getElementById('debug-content');
+                this.updateIndicator = document.getElementById('update-indicator');
+                this.countdownEl = document.getElementById('countdown');
+                this.connectionStatusEl = document.getElementById('connection-status');
+                this.connectionTextEl = document.getElementById('connection-text');
+                this.fallbackBadgeEl = document.getElementById('fallback-badge');
+                
+                // Weather icons mapping
+                this.weatherIcons = {
+                    'Sunny': '☀️',
+                    'Partly Cloudy': '⛅',
+                    'Cloudy': '☁️',
+                    'Overcast': '🌥️',
+                    'Rainy': '🌧️',
+                    'Stormy': '⛈️',
+                    'Snowy': '❄️',
+                    'Foggy': '🌫️',
+                    'Clear Night': '🌙',
+                    'Windy': '💨'
+                };
+                
+                this.init();
+            }
+            
+            async init() {
+                if (this.isDebugMode) {
+                    this.debugEl.classList.add('show');
+                }
+                
+                this.setupEventListeners();
+                this.setupNetworkListeners();
+                this.spinnerEl.classList.add('active');
+                await this.loadDisplay(true);  // Initial load
+                this.startPolling();
+                
+                // Show status bar briefly on load
+                this.statusEl.classList.add('visible');
+                setTimeout(() => {
+                    this.statusEl.classList.remove('visible');
+                }, 5000);
+            }
+            
+            setupNetworkListeners() {
+                window.addEventListener('online', () => {
+                    this.isOnline = true;
+                    this.showConnectionStatus('Back online', false);
+                    this.retryCount = 0;  // Reset retry count
+                    this.loadDisplay(true);  // Immediately try to load
+                });
+                
+                window.addEventListener('offline', () => {
+                    this.isOnline = false;
+                    this.showConnectionStatus('Offline', true);
+                    this.showFallbackImage();
+                });
+            }
+            
+            showConnectionStatus(text, isError) {
+                this.connectionTextEl.textContent = text;
+                this.connectionStatusEl.classList.toggle('error', isError);
+                this.connectionStatusEl.classList.add('visible');
+                
+                // Auto-hide success messages
+                if (!isError) {
+                    setTimeout(() => {
+                        this.connectionStatusEl.classList.remove('visible');
+                    }, 3000);
+                }
+            }
+            
+            showFallbackImage() {
+                if (this.lastGoodData) {
+                    // Show last known good image
+                    this.updateDisplay(this.lastGoodData, true);
+                    this.usingFallback = true;
+                    this.fallbackBadgeEl.classList.add('show');
+                    document.body.classList.add('fallback-active');
+                } else if (this.fallbackImageUrl) {
+                    // Show default fallback
+                    this.crossfadeImage(this.fallbackImageUrl, 'Alice (Fallback)', true);
+                    this.usingFallback = true;
+                    this.fallbackBadgeEl.classList.add('show');
+                    document.body.classList.add('fallback-active');
+                }
+            }
+            
+            clearFallbackState() {
+                this.usingFallback = false;
+                this.fallbackBadgeEl.classList.remove('show');
+                document.body.classList.remove('fallback-active');
+                this.connectionStatusEl.classList.remove('visible');
+            }
+            
+            setupEventListeners() {
+                // Fullscreen button
+                document.getElementById('fullscreen-btn').addEventListener('click', () => {
+                    this.toggleFullscreen();
+                });
+                
+                // Weather widget click to hide
+                document.getElementById('weather-widget').addEventListener('click', () => {
+                    this.toggleWeatherWidget();
+                });
+                
+                // Show status on mouse move / touch
+                let hideTimeout;
+                const showOverlays = () => {
+                    this.statusEl.classList.add('visible');
+                    this.titleEl.classList.add('visible');
+                    this.countdownEl.classList.add('visible');
+                    clearTimeout(hideTimeout);
+                    hideTimeout = setTimeout(() => {
+                        this.statusEl.classList.remove('visible');
+                        this.titleEl.classList.remove('visible');
+                        this.countdownEl.classList.remove('visible');
+                    }, 4000);
+                };
+                document.addEventListener('mousemove', showOverlays);
+                document.addEventListener('touchstart', showOverlays);
+                
+                // Keyboard shortcuts
+                document.addEventListener('keydown', (e) => {
+                    // Ignore if typing in an input
+                    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+                    
+                    switch(e.key.toLowerCase()) {
+                        case 'd':
+                            if (e.ctrlKey) {
+                                e.preventDefault();
+                                this.debugEl.classList.toggle('show');
+                            }
+                            break;
+                        case 'r':
+                            if (!e.ctrlKey) {
+                                e.preventDefault();
+                                this.loadDisplay(true);
+                                this.showToast('🔄 Refreshing...');
+                            }
+                            break;
+                        case 'f':
+                            e.preventDefault();
+                            this.toggleFullscreen();
+                            break;
+                        case 's':
+                            e.preventDefault();
+                            this.statusEl.classList.toggle('visible');
+                            this.titleEl.classList.toggle('visible');
+                            break;
+                        case 'w':
+                            e.preventDefault();
+                            this.toggleWeatherWidget();
+                            break;
+                        case ' ':
+                            e.preventDefault();
+                            this.togglePause();
+                            break;
+                        case 'h':
+                        case '?':
+                            e.preventDefault();
+                            this.toggleHelp();
+                            break;
+                        case 'i':
+                            e.preventDefault();
+                            this.showImageInfo();
+                            break;
+                        case 'escape':
+                            this.closeAllPanels();
+                            break;
+                        case 'arrowleft':
+                            e.preventDefault();
+                            this.showToast('⏮️ Previous (not implemented)');
+                            break;
+                        case 'arrowright':
+                            e.preventDefault();
+                            this.showToast('⏭️ Next (not implemented)');
+                            break;
+                    }
+                });
+                
+                // Check for updates when page becomes visible again
+                document.addEventListener('visibilitychange', () => {
+                    if (!document.hidden) {
+                        this.loadDisplay();
+                    }
+                });
+            }
+            
+            async loadDisplay(forceUpdate = false) {
+                // Check if offline
+                if (!navigator.onLine) {
+                    this.handleError('offline', 'You appear to be offline');
+                    return;
+                }
+                
+                try {
+                    const controller = new AbortController();
+                    const timeout = setTimeout(() => controller.abort(), 15000);  // 15s timeout
+                    
+                    const response = await fetch(`${this.controlFile}?t=${Date.now()}`, {
+                        signal: controller.signal
+                    });
+                    clearTimeout(timeout);
+                    
+                    if (!response.ok) {
+                        throw new Error(`Server returned ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Validate data structure
+                    if (!data || !data.currentImage) {
+                        throw new Error('Invalid data format');
+                    }
+                    
+                    // Success! Reset error state
+                    this.retryCount = 0;
+                    this.clearError();
+                    this.clearFallbackState();
+                    
+                    // Check if data has changed
+                    const newLastUpdated = data.lastUpdated;
+                    const hasChanged = forceUpdate || (newLastUpdated !== this.lastUpdated);
+                    
+                    if (hasChanged && newLastUpdated) {
+                        console.log('🦜 Update detected:', newLastUpdated);
+                        this.lastUpdated = newLastUpdated;
+                        this.currentData = data;
+                        this.lastGoodData = data;  // Cache for fallback
+                        await this.updateDisplay(data, !forceUpdate);
+                        this.updateDebug(data);
+                        this.updateWeatherWidget();
+                        this.startWidgetClock();
+                        
+                        // Show update indicator (not on initial load)
+                        if (!forceUpdate && this.lastUpdated) {
+                            this.showUpdateIndicator();
+                        }
+                    } else {
+                        this.updateDebug({ ...data, _status: 'No changes detected' });
+                    }
+                    
+                } catch (error) {
+                    console.error('Error loading display:', error);
+                    
+                    // Categorize the error
+                    let errorType = 'unknown';
+                    let errorMessage = error.message;
+                    
+                    if (error.name === 'AbortError') {
+                        errorType = 'timeout';
+                        errorMessage = 'Request timed out';
+                    } else if (error.message.includes('Failed to fetch')) {
+                        errorType = 'network';
+                        errorMessage = 'Network connection failed';
+                    } else if (error.message.includes('Server returned')) {
+                        errorType = 'server';
+                    } else if (error.message.includes('Invalid data')) {
+                        errorType = 'data';
+                        errorMessage = 'Received invalid data';
+                    }
+                    
+                    this.handleError(errorType, errorMessage);
+                }
+            }
+            
+            handleError(type, message) {
+                this.retryCount++;
+                this.updateDebug({ error: message, type, retryCount: this.retryCount });
+                
+                // Calculate retry interval with exponential backoff
+                const retryInterval = Math.min(
+                    this.baseRetryInterval * Math.pow(1.5, this.retryCount - 1),
+                    this.maxRetryInterval
+                );
+                
+                // Set error message based on type
+                const errorMessages = {
+                    offline: { title: 'You\'re Offline', icon: '📡' },
+                    timeout: { title: 'Connection Slow', icon: '⏱️' },
+                    network: { title: 'Connection Failed', icon: '🔌' },
+                    server: { title: 'Server Issue', icon: '🖥️' },
+                    data: { title: 'Data Error', icon: '⚠️' },
+                    image: { title: 'Image Load Failed', icon: '🖼️' },
+                    unknown: { title: 'Something Went Wrong', icon: '🦜' }
+                };
+                
+                const errorInfo = errorMessages[type] || errorMessages.unknown;
+                
+                // Show fallback if we have one and this isn't the first load
+                if (this.lastGoodData || this.currentData) {
+                    this.showFallbackImage();
+                }
+                
+                // Show error UI
+                this.showError(errorInfo.title, message, retryInterval);
+                
+                // Schedule retry (unless we've exceeded max retries)
+                if (this.retryCount <= this.maxRetries) {
+                    setTimeout(() => this.loadDisplay(), retryInterval);
+                } else {
+                    this.errorDetailEl.textContent = 'Max retries exceeded. Tap to retry.';
+                    this.errorEl.onclick = () => {
+                        this.retryCount = 0;
+                        this.loadDisplay(true);
+                    };
+                }
+            }
+            
+            showError(title = 'Connection Issue', detail = 'Unable to load display', retryIn = 10000) {
+                this.spinnerEl.classList.remove('active');
+                this.errorTitleEl.textContent = title;
+                this.errorDetailEl.textContent = detail;
+                this.errorEl.classList.add('show');
+                
+                // Show connection status
+                this.showConnectionStatus(`Retry ${this.retryCount}/${this.maxRetries}`, true);
+                
+                // Update countdown
+                if (this.errorCountdownInterval) {
+                    clearInterval(this.errorCountdownInterval);
+                }
+                
+                let remaining = Math.ceil(retryIn / 1000);
+                this.errorCountdownEl.textContent = remaining;
+                
+                this.errorCountdownInterval = setInterval(() => {
+                    remaining--;
+                    if (remaining > 0) {
+                        this.errorCountdownEl.textContent = remaining;
+                    } else {
+                        clearInterval(this.errorCountdownInterval);
+                    }
+                }, 1000);
+            }
+            
+            clearError() {
+                this.errorEl.classList.remove('show');
+                this.errorEl.onclick = null;
+                if (this.errorCountdownInterval) {
+                    clearInterval(this.errorCountdownInterval);
+                }
+            }
+            
+            async updateDisplay(data, animate = true) {
+                const { currentImage, weather, time } = data;
+                
+                // Update image with crossfade
+                if (currentImage && currentImage.url) {
+                    await this.crossfadeImage(currentImage.url, currentImage.title, animate);
+                }
+                
+                // Update title
+                if (currentImage && currentImage.title) {
+                    this.titleEl.textContent = currentImage.title;
+                }
+                
+                // Update weather
+                if (weather) {
+                    document.getElementById('weather-icon').textContent = 
+                        this.weatherIcons[weather.condition] || '🌡️';
+                    document.getElementById('weather-condition').textContent = 
+                        weather.condition || 'Unknown';
+                    document.getElementById('temperature').textContent = 
+                        weather.temperature ? `${Math.round(weather.temperature)}°C` : '';
+                }
+                
+                // Update time
+                if (time) {
+                    document.getElementById('time-period').textContent = 
+                        time.period || 'Unknown';
+                    const now = new Date();
+                    document.getElementById('current-time').textContent = 
+                        now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+                }
+                
+                // Update activity
+                if (currentImage && currentImage.activity) {
+                    document.getElementById('activity').textContent = currentImage.activity;
+                }
+                
+                this.spinnerEl.classList.remove('active');
+            }
+            
+            crossfadeImage(url, title, animate = true) {
+                return new Promise((resolve) => {
+                    // Determine which layer to load into
+                    const nextLayer = this.activeLayer === 'a' ? 'b' : 'a';
+                    const nextLayerEl = nextLayer === 'a' ? this.layerA : this.layerB;
+                    const currentLayerEl = this.activeLayer === 'a' ? this.layerA : this.layerB;
+                    const nextImg = nextLayerEl.querySelector('img');
+                    
+                    // Preload the image with timeout
+                    const preloader = new Image();
+                    const loadTimeout = setTimeout(() => {
+                        console.warn('Image load timeout:', url);
+                        this.handleImageError(url, 'timeout');
+                        resolve();
+                    }, 30000);  // 30s timeout for image load
+                    
+                    preloader.onload = () => {
+                        clearTimeout(loadTimeout);
+                        nextImg.src = url;
+                        nextImg.alt = title || 'Alice';
+                        
+                        // Apply random Ken Burns effect
+                        const kbVariants = ['kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4'];
+                        const randomKB = kbVariants[Math.floor(Math.random() * kbVariants.length)];
+                        
+                        // Remove old Ken Burns classes and add new one
+                        nextImg.classList.remove('kenburns', 'kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4');
+                        nextImg.classList.add('kenburns', randomKB);
+                        
+                        // Also remove from the old layer's image to reset it
+                        const currentImg = currentLayerEl.querySelector('img');
+                        currentImg.classList.remove('kenburns', 'kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4');
+                        
+                        // Crossfade: show new layer, hide old
+                        nextLayerEl.classList.remove('inactive');
+                        nextLayerEl.classList.add('active');
+                        currentLayerEl.classList.remove('active');
+                        currentLayerEl.classList.add('inactive');
+                        
+                        this.activeLayer = nextLayer;
+                        this.spinnerEl.classList.remove('active');
+                        resolve();
+                    };
+                    
+                    preloader.onerror = () => {
+                        clearTimeout(loadTimeout);
+                        console.error('Failed to load image:', url);
+                        this.handleImageError(url, 'load');
+                        resolve();
+                    };
+                    
+                    preloader.src = url;
+                });
+            }
+            
+            handleImageError(url, reason) {
+                console.warn(`Image error (${reason}):`, url);
+                
+                // Try fallback image if main image fails
+                if (!this.usingFallback && url !== this.fallbackImageUrl) {
+                    console.log('Attempting fallback image...');
+                    this.usingFallback = true;
+                    this.fallbackBadgeEl.textContent = '⚠️ Image unavailable';
+                    this.fallbackBadgeEl.classList.add('show');
+                    
+                    // Try fallback
+                    if (this.lastGoodData && this.lastGoodData.currentImage) {
+                        this.crossfadeImage(
+                            this.lastGoodData.currentImage.url,
+                            this.lastGoodData.currentImage.title + ' (cached)',
+                            true
+                        );
+                    } else {
+                        this.crossfadeImage(this.fallbackImageUrl, 'Alice (Fallback)', true);
+                    }
+                } else {
+                    // Even fallback failed - show error state
+                    this.handleError('image', 'Unable to load images');
+                }
+            }
+            
+            showUpdateIndicator() {
+                this.updateIndicator.classList.add('show');
+                setTimeout(() => {
+                    this.updateIndicator.classList.remove('show');
+                }, 3000);
+            }
+            
+            updateDebug(data) {
+                if (!this.isDebugMode) return;
+                const debugInfo = {
+                    ...data,
+                    _pollInterval: `${this.pollInterval / 1000}s`,
+                    _lastChecked: new Date().toISOString()
+                };
+                this.debugContent.textContent = JSON.stringify(debugInfo, null, 2);
+            }
+            
+            toggleFullscreen() {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen().catch(err => {
+                        console.log('Fullscreen error:', err);
+                    });
+                    this.showToast('🖥️ Fullscreen');
+                } else {
+                    document.exitFullscreen();
+                    this.showToast('🪟 Windowed');
+                }
+            }
+            
+            togglePause() {
+                this.isPaused = !this.isPaused;
+                const pauseIndicator = document.getElementById('pause-indicator');
+                if (this.isPaused) {
+                    pauseIndicator.classList.add('show');
+                    this.showToast('⏸️ Paused');
+                } else {
+                    pauseIndicator.classList.remove('show');
+                    this.showToast('▶️ Resumed');
+                    this.loadDisplay();  // Refresh immediately when unpausing
+                }
+            }
+            
+            toggleHelp() {
+                const helpOverlay = document.getElementById('help-overlay');
+                helpOverlay.classList.toggle('show');
+            }
+            
+            toggleWeatherWidget() {
+                const widget = document.getElementById('weather-widget');
+                widget.classList.toggle('hidden');
+                if (!widget.classList.contains('hidden')) {
+                    this.showToast('🌤️ Weather overlay on');
+                } else {
+                    this.showToast('🌤️ Weather overlay off');
+                }
+            }
+            
+            updateWeatherWidget() {
+                if (!this.currentData) return;
+                
+                const data = this.currentData;
+                document.getElementById('widget-weather-icon').textContent = 
+                    this.weatherIcons[data.weather?.condition] || '🌡️';
+                document.getElementById('widget-temp').textContent = 
+                    data.weather?.temperature ?? '--';
+                document.getElementById('widget-condition').textContent = 
+                    data.weather?.condition || 'Unknown';
+                document.getElementById('widget-description').textContent = 
+                    data.weather?.description || '';
+                document.getElementById('widget-humidity').textContent = 
+                    (data.weather?.humidity ?? '--') + '%';
+                document.getElementById('widget-period').textContent = 
+                    data.time?.period || '--';
+                document.getElementById('widget-activity').textContent = 
+                    data.activity || '--';
+            }
+            
+            startWidgetClock() {
+                // Update clock immediately and every second
+                const updateClock = () => {
+                    const now = new Date();
+                    const timeStr = now.toLocaleTimeString('en-US', { 
+                        hour: '2-digit', 
+                        minute: '2-digit',
+                        hour12: false,
+                        timeZone: 'Asia/Hebron'
+                    });
+                    document.getElementById('widget-clock').textContent = timeStr;
+                };
+                updateClock();
+                
+                // Only set interval if not already running
+                if (!this.clockInterval) {
+                    this.clockInterval = setInterval(updateClock, 1000);
+                }
+            }
+            
+            showImageInfo() {
+                const infoPanel = document.getElementById('image-info');
+                if (this.currentData) {
+                    document.getElementById('info-title').textContent = this.currentData.title || '--';
+                    document.getElementById('info-weather').textContent = this.currentData.weather || '--';
+                    document.getElementById('info-time').textContent = this.currentData.time || '--';
+                    document.getElementById('info-activity').textContent = this.currentData.activity || '--';
+                    document.getElementById('info-updated').textContent = this.currentData.updated || '--';
+                }
+                infoPanel.classList.toggle('show');
+            }
+            
+            closeAllPanels() {
+                document.getElementById('help-overlay').classList.remove('show');
+                document.getElementById('image-info').classList.remove('show');
+                document.getElementById('weather-widget').classList.add('hidden');
+                this.debugEl.classList.remove('show');
+            }
+            
+            showToast(message) {
+                const toast = document.getElementById('toast');
+                toast.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 1500);
+            }
+            
+            startPolling() {
+                // Update countdown display
+                let nextPoll = Date.now() + this.pollInterval;
+                
+                const updateCountdown = () => {
+                    const remaining = Math.max(0, Math.ceil((nextPoll - Date.now()) / 1000));
+                    const mins = Math.floor(remaining / 60);
+                    const secs = remaining % 60;
+                    this.countdownEl.textContent = `Next check in ${mins}:${secs.toString().padStart(2, '0')}`;
+                };
+                
+                setInterval(updateCountdown, 1000);
+                
+                // Main polling loop
+                setInterval(() => {
+                    if (!this.isPaused) {
+                        this.loadDisplay();
+                    }
+                    nextPoll = Date.now() + this.pollInterval;
+                }, this.pollInterval);
+                
+                console.log('🦜 Alice Display initialized');
+                console.log(`📡 Auto-refresh every ${this.pollInterval / 1000 / 60} minutes`);
+            }
+        }
+        
+        // Initialize on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new AliceDisplay();
+        });
+        
+        // PWA Install Prompt Handler
+        class InstallPrompt {
+            constructor() {
+                this.deferredPrompt = null;
+                this.banner = document.getElementById('install-banner');
+                this.installBtn = document.getElementById('install-btn');
+                this.dismissBtn = document.getElementById('install-dismiss');
+                this.iosModal = document.getElementById('ios-modal');
+                this.iosModalClose = document.getElementById('ios-modal-close');
+                
+                this.init();
+            }
+            
+            init() {
+                // Check if already installed or dismissed
+                if (this.isInstalled() || this.isDismissed()) {
+                    return;
+                }
+                
+                // Check for iOS
+                if (this.isIOS()) {
+                    this.setupIOSPrompt();
+                    return;
+                }
+                
+                // Listen for beforeinstallprompt (Chrome/Edge)
+                window.addEventListener('beforeinstallprompt', (e) => {
+                    e.preventDefault();
+                    this.deferredPrompt = e;
+                    this.showBanner();
+                });
+                
+                // Handle install button click
+                this.installBtn.addEventListener('click', () => this.handleInstall());
+                this.dismissBtn.addEventListener('click', () => this.handleDismiss());
+                
+                // Listen for successful install
+                window.addEventListener('appinstalled', () => {
+                    console.log('🦜 App installed successfully!');
+                    this.hideBanner();
+                    this.deferredPrompt = null;
+                });
+            }
+            
+            isInstalled() {
+                // Check if running as installed PWA
+                return window.matchMedia('(display-mode: standalone)').matches ||
+                       window.navigator.standalone === true;
+            }
+            
+            isDismissed() {
+                const dismissed = localStorage.getItem('installDismissed');
+                if (!dismissed) return false;
+                
+                // Allow re-prompting after 7 days
+                const dismissedTime = parseInt(dismissed, 10);
+                const sevenDays = 7 * 24 * 60 * 60 * 1000;
+                return (Date.now() - dismissedTime) < sevenDays;
+            }
+            
+            isIOS() {
+                return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            }
+            
+            isIPad() {
+                return /iPad/.test(navigator.userAgent) || 
+                       (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            }
+            
+            isIOSSafari() {
+                const ua = navigator.userAgent;
+                const iOS = /iPad|iPhone|iPod/.test(ua);
+                const webkit = /WebKit/.test(ua);
+                const notChrome = !/CriOS/.test(ua);
+                const notFirefox = !/FxiOS/.test(ua);
+                const notEdge = !/EdgiOS/.test(ua);
+                return iOS && webkit && notChrome && notFirefox && notEdge;
+            }
+            
+            setupIOSPrompt() {
+                // Get additional iOS modal elements
+                const iosModalDismiss = document.getElementById('ios-modal-dismiss');
+                const safariNote = this.iosModal.querySelector('.ios-safari-note');
+                
+                // Update note if not in Safari
+                if (!this.isIOSSafari() && safariNote) {
+                    safariNote.innerHTML = `
+                        <strong>⚠️ Open in Safari</strong><br>
+                        You're not in Safari. Copy this link and open it in Safari to install:
+                        <div style="margin-top:8px;padding:8px;background:rgba(255,255,255,0.1);border-radius:6px;font-size:11px;word-break:break-all;">
+                            ${window.location.href}
+                        </div>
+                    `;
+                    safariNote.style.color = 'rgba(255, 200, 100, 0.8)';
+                }
+                
+                // Update text for iPad
+                if (this.isIPad()) {
+                    const stepDesc = this.iosModal.querySelector('.ios-step-desc');
+                    if (stepDesc) {
+                        stepDesc.textContent = 'Find it at the top of Safari';
+                    }
+                }
+                
+                // Show banner after a short delay on iOS
+                setTimeout(() => {
+                    this.showBanner();
+                }, 3000);
+                
+                this.installBtn.addEventListener('click', () => {
+                    this.iosModal.classList.add('show');
+                    this.hideBanner();
+                });
+                
+                this.dismissBtn.addEventListener('click', () => this.handleDismiss());
+                
+                // "Got it" button - just closes modal
+                this.iosModalClose.addEventListener('click', () => {
+                    this.iosModal.classList.remove('show');
+                });
+                
+                // "Don't show again" button - closes and permanently dismisses
+                if (iosModalDismiss) {
+                    iosModalDismiss.addEventListener('click', () => {
+                        this.iosModal.classList.remove('show');
+                        // Set a very long dismissal (365 days)
+                        const oneYear = 365 * 24 * 60 * 60 * 1000;
+                        localStorage.setItem('installDismissed', (Date.now() + oneYear).toString());
+                    });
+                }
+                
+                // Close modal on backdrop click
+                this.iosModal.addEventListener('click', (e) => {
+                    if (e.target === this.iosModal) {
+                        this.iosModal.classList.remove('show');
+                    }
+                });
+                
+                // Close modal with Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.iosModal.classList.contains('show')) {
+                        this.iosModal.classList.remove('show');
+                    }
+                });
+            }
+            
+            showBanner() {
+                // Delay showing to not interrupt initial experience
+                setTimeout(() => {
+                    this.banner.classList.add('show');
+                }, 5000);
+            }
+            
+            hideBanner() {
+                this.banner.classList.remove('show');
+            }
+            
+            async handleInstall() {
+                if (!this.deferredPrompt) {
+                    console.log('No install prompt available');
+                    return;
+                }
+                
+                // Show the install prompt
+                this.deferredPrompt.prompt();
+                
+                // Wait for user response
+                const { outcome } = await this.deferredPrompt.userChoice;
+                console.log(`Install prompt outcome: ${outcome}`);
+                
+                this.deferredPrompt = null;
+                this.hideBanner();
+            }
+            
+            handleDismiss() {
+                localStorage.setItem('installDismissed', Date.now().toString());
+                this.hideBanner();
+            }
+        }
+        
+        // Initialize install prompt
+        new InstallPrompt();
+        
+        // Register service worker for offline support
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('🦜 Service Worker registered:', registration.scope);
+                        
+                        // Check for updates periodically
+                        setInterval(() => {
+                            registration.update();
+                        }, 60 * 60 * 1000);  // Check hourly
+                        
+                        // Handle updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    console.log('🦜 New version available');
+                                    // Optionally notify user or auto-update
+                                    newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                }
+                            });
+                        });
+                    })
+                    .catch((error) => {
+                        console.warn('Service Worker registration failed:', error);
+                    });
+                
+                // Listen for controller changes (new SW activated)
+                navigator.serviceWorker.addEventListener('controllerchange', () => {
+                    console.log('🦜 Service Worker updated, reloading...');
+                    window.location.reload();
+                });
+            });
+        }
+    </script>
+</body>
+</html>

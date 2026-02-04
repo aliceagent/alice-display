@@ -1,0 +1,47 @@
+[
+  {
+    "filename": "Alice_Gaming_Time__20",
+    "image_path": "/Users/agentcaras/alice-gallery-images/Alice_Gaming_Time__20.png",
+    "folder": "alice-gallery/anime",
+    "public_id": "Alice_Gaming_Time__20",
+    "success": false,
+    "result": "HTTP 401: {\"error\":{\"message\":\"Invalid Signature 3f4780b95817e63f205284a4a4da1c3d04f6c21e. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Gaming_Time__20&timestamp=1770218640'.\"}}",
+    "timestamp": "2026-02-04T15:24:02.376989"
+  },
+  {
+    "filename": "Alice_Hot_Cocoa_Outside_-_Snowy_Evening",
+    "image_path": "/Users/agentcaras/alice-gallery-images/Alice_Hot_Cocoa_Outside_-_Snowy_Evening.png",
+    "folder": "alice-gallery/anime",
+    "public_id": "Alice_Hot_Cocoa_Outside_-_Snowy_Evening",
+    "success": false,
+    "result": "HTTP 401: {\"error\":{\"message\":\"Invalid Signature 3f69a9c24d40b468c14e0f36fbd2096320b39d39. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Hot_Cocoa_Outside_-_Snowy_Evening&timestamp=1770218644'.\"}}",
+    "timestamp": "2026-02-04T15:24:06.649063"
+  },
+  {
+    "filename": "Alice_Baking_-_Overcast_Evening",
+    "image_path": "/Users/agentcaras/alice-gallery-images/Alice_Baking_-_Overcast_Evening.png",
+    "folder": "alice-gallery/anime",
+    "public_id": "Alice_Baking_-_Overcast_Evening",
+    "success": false,
+    "result": "HTTP 401: {\"error\":{\"message\":\"Invalid Signature 344417f558ff2d42c81a334b3a250c12b265bd0f. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Baking_-_Overcast_Evening&timestamp=1770218648'.\"}}",
+    "timestamp": "2026-02-04T15:24:10.977397"
+  },
+  {
+    "filename": "029_Alice_Sleeping_-_Stormy_Early_Morning__30",
+    "image_path": "/Users/agentcaras/alice-gallery-images/029_Alice_Sleeping_-_Stormy_Early_Morning__30.png",
+    "folder": "alice-gallery/anime",
+    "public_id": "029_Alice_Sleeping_-_Stormy_Early_Morning__30",
+    "success": false,
+    "result": "HTTP 401: {\"error\":{\"message\":\"Invalid Signature 77d6a6c1a01888d4fb7b56271f0796344a380997. String to sign - 'folder=alice-gallery/anime&public_id=029_Alice_Sleeping_-_Stormy_Early_Morning__30&timestamp=1770218653'.\"}}",
+    "timestamp": "2026-02-04T15:24:15.010219"
+  },
+  {
+    "filename": "Alice_Swimming_Session__25",
+    "image_path": "/Users/agentcaras/alice-gallery-images/Alice_Swimming_Session__25.png",
+    "folder": "alice-gallery/anime",
+    "public_id": "Alice_Swimming_Session__25",
+    "success": false,
+    "result": "HTTP 401: {\"error\":{\"message\":\"Invalid Signature ae7102ec4dee2610b1ee889f8b3f6f52cd5a5680. String to sign - 'folder=alice-gallery/anime&public_id=Alice_Swimming_Session__25&timestamp=1770218657'.\"}}",
+    "timestamp": "2026-02-04T15:24:18.986102"
+  }
+]

@@ -6,6 +6,9 @@ __pycache__/
 
 # Sensitive config
 config.py
+config_secrets.py
+*.key
+secrets.json
 
 # Environment
 .env

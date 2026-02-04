@@ -1,12 +1,13 @@
 {
-  "generated_at": "2026-02-03T17:53:31Z",
-  "total_images": 32,
+  "generated_at": "2026-02-03T18:07:18Z",
+  "total_images": 40,
   "base_path": "images/generated/",
   "time_periods": [
     "Morning",
     "Afternoon",
     "Evening",
-    "Night"
+    "Night",
+    "Bedtime"
   ],
   "weather_conditions": [
     "Sunny",
@@ -81,6 +82,70 @@
       "path": "images/generated/afternoon-sunny.png",
       "weather": "Sunny",
       "time_period": "Afternoon",
+      "generated": true
+    },
+    {
+      "id": "bedtime-clear-night",
+      "filename": "bedtime-clear-night.png",
+      "path": "images/generated/bedtime-clear-night.png",
+      "weather": "Clear Night",
+      "time_period": "Bedtime",
+      "generated": true
+    },
+    {
+      "id": "bedtime-cloudy",
+      "filename": "bedtime-cloudy.png",
+      "path": "images/generated/bedtime-cloudy.png",
+      "weather": "Cloudy",
+      "time_period": "Bedtime",
+      "generated": true
+    },
+    {
+      "id": "bedtime-foggy",
+      "filename": "bedtime-foggy.png",
+      "path": "images/generated/bedtime-foggy.png",
+      "weather": "Foggy",
+      "time_period": "Bedtime",
+      "generated": true
+    },
+    {
+      "id": "bedtime-overcast",
+      "filename": "bedtime-overcast.png",
+      "path": "images/generated/bedtime-overcast.png",
+      "weather": "Overcast",
+      "time_period": "Bedtime",
+      "generated": true
+    },
+    {
+      "id": "bedtime-rainy",
+      "filename": "bedtime-rainy.png",
+      "path": "images/generated/bedtime-rainy.png",
+      "weather": "Rainy",
+      "time_period": "Bedtime",
+      "generated": true
+    },
+    {
+      "id": "bedtime-snowy",
+      "filename": "bedtime-snowy.png",
+      "path": "images/generated/bedtime-snowy.png",
+      "weather": "Snowy",
+      "time_period": "Bedtime",
+      "generated": true
+    },
+    {
+      "id": "bedtime-stormy",
+      "filename": "bedtime-stormy.png",
+      "path": "images/generated/bedtime-stormy.png",
+      "weather": "Stormy",
+      "time_period": "Bedtime",
+      "generated": true
+    },
+    {
+      "id": "bedtime-sunny",
+      "filename": "bedtime-sunny.png",
+      "path": "images/generated/bedtime-sunny.png",
+      "weather": "Sunny",
+      "time_period": "Bedtime",
       "generated": true
     },
     {

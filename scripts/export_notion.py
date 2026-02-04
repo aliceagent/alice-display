@@ -18,8 +18,8 @@ from pathlib import Path
 from typing import Optional
 
 # Alice image database ID (from Notion)
-DATABASE_ID = "2fc41906-4d30-81ee-ba44-000bce6001c8"
-NOTION_VERSION = "2025-09-03"
+DATABASE_ID = "2fc41906-4d30-8189-a748-c6b715faf485"
+NOTION_VERSION = "2022-06-28"  # Using correct version, NOT 2025-09-03
 
 
 class NotionExporter:
@@ -61,7 +61,7 @@ class NotionExporter:
                 body["start_cursor"] = start_cursor
             
             # Make request
-            url = f"{self.base_url}/data_sources/{DATABASE_ID}/query"
+            url = f"{self.base_url}/databases/{DATABASE_ID}/query"
             data = json.dumps(body).encode("utf-8")
             
             request = urllib.request.Request(url, data=data, headers=self.headers, method="POST")

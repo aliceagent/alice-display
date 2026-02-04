@@ -62,16 +62,13 @@ def get_time_period(hour: int, sunrise_hour: int = 6, sunset_hour: int = 18) -> 
     Determine time period based on current hour.
     Uses fixed boundaries for consistent behavior in Israel timezone.
     
-    Returns one of: Dawn, Morning, Afternoon, Evening, Night, Late Night
+    Returns one of: Morning, Afternoon, Evening, Night, Bedtime
     """
-    # Late Night: 23:00-4:59 (sleep time)
-    if hour >= 23 or hour < 5:
-        return "Late Night"
-    # Dawn: 5:00-6:59 (sunrise)
-    elif 5 <= hour < 7:
-        return "Dawn"
-    # Morning: 7:00-11:59 (bright daylight)
-    elif 7 <= hour < 12:
+    # Bedtime: 23:00-5:59 (sleep time)
+    if hour >= 23 or hour < 6:
+        return "Bedtime"
+    # Morning: 6:00-11:59 (bright daylight)
+    elif 6 <= hour < 12:
         return "Morning"
     # Afternoon: 12:00-16:59 (full daylight)
     elif 12 <= hour < 17:
