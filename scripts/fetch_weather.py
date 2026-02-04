@@ -62,21 +62,37 @@ def get_time_period(hour: int, sunrise_hour: int = 6, sunset_hour: int = 18) -> 
     Determine time period based on current hour.
     Uses fixed boundaries for consistent behavior in Israel timezone.
     
-    Returns one of: Morning, Afternoon, Evening, Night, Bedtime
+    Maps to gallery DB values: Dawn, Early Morning, Morning, Midday,
+    Afternoon, Golden Hour, Evening, Night, Late Night.
+    
+    The gallery has 31 Sleeping images tagged as Early Morning, Night,
+    and Late Night — so late hours map to Late Night to prefer those.
     """
-    # Bedtime: 23:00-5:59 (sleep time)
-    if hour >= 23 or hour < 6:
-        return "Bedtime"
-    # Morning: 6:00-11:59 (bright daylight)
-    elif 6 <= hour < 12:
+    # Late Night / Sleep: 23:00-4:59 → "Late Night" (maps to sleeping images)
+    if hour >= 23 or hour < 5:
+        return "Late Night"
+    # Dawn: 5:00-5:59 (pre-sunrise)
+    elif 5 <= hour < 6:
+        return "Dawn"
+    # Early Morning: 6:00-7:59
+    elif 6 <= hour < 8:
+        return "Early Morning"
+    # Morning: 8:00-10:59
+    elif 8 <= hour < 11:
         return "Morning"
-    # Afternoon: 12:00-16:59 (full daylight)
-    elif 12 <= hour < 17:
+    # Midday: 11:00-13:59
+    elif 11 <= hour < 14:
+        return "Midday"
+    # Afternoon: 14:00-16:59
+    elif 14 <= hour < 17:
         return "Afternoon"
-    # Evening: 17:00-19:59 (golden hour, sunset)
-    elif 17 <= hour < 20:
+    # Golden Hour: 17:00-17:59 (sunset hour in Israel winter)
+    elif 17 <= hour < 18:
+        return "Golden Hour"
+    # Evening: 18:00-19:59
+    elif 18 <= hour < 20:
         return "Evening"
-    # Night: 20:00-22:59 (dark, evening activities)
+    # Night: 20:00-22:59
     else:
         return "Night"
 

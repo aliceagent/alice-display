@@ -1,7 +1,7 @@
 {
-  "temperature": 9,
-  "feels_like": 8,
-  "humidity": 77,
+  "temperature": 8,
+  "feels_like": 7,
+  "humidity": 79,
   "wind_speed": 7,
   "weather_id": 802,
   "condition": "Cloudy",
@@ -9,8 +9,8 @@
   "icon": "03n",
   "sunrise_hour": 6,
   "sunset_hour": 17,
-  "time_period": "Night",
-  "current_hour": 22,
-  "timestamp": "2026-02-04T20:39:26.578556+00:00",
+  "time_period": "Late Night",
+  "current_hour": 23,
+  "timestamp": "2026-02-04T21:14:59.010655+00:00",
   "source": "OpenWeatherMap"
 }

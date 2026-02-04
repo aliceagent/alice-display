@@ -1,24 +1,24 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8130-b947-d37550591b0a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219334/alice-gallery/anime/Alice_Gaming_-_Cloudy_Night.png",
-    "title": "Alice Gaming - Cloudy Night",
+    "id": "2fd41906-4d30-8135-bbcc-f1e4d17e9862",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233001/alice-gallery/holiday/Alice_Reading_Megillah_Scroll_-_Purim_Cloudy_Night.png",
+    "title": "Alice Reading Megillah Scroll - Purim Cloudy Night",
     "description": "",
-    "activity": "Leisure",
+    "activity": "",
     "mood": ""
   },
   "weather": {
     "condition": "Cloudy",
-    "temperature": 9,
-    "humidity": 77,
+    "temperature": 8,
+    "humidity": 79,
     "description": "scattered clouds",
     "icon": "03n"
   },
   "time": {
-    "period": "Night",
-    "hour": 22,
+    "period": "Late Night",
+    "hour": 23,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-04T20:43:38.091106+00:00",
-  "nextUpdate": "2026-02-04T21:00:00+00:00"
+  "lastUpdated": "2026-02-04T21:14:59.023194+00:00",
+  "nextUpdate": "2026-02-04T22:00:00+00:00"
 }
