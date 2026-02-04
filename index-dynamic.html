@@ -108,7 +108,7 @@
             z-index: 1;
         }
         
-        /* Weather/Time overlay (bottom bar) */
+        /* Weather/Time overlay (bottom bar) - now toggleable */
         .status-overlay {
             position: fixed;
             bottom: 20px;
@@ -124,12 +124,42 @@
             gap: 20px;
             font-size: 14px;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease, transform 0.4s ease, width 0.4s ease, padding 0.4s ease;
             z-index: 10;
+            cursor: pointer;
         }
         
         .status-overlay.visible {
             opacity: 1;
+        }
+        
+        /* Collapsed state - small indicator in bottom-left */
+        .status-overlay.collapsed {
+            bottom: 20px;
+            left: 20px;
+            transform: none;
+            width: 50px;
+            height: 50px;
+            padding: 12px;
+            border-radius: 50%;
+            justify-content: center;
+            gap: 0;
+            opacity: 0.8;
+        }
+        
+        /* Hide all items except weather icon when collapsed */
+        .status-overlay.collapsed .status-item:not(:first-child),
+        .status-overlay.collapsed .status-item .value,
+        .status-overlay.collapsed .status-item .label {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+        
+        /* Make weather icon bigger in collapsed state */
+        .status-overlay.collapsed .status-item:first-child .icon {
+            font-size: 24px;
         }
         
         .status-item {
@@ -186,7 +216,7 @@
             transform: translateX(-50%) translateY(0);
         }
         
-        /* Weather widget overlay (corner) - now in bottom-right for mobile */
+        /* Weather widget overlay (corner) - reverted to original */
         .weather-widget {
             position: fixed;
             top: 20px;
@@ -200,41 +230,11 @@
             min-width: 180px;
             opacity: 1;
             transform: translateY(0);
-            transition: opacity 0.4s ease, transform 0.4s ease, width 0.4s ease, height 0.4s ease, padding 0.4s ease;
+            transition: opacity 0.4s ease, transform 0.4s ease;
             z-index: 15;
             border: 1px solid rgba(255,255,255,0.1);
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             cursor: pointer;
-        }
-        
-        /* Collapsed state - shows only a small weather icon */
-        .weather-widget.collapsed {
-            width: 60px;
-            height: 60px;
-            padding: 16px;
-            border-radius: 50%;
-            min-width: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(30,30,50,0.8) 100%);
-        }
-        
-        /* Hide expanded content when collapsed */
-        .weather-widget.collapsed .weather-widget-header > div,
-        .weather-widget.collapsed .weather-widget-condition,
-        .weather-widget.collapsed .weather-widget-description,
-        .weather-widget.collapsed .weather-widget-divider,
-        .weather-widget.collapsed .weather-widget-details,
-        .weather-widget.collapsed .weather-widget-time {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        
-        /* Weather icon gets bigger and centered when collapsed */
-        .weather-widget.collapsed .weather-widget-icon {
-            font-size: 28px !important;
         }
         
         .weather-widget.hidden {
@@ -339,7 +339,7 @@
         /* ═══════════════════════════════════════════════════════════
            MOBILE PORTRAIT LAYOUT
            On portrait phones, we position the weather widget in the
-           bottom-right corner where it can toggle on/off smoothly.
+           bottom-left corner where it can toggle on/off smoothly.
            When expanded, the image gets slightly shrunk to avoid overlap.
            When collapsed, image uses full space.
            
@@ -362,11 +362,11 @@
             }
             
             .weather-widget {
-                /* Reposition to bottom-right corner */
+                /* Reposition to bottom-left corner */
                 top: auto;
                 bottom: 20px;
-                right: 20px;
-                left: auto;
+                left: 20px;
+                right: auto;
                 transform: none;
                 
                 /* More compact for mobile */
@@ -380,7 +380,7 @@
             /* Collapsed state positioning */
             .weather-widget.collapsed {
                 bottom: 20px;
-                right: 20px;
+                left: 20px;
             }
             
             /* Horizontal layout for the header (icon + temp side by side with condition) */
