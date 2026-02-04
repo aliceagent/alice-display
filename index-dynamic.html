@@ -108,12 +108,12 @@
             z-index: 1;
         }
         
-        /* Weather/Time overlay (bottom bar) - now toggleable */
+        /* Weather/Time overlay (bottom bar) - now toggleable at bottom-LEFT */
         .status-overlay {
             position: fixed;
             bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 20px;
+            transform: none;
             background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
             padding: 12px 24px;
@@ -124,7 +124,7 @@
             gap: 20px;
             font-size: 14px;
             opacity: 0;
-            transition: opacity 0.4s ease, transform 0.4s ease, width 0.4s ease, padding 0.4s ease;
+            transition: opacity 0.4s ease, width 0.4s ease, padding 0.4s ease, border-radius 0.4s ease;
             z-index: 10;
             cursor: pointer;
         }
@@ -133,11 +133,8 @@
             opacity: 1;
         }
         
-        /* Collapsed state - small indicator in bottom-left */
+        /* Collapsed state - small circular indicator */
         .status-overlay.collapsed {
-            bottom: 20px;
-            left: 20px;
-            transform: none;
             width: 50px;
             height: 50px;
             padding: 12px;
