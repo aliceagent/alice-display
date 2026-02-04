@@ -318,6 +318,15 @@
            from the top. We position the widget above that line.
            ═══════════════════════════════════════════════════════════ */
         @media (max-width: 480px) and (orientation: portrait) {
+            /* Image push-down when weather widget is visible */
+            .display-container {
+                transition: padding-top 0.5s ease;
+                padding-top: 110px; /* Space for weather widget + clock */
+            }
+            
+            .display-container.widget-hidden {
+                padding-top: 0;
+            }
             .weather-widget {
                 /* Reposition to top-center, fitting in the dead space bar */
                 top: 8px;
@@ -2077,7 +2086,19 @@
             
             toggleWeatherWidget() {
                 const widget = document.getElementById('weather-widget');
+                const displayContainer = document.querySelector('.display-container');
+                const portraitClock = document.getElementById('portrait-clock');
+                
                 widget.classList.toggle('hidden');
+                
+                // Toggle display container class for mobile portrait image push-down
+                displayContainer.classList.toggle('widget-hidden', widget.classList.contains('hidden'));
+                
+                // Toggle portrait clock visibility (they're a pair on mobile portrait)
+                if (portraitClock) {
+                    portraitClock.style.display = widget.classList.contains('hidden') ? 'none' : '';
+                }
+                
                 if (!widget.classList.contains('hidden')) {
                     this.showToast('🌤️ Weather overlay on');
                 } else {
