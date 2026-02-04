@@ -437,6 +437,80 @@
             }
         }
         
+        /* ═══════════════════════════════════════════════════════════
+           MOBILE LANDSCAPE LAYOUT
+           On landscape phones, the square image fills the viewport
+           height, leaving dead space on left and right. We shift
+           the image to the right and dock the weather widget in
+           the left dead space so they don't overlap.
+           
+           Detection: max-height 480px AND landscape orientation.
+           ═══════════════════════════════════════════════════════════ */
+        @media (max-height: 480px) and (orientation: landscape) {
+            /* Shift image container to use a right-biased layout */
+            .display-container {
+                justify-content: flex-end;
+                padding-right: 5vw;
+            }
+            
+            /* Weather widget docks to the left dead space */
+            .weather-widget {
+                top: 50%;
+                left: 12px;
+                transform: translateY(-50%);
+                right: auto;
+                min-width: auto;
+                width: auto;
+                max-width: 200px;
+                padding: 14px 16px;
+                border-radius: 16px;
+            }
+            
+            /* Slightly compact widget for landscape */
+            .weather-widget-header {
+                gap: 8px;
+                margin-bottom: 8px;
+            }
+            
+            .weather-widget-icon {
+                font-size: 30px;
+            }
+            
+            .weather-widget-temp {
+                font-size: 24px;
+            }
+            
+            .weather-widget-temp .unit {
+                font-size: 14px;
+            }
+            
+            .weather-widget-condition {
+                font-size: 14px;
+            }
+            
+            .weather-widget-description {
+                font-size: 11px;
+            }
+            
+            .weather-widget-divider {
+                margin: 8px 0;
+            }
+            
+            .weather-widget-clock {
+                font-size: 20px;
+            }
+            
+            .weather-widget-period {
+                font-size: 12px;
+                padding: 3px 8px;
+            }
+            
+            /* Hide the portrait-only clock in landscape */
+            .portrait-clock {
+                display: none !important;
+            }
+        }
+        
         /* Update indicator */
         .update-indicator {
             position: fixed;
