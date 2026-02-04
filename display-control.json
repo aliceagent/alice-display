@@ -1,16 +1,16 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8135-bbcc-f1e4d17e9862",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233001/alice-gallery/holiday/Alice_Reading_Megillah_Scroll_-_Purim_Cloudy_Night.png",
-    "title": "Alice Reading Megillah Scroll - Purim Cloudy Night",
+    "id": "2fc41906-4d30-8150-8289-dfc617beabaf",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231169/alice-gallery/anime/053_Alice_Analyzing_Session__59.png",
+    "title": "Alice Analyzing Session #59",
     "description": "",
-    "activity": "",
+    "activity": "Work",
     "mood": ""
   },
   "weather": {
     "condition": "Cloudy",
     "temperature": 8,
-    "humidity": 79,
+    "humidity": 78,
     "description": "scattered clouds",
     "icon": "03n"
   },
@@ -19,6 +19,6 @@
     "hour": 23,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-04T21:14:59.023194+00:00",
+  "lastUpdated": "2026-02-04T21:44:17.109969+00:00",
   "nextUpdate": "2026-02-04T22:00:00+00:00"
 }
