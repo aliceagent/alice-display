@@ -151,6 +151,41 @@
             font-weight: 500;
         }
         
+        /* Tap-to-copy: makes the activity item tappable */
+        .tap-to-copy {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: opacity 0.15s ease;
+        }
+        
+        .tap-to-copy:active {
+            opacity: 0.6;
+        }
+        
+        /* Copy confirmation toast — floats above the status bar */
+        .copy-toast {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: rgba(34, 197, 94, 0.9);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            margin-bottom: 8px;
+        }
+        
+        .copy-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        
         /* Weather widget overlay (corner) */
         .weather-widget {
             position: fixed;
@@ -1045,12 +1080,14 @@
                 <div class="label" id="current-time">--:--</div>
             </div>
         </div>
-        <div class="status-item">
+        <div class="status-item tap-to-copy" id="activity-item" title="Tap to copy image link">
             <span class="icon">🎨</span>
             <div>
                 <div class="value" id="activity">--</div>
             </div>
         </div>
+        <!-- Copy confirmation toast -->
+        <div class="copy-toast" id="copy-toast">📋 Link copied!</div>
     </div>
     
     <div class="countdown" id="countdown"></div>
@@ -1360,6 +1397,30 @@
                 document.addEventListener('mousemove', showOverlays);
                 document.addEventListener('touchstart', showOverlays);
                 
+                // Tap-to-copy: tapping the activity area copies the current image's
+                // Cloudinary URL to the clipboard. Shows a brief green toast confirmation.
+                document.getElementById('activity-item').addEventListener('click', (e) => {
+                    e.stopPropagation();  // Don't trigger the show/hide overlays
+                    
+                    // Get the current image URL from the last loaded data
+                    const url = this.currentData?.currentImage?.url;
+                    if (!url) {
+                        this.showCopyToast('⚠️ No image URL');
+                        return;
+                    }
+                    
+                    // Copy to clipboard using the modern API with fallback
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(url).then(() => {
+                            this.showCopyToast('📋 Link copied!');
+                        }).catch(() => {
+                            this.fallbackCopy(url);
+                        });
+                    } else {
+                        this.fallbackCopy(url);
+                    }
+                });
+                
                 // Keyboard shortcuts
                 document.addEventListener('keydown', (e) => {
                     // Ignore if typing in an input
@@ -1407,6 +1468,18 @@
                             break;
                         case 'escape':
                             this.closeAllPanels();
+                            break;
+                        case 'c':
+                            // Copy current image URL to clipboard
+                            if (!e.ctrlKey && !e.metaKey) {
+                                e.preventDefault();
+                                const copyUrl = this.currentData?.currentImage?.url;
+                                if (copyUrl) {
+                                    navigator.clipboard?.writeText(copyUrl).then(() => {
+                                        this.showCopyToast('📋 Link copied!');
+                                    }).catch(() => this.fallbackCopy(copyUrl));
+                                }
+                            }
                             break;
                         case 'arrowleft':
                             e.preventDefault();
@@ -1731,6 +1804,40 @@
                     document.exitFullscreen();
                     this.showToast('🪟 Windowed');
                 }
+            }
+            
+            /**
+             * Show the green "Link copied!" toast above the status bar.
+             * Auto-hides after 1.5 seconds.
+             */
+            showCopyToast(message) {
+                const toast = document.getElementById('copy-toast');
+                toast.textContent = message;
+                toast.classList.add('show');
+                clearTimeout(this._copyToastTimer);
+                this._copyToastTimer = setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 1500);
+            }
+            
+            /**
+             * Fallback for copying text on older browsers / non-HTTPS contexts.
+             * Creates a temporary textarea, selects the text, and uses execCommand.
+             */
+            fallbackCopy(text) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    this.showCopyToast('📋 Link copied!');
+                } catch (err) {
+                    this.showCopyToast('⚠️ Copy failed');
+                }
+                document.body.removeChild(textarea);
             }
             
             togglePause() {
