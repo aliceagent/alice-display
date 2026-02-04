@@ -1778,7 +1778,7 @@
                 document.getElementById('widget-period').textContent = 
                     data.time?.period || '--';
                 document.getElementById('widget-activity').textContent = 
-                    data.activity || '--';
+                    data.currentImage?.activity || data.activity || '--';
             }
             
             startWidgetClock() {
