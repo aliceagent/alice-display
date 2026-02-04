@@ -205,8 +205,14 @@ class ImageSelector:
             
             matches.append(img)
         
-        # Prefer images with actual URLs (generated images)
-        images_with_urls = [m for m in matches if m.get("cloudinary_url") or m.get("url")]
+        # REQUIRE Cloudinary URLs — local paths don't exist on GitHub Pages.
+        # Once all images are uploaded to Cloudinary, this filter can be relaxed.
+        images_with_cdn = [m for m in matches if m.get("cloudinary_url")]
+        if images_with_cdn:
+            return images_with_cdn
+        
+        # Fallback: any image with a URL (only useful for local development)
+        images_with_urls = [m for m in matches if m.get("url")]
         if images_with_urls:
             return images_with_urls
         
