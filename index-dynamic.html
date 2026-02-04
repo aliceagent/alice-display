@@ -318,14 +318,22 @@
            from the top. We position the widget above that line.
            ═══════════════════════════════════════════════════════════ */
         @media (max-width: 480px) and (orientation: portrait) {
-            /* Image push-down when weather widget is visible */
-            .display-container {
-                transition: padding-top 0.5s ease;
-                padding-top: 110px; /* Space for weather widget + clock */
+            /* ── Image push-down ──────────────────────────────────
+               .image-layer is position:absolute, so parent padding
+               has NO effect. We override top/height directly on the
+               layers to push the image below the weather-widget band
+               (~130 px accounts for widget + portrait-clock).
+               ──────────────────────────────────────────────────── */
+            .image-layer {
+                top: 130px;
+                height: calc(100% - 130px);
+                transition: top 0.5s ease, height 0.5s ease;
             }
             
-            .display-container.widget-hidden {
-                padding-top: 0;
+            /* When the widget is tapped away, reclaim the full viewport */
+            .display-container.widget-hidden .image-layer {
+                top: 0;
+                height: 100%;
             }
             .weather-widget {
                 /* Reposition to top-center, fitting in the dead space bar */
