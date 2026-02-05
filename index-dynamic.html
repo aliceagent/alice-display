@@ -22,6 +22,9 @@
             position: fixed;
             top: 0;
             left: 0;
+            overscroll-behavior: none;
+            -webkit-overflow-scrolling: touch;
+            touch-action: manipulation;
         }
         
         body {
@@ -2025,6 +2028,7 @@
                 this.setupNetworkListeners();
                 this.initializeStatusOverlay();
                 this.initializeReportModal();
+                this.preventMobileScroll();  // Prevent iOS Safari scroll
                 this.spinnerEl.classList.add('active');
                 await this.loadDisplay(true);  // Initial load
                 this.startPolling();
@@ -2034,6 +2038,22 @@
                 setTimeout(() => {
                     this.statusEl.classList.remove('visible');
                 }, 5000);
+            }
+            
+            preventMobileScroll() {
+                // Prevent scroll on iOS Safari except in modal content
+                document.addEventListener('touchmove', (e) => {
+                    const modal = document.getElementById('report-modal');
+                    const modalContent = document.querySelector('.report-modal-content');
+                    
+                    // Allow scroll only inside the report modal content
+                    if (modal.classList.contains('show') && modalContent && modalContent.contains(e.target)) {
+                        return; // Allow scrolling in modal
+                    }
+                    
+                    // Prevent scroll everywhere else
+                    e.preventDefault();
+                }, { passive: false });
             }
             
             initializeStatusOverlay() {
