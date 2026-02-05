@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81f3-9075-f6b73ca7b9af",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231322/alice-gallery/anime/094_Alice_Video_Conference_Session__36.png",
-    "title": "Alice Video Conference Session #36",
+    "id": "2fd41906-4d30-8115-83c8-d3e99184716d",
+    "url": "images/generated/Alice_Reading_Names_-_Yom_HaShoah_Overcast_Afternoon.png",
+    "title": "Alice Reading Names - Yom HaShoah Overcast Afternoon",
     "description": "",
-    "activity": "Work",
+    "activity": "",
     "mood": ""
   },
   "weather": {
@@ -19,6 +19,6 @@
     "hour": 16,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T14:43:44.059861+00:00",
+  "lastUpdated": "2026-02-05T14:58:55.730674+00:00",
   "nextUpdate": "2026-02-05T15:00:00+00:00"
 }
