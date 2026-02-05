@@ -810,6 +810,17 @@
             white-space: normal;
         }
         
+        .error-retry-counter {
+            font-size: 13px;
+            font-weight: 600;
+            color: #ff7043;
+            margin-bottom: 10px;
+            padding: 4px 12px;
+            background: rgba(255, 112, 67, 0.15);
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
         .error-retry {
             font-size: 12px;
             opacity: 0.5;
@@ -1907,6 +1918,7 @@
         <div class="error-icon">🦜</div>
         <div class="error-title" id="error-title">Connection Issue</div>
         <div class="error-detail" id="error-detail">Unable to load display data</div>
+        <div class="error-retry-counter" id="error-retry-counter">Retry 0/10</div>
         <div class="error-retry">Retrying in <span class="countdown" id="error-countdown">10</span>s</div>
     </div>
     
@@ -2586,8 +2598,14 @@
                 this.errorDetailEl.textContent = detail;
                 this.errorEl.classList.add('show');
                 
-                // Show connection status
-                this.showConnectionStatus(`Retry ${this.retryCount}/${this.maxRetries}`, true);
+                // Update retry counter inside modal (not connection status)
+                const retryCounterEl = document.getElementById('error-retry-counter');
+                if (retryCounterEl) {
+                    retryCounterEl.textContent = `Retry ${this.retryCount}/${this.maxRetries}`;
+                }
+                
+                // Hide connection status when error modal is shown
+                this.connectionStatusEl.classList.remove('show');
                 
                 // Update countdown
                 if (this.errorCountdownInterval) {
