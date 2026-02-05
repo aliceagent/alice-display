@@ -1,24 +1,24 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8150-8289-dfc617beabaf",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231169/alice-gallery/anime/053_Alice_Analyzing_Session__59.png",
-    "title": "Alice Analyzing Session #59",
+    "id": "2fd41906-4d30-81f5-802b-c6d825f3406b",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231861/alice-gallery/anime/Alice_Cooking_-_Overcast_Morning.png",
+    "title": "Alice Cooking - Overcast Morning",
     "description": "",
-    "activity": "Work",
+    "activity": "Leisure",
     "mood": ""
   },
   "weather": {
-    "condition": "Cloudy",
-    "temperature": 8,
-    "humidity": 78,
-    "description": "scattered clouds",
-    "icon": "03n"
+    "condition": "Overcast",
+    "temperature": 7,
+    "humidity": 65,
+    "description": "overcast clouds",
+    "icon": "04d"
   },
   "time": {
-    "period": "Late Night",
-    "hour": 23,
+    "period": "Early Morning",
+    "hour": 6,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-04T21:44:17.109969+00:00",
-  "nextUpdate": "2026-02-04T22:00:00+00:00"
+  "lastUpdated": "2026-02-05T04:35:01.364182+00:00",
+  "nextUpdate": "2026-02-05T05:00:00+00:00"
 }
