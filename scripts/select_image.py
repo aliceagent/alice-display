@@ -47,6 +47,41 @@ TIME_FALLBACKS = {
     "Clear Night": ["Night", "Late Night", "Evening"],
 }
 
+# Activity preferences by hour - what Alice should be doing at different times
+# Format: hour -> list of preferred activities (in order of preference)
+ACTIVITY_BY_HOUR = {
+    # Late night / sleeping (22:00 - 05:59)
+    22: ["Sleeping"],
+    23: ["Sleeping"],
+    0: ["Sleeping"],
+    1: ["Sleeping"],
+    2: ["Sleeping"],
+    3: ["Sleeping"],
+    4: ["Sleeping"],
+    5: ["Sleeping"],
+    # Early morning (06:00 - 07:59)
+    6: ["Sleeping", "Waking Up", "Morning Routine"],
+    7: ["Waking Up", "Morning Routine", "Breakfast", "Exercise"],
+    # Morning (08:00 - 11:59)
+    8: ["Breakfast", "Exercise", "Work", "Outdoor"],
+    9: ["Work", "Exercise", "Outdoor", "Creative"],
+    10: ["Work", "Outdoor", "Creative", "Exercise"],
+    11: ["Work", "Outdoor", "Creative"],
+    # Midday (12:00 - 13:59)
+    12: ["Lunch", "Work", "Outdoor"],
+    13: ["Lunch", "Work", "Leisure", "Outdoor"],
+    # Afternoon (14:00 - 17:59)
+    14: ["Work", "Leisure", "Creative", "Outdoor"],
+    15: ["Work", "Leisure", "Creative", "Outdoor"],
+    16: ["Leisure", "Creative", "Outdoor", "Exercise"],
+    17: ["Leisure", "Creative", "Outdoor"],
+    # Evening (18:00 - 21:59)
+    18: ["Dinner", "Leisure", "Creative"],
+    19: ["Dinner", "Leisure", "Reading", "Gaming"],
+    20: ["Leisure", "Reading", "Gaming", "Movie"],
+    21: ["Leisure", "Reading", "Gaming", "Movie", "Sleeping"],
+}
+
 
 class ImageSelector:
     """Selects images from the database based on weather and time conditions."""
@@ -115,6 +150,7 @@ class ImageSelector:
         self,
         weather: str,
         time_period: str,
+        hour: int = None,
         avoid_recent: bool = True,
         save_history: bool = True
     ) -> Optional[dict]:
@@ -124,6 +160,7 @@ class ImageSelector:
         Args:
             weather: Weather condition (Sunny, Rainy, etc.)
             time_period: Time of day (Morning, Afternoon, etc.)
+            hour: Current hour (0-23) for activity preference
             avoid_recent: Avoid images selected in last 24 hours
             save_history: Save selection to history
             
@@ -134,16 +171,26 @@ class ImageSelector:
             print("❌ No images in database", file=sys.stderr)
             return None
         
+        # Default hour to current time if not provided
+        if hour is None:
+            from datetime import datetime
+            import pytz
+            tz = pytz.timezone("Asia/Hebron")
+            hour = datetime.now(tz).hour
+        
         # Get recent IDs to avoid
         recent_ids = self._get_recent_ids(24) if avoid_recent else set()
         
-        # Try exact match first
-        candidates = self._find_matches(weather, time_period, recent_ids)
+        # Get preferred activities for this hour
+        preferred_activities = ACTIVITY_BY_HOUR.get(hour, [])
+        
+        # Try exact match first (with activity preference)
+        candidates = self._find_matches(weather, time_period, recent_ids, preferred_activities)
         
         # Try weather fallbacks
         if not candidates:
             for fallback_weather in WEATHER_FALLBACKS.get(weather, []):
-                candidates = self._find_matches(fallback_weather, time_period, recent_ids)
+                candidates = self._find_matches(fallback_weather, time_period, recent_ids, preferred_activities)
                 if candidates:
                     print(f"📎 Using weather fallback: {weather} → {fallback_weather}")
                     break
@@ -151,7 +198,7 @@ class ImageSelector:
         # Try time fallbacks
         if not candidates:
             for fallback_time in TIME_FALLBACKS.get(time_period, []):
-                candidates = self._find_matches(weather, fallback_time, recent_ids)
+                candidates = self._find_matches(weather, fallback_time, recent_ids, preferred_activities)
                 if candidates:
                     print(f"📎 Using time fallback: {time_period} → {fallback_time}")
                     break
@@ -160,17 +207,22 @@ class ImageSelector:
         if not candidates:
             for fallback_weather in WEATHER_FALLBACKS.get(weather, []):
                 for fallback_time in TIME_FALLBACKS.get(time_period, []):
-                    candidates = self._find_matches(fallback_weather, fallback_time, recent_ids)
+                    candidates = self._find_matches(fallback_weather, fallback_time, recent_ids, preferred_activities)
                     if candidates:
                         print(f"📎 Using combined fallback: {weather}/{time_period} → {fallback_weather}/{fallback_time}")
                         break
                 if candidates:
                     break
         
+        # Try relaxing activity restriction if we still have no candidates
+        if not candidates and preferred_activities:
+            print("📎 Relaxing activity restriction to find match")
+            candidates = self._find_matches(weather, time_period, recent_ids, [])
+        
         # If still no candidates, ignore recent restriction
         if not candidates and avoid_recent:
             print("📎 Relaxing recent restriction to find match")
-            return self.select(weather, time_period, avoid_recent=False, save_history=save_history)
+            return self.select(weather, time_period, hour=hour, avoid_recent=False, save_history=save_history)
         
         # Ultimate fallback: any image
         if not candidates:
@@ -185,9 +237,11 @@ class ImageSelector:
         
         return selected
     
-    def _find_matches(self, weather: str, time_period: str, exclude_ids: set) -> list:
-        """Find all images matching weather and time, excluding recent IDs and non-current holidays."""
+    def _find_matches(self, weather: str, time_period: str, exclude_ids: set, preferred_activities: list = None) -> list:
+        """Find all images matching weather, time, and activity preferences."""
         matches = []
+        activity_matches = []  # Images that also match preferred activity
+        
         for img in self.images:
             # CRITICAL: Skip holiday images unless today is that holiday
             # Holiday images should only show on their specific days
@@ -212,6 +266,21 @@ class ImageSelector:
                 continue
             
             matches.append(img)
+            
+            # Check if activity matches preferred activities for this hour
+            if preferred_activities:
+                img_activity = img.get("activity", "").lower()
+                img_title = img.get("title", "").lower()
+                for pref_activity in preferred_activities:
+                    pref_lower = pref_activity.lower()
+                    if pref_lower in img_activity or pref_lower in img_title:
+                        activity_matches.append(img)
+                        break
+        
+        # Return activity-matched images if we have them, otherwise fall back to all matches
+        if activity_matches:
+            print(f"   🎯 Activity filter: {len(activity_matches)}/{len(matches)} images match preferred activities")
+            matches = activity_matches
         
         # REQUIRE Cloudinary URLs — local paths don't exist on GitHub Pages.
         # Once all images are uploaded to Cloudinary, this filter can be relaxed.
