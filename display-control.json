@@ -1,24 +1,24 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8188-92a1-e87df72e7776",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233137/alice-gallery/anime/Alice_Reading_Time__26.png",
-    "title": "Alice Reading Time #26",
+    "id": "2fc41906-4d30-8167-a3a0-e9eb8da057f8",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219083/alice-gallery/anime/Alice_Running_Session__8.png",
+    "title": "Alice Running Session #8",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Exercise",
     "mood": ""
   },
   "weather": {
-    "condition": "Partly Cloudy",
+    "condition": "Sunny",
     "temperature": 17,
-    "humidity": 33,
-    "description": "few clouds",
-    "icon": "02d"
+    "humidity": 31,
+    "description": "clear sky",
+    "icon": "01d"
   },
   "time": {
     "period": "Afternoon",
     "hour": 14,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T12:17:29.909271+00:00",
+  "lastUpdated": "2026-02-05T12:32:44.597906+00:00",
   "nextUpdate": "2026-02-05T13:00:00+00:00"
 }
