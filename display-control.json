@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81b1-b969-d3213a6969b3",
-    "url": "images/fallback.png",
-    "title": "Alice Sleeping - Renoir Luminous Impressionism Couch",
+    "id": "2fc41906-4d30-8200-d001-f1a1b1c1d1e1",
+    "url": "images/Alice_Sleeping_-_Hopper_American_Realism_Late_Night_48",
+    "title": "Alice Sleeping - Hopper American Realism Late Night",
     "description": "",
     "activity": "Sleeping",
     "mood": "",
     "imageWeather": "Cloudy",
-    "imageTimePeriod": "Unknown",
+    "imageTimePeriod": "Late Night",
     "imageHoliday": ""
   },
   "weather": {
@@ -22,6 +22,6 @@
     "hour": 23,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T21:20:04.882809+00:00",
+  "lastUpdated": "2026-02-05T21:36:25.898733+00:00",
   "nextUpdate": "2026-02-05T22:00:00+00:00"
 }
