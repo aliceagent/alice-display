@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8115-83c8-d3e99184716d",
-    "url": "images/generated/Alice_Reading_Names_-_Yom_HaShoah_Overcast_Afternoon.png",
-    "title": "Alice Reading Names - Yom HaShoah Overcast Afternoon",
+    "id": "2fd41906-4d30-8197-803b-da2e31d478a8",
+    "url": "images/fallback.png",
+    "title": "Alice Sleeping - Degas Ballet Studio Pastels",
     "description": "",
-    "activity": "",
+    "activity": "Sleeping",
     "mood": ""
   },
   "weather": {
@@ -15,10 +15,10 @@
     "icon": "04d"
   },
   "time": {
-    "period": "Afternoon",
-    "hour": 16,
+    "period": "Golden Hour",
+    "hour": 17,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T14:58:55.730674+00:00",
-  "nextUpdate": "2026-02-05T15:00:00+00:00"
+  "lastUpdated": "2026-02-05T15:14:09.911665+00:00",
+  "nextUpdate": "2026-02-05T16:00:00+00:00"
 }
