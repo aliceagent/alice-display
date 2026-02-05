@@ -562,6 +562,14 @@
                 padding-right: 5vw;
             }
             
+            /* CRITICAL: Constrain image to viewport height in landscape */
+            .image-layer img {
+                max-height: calc(100vh - 24px); /* Small padding for breathing room */
+                max-width: calc(100vw - 240px); /* Leave space for weather widget on left */
+                width: auto;
+                height: auto;
+            }
+            
             /* Weather widget docks to the left dead space */
             .weather-widget {
                 top: 50%;
