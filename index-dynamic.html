@@ -2550,8 +2550,11 @@
             }
             
             handleError(type, message) {
-                this.retryCount++;
-                this.updateDebug({ error: message, type, retryCount: this.retryCount });
+                // Cap the retry counter at maxRetries to prevent runaway display
+                if (this.retryCount <= this.maxRetries) {
+                    this.retryCount++;
+                }
+                this.updateDebug({ error: message, type, retryCount: Math.min(this.retryCount, this.maxRetries) });
                 
                 // Calculate retry interval with exponential backoff
                 const retryInterval = Math.min(
@@ -2598,10 +2601,11 @@
                 this.errorDetailEl.textContent = detail;
                 this.errorEl.classList.add('show');
                 
-                // Update retry counter inside modal (not connection status)
+                // Update retry counter inside modal (capped at maxRetries)
                 const retryCounterEl = document.getElementById('error-retry-counter');
                 if (retryCounterEl) {
-                    retryCounterEl.textContent = `Retry ${this.retryCount}/${this.maxRetries}`;
+                    const displayCount = Math.min(this.retryCount, this.maxRetries);
+                    retryCounterEl.textContent = `Retry ${displayCount}/${this.maxRetries}`;
                 }
                 
                 // Hide connection status when error modal is shown
