@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8197-803b-da2e31d478a8",
-    "url": "images/fallback.png",
-    "title": "Alice Sleeping - Degas Ballet Studio Pastels",
+    "id": "2fc41906-4d30-81e3-bcd2-c582e846f351",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219345/alice-gallery/anime/153_Alice_Digital_Art_Session__9.png",
+    "title": "Alice Digital Art Session #9",
     "description": "",
-    "activity": "Sleeping",
+    "activity": "Creative",
     "mood": ""
   },
   "weather": {
@@ -12,13 +12,13 @@
     "temperature": 13,
     "humidity": 51,
     "description": "overcast clouds",
-    "icon": "04d"
+    "icon": "04n"
   },
   "time": {
     "period": "Golden Hour",
     "hour": 17,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T15:14:09.911665+00:00",
+  "lastUpdated": "2026-02-05T15:29:21.215826+00:00",
   "nextUpdate": "2026-02-05T16:00:00+00:00"
 }
