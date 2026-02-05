@@ -412,8 +412,8 @@
             
             /* ── Portrait: constrain image to fit viewport with space for UI elements ──── */
             .image-layer {
-                /* Center image in the available space */
-                padding-top: 80px;  /* Space for clock/weather at top */
+                /* Center image in the available space, accounting for notch */
+                padding-top: calc(80px + env(safe-area-inset-top, 0px));
                 padding-bottom: 60px; /* Space for buttons at bottom */
                 box-sizing: border-box;
             }
@@ -429,8 +429,8 @@
             }
             
             .weather-widget {
-                /* Reposition to top-left corner */
-                top: 20px;
+                /* Reposition to top-left corner, accounting for notch */
+                top: calc(20px + env(safe-area-inset-top, 0px));
                 bottom: auto;
                 left: 20px;
                 right: auto;
@@ -446,7 +446,7 @@
             
             /* Collapsed state positioning */
             .weather-widget.collapsed {
-                top: 20px;
+                top: calc(20px + env(safe-area-inset-top, 0px));
                 left: 20px;
             }
             
@@ -518,7 +518,7 @@
                 flex-direction: column;
                 align-items: flex-end;
                 position: fixed;
-                top: 30px;
+                top: calc(30px + env(safe-area-inset-top, 0px));
                 right: 15px;
                 z-index: 15;
                 color: white;
