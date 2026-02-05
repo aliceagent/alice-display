@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8200-a006-f6a6b6c6d6e6",
-    "url": "images/Alice_Sleeping_-_Toulouse-Lautrec_Poster_Style_Late_Night_23",
-    "title": "Alice Sleeping - Toulouse-Lautrec Poster Style Late Night",
+    "id": "2fd41906-4d30-818a-939c-ded8ef5edff8",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232790/alice-gallery/pixel-art/Alice_Playing_Piano_-_Cloudy_Night.png",
+    "title": "Alice Playing Piano - Cloudy Night",
     "description": "",
-    "activity": "Sleeping",
+    "activity": "Creative",
     "mood": "",
-    "imageWeather": "Overcast",
-    "imageTimePeriod": "Late Night",
+    "imageWeather": "Cloudy",
+    "imageTimePeriod": "Night",
     "imageHoliday": ""
   },
   "weather": {
@@ -19,9 +19,9 @@
   },
   "time": {
     "period": "Night",
-    "hour": 20,
+    "hour": 21,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T18:57:48.179864+00:00",
-  "nextUpdate": "2026-02-05T19:00:00+00:00"
+  "lastUpdated": "2026-02-05T19:11:44.265718+00:00",
+  "nextUpdate": "2026-02-05T20:00:00+00:00"
 }
