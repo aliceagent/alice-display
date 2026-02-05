@@ -512,35 +512,35 @@
                 display: none;
             }
             
-            /* Show the standalone portrait clock below weather widget */
+            /* Portrait clock - top right with proper padding */
             .portrait-clock {
                 display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 10px;
+                flex-direction: column;
+                align-items: flex-end;
                 position: fixed;
-                top: 200px; /* Below weather widget */
-                left: 20px;
+                top: 30px;
+                right: 15px;
                 z-index: 15;
                 color: white;
-                text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+                text-shadow: 0 2px 8px rgba(0,0,0,0.7);
             }
             
             .portrait-clock-time {
-                font-size: 56px;
-                font-weight: 100;
-                letter-spacing: 2px;
+                font-size: 36px;
+                font-weight: 200;
+                letter-spacing: 1px;
                 font-variant-numeric: tabular-nums;
                 line-height: 1;
             }
             
             .portrait-clock-period {
-                font-size: 16px;
+                font-size: 11px;
                 font-weight: 500;
                 opacity: 0.9;
+                margin-top: 4px;
                 background: rgba(0,0,0,0.4);
-                padding: 6px 12px;
-                border-radius: 8px;
+                padding: 3px 8px;
+                border-radius: 6px;
             }
             
             /* End portrait clock */
