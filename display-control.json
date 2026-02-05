@@ -1,24 +1,24 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-817b-a9ae-fbcd79695e1a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232726/alice-gallery/anime/Alice_Picnic_-_Sunny_Afternoon.png",
-    "title": "Alice Picnic - Sunny Afternoon",
+    "id": "2fd41906-4d30-8106-9bf2-c9079a5c311c",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233351/alice-gallery/holiday/Alice_Standing_With_Head_Bowed_-_Yom_HaZikaron_Overcast_Afternoon.png",
+    "title": "Alice Standing With Head Bowed - Yom HaZikaron Overcast Afternoon",
     "description": "",
-    "activity": "Social",
+    "activity": "",
     "mood": ""
   },
   "weather": {
-    "condition": "Sunny",
-    "temperature": 17,
+    "condition": "Overcast",
+    "temperature": 18,
     "humidity": 31,
-    "description": "clear sky",
-    "icon": "01d"
+    "description": "broken clouds",
+    "icon": "04d"
   },
   "time": {
     "period": "Afternoon",
-    "hour": 14,
+    "hour": 15,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T12:47:57.209836+00:00",
-  "nextUpdate": "2026-02-05T13:00:00+00:00"
+  "lastUpdated": "2026-02-05T13:03:09.583489+00:00",
+  "nextUpdate": "2026-02-05T14:00:00+00:00"
 }
