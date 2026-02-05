@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81d8-b66e-ef6f3d1fe6e6",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232678/alice-gallery/anime/Alice_Photography_-_Cloudy_Midday.png",
-    "title": "Alice Photography - Cloudy Midday",
+    "id": "2fc41906-4d30-81fe-8f69-dd14c2df31aa",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232090/alice-gallery/anime/Alice_Drawing_Session__76.png",
+    "title": "Alice Drawing Session #76",
     "description": "",
     "activity": "Creative",
     "mood": ""
@@ -15,10 +15,10 @@
     "icon": "02d"
   },
   "time": {
-    "period": "Midday",
-    "hour": 13,
+    "period": "Afternoon",
+    "hour": 14,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T11:45:23.479026+00:00",
-  "nextUpdate": "2026-02-05T12:00:00+00:00"
+  "lastUpdated": "2026-02-05T12:02:18.320422+00:00",
+  "nextUpdate": "2026-02-05T13:00:00+00:00"
 }
