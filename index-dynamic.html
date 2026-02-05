@@ -413,8 +413,8 @@
             /* ── Portrait: constrain image to fit viewport with space for UI elements ──── */
             .image-layer {
                 /* Center image in the available space, accounting for notch */
-                padding-top: max(115px, calc(80px + env(safe-area-inset-top, 35px)));
-                padding-bottom: 60px; /* Space for buttons at bottom */
+                padding-top: max(80px, calc(50px + env(safe-area-inset-top, 30px)));
+                padding-bottom: 50px; /* Space for buttons at bottom */
                 box-sizing: border-box;
             }
             
@@ -430,7 +430,7 @@
             
             .weather-widget {
                 /* Reposition to top-left corner, accounting for notch */
-                top: max(55px, calc(20px + env(safe-area-inset-top, 35px)));
+                top: max(50px, calc(10px + env(safe-area-inset-top, 40px)));
                 bottom: auto;
                 left: 20px;
                 right: auto;
@@ -446,7 +446,7 @@
             
             /* Collapsed state positioning */
             .weather-widget.collapsed {
-                top: max(55px, calc(20px + env(safe-area-inset-top, 35px)));
+                top: max(50px, calc(10px + env(safe-area-inset-top, 40px)));
                 left: 20px;
             }
             
@@ -518,7 +518,7 @@
                 flex-direction: column;
                 align-items: flex-end;
                 position: fixed;
-                top: max(55px, calc(30px + env(safe-area-inset-top, 25px)));
+                top: max(50px, calc(10px + env(safe-area-inset-top, 40px)));
                 right: 15px;
                 z-index: 15;
                 color: white;
@@ -742,7 +742,7 @@
         /* Fullscreen button */
         .fullscreen-btn {
             position: fixed;
-            bottom: 20px;
+            bottom: max(20px, calc(10px + env(safe-area-inset-bottom, 10px)));
             right: 20px;
             background: rgba(255, 255, 255, 0.1);
             border: none;
@@ -881,7 +881,7 @@
         
         .fallback-badge {
             position: fixed;
-            bottom: 80px;
+            bottom: max(80px, calc(60px + env(safe-area-inset-bottom, 20px)));
             left: 50%;
             transform: translateX(-50%);
             background: rgba(255, 150, 0, 0.9);
@@ -900,7 +900,7 @@
         /* Next update countdown */
         .countdown {
             position: fixed;
-            bottom: 70px;
+            bottom: max(70px, calc(50px + env(safe-area-inset-bottom, 20px)));
             left: 50%;
             transform: translateX(-50%);
             color: rgba(255, 255, 255, 0.3);
@@ -1390,7 +1390,7 @@
         
         .command-center {
             position: fixed;
-            bottom: 24px;
+            bottom: max(24px, calc(10px + env(safe-area-inset-bottom, 14px)));
             right: 24px;
             z-index: 60;
         }
