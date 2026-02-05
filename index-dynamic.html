@@ -1455,6 +1455,51 @@
             cursor: pointer;
         }
         
+        .report-checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        
+        .report-checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            user-select: none;
+        }
+        
+        .report-checkbox-label:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .report-checkbox-label:has(input:checked) {
+            background: rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(99, 102, 241, 0.5);
+        }
+        
+        .report-checkbox-label input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #6366f1;
+            cursor: pointer;
+        }
+        
+        .report-checkbox-text {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        @media (max-width: 480px) {
+            .report-checkbox-group {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .report-form-textarea {
             resize: vertical;
             min-height: 100px;
@@ -1817,17 +1862,41 @@
             
             <form class="report-form" id="report-form">
                 <div class="report-form-group">
-                    <label class="report-form-label" for="report-category">Issue Type * <span style="font-weight: normal; font-size: 0.85em; opacity: 0.7;">(select all that apply)</span></label>
-                    <select class="report-form-select" id="report-category" multiple size="5" required>
-                        <option value="wrong-content">Wrong Content</option>
-                        <option value="poor-quality">Poor Quality</option>
-                        <option value="duplicate">Duplicate</option>
-                        <option value="inappropriate">Inappropriate</option>
-                        <option value="weather-mismatch">Weather Mismatch</option>
-                        <option value="time-mismatch">Time Mismatch</option>
-                        <option value="technical-issue">Technical Issue</option>
-                        <option value="other">Other</option>
-                    </select>
+                    <label class="report-form-label">Issue Type * <span style="font-weight: normal; font-size: 0.85em; opacity: 0.7;">(select all that apply)</span></label>
+                    <div class="report-checkbox-group" id="report-category">
+                        <label class="report-checkbox-label">
+                            <input type="checkbox" name="issue-type" value="wrong-content">
+                            <span class="report-checkbox-text">Wrong Content</span>
+                        </label>
+                        <label class="report-checkbox-label">
+                            <input type="checkbox" name="issue-type" value="poor-quality">
+                            <span class="report-checkbox-text">Poor Quality</span>
+                        </label>
+                        <label class="report-checkbox-label">
+                            <input type="checkbox" name="issue-type" value="duplicate">
+                            <span class="report-checkbox-text">Duplicate</span>
+                        </label>
+                        <label class="report-checkbox-label">
+                            <input type="checkbox" name="issue-type" value="inappropriate">
+                            <span class="report-checkbox-text">Inappropriate</span>
+                        </label>
+                        <label class="report-checkbox-label">
+                            <input type="checkbox" name="issue-type" value="weather-mismatch">
+                            <span class="report-checkbox-text">Weather Mismatch</span>
+                        </label>
+                        <label class="report-checkbox-label">
+                            <input type="checkbox" name="issue-type" value="time-mismatch">
+                            <span class="report-checkbox-text">Time Mismatch</span>
+                        </label>
+                        <label class="report-checkbox-label">
+                            <input type="checkbox" name="issue-type" value="technical-issue">
+                            <span class="report-checkbox-text">Technical Issue</span>
+                        </label>
+                        <label class="report-checkbox-label">
+                            <input type="checkbox" name="issue-type" value="other">
+                            <span class="report-checkbox-text">Other</span>
+                        </label>
+                    </div>
                 </div>
                 
                 <div class="report-form-group">
@@ -2697,8 +2766,8 @@
             
             async submitReport() {
                 const submitButton = document.getElementById('report-submit');
-                const categorySelect = document.getElementById('report-category');
-                const selectedCategories = Array.from(categorySelect.selectedOptions).map(opt => opt.value);
+                const checkboxes = document.querySelectorAll('input[name="issue-type"]:checked');
+                const selectedCategories = Array.from(checkboxes).map(cb => cb.value);
                 const description = document.getElementById('report-description').value;
                 const imageId = document.getElementById('report-image-id').value;
                 
