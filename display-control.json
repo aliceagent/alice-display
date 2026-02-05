@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81de-9c04-fa1eb20cafe8",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232998/alice-gallery/holiday/Alice_Reading_Megillah_Scroll_-_Purim_Cloudy_Midday.png",
-    "title": "Alice Reading Megillah Scroll - Purim Cloudy Midday",
+    "id": "2fd41906-4d30-81d8-b66e-ef6f3d1fe6e6",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232678/alice-gallery/anime/Alice_Photography_-_Cloudy_Midday.png",
+    "title": "Alice Photography - Cloudy Midday",
     "description": "",
-    "activity": "",
+    "activity": "Creative",
     "mood": ""
   },
   "weather": {
@@ -19,6 +19,6 @@
     "hour": 13,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T11:30:11.357157+00:00",
+  "lastUpdated": "2026-02-05T11:45:23.479026+00:00",
   "nextUpdate": "2026-02-05T12:00:00+00:00"
 }
