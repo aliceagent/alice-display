@@ -283,7 +283,7 @@ class ImageSelector:
         
         # REQUIRE Cloudinary URLs — local paths don't exist on GitHub Pages.
         # Once all images are uploaded to Cloudinary, this filter can be relaxed.
-        images_with_cdn = [m for m in matches if m.get("cloudinary_url")]
+        images_with_cdn = [m for m in matches if m.get("cloudinary_url") and m.get("cloudinary_url").strip()]
         if images_with_cdn:
             return images_with_cdn
         
