@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-817e-8d7c-fd0f57c1d48e",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770218842/alice-gallery/pixel-art/Alice_Baking_-_Overcast_Evening.png",
-    "title": "Alice Baking - Overcast Evening",
+    "id": "2fd41906-4d30-8105-a6dc-df90ed10e67a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233116/alice-gallery/holiday/Alice_Reading_Names_-_Yom_HaShoah_Overcast_Evening.png",
+    "title": "Alice Reading Names - Yom HaShoah Overcast Evening",
     "description": "",
-    "activity": "Leisure",
+    "activity": "",
     "mood": ""
   },
   "weather": {
@@ -16,9 +16,9 @@
   },
   "time": {
     "period": "Evening",
-    "hour": 18,
+    "hour": 19,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T16:48:44.368024+00:00",
-  "nextUpdate": "2026-02-05T17:00:00+00:00"
+  "lastUpdated": "2026-02-05T17:03:57.269384+00:00",
+  "nextUpdate": "2026-02-05T18:00:00+00:00"
 }
