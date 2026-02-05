@@ -176,10 +176,11 @@ class AliceUpdater:
     
     def _get_next_update_time(self) -> str:
         """Calculate next update time (top of next hour)."""
+        from datetime import timedelta
         now = datetime.now(timezone.utc)
         next_hour = now.replace(minute=0, second=0, microsecond=0)
         if now.minute > 0 or now.second > 0:
-            next_hour = next_hour.replace(hour=now.hour + 1)
+            next_hour = next_hour + timedelta(hours=1)
         return next_hour.isoformat()
     
     def _save_control(self, control: dict) -> None:
