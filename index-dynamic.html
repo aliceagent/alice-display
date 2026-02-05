@@ -515,21 +515,20 @@
             /* Show the standalone portrait clock in the top-right dead space */
             .portrait-clock {
                 display: flex;
-                flex-direction: row;
-                align-items: baseline;
-                gap: 8px;
+                flex-direction: column;
+                align-items: flex-end;
                 position: fixed;
-                /* Position in top-right, with safe margin from edge */
-                top: 30px;
-                right: 20px;
-                left: auto;
+                /* Position next to weather widget, not at edge */
+                top: 25px;
+                left: 240px; /* After weather widget */
+                right: auto;
                 z-index: 15;
                 color: white;
                 text-shadow: 0 2px 10px rgba(0,0,0,0.8);
             }
             
             .portrait-clock-time {
-                font-size: 48px;
+                font-size: 44px;
                 font-weight: 200;
                 letter-spacing: 1px;
                 font-variant-numeric: tabular-nums;
@@ -537,12 +536,13 @@
             }
             
             .portrait-clock-period {
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: 500;
                 opacity: 0.9;
+                margin-top: 4px;
                 background: rgba(0,0,0,0.4);
-                padding: 4px 10px;
-                border-radius: 8px;
+                padding: 3px 8px;
+                border-radius: 6px;
             }
             
             /* Large clock digits — fills the top-right area */
@@ -796,14 +796,17 @@
             background: rgba(30, 30, 50, 0.95);
             border: 1px solid rgba(255, 100, 100, 0.3);
             color: white;
-            padding: 30px 40px;
+            padding: 30px 25px;
             border-radius: 16px;
             text-align: center;
             display: none;
             z-index: 15;
             backdrop-filter: blur(10px);
-            max-width: 90%;
-            width: 320px;
+            max-width: 85vw;
+            width: auto;
+            min-width: 280px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         .error-message.show {
@@ -825,6 +828,8 @@
             font-size: 13px;
             opacity: 0.7;
             margin-bottom: 15px;
+            word-wrap: break-word;
+            white-space: normal;
         }
         
         .error-retry {
