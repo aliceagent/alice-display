@@ -137,38 +137,52 @@
         .status-overlay.collapsed {
             width: 50px;
             height: 50px;
-            padding: 0;
+            padding: 0 !important;
             border-radius: 50%;
             justify-content: center;
             align-items: center;
-            gap: 0;
+            gap: 0 !important;
             opacity: 0.8;
+            overflow: hidden;
         }
         
         /* Hide all items except first one when collapsed */
         .status-overlay.collapsed .status-item:not(:first-child) {
-            display: none;
+            display: none !important;
         }
         
-        /* Center the weather icon in collapsed state */
+        /* First status item takes full container in collapsed state */
         .status-overlay.collapsed .status-item:first-child {
-            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             display: flex;
+            justify-content: center;
             align-items: center;
             gap: 0;
+            margin: 0;
+            padding: 0;
         }
         
         /* Hide text elements completely in collapsed state */
         .status-overlay.collapsed .status-item:first-child > div {
-            display: none;
+            display: none !important;
         }
         
-        /* Make weather icon bigger and centered in collapsed state */
+        /* Weather icon: flex container for perfect centering */
         .status-overlay.collapsed .status-item:first-child .icon {
             font-size: 24px;
             margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            line-height: 1;
+            text-align: center;
         }
         
         .status-item {

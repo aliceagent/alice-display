@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Icon Centering Test</title>
+    <style>
+        body {
+            background: #1a1a2e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 40px;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: white;
+        }
+        
+        h2 {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        .test-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Original (broken) styles */
+        .widget-broken {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .widget-broken::before,
+        .widget-broken::after {
+            content: '';
+            position: absolute;
+            background: rgba(255,0,0,0.3);
+        }
+        .widget-broken::before {
+            width: 1px;
+            height: 100%;
+            left: 50%;
+        }
+        .widget-broken::after {
+            width: 100%;
+            height: 1px;
+            top: 50%;
+        }
+        
+        .widget-broken .icon {
+            font-size: 24px;
+        }
+        
+        /* Fixed styles */
+        .widget-fixed {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .widget-fixed::before,
+        .widget-fixed::after {
+            content: '';
+            position: absolute;
+            background: rgba(0,255,0,0.3);
+        }
+        .widget-fixed::before {
+            width: 1px;
+            height: 100%;
+            left: 50%;
+        }
+        .widget-fixed::after {
+            width: 100%;
+            height: 1px;
+            top: 50%;
+        }
+        
+        .widget-fixed .icon {
+            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            line-height: 1;
+            text-align: center;
+        }
+        
+        .result {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .result.fail { background: #ff4444; }
+        .result.pass { background: #44ff44; color: black; }
+        
+        /* Cross-hairs show true center */
+        .info {
+            font-size: 12px;
+            opacity: 0.6;
+            text-align: center;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Icon Centering Test</h1>
+    <p class="info">Red crosshairs = visual center. Icon should align with crosshairs.</p>
+    
+    <div class="test-container">
+        <h2>BEFORE FIX (icon as inline span)</h2>
+        <div class="widget-broken">
+            <span class="icon">☁️</span>
+        </div>
+        <span class="result fail">May be off-center</span>
+    </div>
+    
+    <div class="test-container">
+        <h2>AFTER FIX (icon as flex container)</h2>
+        <div class="widget-fixed">
+            <span class="icon">☁️</span>
+        </div>
+        <span class="result pass">Should be centered</span>
+    </div>
+    
+    <div class="test-container">
+        <h2>Test with different icons</h2>
+        <div style="display: flex; gap: 20px;">
+            <div class="widget-fixed"><span class="icon">☀️</span></div>
+            <div class="widget-fixed"><span class="icon">🌧️</span></div>
+            <div class="widget-fixed"><span class="icon">❄️</span></div>
+            <div class="widget-fixed"><span class="icon">🌫️</span></div>
+        </div>
+    </div>
+</body>
+</html>
