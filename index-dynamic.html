@@ -405,6 +405,11 @@
            Detection: max-width 480px AND portrait orientation.
            ═══════════════════════════════════════════════════════════ */
         @media (max-width: 480px) and (orientation: portrait) {
+            /* ── Portrait: ensure dark background for any visible areas ──── */
+            .display-container {
+                background: #1a1a2e;
+            }
+            
             /* ── Portrait: image fills width, height auto to maintain aspect ratio ──── */
             .image-layer img {
                 /* Fill viewport width, let height be natural (square images will have letterboxing) */
@@ -535,10 +540,9 @@
                 border-radius: 8px;
             }
             
-            /* Title also repositions to avoid image overlap */
+            /* Hide title overlay on mobile - it clutters the display */
             .title-overlay {
-                top: auto;
-                /* Push just below the weather widget in the top dead space */
+                display: none !important;
             }
         }
         
