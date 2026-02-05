@@ -1371,14 +1371,23 @@
             font-weight: 500;
         }
         
-        /* Report Issue Button */
-        .report-button {
+        /* ═══════════════════════════════════════════════════════════
+           COMMAND CENTER
+           Bottom-right button that expands to show 3 feature icons:
+           Report (🚩), Vacuum (🤖), Lights (💡)
+           ═══════════════════════════════════════════════════════════ */
+        
+        .command-center {
             position: fixed;
             bottom: 24px;
             right: 24px;
+            z-index: 60;
+        }
+        
+        .command-center-button {
             width: 56px;
             height: 56px;
-            background: rgba(255, 100, 100, 0.8);
+            background: linear-gradient(135deg, rgba(100, 100, 180, 0.9) 0%, rgba(80, 80, 140, 0.95) 100%);
             border: none;
             border-radius: 50%;
             color: white;
@@ -1387,22 +1396,116 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0.3;
-            transition: opacity 0.3s, transform 0.2s, background 0.3s;
-            z-index: 60;
+            opacity: 0.4;
+            transition: opacity 0.3s, transform 0.3s, background 0.3s;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(255, 100, 100, 0.3);
+            box-shadow: 0 4px 20px rgba(100, 100, 180, 0.3);
         }
         
-        .report-button:hover {
+        .command-center-button:hover {
             opacity: 1;
             transform: scale(1.1);
-            background: rgba(255, 80, 80, 1);
         }
         
-        .report-button:active {
+        .command-center-button:active {
             transform: scale(0.95);
+        }
+        
+        .command-center.open .command-center-button {
+            opacity: 1;
+            transform: rotate(45deg);
+            background: linear-gradient(135deg, rgba(180, 100, 100, 0.9) 0%, rgba(140, 80, 80, 0.95) 100%);
+        }
+        
+        /* Feature icons popup */
+        .command-center-popup {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.8);
+            transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+        }
+        
+        .command-center.open .command-center-popup {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        
+        .command-center-icon {
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .command-center-icon:hover {
+            transform: scale(1.15);
+        }
+        
+        .command-center-icon:active {
+            transform: scale(0.95);
+        }
+        
+        .command-center-icon.report {
+            background: linear-gradient(135deg, rgba(255, 100, 100, 0.9) 0%, rgba(200, 80, 80, 0.95) 100%);
+            box-shadow: 0 4px 15px rgba(255, 100, 100, 0.4);
+        }
+        
+        .command-center-icon.vacuum {
+            background: linear-gradient(135deg, rgba(100, 180, 100, 0.9) 0%, rgba(80, 140, 80, 0.95) 100%);
+            box-shadow: 0 4px 15px rgba(100, 180, 100, 0.4);
+        }
+        
+        .command-center-icon.lights {
+            background: linear-gradient(135deg, rgba(255, 200, 100, 0.9) 0%, rgba(200, 160, 80, 0.95) 100%);
+            box-shadow: 0 4px 15px rgba(255, 200, 100, 0.4);
+        }
+        
+        /* Staggered animation for icons */
+        .command-center.open .command-center-icon:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+        .command-center.open .command-center-icon:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+        .command-center.open .command-center-icon:nth-child(3) {
+            transition-delay: 0.15s;
+        }
+        
+        /* Command Center backdrop for tap-outside-to-close */
+        .command-center-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 55;
+            display: none;
+        }
+        
+        .command-center.open + .command-center-backdrop {
+            display: block;
+        }
+        
+        /* Legacy: Keep report-button class for backwards compatibility during transition */
+        .report-button {
+            display: none; /* Hidden - replaced by Command Center */
         }
         
         /* Report Modal */
@@ -1944,7 +2047,16 @@
     </div>
     
     <!-- Report Issue Button -->
-    <button class="report-button" id="report-button" title="Report Issue">🚩</button>
+    <!-- Command Center -->
+    <div class="command-center" id="command-center">
+        <div class="command-center-popup">
+            <button class="command-center-icon lights" id="cmd-lights" title="Lights">💡</button>
+            <button class="command-center-icon vacuum" id="cmd-vacuum" title="Vacuum">🤖</button>
+            <button class="command-center-icon report" id="cmd-report" title="Report Issue">🚩</button>
+        </div>
+        <button class="command-center-button" id="command-center-button" title="Command Center">⚙️</button>
+    </div>
+    <div class="command-center-backdrop" id="command-center-backdrop"></div>
     
     <!-- Report Issue Modal -->
     <div class="report-modal" id="report-modal">
@@ -2799,16 +2911,57 @@
                 infoPanel.classList.toggle('show');
             }
             
+            initializeCommandCenter() {
+                const commandCenter = document.getElementById('command-center');
+                const commandButton = document.getElementById('command-center-button');
+                const backdrop = document.getElementById('command-center-backdrop');
+                const cmdReport = document.getElementById('cmd-report');
+                const cmdVacuum = document.getElementById('cmd-vacuum');
+                const cmdLights = document.getElementById('cmd-lights');
+                
+                // Toggle Command Center popup
+                commandButton.addEventListener('click', () => {
+                    commandCenter.classList.toggle('open');
+                });
+                
+                // Close on backdrop tap
+                backdrop.addEventListener('click', () => {
+                    commandCenter.classList.remove('open');
+                });
+                
+                // Report button → show report modal
+                cmdReport.addEventListener('click', () => {
+                    commandCenter.classList.remove('open');
+                    this.showReportModal();
+                });
+                
+                // Vacuum button → show vacuum panel (placeholder for now)
+                cmdVacuum.addEventListener('click', () => {
+                    commandCenter.classList.remove('open');
+                    this.showToast('🤖 Vacuum control coming soon!');
+                });
+                
+                // Lights button → show lights panel (placeholder for now)
+                cmdLights.addEventListener('click', () => {
+                    commandCenter.classList.remove('open');
+                    this.showToast('💡 Lights control coming soon!');
+                });
+                
+                // Close on Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && commandCenter.classList.contains('open')) {
+                        commandCenter.classList.remove('open');
+                    }
+                });
+            }
+            
             initializeReportModal() {
-                const reportButton = document.getElementById('report-button');
                 const reportModal = document.getElementById('report-modal');
                 const reportClose = document.getElementById('report-modal-close');
                 const reportForm = document.getElementById('report-form');
                 
-                // Show modal when report button clicked
-                reportButton.addEventListener('click', () => {
-                    this.showReportModal();
-                });
+                // Initialize Command Center (which includes report button)
+                this.initializeCommandCenter();
                 
                 // Close modal when close button clicked
                 reportClose.addEventListener('click', () => {
