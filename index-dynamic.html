@@ -1311,6 +1311,269 @@
         .image-info-value {
             font-weight: 500;
         }
+        
+        /* Report Issue Button */
+        .report-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 100, 100, 0.8);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.3;
+            transition: opacity 0.3s, transform 0.2s, background 0.3s;
+            z-index: 60;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(255, 100, 100, 0.3);
+        }
+        
+        .report-button:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            background: rgba(255, 80, 80, 1);
+        }
+        
+        .report-button:active {
+            transform: scale(0.95);
+        }
+        
+        /* Report Modal */
+        .report-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 300;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .report-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .report-modal-content {
+            background: linear-gradient(145deg, #2d2d44 0%, #1a1a2e 100%);
+            border-radius: 20px;
+            padding: 32px;
+            max-width: 480px;
+            width: 90%;
+            color: white;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: modalSlideIn 0.4s ease-out;
+            position: relative;
+        }
+        
+        .report-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        
+        .report-modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .report-modal-close {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: color 0.2s, background 0.2s;
+        }
+        
+        .report-modal-close:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .report-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .report-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .report-form-label {
+            font-weight: 600;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .report-form-select,
+        .report-form-textarea {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: white;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        
+        .report-form-select:focus,
+        .report-form-textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .report-form-select {
+            cursor: pointer;
+        }
+        
+        .report-form-textarea {
+            resize: vertical;
+            min-height: 100px;
+            max-height: 200px;
+        }
+        
+        .report-form-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .report-form-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 8px;
+        }
+        
+        .report-btn {
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+        
+        .report-btn-cancel {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .report-btn-cancel:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .report-btn-submit {
+            background: linear-gradient(135deg, #ff5252 0%, #ff1744 100%);
+            color: white;
+        }
+        
+        .report-btn-submit:hover {
+            background: linear-gradient(135deg, #ff1744 0%, #d50000 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 82, 82, 0.4);
+        }
+        
+        .report-btn-submit:active {
+            transform: translateY(0);
+        }
+        
+        .report-btn-submit:disabled {
+            background: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.5);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .report-feedback {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 32px;
+            border-radius: 12px;
+            text-align: center;
+            display: none;
+        }
+        
+        .report-feedback.show {
+            display: block;
+        }
+        
+        .report-feedback-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        
+        .report-feedback-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .report-feedback-message {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .report-button {
+                bottom: 18px;
+                right: 18px;
+                width: 52px;
+                height: 52px;
+                font-size: 22px;
+            }
+            
+            .report-modal-content {
+                margin: 16px;
+                padding: 24px;
+                max-width: none;
+                width: auto;
+            }
+            
+            .report-form-actions {
+                flex-direction: column;
+            }
+            
+            .report-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1381,6 +1644,7 @@
                 <div class="value" id="activity">--</div>
             </div>
         </div>
+        <div class="copy-toast" id="copy-toast">📋 Copied!</div>
     </div>
     
     <div class="countdown" id="countdown"></div>
@@ -1497,6 +1761,9 @@
                 <span class="help-key">H / ?</span>
                 <span class="help-desc">Show this help</span>
                 
+                <span class="help-key">Shift+R</span>
+                <span class="help-desc">Report issue with image</span>
+                
                 <span class="help-key">Esc</span>
                 <span class="help-desc">Close panels</span>
             </div>
@@ -1534,6 +1801,58 @@
         <div class="image-info-row">
             <span class="image-info-label">Updated</span>
             <span class="image-info-value" id="info-updated">--</span>
+        </div>
+    </div>
+    
+    <!-- Report Issue Button -->
+    <button class="report-button" id="report-button" title="Report Issue">🚩</button>
+    
+    <!-- Report Issue Modal -->
+    <div class="report-modal" id="report-modal">
+        <div class="report-modal-content">
+            <div class="report-modal-header">
+                <h2 class="report-modal-title">🚩 Report Issue</h2>
+                <button class="report-modal-close" id="report-modal-close" title="Close">✕</button>
+            </div>
+            
+            <form class="report-form" id="report-form">
+                <div class="report-form-group">
+                    <label class="report-form-label" for="report-category">Issue Type *</label>
+                    <select class="report-form-select" id="report-category" required>
+                        <option value="">Select an issue type...</option>
+                        <option value="wrong-content">Wrong Content</option>
+                        <option value="poor-quality">Poor Quality</option>
+                        <option value="duplicate">Duplicate</option>
+                        <option value="inappropriate">Inappropriate</option>
+                        <option value="weather-mismatch">Weather Mismatch</option>
+                        <option value="time-mismatch">Time Mismatch</option>
+                        <option value="technical-issue">Technical Issue</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="report-form-group">
+                    <label class="report-form-label" for="report-description">Description (optional)</label>
+                    <textarea 
+                        class="report-form-textarea" 
+                        id="report-description" 
+                        placeholder="Please describe the issue in more detail...">
+                    </textarea>
+                </div>
+                
+                <input type="hidden" id="report-image-id" value="">
+                
+                <div class="report-form-actions">
+                    <button type="button" class="report-btn report-btn-cancel" id="report-cancel">Cancel</button>
+                    <button type="submit" class="report-btn report-btn-submit" id="report-submit">Submit Report</button>
+                </div>
+            </form>
+            
+            <div class="report-feedback" id="report-feedback">
+                <div class="report-feedback-icon" id="report-feedback-icon">✅</div>
+                <div class="report-feedback-title" id="report-feedback-title">Report Submitted</div>
+                <div class="report-feedback-message" id="report-feedback-message">Thank you for your feedback!</div>
+            </div>
         </div>
     </div>
     
@@ -1602,6 +1921,7 @@
                 this.setupEventListeners();
                 this.setupNetworkListeners();
                 this.initializeStatusOverlay();
+                this.initializeReportModal();
                 this.spinnerEl.classList.add('active');
                 await this.loadDisplay(true);  // Initial load
                 this.startPolling();
@@ -1763,7 +2083,12 @@
                             }
                             break;
                         case 'r':
-                            if (!e.ctrlKey) {
+                            if (e.shiftKey) {
+                                // Shift+R for report modal
+                                e.preventDefault();
+                                this.showReportModal();
+                            } else if (!e.ctrlKey) {
+                                // R for refresh
                                 e.preventDefault();
                                 this.loadDisplay(true);
                                 this.showToast('🔄 Refreshing...');
@@ -2300,9 +2625,227 @@
                 infoPanel.classList.toggle('show');
             }
             
+            initializeReportModal() {
+                const reportButton = document.getElementById('report-button');
+                const reportModal = document.getElementById('report-modal');
+                const reportClose = document.getElementById('report-modal-close');
+                const reportCancel = document.getElementById('report-cancel');
+                const reportForm = document.getElementById('report-form');
+                
+                // Show modal when report button clicked
+                reportButton.addEventListener('click', () => {
+                    this.showReportModal();
+                });
+                
+                // Close modal when close button clicked
+                reportClose.addEventListener('click', () => {
+                    this.hideReportModal();
+                });
+                
+                // Close modal when cancel button clicked
+                reportCancel.addEventListener('click', () => {
+                    this.hideReportModal();
+                });
+                
+                // Close modal when clicking outside
+                reportModal.addEventListener('click', (e) => {
+                    if (e.target === reportModal) {
+                        this.hideReportModal();
+                    }
+                });
+                
+                // Handle form submission
+                reportForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.submitReport();
+                });
+                
+                // Close modal with Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && reportModal.classList.contains('show')) {
+                        this.hideReportModal();
+                    }
+                });
+            }
+            
+            showReportModal() {
+                const modal = document.getElementById('report-modal');
+                const form = document.getElementById('report-form');
+                const feedback = document.getElementById('report-feedback');
+                
+                // Reset form
+                form.reset();
+                form.style.display = 'flex';
+                feedback.style.display = 'none';
+                
+                // Populate current image info if available
+                if (this.currentData && this.currentData.currentImage) {
+                    document.getElementById('report-image-id').value = this.currentData.currentImage.notion_id || '';
+                }
+                
+                modal.classList.add('show');
+                
+                // Focus on category select
+                setTimeout(() => {
+                    document.getElementById('report-category').focus();
+                }, 100);
+            }
+            
+            hideReportModal() {
+                const modal = document.getElementById('report-modal');
+                modal.classList.remove('show');
+            }
+            
+            async submitReport() {
+                const submitButton = document.getElementById('report-submit');
+                const category = document.getElementById('report-category').value;
+                const description = document.getElementById('report-description').value;
+                const imageId = document.getElementById('report-image-id').value;
+                
+                if (!category) {
+                    this.showToast('⚠️ Please select an issue type');
+                    return;
+                }
+                
+                // Disable submit button
+                submitButton.disabled = true;
+                submitButton.textContent = 'Submitting...';
+                
+                try {
+                    // Gather context data for the report
+                    const reportData = {
+                        image_data: {
+                            notion_id: imageId,
+                            title: this.currentData?.currentImage?.title || '',
+                            url: this.currentData?.currentImage?.url || '',
+                            style: this.currentData?.currentImage?.style || '',
+                            row_number: this.currentData?.currentImage?.row_number || 0
+                        },
+                        categories: [category],
+                        notes: description,
+                        context_data: {
+                            time_of_day: this.currentData?.time?.period || '',
+                            weather_shown: this.currentData?.weather?.condition || '',
+                            actual_weather: this.currentData?.weather?.condition || '',
+                            weather_mismatch: false, // Would need more logic to detect this
+                            hebrew_date: '', // Would need Hebrew calendar integration
+                            sunrise: '',
+                            sunset: '',
+                            holiday: null,
+                            user_agent: navigator.userAgent,
+                            screen_resolution: `${screen.width}x${screen.height}`,
+                            platform: navigator.platform
+                        }
+                    };
+                    
+                    // Try to submit to server endpoint
+                    let success = await this.submitReportToServer(reportData);
+                    
+                    // Fallback to localStorage if server fails
+                    if (!success) {
+                        success = this.submitReportToLocalStorage(reportData);
+                    }
+                    
+                    this.showReportFeedback(success);
+                    
+                } catch (error) {
+                    console.error('Error submitting report:', error);
+                    // Fallback to localStorage
+                    const success = this.submitReportToLocalStorage({
+                        category,
+                        description,
+                        imageId,
+                        timestamp: new Date().toISOString(),
+                        imageTitle: this.currentData?.currentImage?.title || ''
+                    });
+                    this.showReportFeedback(success);
+                } finally {
+                    // Re-enable submit button
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit Report';
+                }
+            }
+            
+            async submitReportToServer(reportData) {
+                try {
+                    const response = await fetch('/api/report', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(reportData)
+                    });
+                    
+                    if (response.ok) {
+                        console.log('Report submitted to server successfully');
+                        return true;
+                    } else {
+                        console.warn('Server report submission failed:', response.status);
+                        return false;
+                    }
+                } catch (error) {
+                    console.warn('Network error submitting report:', error);
+                    return false;
+                }
+            }
+            
+            submitReportToLocalStorage(reportData) {
+                try {
+                    const reportId = 'RPT-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+                    const report = {
+                        id: reportId,
+                        ...reportData,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    // Get existing reports
+                    const existingReports = JSON.parse(localStorage.getItem('aliceDisplayReports') || '[]');
+                    existingReports.push(report);
+                    
+                    // Keep only last 50 reports to avoid storage bloat
+                    if (existingReports.length > 50) {
+                        existingReports.splice(0, existingReports.length - 50);
+                    }
+                    
+                    localStorage.setItem('aliceDisplayReports', JSON.stringify(existingReports));
+                    console.log('Report saved to localStorage:', reportId);
+                    return true;
+                } catch (error) {
+                    console.error('Error saving report to localStorage:', error);
+                    return false;
+                }
+            }
+            
+            showReportFeedback(success) {
+                const form = document.getElementById('report-form');
+                const feedback = document.getElementById('report-feedback');
+                const icon = document.getElementById('report-feedback-icon');
+                const title = document.getElementById('report-feedback-title');
+                const message = document.getElementById('report-feedback-message');
+                
+                form.style.display = 'none';
+                feedback.style.display = 'block';
+                
+                if (success) {
+                    icon.textContent = '✅';
+                    title.textContent = 'Report Submitted';
+                    message.textContent = 'Thank you for your feedback! We\'ll review this issue.';
+                } else {
+                    icon.textContent = '❌';
+                    title.textContent = 'Submission Failed';
+                    message.textContent = 'Unable to submit report. Please try again later.';
+                }
+                
+                // Auto-close modal after 3 seconds
+                setTimeout(() => {
+                    this.hideReportModal();
+                }, 3000);
+            }
+            
             closeAllPanels() {
                 document.getElementById('help-overlay').classList.remove('show');
                 document.getElementById('image-info').classList.remove('show');
+                document.getElementById('report-modal').classList.remove('show');
                 // Note: status overlay toggle is separate - not included in close all panels
                 this.debugEl.classList.remove('show');
             }

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice Display - Report Feature Test</title>
+    <style>
+        body {
+            background: #1a1a2e;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .test-header h1 {
+            color: #6366f1;
+            margin-bottom: 10px;
+        }
+        
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+        }
+        
+        .test-section h2 {
+            color: #8b5cf6;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .test-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .test-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .test-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .status.pass {
+            background: #22c55e;
+            color: white;
+        }
+        
+        .status.manual {
+            background: #f59e0b;
+            color: white;
+        }
+        
+        .demo-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff5252 0%, #ff1744 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        
+        .demo-button:hover {
+            background: linear-gradient(135deg, #ff1744 0%, #d50000 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 82, 82, 0.4);
+        }
+        
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 13px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>🚩 Alice Display - Report Feature Test</h1>
+            <p>Comprehensive testing checklist for the image issue reporting feature</p>
+        </div>
+
+        <div class="test-section">
+            <h2>✅ Implementation Status</h2>
+            <ul class="test-list">
+                <li><span class="status pass">PASS</span> Report button added (bottom-right corner)</li>
+                <li><span class="status pass">PASS</span> Modal with 8 issue categories</li>
+                <li><span class="status pass">PASS</span> Optional description textarea</li>
+                <li><span class="status pass">PASS</span> Submit/Cancel buttons</li>
+                <li><span class="status pass">PASS</span> Mobile-responsive design</li>
+                <li><span class="status pass">PASS</span> Dark theme styling</li>
+                <li><span class="status pass">PASS</span> Keyboard shortcuts (Shift+R, Escape)</li>
+                <li><span class="status pass">PASS</span> LocalStorage fallback</li>
+                <li><span class="status pass">PASS</span> Visual feedback system</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>🧪 Manual Testing Required</h2>
+            <ul class="test-list">
+                <li><span class="status manual">TEST</span> Click report button → modal opens</li>
+                <li><span class="status manual">TEST</span> Select issue category → validates</li>
+                <li><span class="status manual">TEST</span> Submit with empty category → shows error</li>
+                <li><span class="status manual">TEST</span> Submit valid report → shows success</li>
+                <li><span class="status manual">TEST</span> Report saved to localStorage</li>
+                <li><span class="status manual">TEST</span> Escape key closes modal</li>
+                <li><span class="status manual">TEST</span> Click outside modal → closes</li>
+                <li><span class="status manual">TEST</span> Mobile viewport → responsive layout</li>
+                <li><span class="status manual">TEST</span> Shift+R keyboard shortcut works</li>
+                <li><span class="status manual">TEST</span> Auto-close after 3 seconds</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>📝 Issue Categories Available</h2>
+            <ul class="test-list">
+                <li>• Wrong Content</li>
+                <li>• Poor Quality</li>
+                <li>• Duplicate</li>
+                <li>• Inappropriate</li>
+                <li>• Weather Mismatch</li>
+                <li>• Time Mismatch</li>
+                <li>• Technical Issue</li>
+                <li>• Other</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>🔧 Technical Integration</h2>
+            <div class="code-block">
+Server Endpoint (when available): POST /api/report<br>
+Fallback Storage: localStorage 'aliceDisplayReports'<br>
+Report ID Format: RPT-{timestamp}-{random}<br>
+Max Local Reports: 50 (auto-rotation)
+            </div>
+            
+            <p>Reports include:</p>
+            <ul class="test-list">
+                <li>• Current image metadata (Notion ID, title, URL)</li>
+                <li>• Context data (weather, time, activity)</li>
+                <li>• User environment (screen resolution, platform)</li>
+                <li>• Sanitized user input</li>
+                <li>• Timestamp and unique ID</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>🚀 Next Steps</h2>
+            <ul class="test-list">
+                <li><span class="status manual">TODO</span> Test on live Alice Display website</li>
+                <li><span class="status manual">TODO</span> Verify integration with existing functionality</li>
+                <li><span class="status manual">TODO</span> Test mobile viewport responsiveness</li>
+                <li><span class="status manual">TODO</span> Validate localStorage fallback</li>
+                <li><span class="status manual">TODO</span> Server endpoint integration (when ready)</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index-dynamic.html" class="demo-button">🦜 Open Alice Display</a>
+            <button class="demo-button" onclick="checkLocalStorage()">📋 Check Local Reports</button>
+        </div>
+    </div>
+
+    <script>
+        function checkLocalStorage() {
+            const reports = JSON.parse(localStorage.getItem('aliceDisplayReports') || '[]');
+            if (reports.length > 0) {
+                alert(`Found ${reports.length} local reports:\n\n${reports.map(r => `${r.id}: ${r.category || r.categories?.[0] || 'Unknown'}`).join('\n')}`);
+                console.log('Local reports:', reports);
+            } else {
+                alert('No local reports found. Submit a test report first!');
+            }
+        }
+        
+        // Show keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'h' || e.key === '?') {
+                alert(`Alice Display Shortcuts:
+• Shift+R: Open report modal
+• R: Refresh display  
+• F: Toggle fullscreen
+• S: Toggle status overlay
+• Space: Pause/resume
+• I: Show image info
+• Escape: Close panels`);
+            }
+        });
+        
+        console.log('🚩 Report Feature Test Page Loaded');
+        console.log('Press H or ? for keyboard shortcuts');
+    </script>
+</body>
+</html>

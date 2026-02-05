@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81f5-802b-c6d825f3406b",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231861/alice-gallery/anime/Alice_Cooking_-_Overcast_Morning.png",
-    "title": "Alice Cooking - Overcast Morning",
+    "id": "2fc41906-4d30-819b-adbb-d2d276df3f49",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231227/alice-gallery/anime/070_Alice_Presenting_Session__62.png",
+    "title": "Alice Presenting Session #62",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Work",
     "mood": ""
   },
   "weather": {
@@ -19,6 +19,6 @@
     "hour": 6,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T04:35:01.364182+00:00",
-  "nextUpdate": "2026-02-05T05:00:00+00:00"
+  "lastUpdated": "2026-02-05T08:17:35.983466+00:00",
+  "nextUpdate": "2026-02-05T09:00:00+00:00"
 }
