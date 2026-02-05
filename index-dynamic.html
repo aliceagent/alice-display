@@ -235,9 +235,33 @@
         }
         
         .weather-widget.hidden {
-            opacity: 0;
-            transform: translateY(-10px);
-            pointer-events: none;
+            /* Collapsed state: small icon only */
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            max-width: 50px;
+            padding: 8px;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+        
+        /* Hide all content except icon when collapsed */
+        .weather-widget.hidden .weather-widget-temp,
+        .weather-widget.hidden .weather-widget-condition,
+        .weather-widget.hidden .weather-widget-description,
+        .weather-widget.hidden .weather-widget-divider,
+        .weather-widget.hidden .weather-widget-details,
+        .weather-widget.hidden .weather-widget-time {
+            display: none;
+        }
+        
+        .weather-widget.hidden .weather-widget-icon {
+            font-size: 28px;
+        }
+        
+        .weather-widget.hidden .weather-widget-header {
+            margin: 0;
+            justify-content: center;
         }
         
         .weather-widget-header {
@@ -336,7 +360,7 @@
         /* ═══════════════════════════════════════════════════════════
            MOBILE PORTRAIT LAYOUT
            On portrait phones, we position the weather widget in the
-           bottom-left corner where it can toggle on/off smoothly.
+           top-left corner where it can toggle on/off smoothly.
            When expanded, the image gets slightly shrunk to avoid overlap.
            When collapsed, image uses full space.
            
@@ -353,30 +377,35 @@
                 padding-bottom: 120px; /* Space for expanded status overlay */
             }
             
-            /* When status overlay is collapsed, image uses full space */
-            .display-container.status-collapsed .image-layer {
-                padding-bottom: 20px; /* Minimal space for collapsed indicator */
+            /* Image pushed down to avoid overlapping with weather widget at top-left */
+            .image-layer {
+                padding-top: 140px; /* Space for weather widget */
+            }
+            
+            /* When weather widget is hidden, image uses full space */
+            .display-container.widget-hidden .image-layer {
+                padding-top: 0;
             }
             
             .weather-widget {
-                /* Reposition to bottom-left corner */
-                top: auto;
-                bottom: 20px;
+                /* Reposition to top-left corner */
+                top: 20px;
+                bottom: auto;
                 left: 20px;
                 right: auto;
                 transform: none;
                 
                 /* More compact for mobile */
                 min-width: auto;
-                max-width: 280px;
+                max-width: 200px;
                 width: auto;
-                padding: 16px;
-                border-radius: 16px;
+                padding: 12px;
+                border-radius: 12px;
             }
             
             /* Collapsed state positioning */
             .weather-widget.collapsed {
-                bottom: 20px;
+                top: 20px;
                 left: 20px;
             }
             
@@ -1676,6 +1705,11 @@
                     this.toggleStatusOverlay();
                 });
                 
+                // Weather widget click to toggle visibility
+                document.getElementById('weather-widget').addEventListener('click', () => {
+                    this.toggleWeatherWidget();
+                });
+                
                 // Show status on mouse move / touch
                 let hideTimeout;
                 const showOverlays = () => {
@@ -2186,6 +2220,23 @@
                     this.showToast('📍 Status minimized');
                 } else {
                     this.showToast('📍 Status expanded');
+                }
+            }
+            
+            toggleWeatherWidget() {
+                const weatherWidget = document.getElementById('weather-widget');
+                const displayContainer = document.querySelector('.display-container');
+                
+                // Toggle visibility
+                weatherWidget.classList.toggle('hidden');
+                
+                // Update display container class for image spacing
+                displayContainer.classList.toggle('widget-hidden', weatherWidget.classList.contains('hidden'));
+                
+                if (weatherWidget.classList.contains('hidden')) {
+                    this.showToast('🌤️ Tap icon to expand');
+                } else {
+                    this.showToast('🌤️ Tap to collapse');
                 }
             }
             
