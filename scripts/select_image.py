@@ -174,9 +174,8 @@ class ImageSelector:
         # Default hour to current time if not provided
         if hour is None:
             from datetime import datetime
-            import pytz
-            tz = pytz.timezone("Asia/Hebron")
-            hour = datetime.now(tz).hour
+            # Use UTC+2 as approximation for Asia/Hebron
+            hour = (datetime.utcnow().hour + 2) % 24
         
         # Get recent IDs to avoid
         recent_ids = self._get_recent_ids(24) if avoid_recent else set()
