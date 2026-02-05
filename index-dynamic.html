@@ -137,11 +137,21 @@
         .status-overlay.collapsed {
             width: 50px;
             height: 50px;
-            padding: 12px;
+            padding: 0;
             border-radius: 50%;
             justify-content: center;
+            align-items: center;
             gap: 0;
             opacity: 0.8;
+        }
+        
+        /* Center the weather icon in collapsed state */
+        .status-overlay.collapsed .status-item:first-child {
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
         }
         
         /* Hide all items except weather icon when collapsed */
