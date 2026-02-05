@@ -1,16 +1,16 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8111-aa16-f71d17d04d2d",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233504/alice-gallery/holiday/Alice_Watching_Brilliant_Fireworks_Light_-_Yom_HaAtzmaut_Overcast_Afternoon.png",
-    "title": "Alice Watching Brilliant Fireworks Light - Yom HaAtzmaut Overcast Afternoon",
+    "id": "2fd41906-4d30-8160-a6b9-d3e7d20951fa",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231667/alice-gallery/anime/Alice_Bicycle_Ride_-_Overcast_Afternoon.png",
+    "title": "Alice Bicycle Ride - Overcast Afternoon",
     "description": "",
-    "activity": "",
+    "activity": "Exercise",
     "mood": ""
   },
   "weather": {
     "condition": "Overcast",
     "temperature": 18,
-    "humidity": 31,
+    "humidity": 38,
     "description": "broken clouds",
     "icon": "04d"
   },
@@ -19,6 +19,6 @@
     "hour": 15,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T13:18:23.675716+00:00",
+  "lastUpdated": "2026-02-05T13:33:36.659084+00:00",
   "nextUpdate": "2026-02-05T14:00:00+00:00"
 }
