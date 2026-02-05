@@ -1,11 +1,14 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8155-931a-f0d3e507c5c3",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232256/alice-gallery/anime/Alice_Gaming_Time__58.png",
-    "title": "Alice Gaming Time #58",
+    "id": "2fd41906-4d30-81db-9cae-fc0f7dd1ad82",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232721/alice-gallery/anime/Alice_Picnic_-_Overcast_Night.png",
+    "title": "Alice Picnic - Overcast Night",
     "description": "",
-    "activity": "Leisure",
-    "mood": ""
+    "activity": "Social",
+    "mood": "",
+    "imageWeather": "Overcast",
+    "imageTimePeriod": "Night",
+    "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
@@ -15,10 +18,10 @@
     "icon": "04n"
   },
   "time": {
-    "period": "Evening",
-    "hour": 19,
+    "period": "Night",
+    "hour": 20,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T17:51:28.824261+00:00",
-  "nextUpdate": "2026-02-05T18:00:00+00:00"
+  "lastUpdated": "2026-02-05T18:02:24.400024+00:00",
+  "nextUpdate": "2026-02-05T19:00:00+00:00"
 }

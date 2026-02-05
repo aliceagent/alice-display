@@ -154,6 +154,9 @@ class AliceUpdater:
                 "description": image.get("description", ""),
                 "activity": image.get("activity", ""),
                 "mood": image.get("mood", ""),
+                "imageWeather": image.get("weather", "Unknown"),
+                "imageTimePeriod": image.get("time_period", image.get("time", "Unknown")),
+                "imageHoliday": image.get("holiday", ""),
             },
             "weather": {
                 "condition": weather["condition"],
