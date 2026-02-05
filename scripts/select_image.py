@@ -213,6 +213,43 @@ class ImageSelector:
                 if candidates:
                     break
         
+        # For sleeping hours (22-05), prioritize activity match over recency
+        # Better to repeat a sleeping image than show Alice partying at 2 AM
+        is_sleeping_hour = hour in [22, 23, 0, 1, 2, 3, 4, 5]
+        
+        # Check if current candidates actually match preferred activity
+        def has_activity_match(cands, prefs):
+            if not prefs:
+                return True
+            for c in cands:
+                act = c.get('activity', '').lower()
+                for p in prefs:
+                    if p.lower() in act:
+                        return True
+            return False
+        
+        candidates_have_activity = has_activity_match(candidates, preferred_activities)
+        
+        if avoid_recent and is_sleeping_hour and preferred_activities and not candidates_have_activity:
+            print("💤 Sleeping hour: relaxing recency to prioritize Sleeping images")
+            
+            # Helper to check if candidates have valid CDN URLs
+            def has_cdn(cands):
+                return any(c.get('cloudinary_url') and c.get('cloudinary_url').strip() for c in cands)
+            
+            sleeping_candidates = self._find_matches(weather, time_period, set(), preferred_activities)
+            # Only accept if we have CDN images
+            if not sleeping_candidates or not has_cdn(sleeping_candidates):
+                for fallback_weather in WEATHER_FALLBACKS.get(weather, []):
+                    sleeping_candidates = self._find_matches(fallback_weather, time_period, set(), preferred_activities)
+                    if sleeping_candidates and has_cdn(sleeping_candidates):
+                        print(f"📎 Using weather fallback: {weather} → {fallback_weather}")
+                        break
+            if sleeping_candidates and has_cdn(sleeping_candidates):
+                # Filter to only CDN images
+                sleeping_candidates = [c for c in sleeping_candidates if c.get('cloudinary_url') and c.get('cloudinary_url').strip()]
+                candidates = sleeping_candidates
+        
         # Try relaxing activity restriction if we still have no candidates
         if not candidates and preferred_activities:
             print("📎 Relaxing activity restriction to find match")

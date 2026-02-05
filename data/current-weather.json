@@ -12,5 +12,5 @@
   "time_period": "Late Night",
   "current_hour": 0,
   "timestamp": "2026-02-05T22:38:56.420825+00:00",
-  "source": "OpenWeatherMap"
+  "source": "cache"
 }
