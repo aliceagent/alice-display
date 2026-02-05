@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8106-9bf2-c9079a5c311c",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233351/alice-gallery/holiday/Alice_Standing_With_Head_Bowed_-_Yom_HaZikaron_Overcast_Afternoon.png",
-    "title": "Alice Standing With Head Bowed - Yom HaZikaron Overcast Afternoon",
+    "id": "2fd41906-4d30-8111-aa16-f71d17d04d2d",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233504/alice-gallery/holiday/Alice_Watching_Brilliant_Fireworks_Light_-_Yom_HaAtzmaut_Overcast_Afternoon.png",
+    "title": "Alice Watching Brilliant Fireworks Light - Yom HaAtzmaut Overcast Afternoon",
     "description": "",
     "activity": "",
     "mood": ""
@@ -19,6 +19,6 @@
     "hour": 15,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T13:03:09.583489+00:00",
+  "lastUpdated": "2026-02-05T13:18:23.675716+00:00",
   "nextUpdate": "2026-02-05T14:00:00+00:00"
 }
