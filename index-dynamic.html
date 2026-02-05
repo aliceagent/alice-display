@@ -2001,7 +2001,6 @@
                 <input type="hidden" id="report-image-id" value="">
                 
                 <div class="report-form-actions">
-                    <button type="button" class="report-btn report-btn-cancel" id="report-cancel">Cancel</button>
                     <button type="submit" class="report-btn report-btn-submit" id="report-submit">Submit Report</button>
                 </div>
             </form>
@@ -2804,7 +2803,6 @@
                 const reportButton = document.getElementById('report-button');
                 const reportModal = document.getElementById('report-modal');
                 const reportClose = document.getElementById('report-modal-close');
-                const reportCancel = document.getElementById('report-cancel');
                 const reportForm = document.getElementById('report-form');
                 
                 // Show modal when report button clicked
@@ -2814,11 +2812,6 @@
                 
                 // Close modal when close button clicked
                 reportClose.addEventListener('click', () => {
-                    this.hideReportModal();
-                });
-                
-                // Close modal when cancel button clicked
-                reportCancel.addEventListener('click', () => {
                     this.hideReportModal();
                 });
                 
