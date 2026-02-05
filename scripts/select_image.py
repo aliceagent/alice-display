@@ -186,9 +186,17 @@ class ImageSelector:
         return selected
     
     def _find_matches(self, weather: str, time_period: str, exclude_ids: set) -> list:
-        """Find all images matching weather and time, excluding recent IDs."""
+        """Find all images matching weather and time, excluding recent IDs and non-current holidays."""
         matches = []
         for img in self.images:
+            # CRITICAL: Skip holiday images unless today is that holiday
+            # Holiday images should only show on their specific days
+            img_holiday = img.get("holiday", "").strip()
+            if img_holiday:
+                # This is a holiday image - skip it for now
+                # TODO: Add proper Hebrew calendar integration to show holiday images on correct days
+                continue
+            
             # Check weather match (case-insensitive)
             img_weather = img.get("weather", "").lower()
             if weather.lower() not in img_weather and img_weather not in weather.lower():
