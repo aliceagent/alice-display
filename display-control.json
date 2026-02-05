@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-818a-939c-ded8ef5edff8",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232790/alice-gallery/pixel-art/Alice_Playing_Piano_-_Cloudy_Night.png",
-    "title": "Alice Playing Piano - Cloudy Night",
+    "id": "2fc41906-4d30-816a-93e4-ef6148c6cb74",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231023/alice-gallery/anime/013_Alice_Sleeping_-_Cloudy_Night__14.png",
+    "title": "Alice Sleeping - Cloudy Night #14",
     "description": "",
-    "activity": "Creative",
+    "activity": "Sleeping",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Night",
@@ -22,6 +22,6 @@
     "hour": 21,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T19:11:44.265718+00:00",
+  "lastUpdated": "2026-02-05T19:13:00.359109+00:00",
   "nextUpdate": "2026-02-05T20:00:00+00:00"
 }
