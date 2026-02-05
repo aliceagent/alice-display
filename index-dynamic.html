@@ -1519,6 +1519,352 @@
             display: none; /* Hidden - replaced by Command Center */
         }
         
+        /* Vacuum Control Panel */
+        .vacuum-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 300;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .vacuum-panel.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .vacuum-panel-content {
+            background: linear-gradient(145deg, #2d2d44 0%, #1a1a2e 100%);
+            border-radius: 20px;
+            padding: 32px;
+            max-width: 400px;
+            width: 90%;
+            color: white;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: modalSlideIn 0.4s ease-out;
+            text-align: center;
+        }
+        
+        .vacuum-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        
+        .vacuum-panel-title {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .vacuum-panel-close {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: color 0.2s, background 0.2s;
+        }
+        
+        .vacuum-panel-close:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .vacuum-battery {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+        }
+        
+        .vacuum-battery-icon {
+            font-size: 32px;
+        }
+        
+        .vacuum-battery-text {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .vacuum-battery-loading {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        
+        .vacuum-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .vacuum-btn {
+            padding: 16px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-height: 56px;
+        }
+        
+        .vacuum-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .vacuum-btn-start {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: white;
+        }
+        
+        .vacuum-btn-start:hover:not(:disabled) {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+        }
+        
+        .vacuum-btn-stop {
+            background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%);
+            color: white;
+        }
+        
+        .vacuum-btn-stop:hover:not(:disabled) {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 82, 82, 0.4);
+        }
+        
+        .vacuum-btn-home {
+            background: linear-gradient(135deg, #2196f3 0%, #1565c0 100%);
+            color: white;
+        }
+        
+        .vacuum-btn-home:hover:not(:disabled) {
+            background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(33, 150, 243, 0.4);
+        }
+        
+        .vacuum-btn:active:not(:disabled) {
+            transform: translateY(0);
+        }
+        
+        .vacuum-btn-icon {
+            font-size: 20px;
+        }
+        
+        @media (max-width: 480px) {
+            .vacuum-panel-content {
+                margin: 16px;
+                padding: 24px;
+                max-width: none;
+                width: auto;
+            }
+            
+            .vacuum-actions {
+                gap: 12px;
+            }
+            
+            .vacuum-btn {
+                padding: 14px 20px;
+                min-height: 50px;
+            }
+        }
+
+        /* Lights Control Panel */
+        .lights-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 300;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .lights-panel.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lights-panel-content {
+            background: linear-gradient(145deg, #2d2d44 0%, #1a1a2e 100%);
+            border-radius: 20px;
+            padding: 32px;
+            max-width: 400px;
+            width: 90%;
+            color: white;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: modalSlideIn 0.4s ease-out;
+            text-align: center;
+        }
+        
+        .lights-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+        
+        .lights-panel-title {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .lights-panel-close {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: color 0.2s, background 0.2s;
+        }
+        
+        .lights-panel-close:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .lights-presets {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .lights-preset-btn {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .lights-preset-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .lights-preset-btn:active {
+            transform: translateY(0);
+        }
+        
+        .lights-preset-btn.bedtime {
+            border-color: rgba(147, 51, 234, 0.5);
+            box-shadow: 0 4px 20px rgba(147, 51, 234, 0.2);
+        }
+        
+        .lights-preset-btn.bedtime:hover {
+            border-color: rgba(147, 51, 234, 0.7);
+            box-shadow: 0 6px 25px rgba(147, 51, 234, 0.3);
+        }
+        
+        .lights-preset-btn.daytime {
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
+        }
+        
+        .lights-preset-btn.daytime:hover {
+            border-color: rgba(245, 158, 11, 0.7);
+            box-shadow: 0 6px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        .lights-preset-btn.movie {
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.2);
+        }
+        
+        .lights-preset-btn.movie:hover {
+            border-color: rgba(59, 130, 246, 0.7);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .lights-preset-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+        
+        .lights-preset-text {
+            font-size: 18px;
+            font-weight: 600;
+            flex: 1;
+        }
+        
+        .lights-preset-desc {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 4px;
+            display: block;
+        }
+        
+        @media (max-width: 480px) {
+            .lights-panel-content {
+                margin: 16px;
+                padding: 24px;
+                max-width: none;
+                width: auto;
+            }
+            
+            .lights-preset-btn {
+                padding: 16px;
+                gap: 12px;
+            }
+            
+            .lights-preset-icon {
+                font-size: 28px;
+            }
+            
+            .lights-preset-text {
+                font-size: 16px;
+            }
+        }
+
         /* Report Modal */
         .report-modal {
             position: fixed;
@@ -2075,6 +2421,64 @@
         <button class="command-center-button" id="command-center-button" title="Command Center">⚙️</button>
     </div>
     <div class="command-center-backdrop" id="command-center-backdrop"></div>
+    
+    <!-- Vacuum Control Panel -->
+    <div class="vacuum-panel" id="vacuum-panel">
+        <div class="vacuum-panel-content">
+            <div class="vacuum-panel-header">
+                <h2 class="vacuum-panel-title">🤖 Yiko Vacuum</h2>
+                <button class="vacuum-panel-close" id="vacuum-panel-close" title="Close">✕</button>
+            </div>
+            
+            <div class="vacuum-battery" id="vacuum-battery">
+                <span class="vacuum-battery-icon" id="vacuum-battery-icon">🔋</span>
+                <span class="vacuum-battery-text" id="vacuum-battery-text">Loading...</span>
+            </div>
+            
+            <div class="vacuum-actions">
+                <button class="vacuum-btn vacuum-btn-start" id="vacuum-btn-start">
+                    <span class="vacuum-btn-icon">▶️</span>
+                    <span>Start Cleaning</span>
+                </button>
+                <button class="vacuum-btn vacuum-btn-stop" id="vacuum-btn-stop">
+                    <span class="vacuum-btn-icon">⏹️</span>
+                    <span>Stop</span>
+                </button>
+                <button class="vacuum-btn vacuum-btn-home" id="vacuum-btn-home">
+                    <span class="vacuum-btn-icon">🏠</span>
+                    <span>Go Home</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lights Control Panel -->
+    <div class="lights-panel" id="lights-panel">
+        <div class="lights-panel-content">
+            <div class="lights-panel-header">
+                <h2 class="lights-panel-title">💡 Lights Control</h2>
+                <button class="lights-panel-close" id="lights-panel-close" title="Close">✕</button>
+            </div>
+            
+            <div class="lights-presets">
+                <button class="lights-preset-btn bedtime" id="lights-bedtime">
+                    <span class="lights-preset-icon">🌙</span>
+                    <span class="lights-preset-text">Bedtime</span>
+                    <span class="lights-preset-desc">All lights to 1%</span>
+                </button>
+                <button class="lights-preset-btn daytime" id="lights-daytime">
+                    <span class="lights-preset-icon">☀️</span>
+                    <span class="lights-preset-text">Daytime</span>
+                    <span class="lights-preset-desc">All lights to 100%</span>
+                </button>
+                <button class="lights-preset-btn movie" id="lights-movie">
+                    <span class="lights-preset-icon">🎬</span>
+                    <span class="lights-preset-text">Movie Mode</span>
+                    <span class="lights-preset-desc">30% + Blue</span>
+                </button>
+            </div>
+        </div>
+    </div>
     
     <!-- Report Issue Modal -->
     <div class="report-modal" id="report-modal">
@@ -2963,16 +3367,16 @@
                     this.showReportModal();
                 });
                 
-                // Vacuum button → show vacuum panel (placeholder for now)
+                // Vacuum button → show vacuum panel
                 cmdVacuum.addEventListener('click', () => {
                     commandCenter.classList.remove('open');
-                    this.showToast('🤖 Vacuum control coming soon!');
+                    this.showVacuumPanel();
                 });
                 
-                // Lights button → show lights panel (placeholder for now)
+                // Lights button → show lights panel
                 cmdLights.addEventListener('click', () => {
                     commandCenter.classList.remove('open');
-                    this.showToast('💡 Lights control coming soon!');
+                    this.showLightsPanel();
                 });
                 
                 // Close on Escape key
@@ -2990,6 +3394,12 @@
                 
                 // Initialize Command Center (which includes report button)
                 this.initializeCommandCenter();
+                
+                // Initialize Vacuum Panel
+                this.initializeVacuumPanel();
+                
+                // Initialize Lights Panel
+                this.initializeLightsPanel();
                 
                 // Close modal when close button clicked
                 reportClose.addEventListener('click', () => {
@@ -3209,6 +3619,210 @@
                 setTimeout(() => {
                     this.hideReportModal();
                 }, 3000);
+            }
+            
+            initializeVacuumPanel() {
+                const vacuumPanel = document.getElementById('vacuum-panel');
+                const vacuumClose = document.getElementById('vacuum-panel-close');
+                const vacuumBtnStart = document.getElementById('vacuum-btn-start');
+                const vacuumBtnStop = document.getElementById('vacuum-btn-stop');
+                const vacuumBtnHome = document.getElementById('vacuum-btn-home');
+                
+                // Close panel when close button clicked
+                vacuumClose.addEventListener('click', () => {
+                    this.hideVacuumPanel();
+                });
+                
+                // Close panel when clicking outside
+                vacuumPanel.addEventListener('click', (e) => {
+                    if (e.target === vacuumPanel) {
+                        this.hideVacuumPanel();
+                    }
+                });
+                
+                // Vacuum control buttons
+                vacuumBtnStart.addEventListener('click', () => this.vacuumStart());
+                vacuumBtnStop.addEventListener('click', () => this.vacuumStop());
+                vacuumBtnHome.addEventListener('click', () => this.vacuumGoHome());
+                
+                // Close panel with Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && vacuumPanel.classList.contains('show')) {
+                        this.hideVacuumPanel();
+                    }
+                });
+            }
+            
+            async showVacuumPanel() {
+                const panel = document.getElementById('vacuum-panel');
+                
+                // Lock body scroll when panel is open
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+                
+                panel.classList.add('show');
+                
+                // Load battery status when panel opens
+                await this.loadVacuumStatus();
+            }
+            
+            hideVacuumPanel() {
+                const panel = document.getElementById('vacuum-panel');
+                panel.classList.remove('show');
+                
+                // Restore body scroll
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
+            
+            async loadVacuumStatus() {
+                const batteryIcon = document.getElementById('vacuum-battery-icon');
+                const batteryText = document.getElementById('vacuum-battery-text');
+                
+                // Show loading state
+                batteryIcon.textContent = '⏳';
+                batteryText.textContent = 'Loading...';
+                
+                try {
+                    // First, try the local API server
+                    const apiUrl = window.location.protocol === 'file:' ? 'http://localhost:3001' : '';
+                    const response = await fetch(`${apiUrl}/api/vacuum/status`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ device: 1 }),
+                        signal: AbortSignal.timeout(5000)  // 5 second timeout
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        this.updateVacuumBattery(data.battery, data.charging);
+                        return;
+                    } else {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                } catch (error) {
+                    console.warn('API server not available, trying direct execution:', error.message);
+                    
+                    // Fallback: Try executing the command directly via browser (if possible)
+                    // This won't work in a browser context, so we'll show a helpful message
+                    batteryIcon.textContent = '🤖';
+                    batteryText.textContent = 'Yiko Ready';
+                    
+                    // Show a note about starting the API server
+                    this.showToast('💡 Tip: Start vacuum API server for full functionality');
+                }
+            }
+            
+            updateVacuumBattery(batteryLevel, isCharging = false) {
+                const batteryIcon = document.getElementById('vacuum-battery-icon');
+                const batteryText = document.getElementById('vacuum-battery-text');
+                
+                // Determine battery icon based on level and charging state
+                if (isCharging) {
+                    batteryIcon.textContent = '🔌';
+                    batteryText.textContent = `${batteryLevel}% (Charging)`;
+                } else if (batteryLevel >= 80) {
+                    batteryIcon.textContent = '🔋';
+                    batteryText.textContent = `${batteryLevel}% (Full)`;
+                } else if (batteryLevel >= 50) {
+                    batteryIcon.textContent = '🔋';
+                    batteryText.textContent = `${batteryLevel}% (Good)`;
+                } else if (batteryLevel >= 20) {
+                    batteryIcon.textContent = '🪫';
+                    batteryText.textContent = `${batteryLevel}% (Low)`;
+                } else {
+                    batteryIcon.textContent = '🪫';
+                    batteryText.textContent = `${batteryLevel}% (Very Low)`;
+                }
+            }
+            
+            async vacuumStart() {
+                await this.executeVacuumCommand('clean', 'Starting vacuum...', '✅ Vacuum started!');
+            }
+            
+            async vacuumStop() {
+                await this.executeVacuumCommand('stop', 'Stopping vacuum...', '⏹️ Vacuum stopped');
+            }
+            
+            async vacuumGoHome() {
+                await this.executeVacuumCommand('charge', 'Sending home...', '🏠 Going home');
+            }
+            
+            async executeVacuumCommand(command, loadingMessage, successMessage) {
+                const buttons = document.querySelectorAll('.vacuum-btn');
+                
+                // Disable all buttons during command
+                buttons.forEach(btn => {
+                    btn.disabled = true;
+                    if (btn.querySelector('span:last-child')) {
+                        btn.querySelector('span:last-child').textContent = 'Working...';
+                    }
+                });
+                
+                this.showToast(loadingMessage);
+                
+                try {
+                    // Try the local API server first
+                    const apiUrl = window.location.protocol === 'file:' ? 'http://localhost:3001' : '';
+                    const response = await fetch(`${apiUrl}/api/vacuum/command`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            device: 1,
+                            command: command
+                        }),
+                        signal: AbortSignal.timeout(30000)  // 30 second timeout for commands
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.success) {
+                            this.showToast(successMessage);
+                            
+                            // Auto-collapse Command Center after successful action (CMD-3-4)
+                            this.hideVacuumPanel();
+                            const commandCenter = document.getElementById('command-center');
+                            commandCenter.classList.remove('open');
+                        } else {
+                            throw new Error(data.error || 'Command failed');
+                        }
+                    } else {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                } catch (error) {
+                    console.error(`Vacuum ${command} failed:`, error.message);
+                    
+                    if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                        // API server not available
+                        this.showToast('🔧 API server needed - check setup instructions');
+                        
+                        // Show helpful information
+                        const helpText = `To control Yiko:
+1. cd /Users/agentcaras/.openclaw/workspace/alice-display-website
+2. npm install && npm start
+3. Refresh this page`;
+                        
+                        console.info(helpText);
+                    } else {
+                        this.showToast(`❌ ${error.message}`);
+                    }
+                } finally {
+                    // Re-enable buttons
+                    buttons.forEach(btn => {
+                        btn.disabled = false;
+                    });
+                    
+                    // Reset button text
+                    const startBtn = document.querySelector('.vacuum-btn-start span:last-child');
+                    const stopBtn = document.querySelector('.vacuum-btn-stop span:last-child');
+                    const homeBtn = document.querySelector('.vacuum-btn-home span:last-child');
+                    
+                    if (startBtn) startBtn.textContent = 'Start Cleaning';
+                    if (stopBtn) stopBtn.textContent = 'Stop';
+                    if (homeBtn) homeBtn.textContent = 'Go Home';
+                }
             }
             
             closeAllPanels() {

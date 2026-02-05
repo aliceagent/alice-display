@@ -1,0 +1,20 @@
+{
+  "name": "alice-display-vacuum-api",
+  "version": "1.0.0",
+  "description": "API server for vacuum control in Alice Display",
+  "main": "vacuum-api.js",
+  "scripts": {
+    "start": "node vacuum-api.js",
+    "dev": "nodemon vacuum-api.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["alice", "vacuum", "ecovacs", "api"],
+  "author": "Alice Agent",
+  "license": "MIT"
+}
