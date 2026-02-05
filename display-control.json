@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8130-b947-d37550591b0a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219334/alice-gallery/anime/Alice_Gaming_-_Cloudy_Night.png",
-    "title": "Alice Gaming - Cloudy Night",
+    "id": "2fc41906-4d30-8197-9a48-e5e64988441a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232547/alice-gallery/anime/Alice_Movie_Watching_Time__15.png",
+    "title": "Alice Movie Watching Time #15",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -13,7 +13,7 @@
   "weather": {
     "condition": "Overcast",
     "temperature": 12,
-    "humidity": 44,
+    "humidity": 43,
     "description": "overcast clouds",
     "icon": "04n"
   },
@@ -22,6 +22,6 @@
     "hour": 22,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T20:32:30.120038+00:00",
+  "lastUpdated": "2026-02-05T20:49:42.265035+00:00",
   "nextUpdate": "2026-02-05T21:00:00+00:00"
 }
