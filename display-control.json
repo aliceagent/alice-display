@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-810d-85e4-e32df4990824",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232011/alice-gallery/holiday/Alice_Deep_Cleaning_Kitchen_Scrubbing_-_Pesach_Overcast_Evening.png",
-    "title": "Alice Deep Cleaning Kitchen Scrubbing - Pesach Overcast Evening",
+    "id": "2fd41906-4d30-810a-8906-cc4869ba8486",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232334/alice-gallery/holiday/Alice_Having_Mangal_BBQ_-_Yom_HaAtzmaut_Overcast_Evening.png",
+    "title": "Alice Having Mangal BBQ - Yom HaAtzmaut Overcast Evening",
     "description": "",
     "activity": "",
     "mood": ""
@@ -19,6 +19,6 @@
     "hour": 18,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T16:00:56.244393+00:00",
+  "lastUpdated": "2026-02-05T16:16:08.329305+00:00",
   "nextUpdate": "2026-02-05T17:00:00+00:00"
 }
