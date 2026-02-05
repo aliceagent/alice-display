@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8200-d003-f3a3b3c3d3e3",
-    "url": "images/Alice_Sleeping_-_Van_Gogh_Bedroom_Variations_Night_50",
-    "title": "Alice Sleeping - Van Gogh Bedroom Variations Night",
+    "id": "2fd41906-4d30-81b1-b969-d3213a6969b3",
+    "url": "images/fallback.png",
+    "title": "Alice Sleeping - Renoir Luminous Impressionism Couch",
     "description": "",
     "activity": "Sleeping",
     "mood": "",
     "imageWeather": "Cloudy",
-    "imageTimePeriod": "Night",
+    "imageTimePeriod": "Unknown",
     "imageHoliday": ""
   },
   "weather": {
@@ -22,6 +22,6 @@
     "hour": 23,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T21:04:53.407437+00:00",
+  "lastUpdated": "2026-02-05T21:20:04.882809+00:00",
   "nextUpdate": "2026-02-05T22:00:00+00:00"
 }
