@@ -1622,6 +1622,39 @@
             opacity: 0.7;
         }
         
+        .vacuum-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .vacuum-status-icon {
+            font-size: 20px;
+        }
+        
+        .vacuum-status-text {
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+        
+        .vacuum-status.cleaning .vacuum-status-text {
+            color: #4ade80;
+        }
+        
+        .vacuum-status.charging .vacuum-status-text {
+            color: #60a5fa;
+        }
+        
+        .vacuum-status.idle .vacuum-status-text {
+            color: #fbbf24;
+        }
+        
         .vacuum-actions {
             display: flex;
             flex-direction: column;
@@ -2443,6 +2476,11 @@
             <div class="vacuum-battery" id="vacuum-battery">
                 <span class="vacuum-battery-icon" id="vacuum-battery-icon">🔋</span>
                 <span class="vacuum-battery-text" id="vacuum-battery-text">Loading...</span>
+            </div>
+            
+            <div class="vacuum-status" id="vacuum-status">
+                <span class="vacuum-status-icon" id="vacuum-status-icon">📍</span>
+                <span class="vacuum-status-text" id="vacuum-status-text">--</span>
             </div>
             
             <div class="vacuum-actions">
@@ -3716,6 +3754,7 @@
                     if (response.ok) {
                         const data = await response.json();
                         this.updateVacuumBattery(data.battery, data.charging);
+                        this.updateVacuumStatus(data.clean_status, data.charging);
                         return;
                     } else {
                         throw new Error(`HTTP ${response.status}`);
@@ -3727,6 +3766,7 @@
                     // This won't work in a browser context, so we'll show a helpful message
                     batteryIcon.textContent = '🤖';
                     batteryText.textContent = 'Yiko Ready';
+                    this.updateVacuumStatus('unknown', false);
                     
                     // Show a note about starting the API server
                     this.showToast('💡 Tip: Start vacuum API server for full functionality');
@@ -3753,6 +3793,44 @@
                 } else {
                     batteryIcon.textContent = '🪫';
                     batteryText.textContent = `${batteryLevel}% (Very Low)`;
+                }
+            }
+            
+            updateVacuumStatus(cleanStatus, isCharging = false) {
+                const statusDiv = document.getElementById('vacuum-status');
+                const statusIcon = document.getElementById('vacuum-status-icon');
+                const statusText = document.getElementById('vacuum-status-text');
+                
+                // Remove previous status classes
+                statusDiv.classList.remove('cleaning', 'charging', 'idle');
+                
+                // Determine status display
+                if (isCharging) {
+                    statusIcon.textContent = '🔌';
+                    statusText.textContent = 'Charging';
+                    statusDiv.classList.add('charging');
+                } else if (cleanStatus === 'cleaning' || cleanStatus === 'working') {
+                    statusIcon.textContent = '🧹';
+                    statusText.textContent = 'Cleaning';
+                    statusDiv.classList.add('cleaning');
+                } else if (cleanStatus === 'idle' || cleanStatus === 'stop') {
+                    statusIcon.textContent = '💤';
+                    statusText.textContent = 'Idle';
+                    statusDiv.classList.add('idle');
+                } else if (cleanStatus === 'paused') {
+                    statusIcon.textContent = '⏸️';
+                    statusText.textContent = 'Paused';
+                    statusDiv.classList.add('idle');
+                } else if (cleanStatus === 'returning') {
+                    statusIcon.textContent = '🏠';
+                    statusText.textContent = 'Returning Home';
+                    statusDiv.classList.add('charging');
+                } else if (cleanStatus === 'unknown') {
+                    statusIcon.textContent = '❓';
+                    statusText.textContent = 'Unknown';
+                } else {
+                    statusIcon.textContent = '📍';
+                    statusText.textContent = cleanStatus || 'Unknown';
                 }
             }
             

@@ -53,14 +53,16 @@ function executeVacuumCommand(command, deviceIndex = 1) {
     });
 }
 
-// Parse battery level from status output
+// Parse battery level and status from output
 function parseBatteryLevel(output) {
     const batteryMatch = output.match(/🔋 Battery: (\d+)%/);
     const chargingMatch = output.match(/🔌 Charge status: (\w+)/);
+    const cleanMatch = output.match(/📍 Clean status: (\w+)/);
     
     return {
         battery: batteryMatch ? parseInt(batteryMatch[1]) : null,
-        charging: chargingMatch ? chargingMatch[1].toLowerCase().includes('charging') : false
+        charging: chargingMatch ? chargingMatch[1].toLowerCase().includes('charging') : false,
+        clean_status: cleanMatch ? cleanMatch[1].toLowerCase() : 'unknown'
     };
 }
 
