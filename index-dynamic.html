@@ -1817,9 +1817,8 @@
             
             <form class="report-form" id="report-form">
                 <div class="report-form-group">
-                    <label class="report-form-label" for="report-category">Issue Type *</label>
-                    <select class="report-form-select" id="report-category" required>
-                        <option value="">Select an issue type...</option>
+                    <label class="report-form-label" for="report-category">Issue Type * <span style="font-weight: normal; font-size: 0.85em; opacity: 0.7;">(select all that apply)</span></label>
+                    <select class="report-form-select" id="report-category" multiple size="5" required>
                         <option value="wrong-content">Wrong Content</option>
                         <option value="poor-quality">Poor Quality</option>
                         <option value="duplicate">Duplicate</option>
@@ -2698,12 +2697,13 @@
             
             async submitReport() {
                 const submitButton = document.getElementById('report-submit');
-                const category = document.getElementById('report-category').value;
+                const categorySelect = document.getElementById('report-category');
+                const selectedCategories = Array.from(categorySelect.selectedOptions).map(opt => opt.value);
                 const description = document.getElementById('report-description').value;
                 const imageId = document.getElementById('report-image-id').value;
                 
-                if (!category) {
-                    this.showToast('⚠️ Please select an issue type');
+                if (selectedCategories.length === 0) {
+                    this.showToast('⚠️ Please select at least one issue type');
                     return;
                 }
                 
@@ -2721,7 +2721,7 @@
                             style: this.currentData?.currentImage?.style || '',
                             row_number: this.currentData?.currentImage?.row_number || 0
                         },
-                        categories: [category],
+                        categories: selectedCategories,
                         notes: description,
                         context_data: {
                             time_of_day: this.currentData?.time?.period || '',
