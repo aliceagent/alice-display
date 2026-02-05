@@ -2917,8 +2917,15 @@
             }
             
             async submitReportToServer(reportData) {
+                // Production API endpoint for image reports
+                // TODO: Update this URL once the API is deployed to Railway/Vercel
+                const API_ENDPOINT = 'https://alice-report-api-production.up.railway.app/api/report';
+                
                 try {
-                    const response = await fetch('/api/report', {
+                    console.log('Submitting report to API:', API_ENDPOINT);
+                    console.log('Report data:', reportData);
+                    
+                    const response = await fetch(API_ENDPOINT, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -2927,10 +2934,13 @@
                     });
                     
                     if (response.ok) {
-                        console.log('Report submitted to server successfully');
+                        const result = await response.json();
+                        console.log('Report submitted to server successfully:', result);
                         return true;
                     } else {
                         console.warn('Server report submission failed:', response.status);
+                        const errorText = await response.text();
+                        console.warn('Error details:', errorText);
                         return false;
                     }
                 } catch (error) {
