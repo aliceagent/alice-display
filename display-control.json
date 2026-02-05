@@ -1,15 +1,15 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-810f-804e-e51936a58d36",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231660/alice-gallery/anime/Alice_Bicycle_Ride_-_Cloudy_Midday.png",
-    "title": "Alice Bicycle Ride - Cloudy Midday",
+    "id": "2fd41906-4d30-810f-8b34-df33ab021cbe",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233237/alice-gallery/holiday/Alice_Roasting_Foil-wrapped_Potatoes_-_Lag_BaOmer_Cloudy_Midday.png",
+    "title": "Alice Roasting Foil-wrapped Potatoes - Lag BaOmer Cloudy Midday",
     "description": "",
-    "activity": "Exercise",
+    "activity": "",
     "mood": ""
   },
   "weather": {
     "condition": "Cloudy",
-    "temperature": 16,
+    "temperature": 17,
     "humidity": 35,
     "description": "scattered clouds",
     "icon": "03d"
@@ -19,6 +19,6 @@
     "hour": 12,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T10:35:47.234430+00:00",
+  "lastUpdated": "2026-02-05T10:57:12.354823+00:00",
   "nextUpdate": "2026-02-05T11:00:00+00:00"
 }
