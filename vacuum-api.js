@@ -31,6 +31,39 @@ app.use(express.json());
 // Path to the ecovacs script
 const ECOVACS_SCRIPT = '/Users/agentcaras/.openclaw/workspace/scripts/ecovacs.mjs';
 
+// Telegram notification config
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = '450517777';  // Jonathan's chat ID
+
+// Send Telegram notification
+async function sendTelegramNotification(message) {
+    if (!TELEGRAM_BOT_TOKEN) {
+        console.log('⚠️ TELEGRAM_BOT_TOKEN not set, skipping notification');
+        return;
+    }
+    
+    try {
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: message,
+                parse_mode: 'HTML'
+            })
+        });
+        
+        if (response.ok) {
+            console.log('📱 Telegram notification sent');
+        } else {
+            console.error('📱 Telegram notification failed:', await response.text());
+        }
+    } catch (error) {
+        console.error('📱 Telegram notification error:', error.message);
+    }
+}
+
 // Execute ecovacs command with timeout
 function executeVacuumCommand(command, deviceIndex = 1) {
     return new Promise((resolve, reject) => {
@@ -105,6 +138,15 @@ app.post('/api/vacuum/command', async (req, res) => {
         
         console.log(`🤖 Executing ${command} for device ${device}...`);
         const output = await executeVacuumCommand(command, device);
+        
+        // Send Telegram notification for clean command
+        if (command === 'clean') {
+            sendTelegramNotification('🤖 <b>Yiko started cleaning!</b>\n\nTriggered from Alice Display Command Center.');
+        } else if (command === 'stop') {
+            sendTelegramNotification('⏹️ <b>Yiko stopped</b>\n\nCleaning paused via Command Center.');
+        } else if (command === 'charge') {
+            sendTelegramNotification('🏠 <b>Yiko going home</b>\n\nReturning to charging dock.');
+        }
         
         res.json({
             success: true,

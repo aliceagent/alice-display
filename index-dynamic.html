@@ -1684,8 +1684,40 @@
         }
         
         .vacuum-btn:disabled {
-            opacity: 0.5;
+            opacity: 0.7;
             cursor: not-allowed;
+        }
+        
+        .vacuum-btn.loading {
+            position: relative;
+            pointer-events: none;
+        }
+        
+        .vacuum-btn.loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            width: 18px;
+            height: 18px;
+            margin-top: -9px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: vacuum-spin 0.8s linear infinite;
+        }
+        
+        @keyframes vacuum-spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .vacuum-btn.loading .vacuum-btn-icon {
+            animation: vacuum-pulse 1s ease-in-out infinite;
+        }
+        
+        @keyframes vacuum-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
         
         .vacuum-btn-start {
@@ -3855,16 +3887,20 @@
             
             async executeVacuumCommand(command, loadingMessage, successMessage) {
                 const buttons = document.querySelectorAll('.vacuum-btn');
+                const clickedBtn = document.querySelector(`.vacuum-btn-${command === 'clean' ? 'start' : command === 'charge' ? 'home' : 'stop'}`);
                 
-                // Disable all buttons during command
+                // Disable all buttons and add loading state to clicked button
                 buttons.forEach(btn => {
                     btn.disabled = true;
-                    if (btn.querySelector('span:last-child')) {
-                        btn.querySelector('span:last-child').textContent = 'Working...';
-                    }
                 });
                 
-                this.showToast(loadingMessage);
+                if (clickedBtn) {
+                    clickedBtn.classList.add('loading');
+                    const btnText = clickedBtn.querySelector('span:last-child');
+                    if (btnText) btnText.textContent = 'Working...';
+                }
+                
+                this.showToast(`⏳ ${loadingMessage}`);
                 
                 try {
                     // Try the local API server first
@@ -3912,9 +3948,10 @@
                         this.showToast(`❌ ${error.message}`);
                     }
                 } finally {
-                    // Re-enable buttons
+                    // Re-enable buttons and remove loading state
                     buttons.forEach(btn => {
                         btn.disabled = false;
+                        btn.classList.remove('loading');
                     });
                     
                     // Reset button text
