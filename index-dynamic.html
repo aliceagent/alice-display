@@ -507,7 +507,36 @@
             
             /* Show the standalone portrait clock in the top-right dead space */
             .portrait-clock {
-                display: none; /* Hide clock on portrait - browser shows time already */
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+                position: fixed;
+                /* Account for notch/dynamic island with safe-area-inset */
+                top: calc(env(safe-area-inset-top, 0px) + 20px);
+                right: calc(env(safe-area-inset-right, 0px) + 20px);
+                z-index: 15;
+                color: white;
+                text-align: right;
+                text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+            }
+            
+            .portrait-clock-time {
+                font-size: 42px;
+                font-weight: 200;
+                letter-spacing: 2px;
+                font-variant-numeric: tabular-nums;
+                line-height: 1;
+            }
+            
+            .portrait-clock-period {
+                font-size: 14px;
+                font-weight: 500;
+                opacity: 0.8;
+                margin-top: 4px;
+                background: rgba(0,0,0,0.3);
+                padding: 3px 10px;
+                border-radius: 8px;
             }
             
             /* Large clock digits — fills the top-right area */
