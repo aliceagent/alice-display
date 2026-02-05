@@ -79,7 +79,7 @@ ACTIVITY_BY_HOUR = {
     18: ["Dinner", "Leisure", "Creative"],
     19: ["Dinner", "Leisure", "Reading", "Gaming"],
     20: ["Leisure", "Reading", "Gaming", "Movie"],
-    21: ["Leisure", "Reading", "Gaming", "Movie", "Sleeping"],
+    21: ["Wind Down", "Reading", "Skincare", "Preparing for Bed"],
 }
 
 
