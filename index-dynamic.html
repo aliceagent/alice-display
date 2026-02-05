@@ -2936,9 +2936,8 @@
             }
             
             async submitReportToServer(reportData) {
-                // Production API endpoint for image reports
-                // TODO: Update this URL once the API is deployed to Railway/Vercel
-                const API_ENDPOINT = 'https://alice-report-api-production.up.railway.app/api/report';
+                // Production API endpoint for image reports (deployed on Vercel)
+                const API_ENDPOINT = 'https://alice-report-api.vercel.app/api/report';
                 
                 try {
                     console.log('Submitting report to API:', API_ENDPOINT);
