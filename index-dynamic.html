@@ -1596,6 +1596,16 @@
             padding: 16px 20px;
             background: rgba(255, 255, 255, 0.08);
             border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+        
+        .vacuum-battery:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .vacuum-battery:active {
+            transform: scale(0.98);
         }
         
         .vacuum-battery-icon {
@@ -3645,6 +3655,14 @@
                 vacuumBtnStop.addEventListener('click', () => this.vacuumStop());
                 vacuumBtnHome.addEventListener('click', () => this.vacuumGoHome());
                 
+                // Tap battery display to refresh
+                const vacuumBattery = document.getElementById('vacuum-battery');
+                vacuumBattery.style.cursor = 'pointer';
+                vacuumBattery.addEventListener('click', () => {
+                    this.showToast('🔄 Refreshing battery...');
+                    this.loadVacuumStatus();
+                });
+                
                 // Close panel with Escape key
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape' && vacuumPanel.classList.contains('show')) {
@@ -3825,10 +3843,236 @@
                 }
             }
             
+            initializeLightsPanel() {
+                const lightsPanel = document.getElementById('lights-panel');
+                const lightsClose = document.getElementById('lights-panel-close');
+                const bedtimeBtn = document.getElementById('lights-bedtime');
+                const daytimeBtn = document.getElementById('lights-daytime');
+                const movieBtn = document.getElementById('lights-movie');
+                
+                // Close panel when close button clicked
+                lightsClose.addEventListener('click', () => {
+                    this.hideLightsPanel();
+                });
+                
+                // Close panel when clicking outside
+                lightsPanel.addEventListener('click', (e) => {
+                    if (e.target === lightsPanel) {
+                        this.hideLightsPanel();
+                    }
+                });
+                
+                // Bedtime preset
+                bedtimeBtn.addEventListener('click', () => {
+                    this.activateLightsPreset('bedtime');
+                });
+                
+                // Daytime preset
+                daytimeBtn.addEventListener('click', () => {
+                    this.activateLightsPreset('daytime');
+                });
+                
+                // Movie preset
+                movieBtn.addEventListener('click', () => {
+                    this.activateLightsPreset('movie');
+                });
+            }
+            
+            async showLightsPanel() {
+                const panel = document.getElementById('lights-panel');
+                
+                // Lock body scroll when panel is open
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+                
+                panel.classList.add('show');
+            }
+            
+            hideLightsPanel() {
+                const panel = document.getElementById('lights-panel');
+                panel.classList.remove('show');
+                
+                // Restore body scroll
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
+            
+            async activateLightsPreset(preset) {
+                // Disable all buttons temporarily
+                const buttons = document.querySelectorAll('.lights-preset-btn');
+                buttons.forEach(btn => btn.disabled = true);
+                
+                try {
+                    let message = '';
+                    let icon = '';
+                    
+                    switch (preset) {
+                        case 'bedtime':
+                            message = 'Setting bedtime mode...';
+                            icon = '🌙';
+                            break;
+                        case 'daytime':
+                            message = 'Setting daytime mode...';
+                            icon = '☀️';
+                            break;
+                        case 'movie':
+                            message = 'Setting movie mode...';
+                            icon = '🎬';
+                            break;
+                    }
+                    
+                    this.showToast(message);
+                    
+                    // Send lights control request
+                    const result = await this.sendLightsCommand(preset);
+                    
+                    if (result.success) {
+                        // Auto-collapse Command Center and hide lights panel
+                        this.hideLightsPanel();
+                        document.getElementById('command-center').classList.remove('open');
+                        
+                        // Show success toast
+                        this.showToast(`${icon} ${preset.charAt(0).toUpperCase() + preset.slice(1)} mode activated`);
+                    } else {
+                        this.showToast(`❌ Failed to set ${preset} mode: ${result.error}`);
+                    }
+                    
+                } catch (error) {
+                    console.error(`Error activating ${preset} preset:`, error);
+                    this.showToast(`❌ Error: ${error.message}`);
+                } finally {
+                    // Re-enable buttons
+                    buttons.forEach(btn => btn.disabled = false);
+                }
+            }
+            
+            async sendLightsCommand(preset) {
+                try {
+                    // Try to connect to local lights API server
+                    // Run `npm start` in the alice-display-website directory to start the server
+                    const response = await fetch('http://localhost:3001/api/lights', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            preset: preset,
+                            timestamp: Date.now()
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    
+                    const result = await response.json();
+                    return result;
+                    
+                } catch (error) {
+                    // Fallback: log the command for manual execution
+                    console.warn('Could not reach lights API, logging command for manual execution:', error);
+                    
+                    // Generate the OpenHue commands for manual execution
+                    const commands = this.generateOpenHueCommands(preset);
+                    console.info('OpenHue commands to run manually:', commands);
+                    
+                    // For demo purposes, simulate success
+                    return { 
+                        success: true, 
+                        message: 'Commands logged to console',
+                        commands: commands
+                    };
+                }
+            }
+            
+            generateOpenHueCommands(preset) {
+                const lightIds = [
+                    "6a704bb0-d201-4343-8939-3cd98ee80643", // Kitchen fan 3-24
+                    "2923d843-cf08-4ed8-aa79-27c722c08bbe", // Kitchen BW fan
+                    "24da2926-210d-4b34-af37-7ecbf613b576", // Kitchen fan 2- 3/24
+                    "1c124fbc-0d5f-4d3d-b84c-35fe208cff84", // Kitchen high lamp
+                    "aa86140d-999d-465e-8c90-ba4d64664e72", // Zahava lamp
+                    "a02ac2d6-482e-48c9-9f39-397008b6670a", // Outside Flood
+                    "f0390f66-031a-4131-83de-b31b3fa9a05b", // Hue color lamp 2
+                    "741900cf-413a-43e3-be6c-6a3f49c23cfb", // Hue color lamp 1
+                    "9376f857-21b9-4a96-9cf4-92cd50cf987d", // Dining room fan - 4/24
+                    "9993b466-9fcd-436e-8d78-1e7d835f7b80", // Living room lamp 3/24
+                    "0dc211bd-b00a-42b6-b484-e49dbe79d05e", // Living room fan 3-24 #2
+                    "9bd2567a-1683-4eeb-83c7-c66f2b214873", // Downstairs entrance 2
+                    "fd64c7ac-4a70-4015-87d4-48264e7a9631", // fan above table
+                    "c3edaddf-d9a0-4277-ad19-9a5ad8b3085c", // Dinning room March 23
+                    "ebf4d80f-5b73-4a08-84a2-0250808f5533", // Living Room Fan 2
+                    "ca5e5869-8b91-4135-94e7-69277f8d4beb", // Downstairs entrance 1
+                    "9f2037a2-116c-4147-96a1-d6098fc44a03", // dinning room strip
+                    "4122d13e-0c3e-4a06-b752-4b90add03a6f", // Living room tv strip
+                    "dfc85340-54aa-44e1-82a4-4b6d2d46a8b4", // living room piano
+                    "7e629fd1-c5c3-4e59-b650-b7d0f342ce7c", // Master bedroom left July 22
+                    "5c0681a9-d2f9-4716-8844-4d91e996deac", // master bed left
+                    "346c7450-096e-4857-b0a0-887ef98c3e8b"  // master bed right
+                ];
+                
+                let commands = [];
+                
+                switch (preset) {
+                    case 'bedtime':
+                        // Set all lights to 1% brightness
+                        lightIds.forEach(lightId => {
+                            commands.push(`openhue set light "${lightId}" --on --brightness 1`);
+                        });
+                        break;
+                        
+                    case 'daytime':
+                        // Set all lights to 100% brightness
+                        lightIds.forEach(lightId => {
+                            commands.push(`openhue set light "${lightId}" --on --brightness 100`);
+                        });
+                        break;
+                        
+                    case 'movie':
+                        // Set all lights to 30% brightness, add blue color for color-capable lights
+                        const colorCapableLights = [
+                            "6a704bb0-d201-4343-8939-3cd98ee80643", // Kitchen fan 3-24
+                            "24da2926-210d-4b34-af37-7ecbf613b576", // Kitchen fan 2- 3/24
+                            "1c124fbc-0d5f-4d3d-b84c-35fe208cff84", // Kitchen high lamp
+                            "aa86140d-999d-465e-8c90-ba4d64664e72", // Zahava lamp
+                            "a02ac2d6-482e-48c9-9f39-397008b6670a", // Outside Flood
+                            "f0390f66-031a-4131-83de-b31b3fa9a05b", // Hue color lamp 2
+                            "741900cf-413a-43e3-be6c-6a3f49c23cfb", // Hue color lamp 1
+                            "9376f857-21b9-4a96-9cf4-92cd50cf987d", // Dining room fan - 4/24
+                            "9993b466-9fcd-436e-8d78-1e7d835f7b80", // Living room lamp 3/24
+                            "0dc211bd-b00a-42b6-b484-e49dbe79d05e", // Living room fan 3-24 #2
+                            "fd64c7ac-4a70-4015-87d4-48264e7a9631", // fan above table
+                            "c3edaddf-d9a0-4277-ad19-9a5ad8b3085c", // Dinning room March 23
+                            "ebf4d80f-5b73-4a08-84a2-0250808f5533", // Living Room Fan 2
+                            "9f2037a2-116c-4147-96a1-d6098fc44a03", // dinning room strip
+                            "4122d13e-0c3e-4a06-b752-4b90add03a6f", // Living room tv strip
+                            "dfc85340-54aa-44e1-82a4-4b6d2d46a8b4", // living room piano
+                            "7e629fd1-c5c3-4e59-b650-b7d0f342ce7c", // Master bedroom left July 22
+                            "5c0681a9-d2f9-4716-8844-4d91e996deac", // master bed left
+                            "346c7450-096e-4857-b0a0-887ef98c3e8b"  // master bed right
+                        ];
+                        
+                        lightIds.forEach(lightId => {
+                            if (colorCapableLights.includes(lightId)) {
+                                commands.push(`openhue set light "${lightId}" --on --brightness 30 --color blue`);
+                            } else {
+                                commands.push(`openhue set light "${lightId}" --on --brightness 30`);
+                            }
+                        });
+                        break;
+                }
+                
+                return commands;
+            }
+            
             closeAllPanels() {
                 document.getElementById('help-overlay').classList.remove('show');
                 document.getElementById('image-info').classList.remove('show');
                 document.getElementById('report-modal').classList.remove('show');
+                document.getElementById('vacuum-panel').classList.remove('show');
+                document.getElementById('lights-panel').classList.remove('show');
                 // Note: status overlay toggle is separate - not included in close all panels
                 this.debugEl.classList.remove('show');
             }

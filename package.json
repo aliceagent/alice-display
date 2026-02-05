@@ -1,20 +1,26 @@
 {
-  "name": "alice-display-vacuum-api",
+  "name": "alice-display-lights-api",
   "version": "1.0.0",
-  "description": "API server for vacuum control in Alice Display",
-  "main": "vacuum-api.js",
+  "description": "Local API server for Alice Display lights control via OpenHue",
+  "main": "lights-api.js",
   "scripts": {
-    "start": "node vacuum-api.js",
-    "dev": "nodemon vacuum-api.js"
+    "start": "node lights-api.js",
+    "dev": "nodemon lights-api.js"
   },
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^2.0.22"
   },
-  "keywords": ["alice", "vacuum", "ecovacs", "api"],
-  "author": "Alice Agent",
+  "keywords": [
+    "alice",
+    "display",
+    "lights",
+    "openhue",
+    "smart-home"
+  ],
+  "author": "Alice System",
   "license": "MIT"
 }
