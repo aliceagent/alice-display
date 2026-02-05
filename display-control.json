@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8112-8932-c5c56b8826b1",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231818/alice-gallery/holiday/Alice_Collecting_Wood_-_Lag_BaOmer_Cloudy_Midday.png",
-    "title": "Alice Collecting Wood - Lag BaOmer Cloudy Midday",
+    "id": "2fd41906-4d30-810f-804e-e51936a58d36",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231660/alice-gallery/anime/Alice_Bicycle_Ride_-_Cloudy_Midday.png",
+    "title": "Alice Bicycle Ride - Cloudy Midday",
     "description": "",
-    "activity": "",
+    "activity": "Exercise",
     "mood": ""
   },
   "weather": {
@@ -19,6 +19,6 @@
     "hour": 12,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T10:33:49.191596+00:00",
+  "lastUpdated": "2026-02-05T10:35:47.234430+00:00",
   "nextUpdate": "2026-02-05T11:00:00+00:00"
 }

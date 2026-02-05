@@ -61,12 +61,8 @@ class AliceUpdater:
         print(f"   Time period: {weather['time_period']}")
         print(f"   Source: {weather['source']}")
         
-        # Step 2: Check if update is needed
-        if not force:
-            current = self._load_current_control()
-            if current and self._conditions_match(current, weather):
-                print("\n⏸️  Conditions unchanged, skipping update")
-                return False
+        # Step 2: Always proceed - we want a new image every hour regardless of conditions
+        # (The old logic skipped updates when weather was unchanged - removed per J's request)
         
         # Step 3: Select image
         print("\n🎨 Step 2: Selecting image...")

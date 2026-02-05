@@ -172,6 +172,10 @@ class WeatherClient:
             if cached:
                 print("📦 Using cached weather data", file=sys.stderr)
                 cached["source"] = "cache"
+                # ALWAYS update time period to current hour (even with cached weather)
+                current_hour = datetime.now().hour
+                cached["time_period"] = get_time_period(current_hour, cached.get("sunrise_hour", 6), cached.get("sunset_hour", 18))
+                cached["current_hour"] = current_hour
                 return cached
             
             # Ultimate fallback
