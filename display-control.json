@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81a6-8b87-eec69c897772",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231516/alice-gallery/anime/142_Alice_Debugging_Session__75.png",
-    "title": "Alice Debugging Session #75",
+    "id": "2fc41906-4d30-8155-931a-f0d3e507c5c3",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232256/alice-gallery/anime/Alice_Gaming_Time__58.png",
+    "title": "Alice Gaming Time #58",
     "description": "",
-    "activity": "Work",
+    "activity": "Leisure",
     "mood": ""
   },
   "weather": {
@@ -19,6 +19,6 @@
     "hour": 19,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T17:47:18.056451+00:00",
+  "lastUpdated": "2026-02-05T17:51:28.824261+00:00",
   "nextUpdate": "2026-02-05T18:00:00+00:00"
 }
