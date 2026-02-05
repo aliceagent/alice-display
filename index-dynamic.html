@@ -512,60 +512,38 @@
                 display: none;
             }
             
-            /* Show the standalone portrait clock in the top-right dead space */
+            /* Show the standalone portrait clock below weather widget */
             .portrait-clock {
                 display: flex;
-                flex-direction: column;
-                align-items: flex-end;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
                 position: fixed;
-                /* Position next to weather widget, not at edge */
-                top: 25px;
-                left: 240px; /* After weather widget */
-                right: auto;
+                top: 200px; /* Below weather widget */
+                left: 20px;
                 z-index: 15;
                 color: white;
                 text-shadow: 0 2px 10px rgba(0,0,0,0.8);
             }
             
             .portrait-clock-time {
-                font-size: 44px;
-                font-weight: 200;
-                letter-spacing: 1px;
-                font-variant-numeric: tabular-nums;
-                line-height: 1;
-            }
-            
-            .portrait-clock-period {
-                font-size: 12px;
-                font-weight: 500;
-                opacity: 0.9;
-                margin-top: 4px;
-                background: rgba(0,0,0,0.4);
-                padding: 3px 8px;
-                border-radius: 6px;
-            }
-            
-            /* Large clock digits — fills the top-right area */
-            .portrait-clock-time {
-                font-size: 48px;
-                font-weight: 200;
+                font-size: 56px;
+                font-weight: 100;
                 letter-spacing: 2px;
                 font-variant-numeric: tabular-nums;
                 line-height: 1;
-                text-shadow: 0 2px 10px rgba(0,0,0,0.5);
             }
             
-            /* Time period label below the clock */
             .portrait-clock-period {
                 font-size: 16px;
                 font-weight: 500;
-                opacity: 0.7;
-                margin-top: 4px;
-                background: rgba(255,255,255,0.1);
-                padding: 2px 10px;
+                opacity: 0.9;
+                background: rgba(0,0,0,0.4);
+                padding: 6px 12px;
                 border-radius: 8px;
             }
             
+            /* End portrait clock */
             /* Hide title overlay on mobile - it clutters the display */
             .title-overlay {
                 display: none !important;
