@@ -1,19 +1,19 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8128-a38d-c86192d33cae",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231375/alice-gallery/anime/105_Alice_Coding_Session__74.png",
-    "title": "Alice Coding Session #74",
+    "id": "2fd41906-4d30-81bf-a7cb-cf753892b245",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219214/alice-gallery/pixel-art/Alice_Flower_Picking_-_Overcast_Night.png",
+    "title": "Alice Flower Picking - Overcast Night",
     "description": "",
-    "activity": "Work",
+    "activity": "Leisure",
     "mood": "",
     "imageWeather": "Overcast",
-    "imageTimePeriod": "Late Night",
+    "imageTimePeriod": "Night",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 13,
-    "humidity": 45,
+    "temperature": 12,
+    "humidity": 46,
     "description": "overcast clouds",
     "icon": "04n"
   },
@@ -22,6 +22,6 @@
     "hour": 20,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T18:27:24.246893+00:00",
+  "lastUpdated": "2026-02-05T18:42:35.894737+00:00",
   "nextUpdate": "2026-02-05T19:00:00+00:00"
 }
