@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-816b-930f-d818c87b5268",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231027/alice-gallery/anime/014_Alice_Sleeping_-_Cloudy_Night__6.png",
-    "title": "Alice Sleeping - Cloudy Night #6",
+    "id": "2fc41906-4d30-8200-d003-f3a3b3c3d3e3",
+    "url": "images/Alice_Sleeping_-_Van_Gogh_Bedroom_Variations_Night_50",
+    "title": "Alice Sleeping - Van Gogh Bedroom Variations Night",
     "description": "",
     "activity": "Sleeping",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 23,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T21:00:50.252892+00:00",
+  "lastUpdated": "2026-02-05T21:04:53.407437+00:00",
   "nextUpdate": "2026-02-05T22:00:00+00:00"
 }
