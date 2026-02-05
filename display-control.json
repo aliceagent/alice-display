@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-810f-8b34-df33ab021cbe",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233237/alice-gallery/holiday/Alice_Roasting_Foil-wrapped_Potatoes_-_Lag_BaOmer_Cloudy_Midday.png",
-    "title": "Alice Roasting Foil-wrapped Potatoes - Lag BaOmer Cloudy Midday",
+    "id": "2fd41906-4d30-81ba-8745-d3c60ca13ea7",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232485/alice-gallery/anime/Alice_Market_Visit_-_Cloudy_Midday.png",
+    "title": "Alice Market Visit - Cloudy Midday",
     "description": "",
-    "activity": "",
+    "activity": "Social",
     "mood": ""
   },
   "weather": {
@@ -16,9 +16,9 @@
   },
   "time": {
     "period": "Midday",
-    "hour": 12,
+    "hour": 13,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-05T10:57:12.354823+00:00",
-  "nextUpdate": "2026-02-05T11:00:00+00:00"
+  "lastUpdated": "2026-02-05T11:14:59.330392+00:00",
+  "nextUpdate": "2026-02-05T12:00:00+00:00"
 }
