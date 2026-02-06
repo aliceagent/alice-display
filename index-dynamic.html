@@ -1403,31 +1403,26 @@
             z-index: 60;
         }
         
-        /* Mobile Safari toolbar takes ~80px at bottom - position buttons just above it */
+        /* Mobile Safari toolbar takes ~80px at bottom - position buttons in dark bar below image */
         @media (max-width: 480px) and (orientation: portrait) {
             .command-center {
-                bottom: 70px;
-                bottom: max(70px, calc(50px + env(safe-area-inset-bottom, 20px)));
+                bottom: 20px;
             }
             
             .status-overlay {
-                bottom: 70px;
-                bottom: max(70px, calc(50px + env(safe-area-inset-bottom, 20px)));
+                bottom: 20px;
             }
             
             .fallback-badge {
-                bottom: 110px;
-                bottom: max(110px, calc(90px + env(safe-area-inset-bottom, 20px)));
+                bottom: 60px;
             }
             
             .countdown {
-                bottom: 100px;
-                bottom: max(100px, calc(80px + env(safe-area-inset-bottom, 20px)));
+                bottom: 50px;
             }
             
             .fullscreen-btn {
-                bottom: 70px;
-                bottom: max(70px, calc(50px + env(safe-area-inset-bottom, 20px)));
+                bottom: 20px;
             }
         }
         
