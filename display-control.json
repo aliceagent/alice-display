@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8124-b861-e61794ef2e30",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231117/alice-gallery/anime/038_Alice_Coding_Session__61.png",
-    "title": "Alice Coding Session #61",
+    "id": "2fc41906-4d30-8147-a9e4-c120b3fa3708",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231399/alice-gallery/anime/114_Alice_Designing_Session__73.png",
+    "title": "Alice Designing Session #73",
     "description": "",
     "activity": "Work",
     "mood": "",
@@ -12,8 +12,8 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 17,
-    "humidity": 38,
+    "temperature": 16,
+    "humidity": 30,
     "description": "overcast clouds",
     "icon": "04d"
   },
@@ -22,6 +22,6 @@
     "hour": 10,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T08:16:01.685722+00:00",
+  "lastUpdated": "2026-02-06T08:31:14.568465+00:00",
   "nextUpdate": "2026-02-06T09:00:00+00:00"
 }
