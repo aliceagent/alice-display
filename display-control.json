@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8200-b005-f5a5b5c5d5e5",
-    "url": "images/Alice_Sleeping_-_Klimt_Three_Ages_Early_Morning_32",
-    "title": "Alice Sleeping - Klimt Three Ages Early Morning",
+    "id": "2fd41906-4d30-81ca-ac43-e362c42b3b78",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232212/alice-gallery/anime/Alice_Gaming_-_Overcast_Morning.png",
+    "title": "Alice Gaming - Overcast Morning",
     "description": "",
-    "activity": "Sleeping",
+    "activity": "Leisure",
     "mood": "",
     "imageWeather": "Overcast",
-    "imageTimePeriod": "Early Morning",
+    "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
   "weather": {
@@ -15,13 +15,13 @@
     "temperature": 12,
     "humidity": 36,
     "description": "overcast clouds",
-    "icon": "04n"
+    "icon": "04d"
   },
   "time": {
     "period": "Early Morning",
     "hour": 6,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T04:14:31.526968+00:00",
+  "lastUpdated": "2026-02-06T04:29:43.414488+00:00",
   "nextUpdate": "2026-02-06T05:00:00+00:00"
 }
