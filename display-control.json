@@ -1,12 +1,12 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8190-b83a-d962f4a87b25",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231653/alice-gallery/anime/Alice_Bench_Reading_-_Cloudy_Afternoon.png",
-    "title": "Alice Bench Reading - Cloudy Afternoon",
+    "id": "2fd41906-4d30-8184-b825-de685564fa53",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232684/alice-gallery/anime/Alice_Photography_-_Overcast_Afternoon.png",
+    "title": "Alice Photography - Overcast Afternoon",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Creative",
     "mood": "",
-    "imageWeather": "Cloudy",
+    "imageWeather": "Overcast",
     "imageTimePeriod": "Afternoon",
     "imageHoliday": ""
   },
@@ -22,6 +22,6 @@
     "hour": 14,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T12:02:10.945619+00:00",
+  "lastUpdated": "2026-02-06T12:17:53.973117+00:00",
   "nextUpdate": "2026-02-06T13:00:00+00:00"
 }
