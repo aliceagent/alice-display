@@ -1,15 +1,15 @@
 {
-  "id": "2fc41906-4d30-810a-9298-d6e7dbf8d65a",
-  "name": "Alice Sleeping - Cloudy Night #2",
-  "filename": "006_Alice_Sleeping_-_Cloudy_Night__2",
-  "row_number": 6,
+  "id": "2fc41906-4d30-81d5-b2d2-f0ac03380cdf",
+  "name": "Alice Yoga Session #30",
+  "filename": "Alice_Yoga_Session__30",
+  "row_number": null,
   "weather": "Cloudy",
-  "time_period": "Night",
-  "activity": "Sleeping",
-  "location": "Cozy bedroom with large windows overlooking cloudy landscape",
-  "style_notes": "Anime style with peaceful sleeping atmosphere, cloudy weather effects visible through window",
+  "time_period": "Morning",
+  "activity": "Exercise",
+  "location": "Yoga space with proper equipment and motivating atmosphere",
+  "style_notes": "Anime style with dynamic energy, cloudy lighting, athletic atmosphere",
   "holiday": "",
   "verified": true,
   "generated": true,
-  "cloudinary_url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770230994/alice-gallery/anime/006_Alice_Sleeping_-_Cloudy_Night__2.png"
+  "cloudinary_url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233620/alice-gallery/anime/Alice_Yoga_Session__30.png"
 }

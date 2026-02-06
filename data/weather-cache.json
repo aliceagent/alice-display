@@ -1,16 +1,16 @@
 {
   "temperature": 12,
-  "feels_like": 11,
-  "humidity": 42,
+  "feels_like": 10,
+  "humidity": 40,
   "wind_speed": 7,
   "weather_id": 804,
   "condition": "Overcast",
   "description": "overcast clouds",
-  "icon": "04n",
+  "icon": "04d",
   "sunrise_hour": 6,
   "sunset_hour": 17,
-  "time_period": "Late Night",
-  "current_hour": 0,
-  "timestamp": "2026-02-05T22:38:56.420825+00:00",
+  "time_period": "Early Morning",
+  "current_hour": 6,
+  "timestamp": "2026-02-06T04:44:55.446794+00:00",
   "source": "OpenWeatherMap"
 }

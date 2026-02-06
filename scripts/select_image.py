@@ -250,20 +250,33 @@ class ImageSelector:
                 sleeping_candidates = [c for c in sleeping_candidates if c.get('cloudinary_url') and c.get('cloudinary_url').strip()]
                 candidates = sleeping_candidates
         
-        # Try relaxing activity restriction if we still have no candidates
+        # Try relaxing activity restriction if we still have no candidates with CDN
         if not candidates and preferred_activities:
-            print("📎 Relaxing activity restriction to find match")
+            print("📎 Relaxing activity restriction to find CDN match")
             candidates = self._find_matches(weather, time_period, recent_ids, [])
+            
+            # Try weather fallbacks with relaxed activity
+            if not candidates:
+                for fallback_weather in WEATHER_FALLBACKS.get(weather, []):
+                    candidates = self._find_matches(fallback_weather, time_period, recent_ids, [])
+                    if candidates:
+                        print(f"📎 Using weather fallback: {weather} → {fallback_weather}")
+                        break
         
         # If still no candidates, ignore recent restriction
         if not candidates and avoid_recent:
             print("📎 Relaxing recent restriction to find match")
             return self.select(weather, time_period, hour=hour, avoid_recent=False, save_history=save_history)
         
-        # Ultimate fallback: any image
+        # Ultimate fallback: any image WITH CDN URL
         if not candidates:
-            print("📎 Using random image as ultimate fallback")
-            candidates = self.images
+            print("📎 Using random CDN image as ultimate fallback")
+            cdn_images = [img for img in self.images if img.get("cloudinary_url") and img.get("cloudinary_url").strip()]
+            if cdn_images:
+                candidates = cdn_images
+            else:
+                print("⚠️ No CDN images available!")
+                candidates = self.images  # Last resort - shouldn't happen
         
         # Select randomly from candidates (could add weighting here)
         selected = random.choice(candidates)
@@ -319,17 +332,10 @@ class ImageSelector:
             matches = activity_matches
         
         # REQUIRE Cloudinary URLs — local paths don't exist on GitHub Pages.
-        # Once all images are uploaded to Cloudinary, this filter can be relaxed.
+        # STRICT: Only return images with CDN URLs. Return empty if none found.
+        # The caller will handle fallbacks while keeping the CDN requirement.
         images_with_cdn = [m for m in matches if m.get("cloudinary_url") and m.get("cloudinary_url").strip()]
-        if images_with_cdn:
-            return images_with_cdn
-        
-        # Fallback: any image with a URL (only useful for local development)
-        images_with_urls = [m for m in matches if m.get("url")]
-        if images_with_urls:
-            return images_with_urls
-        
-        return matches
+        return images_with_cdn  # May be empty - caller handles fallback
     
     def get_stats(self) -> dict:
         """Get statistics about the image database."""
