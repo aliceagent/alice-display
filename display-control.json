@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81d7-872f-ee91e1267c4a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231628/alice-gallery/pixel-art/Alice_Baking_-_Cloudy_Afternoon.png",
-    "title": "Alice Baking - Cloudy Afternoon",
+    "id": "2fc41906-4d30-8136-a7c9-e6105d126e2a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233218/alice-gallery/anime/Alice_Relaxing_Time__37.png",
+    "title": "Alice Relaxing Time #37",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -12,7 +12,7 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 18,
+    "temperature": 19,
     "humidity": 22,
     "description": "overcast clouds",
     "icon": "04d"
@@ -22,6 +22,6 @@
     "hour": 15,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T13:03:51.205713+00:00",
+  "lastUpdated": "2026-02-06T13:19:03.389480+00:00",
   "nextUpdate": "2026-02-06T14:00:00+00:00"
 }
