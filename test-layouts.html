@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Alice Display - Layout Test Kit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #1a1a2e;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* ===========================================
+           CONTROL PANEL STYLES
+           =========================================== */
+        
+        .control-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 24px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .panel-content {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .panel-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .panel-label {
+            font-weight: 600;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .device-selector {
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px;
+            border-radius: 12px;
+        }
+
+        .device-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .device-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .device-btn.active {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .device-btn .device-info {
+            display: block;
+            font-size: 11px;
+            opacity: 0.7;
+            margin-top: 2px;
+        }
+
+        .orientation-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 10px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+
+        .orientation-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .test-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .test-btn {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+
+        .test-btn.secondary {
+            background: linear-gradient(135deg, #64748b, #475569);
+        }
+
+        .test-btn.danger {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        /* ===========================================
+           DEVICE SIMULATOR STYLES
+           =========================================== */
+
+        .simulator-container {
+            margin-top: 120px;
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 120px);
+            background: radial-gradient(circle at center, #2a2a4a 0%, #1a1a2e 100%);
+        }
+
+        .device-frame {
+            position: relative;
+            background: #1a1a1a;
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center center;
+        }
+
+        .device-frame::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+        }
+
+        .device-screen {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 16px;
+            background: white;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Device-specific frame styles */
+        .device-frame.iphone {
+            border-radius: 36px;
+            padding: 24px 12px 24px 12px;
+        }
+
+        .device-frame.iphone::before {
+            width: 80px;
+            height: 6px;
+            background: #2a2a2a;
+            border-radius: 3px;
+            top: 8px;
+        }
+
+        .device-frame.ipad {
+            border-radius: 24px;
+            padding: 24px;
+        }
+
+        .device-frame.ipad::before {
+            display: none;
+        }
+
+        .device-frame.desktop {
+            border-radius: 8px;
+            padding: 8px 8px 32px 8px;
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+        }
+
+        .device-frame.desktop::before {
+            display: none;
+        }
+
+        .device-frame.desktop::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 16px;
+            background: #0a0a0a;
+            border-radius: 8px 8px 4px 4px;
+        }
+
+        /* ===========================================
+           DEVICE PRESETS
+           =========================================== */
+
+        /* iPhone SE Portrait */
+        .device-frame.iphone-se-portrait {
+            width: 375px;
+            height: 667px;
+        }
+
+        /* iPhone SE Landscape */
+        .device-frame.iphone-se-landscape {
+            width: 667px;
+            height: 375px;
+        }
+
+        /* iPhone 13 Portrait */
+        .device-frame.iphone-13-portrait {
+            width: 390px;
+            height: 844px;
+        }
+
+        /* iPhone 13 Landscape */
+        .device-frame.iphone-13-landscape {
+            width: 844px;
+            height: 390px;
+        }
+
+        /* iPhone 13 Pro Max Portrait */
+        .device-frame.iphone-13-pro-max-portrait {
+            width: 428px;
+            height: 926px;
+        }
+
+        /* iPhone 13 Pro Max Landscape */
+        .device-frame.iphone-13-pro-max-landscape {
+            width: 926px;
+            height: 428px;
+        }
+
+        /* iPad Air Portrait */
+        .device-frame.ipad-air-portrait {
+            width: 820px;
+            height: 1180px;
+        }
+
+        /* iPad Air Landscape */
+        .device-frame.ipad-air-landscape {
+            width: 1180px;
+            height: 820px;
+        }
+
+        /* iPad Pro 11" Portrait */
+        .device-frame.ipad-pro-11-portrait {
+            width: 834px;
+            height: 1194px;
+        }
+
+        /* iPad Pro 11" Landscape */
+        .device-frame.ipad-pro-11-landscape {
+            width: 1194px;
+            height: 834px;
+        }
+
+        /* iPad Pro 12.9" Portrait */
+        .device-frame.ipad-pro-12-portrait {
+            width: 1024px;
+            height: 1366px;
+        }
+
+        /* iPad Pro 12.9" Landscape */
+        .device-frame.ipad-pro-12-landscape {
+            width: 1366px;
+            height: 1024px;
+        }
+
+        /* MacBook Air */
+        .device-frame.macbook-air {
+            width: 1440px;
+            height: 900px;
+        }
+
+        /* MacBook Pro 16" */
+        .device-frame.macbook-pro-16 {
+            width: 1728px;
+            height: 1117px;
+        }
+
+        /* iMac 27" */
+        .device-frame.imac-27 {
+            width: 1280px;
+            height: 720px;
+            transform: scale(0.5);
+        }
+
+        /* ===========================================
+           STATUS INDICATORS
+           =========================================== */
+
+        .status-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            z-index: 1000;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .status-info {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+
+        .status-dot.warning {
+            background: #f59e0b;
+        }
+
+        .status-dot.error {
+            background: #ef4444;
+        }
+
+        .debug-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 11px;
+            transition: all 0.2s ease;
+        }
+
+        .debug-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .debug-toggle.active {
+            background: #22c55e;
+            color: white;
+        }
+
+        /* ===========================================
+           DEBUG OVERLAY
+           =========================================== */
+
+        .debug-overlay {
+            position: fixed;
+            top: 120px;
+            right: 24px;
+            width: 320px;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 12px;
+            padding: 16px;
+            font-family: 'Monaco', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+
+        .debug-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .debug-section {
+            margin-bottom: 16px;
+        }
+
+        .debug-title {
+            color: #22c55e;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .debug-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            color: #ccc;
+        }
+
+        .debug-value {
+            color: #60a5fa;
+            font-weight: 500;
+        }
+
+        /* ===========================================
+           RESPONSIVE DESIGN FOR CONTROL PANEL
+           =========================================== */
+
+        @media (max-width: 768px) {
+            .control-panel {
+                padding: 12px 16px;
+            }
+
+            .panel-content {
+                flex-direction: column;
+                gap: 16px;
+                align-items: stretch;
+            }
+
+            .panel-section {
+                justify-content: space-between;
+            }
+
+            .device-selector {
+                flex-wrap: wrap;
+            }
+
+            .device-btn {
+                padding: 10px 12px;
+                flex: 1;
+                min-width: 100px;
+            }
+
+            .simulator-container {
+                margin-top: 160px;
+                padding: 16px;
+            }
+
+            .debug-overlay {
+                right: 16px;
+                left: 16px;
+                width: auto;
+            }
+        }
+
+        /* ===========================================
+           ANIMATION UTILITIES
+           =========================================== */
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .scale-in {
+            animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes scaleIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ===========================================
+           ACCESSIBILITY IMPROVEMENTS
+           =========================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+            .device-frame {
+                transition: none;
+            }
+            
+            .fade-in,
+            .scale-in {
+                animation: none;
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus styles for accessibility */
+        button:focus,
+        .device-btn:focus {
+            outline: 2px solid #60a5fa;
+            outline-offset: 2px;
+        }
+
+        /* ===========================================
+           LOADING STATES
+           =========================================== */
+
+        .loading-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 10;
+        }
+
+        .loading-indicator.visible {
+            display: block;
+        }
+
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-top-color: #60a5fa;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ===========================================
+           GRID OVERLAY FOR DEBUGGING
+           =========================================== */
+
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            background-image: 
+                linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .grid-overlay.visible {
+            opacity: 1;
+        }
+
+        /* ===========================================
+           SCREENSHOT HELPER
+           =========================================== */
+
+        .screenshot-mode .control-panel,
+        .screenshot-mode .status-bar,
+        .screenshot-mode .debug-overlay {
+            display: none !important;
+        }
+
+        .screenshot-mode .simulator-container {
+            margin-top: 0;
+            padding: 0;
+            background: transparent;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <div class="panel-content">
+            <div class="panel-section">
+                <span class="panel-label">Device Presets:</span>
+                <div class="device-selector">
+                    <button class="device-btn" data-device="iphone-se" data-orientation="portrait">
+                        iPhone SE
+                        <div class="device-info">375×667</div>
+                    </button>
+                    <button class="device-btn active" data-device="iphone-13" data-orientation="portrait">
+                        iPhone 13
+                        <div class="device-info">390×844</div>
+                    </button>
+                    <button class="device-btn" data-device="iphone-13-pro-max" data-orientation="portrait">
+                        iPhone Pro Max
+                        <div class="device-info">428×926</div>
+                    </button>
+                    <button class="device-btn" data-device="ipad-air" data-orientation="portrait">
+                        iPad Air
+                        <div class="device-info">820×1180</div>
+                    </button>
+                    <button class="device-btn" data-device="ipad-pro-11" data-orientation="portrait">
+                        iPad Pro 11"
+                        <div class="device-info">834×1194</div>
+                    </button>
+                    <button class="device-btn" data-device="ipad-pro-12" data-orientation="portrait">
+                        iPad Pro 12.9"
+                        <div class="device-info">1024×1366</div>
+                    </button>
+                    <button class="device-btn" data-device="macbook-air" data-orientation="landscape">
+                        MacBook Air
+                        <div class="device-info">1440×900</div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <span class="panel-label">Orientation:</span>
+                <button class="orientation-toggle" aria-label="Toggle orientation">📱</button>
+            </div>
+
+            <div class="panel-section">
+                <span class="panel-label">Test Tools:</span>
+                <div class="test-controls">
+                    <button class="test-btn" onclick="runLayoutTests()">Run Tests</button>
+                    <button class="test-btn secondary" onclick="takeScreenshot()">Screenshot</button>
+                    <button class="test-btn secondary" onclick="toggleGrid()">Grid</button>
+                    <button class="test-btn secondary" onclick="reloadFrame()">Reload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Device Simulator -->
+    <div class="simulator-container">
+        <div class="device-frame iphone iphone-13-portrait scale-in" id="deviceFrame">
+            <div class="loading-indicator" id="loadingIndicator">
+                <div class="spinner"></div>
+            </div>
+            <iframe 
+                class="device-screen" 
+                id="deviceScreen"
+                src="index-dynamic.html"
+                title="Alice Display - Device Preview">
+            </iframe>
+            <div class="grid-overlay" id="gridOverlay"></div>
+        </div>
+    </div>
+
+    <!-- Debug Overlay -->
+    <div class="debug-overlay" id="debugOverlay">
+        <div class="debug-section">
+            <div class="debug-title">Device Info</div>
+            <div class="debug-item">
+                <span>Device:</span>
+                <span class="debug-value" id="debugDevice">iPhone 13</span>
+            </div>
+            <div class="debug-item">
+                <span>Orientation:</span>
+                <span class="debug-value" id="debugOrientation">Portrait</span>
+            </div>
+            <div class="debug-item">
+                <span>Screen Size:</span>
+                <span class="debug-value" id="debugSize">390×844</span>
+            </div>
+            <div class="debug-item">
+                <span>Viewport:</span>
+                <span class="debug-value" id="debugViewport">390×844</span>
+            </div>
+        </div>
+
+        <div class="debug-section">
+            <div class="debug-title">Layout Detection</div>
+            <div class="debug-item">
+                <span>CSS Layout:</span>
+                <span class="debug-value" id="debugCssLayout">phone-portrait</span>
+            </div>
+            <div class="debug-item">
+                <span>JS Layout:</span>
+                <span class="debug-value" id="debugJsLayout">phone-portrait</span>
+            </div>
+            <div class="debug-item">
+                <span>Media Query:</span>
+                <span class="debug-value" id="debugMediaQuery">✓ Active</span>
+            </div>
+        </div>
+
+        <div class="debug-section">
+            <div class="debug-title">Widget Status</div>
+            <div class="debug-item">
+                <span>Weather Widget:</span>
+                <span class="debug-value" id="debugWeather">collapsed</span>
+            </div>
+            <div class="debug-item">
+                <span>Clock:</span>
+                <span class="debug-value" id="debugClock">compact</span>
+            </div>
+            <div class="debug-item">
+                <span>Status Overlay:</span>
+                <span class="debug-value" id="debugStatus">minimal</span>
+            </div>
+            <div class="debug-item">
+                <span>Command Center:</span>
+                <span class="debug-value" id="debugCommand">mobile</span>
+            </div>
+        </div>
+
+        <div class="debug-section">
+            <div class="debug-title">Performance</div>
+            <div class="debug-item">
+                <span>Load Time:</span>
+                <span class="debug-value" id="debugLoadTime">--ms</span>
+            </div>
+            <div class="debug-item">
+                <span>Layout Time:</span>
+                <span class="debug-value" id="debugLayoutTime">--ms</span>
+            </div>
+            <div class="debug-item">
+                <span>Memory:</span>
+                <span class="debug-value" id="debugMemory">--MB</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-info">
+            <div class="status-item">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">Ready</span>
+            </div>
+            <div class="status-item">
+                <span>Frame loaded in <span id="loadDuration">--</span>ms</span>
+            </div>
+            <div class="status-item">
+                <span>Last updated: <span id="lastUpdated">--</span></span>
+            </div>
+        </div>
+        <div class="status-controls">
+            <button class="debug-toggle" id="debugToggle" onclick="toggleDebug()">
+                🐛 Debug
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ===========================================
+        // DEVICE CONFIGURATION
+        // ===========================================
+
+        const deviceConfigs = {
+            'iphone-se': {
+                name: 'iPhone SE',
+                portrait: { width: 375, height: 667, class: 'iphone iphone-se-portrait' },
+                landscape: { width: 667, height: 375, class: 'iphone iphone-se-landscape' }
+            },
+            'iphone-13': {
+                name: 'iPhone 13',
+                portrait: { width: 390, height: 844, class: 'iphone iphone-13-portrait' },
+                landscape: { width: 844, height: 390, class: 'iphone iphone-13-landscape' }
+            },
+            'iphone-13-pro-max': {
+                name: 'iPhone 13 Pro Max',
+                portrait: { width: 428, height: 926, class: 'iphone iphone-13-pro-max-portrait' },
+                landscape: { width: 926, height: 428, class: 'iphone iphone-13-pro-max-landscape' }
+            },
+            'ipad-air': {
+                name: 'iPad Air',
+                portrait: { width: 820, height: 1180, class: 'ipad ipad-air-portrait' },
+                landscape: { width: 1180, height: 820, class: 'ipad ipad-air-landscape' }
+            },
+            'ipad-pro-11': {
+                name: 'iPad Pro 11"',
+                portrait: { width: 834, height: 1194, class: 'ipad ipad-pro-11-portrait' },
+                landscape: { width: 1194, height: 834, class: 'ipad ipad-pro-11-landscape' }
+            },
+            'ipad-pro-12': {
+                name: 'iPad Pro 12.9"',
+                portrait: { width: 1024, height: 1366, class: 'ipad ipad-pro-12-portrait' },
+                landscape: { width: 1366, height: 1024, class: 'ipad ipad-pro-12-landscape' }
+            },
+            'macbook-air': {
+                name: 'MacBook Air',
+                landscape: { width: 1440, height: 900, class: 'desktop macbook-air' }
+            },
+            'macbook-pro-16': {
+                name: 'MacBook Pro 16"',
+                landscape: { width: 1728, height: 1117, class: 'desktop macbook-pro-16' }
+            },
+            'imac-27': {
+                name: 'iMac 27"',
+                landscape: { width: 1280, height: 720, class: 'desktop imac-27' } // Scaled for display
+            }
+        };
+
+        // ===========================================
+        // GLOBAL STATE
+        // ===========================================
+
+        let currentDevice = 'iphone-13';
+        let currentOrientation = 'portrait';
+        let debugMode = false;
+        let gridVisible = false;
+        let loadStartTime = Date.now();
+
+        // ===========================================
+        // INITIALIZATION
+        // ===========================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            updateDevice();
+            startDebugMonitoring();
+            updateLastUpdated();
+        });
+
+        function setupEventListeners() {
+            // Device selection buttons
+            document.querySelectorAll('.device-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const device = this.dataset.device;
+                    const orientation = this.dataset.orientation || 'portrait';
+                    
+                    // Update active button
+                    document.querySelectorAll('.device-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    currentDevice = device;
+                    currentOrientation = orientation;
+                    updateDevice();
+                });
+            });
+
+            // Orientation toggle
+            document.querySelector('.orientation-toggle').addEventListener('click', function() {
+                const config = deviceConfigs[currentDevice];
+                if (config.portrait && config.landscape) {
+                    currentOrientation = currentOrientation === 'portrait' ? 'landscape' : 'portrait';
+                    updateDevice();
+                    this.style.transform = currentOrientation === 'landscape' ? 'rotate(90deg)' : 'rotate(0deg)';
+                }
+            });
+
+            // iframe load event
+            const iframe = document.getElementById('deviceScreen');
+            iframe.addEventListener('load', function() {
+                const loadTime = Date.now() - loadStartTime;
+                document.getElementById('loadDuration').textContent = loadTime;
+                document.getElementById('loadingIndicator').classList.remove('visible');
+                updateStatus('Loaded', 'success');
+                updateDebugInfo();
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.metaKey || e.ctrlKey) {
+                    switch (e.key) {
+                        case 'd':
+                            e.preventDefault();
+                            toggleDebug();
+                            break;
+                        case 'g':
+                            e.preventDefault();
+                            toggleGrid();
+                            break;
+                        case 'r':
+                            e.preventDefault();
+                            reloadFrame();
+                            break;
+                        case 's':
+                            e.preventDefault();
+                            takeScreenshot();
+                            break;
+                    }
+                }
+            });
+        }
+
+        // ===========================================
+        // DEVICE SIMULATION
+        // ===========================================
+
+        function updateDevice() {
+            const frame = document.getElementById('deviceFrame');
+            const config = deviceConfigs[currentDevice];
+            const orientationConfig = config[currentOrientation];
+
+            if (!orientationConfig) {
+                console.error(`Orientation ${currentOrientation} not available for ${currentDevice}`);
+                return;
+            }
+
+            // Show loading indicator
+            document.getElementById('loadingIndicator').classList.add('visible');
+            loadStartTime = Date.now();
+
+            // Update frame classes and dimensions
+            frame.className = `device-frame ${orientationConfig.class} fade-in`;
+            frame.style.width = orientationConfig.width + 'px';
+            frame.style.height = orientationConfig.height + 'px';
+
+            // Update debug info
+            updateDebugInfo();
+
+            // Update status
+            updateStatus(`Loading ${config.name} ${currentOrientation}`, 'loading');
+
+            // Force iframe reload after frame size change
+            setTimeout(() => {
+                reloadFrame();
+            }, 100);
+        }
+
+        // ===========================================
+        // DEBUG FUNCTIONALITY
+        // ===========================================
+
+        function toggleDebug() {
+            debugMode = !debugMode;
+            const overlay = document.getElementById('debugOverlay');
+            const toggle = document.getElementById('debugToggle');
+            
+            overlay.classList.toggle('visible', debugMode);
+            toggle.classList.toggle('active', debugMode);
+            
+            if (debugMode) {
+                startDebugMonitoring();
+            }
+        }
+
+        function startDebugMonitoring() {
+            if (debugMode) {
+                updateDebugInfo();
+                setTimeout(startDebugMonitoring, 1000); // Update every second
+            }
+        }
+
+        function updateDebugInfo() {
+            const config = deviceConfigs[currentDevice];
+            const orientationConfig = config[currentOrientation];
+
+            if (!orientationConfig) return;
+
+            // Device info
+            document.getElementById('debugDevice').textContent = config.name;
+            document.getElementById('debugOrientation').textContent = currentOrientation;
+            document.getElementById('debugSize').textContent = `${orientationConfig.width}×${orientationConfig.height}`;
+            document.getElementById('debugViewport').textContent = `${orientationConfig.width}×${orientationConfig.height}`;
+
+            // Layout detection (would need iframe communication for real data)
+            const layoutType = detectLayoutType(orientationConfig.width, orientationConfig.height);
+            document.getElementById('debugCssLayout').textContent = layoutType;
+            document.getElementById('debugJsLayout').textContent = layoutType;
+            document.getElementById('debugMediaQuery').textContent = '✓ Active';
+
+            // Widget status (simplified for demo)
+            updateWidgetDebugInfo(layoutType);
+
+            // Performance (simplified for demo)
+            document.getElementById('debugLoadTime').textContent = document.getElementById('loadDuration').textContent;
+            document.getElementById('debugLayoutTime').textContent = '<16';
+            
+            // Memory usage (if available)
+            if (performance.memory) {
+                const memUsage = Math.round(performance.memory.usedJSHeapSize / 1024 / 1024);
+                document.getElementById('debugMemory').textContent = memUsage + 'MB';
+            }
+        }
+
+        function detectLayoutType(width, height) {
+            const orientation = width > height ? 'landscape' : 'portrait';
+            
+            if (width <= 480 && orientation === 'portrait') {
+                return 'phone-portrait';
+            } else if (height <= 480 && orientation === 'landscape') {
+                return 'phone-landscape';
+            } else if (width <= 1024 && orientation === 'portrait') {
+                return 'tablet-portrait';
+            } else if (width <= 1199 && orientation === 'landscape') {
+                return 'tablet-landscape';
+            } else {
+                return 'desktop';
+            }
+        }
+
+        function updateWidgetDebugInfo(layoutType) {
+            // Widget status based on layout type
+            const widgetStates = {
+                'phone-portrait': {
+                    weather: 'collapsed',
+                    clock: 'compact', 
+                    status: 'minimal',
+                    command: 'mobile'
+                },
+                'phone-landscape': {
+                    weather: 'horizontal',
+                    clock: 'small',
+                    status: 'vertical',
+                    command: 'two-handed'
+                },
+                'tablet-portrait': {
+                    weather: 'vertical',
+                    clock: 'large',
+                    status: 'horizontal',
+                    command: 'tablet'
+                },
+                'tablet-landscape': {
+                    weather: 'sidebar',
+                    clock: 'medium',
+                    status: 'distributed',
+                    command: 'header'
+                },
+                'desktop': {
+                    weather: 'full',
+                    clock: 'integrated',
+                    status: 'comprehensive',
+                    command: 'advanced'
+                }
+            };
+
+            const states = widgetStates[layoutType] || {};
+            document.getElementById('debugWeather').textContent = states.weather || 'unknown';
+            document.getElementById('debugClock').textContent = states.clock || 'unknown';
+            document.getElementById('debugStatus').textContent = states.status || 'unknown';
+            document.getElementById('debugCommand').textContent = states.command || 'unknown';
+        }
+
+        // ===========================================
+        // TEST FUNCTIONALITY
+        // ===========================================
+
+        function runLayoutTests() {
+            updateStatus('Running layout tests...', 'loading');
+            
+            const tests = [];
+            const devices = Object.keys(deviceConfigs);
+            
+            // Test each device configuration
+            devices.forEach(device => {
+                const config = deviceConfigs[device];
+                if (config.portrait) {
+                    tests.push({ device, orientation: 'portrait', config: config.portrait });
+                }
+                if (config.landscape) {
+                    tests.push({ device, orientation: 'landscape', config: config.landscape });
+                }
+            });
+
+            let currentTest = 0;
+            
+            function runNextTest() {
+                if (currentTest >= tests.length) {
+                    updateStatus(`✅ All ${tests.length} tests completed`, 'success');
+                    return;
+                }
+
+                const test = tests[currentTest];
+                updateStatus(`Testing ${deviceConfigs[test.device].name} ${test.orientation} (${currentTest + 1}/${tests.length})`, 'loading');
+                
+                // Switch to test device
+                currentDevice = test.device;
+                currentOrientation = test.orientation;
+                updateDevice();
+
+                // Wait for load, then continue
+                setTimeout(() => {
+                    currentTest++;
+                    runNextTest();
+                }, 1500); // Give time for layout to settle
+            }
+
+            runNextTest();
+        }
+
+        function takeScreenshot() {
+            // Enable screenshot mode
+            document.body.classList.add('screenshot-mode');
+            
+            updateStatus('Screenshot mode enabled - use browser dev tools to capture', 'success');
+            
+            // Disable screenshot mode after 5 seconds
+            setTimeout(() => {
+                document.body.classList.remove('screenshot-mode');
+                updateStatus('Screenshot mode disabled', 'success');
+            }, 5000);
+        }
+
+        function toggleGrid() {
+            gridVisible = !gridVisible;
+            const overlay = document.getElementById('gridOverlay');
+            overlay.classList.toggle('visible', gridVisible);
+            
+            updateStatus(gridVisible ? 'Grid overlay enabled' : 'Grid overlay disabled', 'success');
+        }
+
+        function reloadFrame() {
+            const iframe = document.getElementById('deviceScreen');
+            document.getElementById('loadingIndicator').classList.add('visible');
+            loadStartTime = Date.now();
+            updateStatus('Reloading frame...', 'loading');
+            
+            // Reload iframe
+            iframe.src = iframe.src;
+        }
+
+        // ===========================================
+        // STATUS MANAGEMENT
+        // ===========================================
+
+        function updateStatus(text, type = 'info') {
+            const statusText = document.getElementById('statusText');
+            const statusDot = document.getElementById('statusDot');
+            
+            statusText.textContent = text;
+            statusDot.className = 'status-dot';
+            
+            if (type === 'success') {
+                statusDot.classList.add('success');
+            } else if (type === 'warning') {
+                statusDot.classList.add('warning');
+            } else if (type === 'error') {
+                statusDot.classList.add('error');
+            }
+            
+            updateLastUpdated();
+        }
+
+        function updateLastUpdated() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            document.getElementById('lastUpdated').textContent = timeString;
+        }
+
+        // ===========================================
+        // UTILITY FUNCTIONS
+        // ===========================================
+
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Window resize handling (for responsive control panel)
+        const debouncedResize = debounce(() => {
+            // Could add logic to adapt control panel to window size
+            updateDebugInfo();
+        }, 250);
+
+        window.addEventListener('resize', debouncedResize);
+
+        // ===========================================
+        // ACCESSIBILITY ENHANCEMENTS
+        // ===========================================
+
+        // Announce status changes to screen readers
+        function announceToScreenReader(message) {
+            const announcement = document.createElement('div');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.setAttribute('aria-atomic', 'true');
+            announcement.className = 'sr-only';
+            announcement.textContent = message;
+            
+            document.body.appendChild(announcement);
+            
+            setTimeout(() => {
+                document.body.removeChild(announcement);
+            }, 1000);
+        }
+
+        // Enhanced status update with screen reader support
+        const originalUpdateStatus = updateStatus;
+        updateStatus = function(text, type = 'info') {
+            originalUpdateStatus(text, type);
+            announceToScreenReader(text);
+        };
+    </script>
+</body>
+</html>
