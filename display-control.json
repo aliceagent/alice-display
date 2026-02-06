@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8123-a078-c66043a25498",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231354/alice-gallery/anime/102_Alice_Digital_Art_Session__20.png",
-    "title": "Alice Digital Art Session #20",
+    "id": "2fc41906-4d30-817b-95da-c9c23aa08933",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232703/alice-gallery/anime/Alice_Photography_Session__58.png",
+    "title": "Alice Photography Session #58",
     "description": "",
     "activity": "Creative",
     "mood": "",
@@ -12,9 +12,9 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 16,
-    "humidity": 34,
-    "description": "overcast clouds",
+    "temperature": 18,
+    "humidity": 45,
+    "description": "broken clouds",
     "icon": "04d"
   },
   "time": {
@@ -22,6 +22,6 @@
     "hour": 16,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T14:20:24.134395+00:00",
+  "lastUpdated": "2026-02-06T14:35:46.906013+00:00",
   "nextUpdate": "2026-02-06T15:00:00+00:00"
 }
