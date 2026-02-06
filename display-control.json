@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8147-80a3-d2904e91074c",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233600/alice-gallery/anime/Alice_Yoga_Session__22.png",
-    "title": "Alice Yoga Session #22",
+    "id": "2fd41906-4d30-81d7-8fb0-d9fe86c7046d",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233529/alice-gallery/anime/Alice_Watching_Storm_-_Overcast_Midday.png",
+    "title": "Alice Watching Storm - Overcast Midday",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Cloudy",
-    "imageTimePeriod": "Morning",
+    "imageWeather": "Overcast",
+    "imageTimePeriod": "Midday",
     "imageHoliday": ""
   },
   "weather": {
@@ -18,10 +18,10 @@
     "icon": "04d"
   },
   "time": {
-    "period": "Morning",
-    "hour": 10,
+    "period": "Midday",
+    "hour": 11,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T08:49:00.647457+00:00",
-  "nextUpdate": "2026-02-06T09:00:00+00:00"
+  "lastUpdated": "2026-02-06T09:06:17.674546+00:00",
+  "nextUpdate": "2026-02-06T10:00:00+00:00"
 }
