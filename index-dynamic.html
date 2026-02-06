@@ -5779,8 +5779,8 @@
                 
                 try {
                     // First, try the local API server
-                    const apiUrl = window.location.protocol === 'file:' ? 'http://localhost:3001' : '';
-                    const response = await fetch(`${apiUrl}/api/vacuum/status`, {
+                    const apiUrl = 'https://alice-vacuum-api.vercel.app';
+                    const response = await fetch(`${apiUrl}/api/vacuum?action=status`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ device: 1 }),
@@ -5789,8 +5789,9 @@
                     
                     if (response.ok) {
                         const data = await response.json();
-                        this.updateVacuumBattery(data.battery, data.charging);
-                        this.updateVacuumStatus(data.clean_status, data.charging);
+                        const isCharging = data.chargeState === 'charging' || data.charging;
+                        this.updateVacuumBattery(data.battery, isCharging);
+                        this.updateVacuumStatus(data.cleanState || data.clean_status, isCharging);
                         return;
                     } else {
                         throw new Error(`HTTP ${response.status}`);
@@ -5900,9 +5901,9 @@
                 this.showToast(`⏳ ${loadingMessage}`);
                 
                 try {
-                    // Try the local API server first
-                    const apiUrl = window.location.protocol === 'file:' ? 'http://localhost:3001' : '';
-                    const response = await fetch(`${apiUrl}/api/vacuum/command`, {
+                    // Use Vercel-hosted vacuum API
+                    const apiUrl = 'https://alice-vacuum-api.vercel.app';
+                    const response = await fetch(`${apiUrl}/api/vacuum?action=${command}`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ 
