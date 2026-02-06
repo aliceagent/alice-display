@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81d5-aba7-fedfcf46a2ed",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219282/alice-gallery/pixel-art/Alice_Park_Walk_-_Cloudy_Morning.png",
-    "title": "Alice Park Walk - Cloudy Morning",
+    "id": "2fc41906-4d30-8185-a37d-c3d21a7165e5",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233603/alice-gallery/anime/Alice_Yoga_Session__26.png",
+    "title": "Alice Yoga Session #26",
     "description": "",
     "activity": "Exercise",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 7,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T05:34:27.141006+00:00",
+  "lastUpdated": "2026-02-06T05:50:08.111791+00:00",
   "nextUpdate": "2026-02-06T06:00:00+00:00"
 }
