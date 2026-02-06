@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alice Display System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 100vw;
+            max-height: 100vh;
+        }
+        
+        #alice-image {
+            max-width: 100vw;
+            max-height: 100vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: opacity 0.5s ease-in-out;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+        }
+        
+        .image-loading {
+            opacity: 0.5;
+        }
+        
+        /* UI elements removed for clean display */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="alice-image" src="images/alice-05-ghibli-style.png" alt="Alice Display">
+    </div>
+    
+    <script>
+        class AliceDisplay {
+            constructor() {
+                this.currentImage = null;
+                this.pollInterval = 2000; // Check every 2 seconds
+                this.imageElement = document.getElementById('alice-image');
+                
+                this.images = {
+                    'alice-01': {
+                        file: 'images/alice-01-coding-golden.png',
+                        title: 'Alice - Coding at Golden Hour'
+                    },
+                    'alice-02': {
+                        file: 'images/alice-02-anime-style.png', 
+                        title: 'Alice - Anime Style'
+                    },
+                    'alice-03': {
+                        file: 'images/alice-03-mature-anime.png',
+                        title: 'Alice - Mature Anime'
+                    },
+                    'alice-04': {
+                        file: 'images/alice-04-japanese-anime.png',
+                        title: 'Alice - Japanese Anime'
+                    },
+                    'alice-05': {
+                        file: 'images/alice-05-ghibli-style.png',
+                        title: 'Alice - Ghibli Style'
+                    }
+                };
+                
+                this.startPolling();
+            }
+            
+            async fetchCurrentImage() {
+                try {
+                    const response = await fetch('display-control.json?' + Date.now());
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    return data.currentImage;
+                } catch (error) {
+                    console.error('Error fetching display control:', error);
+                    return null;
+                }
+            }
+            
+            updateImage(imageKey) {
+                if (imageKey === this.currentImage) return;
+                
+                const imageData = this.images[imageKey];
+                if (!imageData) {
+                    console.error('Unknown image key:', imageKey);
+                    return;
+                }
+                
+                this.imageElement.classList.add('image-loading');
+                
+                // Pre-load the image
+                const newImg = new Image();
+                newImg.onload = () => {
+                    this.imageElement.src = imageData.file;
+                    this.currentImage = imageKey;
+                    
+                    setTimeout(() => {
+                        this.imageElement.classList.remove('image-loading');
+                    }, 100);
+                    
+                    console.log('Switched to:', imageData.title);
+                };
+                
+                newImg.onerror = () => {
+                    console.error('Failed to load image:', imageData.file);
+                    this.imageElement.classList.remove('image-loading');
+                };
+                
+                newImg.src = imageData.file;
+            }
+            
+            async poll() {
+                const imageKey = await this.fetchCurrentImage();
+                
+                if (imageKey) {
+                    this.updateImage(imageKey);
+                }
+            }
+            
+            startPolling() {
+                // Initial poll
+                this.poll();
+                
+                // Set up interval
+                setInterval(() => {
+                    this.poll();
+                }, this.pollInterval);
+            }
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new AliceDisplay();
+        });
+        
+        // Handle visibility change (mobile optimization)
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                // Refresh when tab becomes visible
+                location.reload();
+            }
+        });
+    </script>
+</body>
+</html>
