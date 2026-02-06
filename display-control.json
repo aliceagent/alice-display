@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81dc-8789-e0326592f51a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219375/alice-gallery/pixel-art/Alice_Park_Walk_-_Overcast_Evening.png",
-    "title": "Alice Park Walk - Overcast Evening",
+    "id": "2fd41906-4d30-81be-8de4-c3a440fd53eb",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233584/alice-gallery/pixel-art/Alice_Yoga_-_Overcast_Evening.png",
+    "title": "Alice Yoga - Overcast Evening",
     "description": "",
     "activity": "Exercise",
     "mood": "",
@@ -19,9 +19,9 @@
   },
   "time": {
     "period": "Evening",
-    "hour": 18,
+    "hour": 19,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T16:45:53.503816+00:00",
-  "nextUpdate": "2026-02-06T17:00:00+00:00"
+  "lastUpdated": "2026-02-06T17:01:06.515285+00:00",
+  "nextUpdate": "2026-02-06T18:00:00+00:00"
 }
