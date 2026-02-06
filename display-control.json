@@ -12,8 +12,8 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 12,
-    "humidity": 37,
+    "temperature": 13,
+    "humidity": 36,
     "description": "overcast clouds",
     "icon": "04n"
   },
@@ -22,6 +22,6 @@
     "hour": 5,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T03:26:25.675439+00:00",
+  "lastUpdated": "2026-02-06T03:41:41.313296+00:00",
   "nextUpdate": "2026-02-06T04:00:00+00:00"
 }
