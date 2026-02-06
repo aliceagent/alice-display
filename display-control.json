@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81bf-a7cb-cf753892b245",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219214/alice-gallery/pixel-art/Alice_Flower_Picking_-_Overcast_Night.png",
-    "title": "Alice Flower Picking - Overcast Night",
+    "id": "2fd41906-4d30-81ec-bc36-d3dcf9a7f869",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233368/alice-gallery/anime/Alice_Stargazing_-_Overcast_Night.png",
+    "title": "Alice Stargazing - Overcast Night",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -12,7 +12,7 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 15,
+    "temperature": 14,
     "humidity": 41,
     "description": "overcast clouds",
     "icon": "04n"
@@ -22,6 +22,6 @@
     "hour": 20,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T18:04:08.371372+00:00",
+  "lastUpdated": "2026-02-06T18:19:23.706604+00:00",
   "nextUpdate": "2026-02-06T19:00:00+00:00"
 }
