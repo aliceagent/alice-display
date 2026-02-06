@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81d0-bf43-c23cc1e1910b",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219072/alice-gallery/pixel-art/Alice_Park_Walk_-_Cloudy_Afternoon.png",
-    "title": "Alice Park Walk - Cloudy Afternoon",
+    "id": "2fc41906-4d30-81e3-bcd2-c582e846f351",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219345/alice-gallery/anime/153_Alice_Digital_Art_Session__9.png",
+    "title": "Alice Digital Art Session #9",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Creative",
     "mood": "",
     "imageWeather": "Cloudy",
-    "imageTimePeriod": "Afternoon",
+    "imageTimePeriod": "Golden Hour",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 14,
+    "temperature": 16,
     "humidity": 45,
     "description": "broken clouds",
     "icon": "04d"
   },
   "time": {
-    "period": "Afternoon",
-    "hour": 16,
+    "period": "Golden Hour",
+    "hour": 17,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T14:50:57.906948+00:00",
-  "nextUpdate": "2026-02-06T15:00:00+00:00"
+  "lastUpdated": "2026-02-06T15:08:50.992205+00:00",
+  "nextUpdate": "2026-02-06T16:00:00+00:00"
 }
