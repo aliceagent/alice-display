@@ -12,16 +12,16 @@
   },
   "weather": {
     "condition": "Cloudy",
-    "temperature": 14,
+    "temperature": 13,
     "humidity": 44,
     "description": "scattered clouds",
     "icon": "03n"
   },
   "time": {
-    "period": "Night",
-    "hour": 22,
+    "period": "Late Night",
+    "hour": 23,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T20:57:17.742557+00:00",
-  "nextUpdate": "2026-02-06T21:00:00+00:00"
+  "lastUpdated": "2026-02-06T21:12:47.024137+00:00",
+  "nextUpdate": "2026-02-06T22:00:00+00:00"
 }
