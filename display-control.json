@@ -1,12 +1,12 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81f3-9075-f6b73ca7b9af",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231322/alice-gallery/anime/094_Alice_Video_Conference_Session__36.png",
-    "title": "Alice Video Conference Session #36",
+    "id": "2fd41906-4d30-81d7-872f-ee91e1267c4a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231628/alice-gallery/pixel-art/Alice_Baking_-_Cloudy_Afternoon.png",
+    "title": "Alice Baking - Cloudy Afternoon",
     "description": "",
-    "activity": "Work",
+    "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Overcast",
+    "imageWeather": "Cloudy",
     "imageTimePeriod": "Afternoon",
     "imageHoliday": ""
   },
@@ -19,9 +19,9 @@
   },
   "time": {
     "period": "Afternoon",
-    "hour": 14,
+    "hour": 15,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T12:48:23.316697+00:00",
-  "nextUpdate": "2026-02-06T13:00:00+00:00"
+  "lastUpdated": "2026-02-06T13:03:51.205713+00:00",
+  "nextUpdate": "2026-02-06T14:00:00+00:00"
 }
