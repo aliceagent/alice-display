@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81b2-93a5-cc2db656510a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231069/alice-gallery/anime/022_Alice_Sleeping_-_Rainy_Dawn__11.png",
-    "title": "Alice Sleeping - Rainy Dawn #11",
+    "id": "2fc41906-4d30-81ea-a5da-c2fcdb28e6f2",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231086/alice-gallery/anime/027_Alice_Sleeping_-_Rainy_Dawn__15.png",
+    "title": "Alice Sleeping - Rainy Dawn #15",
     "description": "",
     "activity": "Sleeping",
     "mood": "",
@@ -12,7 +12,7 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 13,
+    "temperature": 12,
     "humidity": 36,
     "description": "overcast clouds",
     "icon": "04n"
@@ -22,6 +22,6 @@
     "hour": 5,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T03:41:41.313296+00:00",
+  "lastUpdated": "2026-02-06T03:58:07.342300+00:00",
   "nextUpdate": "2026-02-06T04:00:00+00:00"
 }
