@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81f9-8f55-f8c94276d78b",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231858/alice-gallery/anime/Alice_Cooking_-_Cloudy_Night.png",
-    "title": "Alice Cooking - Cloudy Night",
+    "id": "2fc41906-4d30-816a-93e4-ef6148c6cb74",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231023/alice-gallery/anime/013_Alice_Sleeping_-_Cloudy_Night__14.png",
+    "title": "Alice Sleeping - Cloudy Night #14",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Sleeping",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Night",
@@ -19,9 +19,9 @@
   },
   "time": {
     "period": "Night",
-    "hour": 21,
+    "hour": 22,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T19:55:58.426628+00:00",
-  "nextUpdate": "2026-02-06T20:00:00+00:00"
+  "lastUpdated": "2026-02-06T20:11:10.759676+00:00",
+  "nextUpdate": "2026-02-06T21:00:00+00:00"
 }
