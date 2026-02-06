@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-812f-8e17-dd446002a618",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231382/alice-gallery/anime/107_Alice_Presenting_Session__68.png",
-    "title": "Alice Presenting Session #68",
+    "id": "2fc41906-4d30-8189-82aa-e46caa7c82cd",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233568/alice-gallery/anime/Alice_Writing_Session__74.png",
+    "title": "Alice Writing Session #74",
     "description": "",
-    "activity": "Work",
+    "activity": "Creative",
     "mood": "",
-    "imageWeather": "Overcast",
-    "imageTimePeriod": "Early Morning",
+    "imageWeather": "Cloudy",
+    "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
   "weather": {
@@ -19,9 +19,9 @@
   },
   "time": {
     "period": "Morning",
-    "hour": 8,
+    "hour": 9,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T06:57:40.280401+00:00",
-  "nextUpdate": "2026-02-06T07:00:00+00:00"
+  "lastUpdated": "2026-02-06T07:12:54.331331+00:00",
+  "nextUpdate": "2026-02-06T08:00:00+00:00"
 }
