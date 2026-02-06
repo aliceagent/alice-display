@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8181-9f20-d9b2c0a4001c",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231481/alice-gallery/anime/133_Alice_Writing_Session__46.png",
-    "title": "Alice Writing Session #46",
+    "id": "2fd41906-4d30-817e-8d7c-fd0f57c1d48e",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770218842/alice-gallery/pixel-art/Alice_Baking_-_Overcast_Evening.png",
+    "title": "Alice Baking - Overcast Evening",
     "description": "",
-    "activity": "Creative",
+    "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Cloudy",
-    "imageTimePeriod": "Golden Hour",
+    "imageWeather": "Overcast",
+    "imageTimePeriod": "Evening",
     "imageHoliday": ""
   },
   "weather": {
@@ -18,10 +18,10 @@
     "icon": "04n"
   },
   "time": {
-    "period": "Golden Hour",
-    "hour": 17,
+    "period": "Evening",
+    "hour": 18,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T15:56:37.837095+00:00",
-  "nextUpdate": "2026-02-06T16:00:00+00:00"
+  "lastUpdated": "2026-02-06T16:11:59.869936+00:00",
+  "nextUpdate": "2026-02-06T17:00:00+00:00"
 }
