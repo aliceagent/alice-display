@@ -5523,7 +5523,7 @@
                 
                 // Populate current image info if available
                 if (this.currentData && this.currentData.currentImage) {
-                    document.getElementById('report-image-id').value = this.currentData.currentImage.notion_id || '';
+                    document.getElementById('report-image-id').value = this.currentData.currentImage.notion_id || this.currentData.currentImage.id || '';
                 }
                 
                 // Lock body scroll when modal is open
@@ -6167,7 +6167,7 @@
                 const dislikeBtn = document.getElementById('img-dislike');
                 
                 // Check localStorage for existing rating on this image
-                const imageId = this.currentData?.currentImage?.notion_id;
+                const imageId = this.currentData?.currentImage?.notion_id || this.currentData?.currentImage?.id;
                 if (imageId) {
                     const ratings = JSON.parse(localStorage.getItem('aliceImageRatings') || '{}');
                     const rating = ratings[imageId];
@@ -6194,7 +6194,7 @@
                 
                 try {
                     // Get current image ID and context
-                    const currentImageId = this.currentData?.currentImage?.notion_id;
+                    const currentImageId = this.currentData?.currentImage?.notion_id || this.currentData?.currentImage?.id;
                     const context = {
                         weather: this.currentData?.weather?.condition || 'Sunny',
                         time_period: this.currentData?.time?.period || 'Afternoon',
@@ -6272,7 +6272,7 @@
                 const activeBtn = rating === 1 ? likeBtn : dislikeBtn;
                 
                 // If already rated same way, this is an "unrate"
-                const imageId = this.currentData?.currentImage?.notion_id;
+                const imageId = this.currentData?.currentImage?.notion_id || this.currentData?.currentImage?.id;
                 if (!imageId) {
                     this.showToast('⚠️ No image to rate');
                     return;
