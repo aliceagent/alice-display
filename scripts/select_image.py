@@ -278,13 +278,75 @@ class ImageSelector:
                 print("⚠️ No CDN images available!")
                 candidates = self.images  # Last resort - shouldn't happen
         
-        # Select randomly from candidates (could add weighting here)
-        selected = random.choice(candidates)
+        # Select using weighted random choice based on rating scores
+        selected = self._weighted_random_choice(candidates)
         
         if save_history:
             self._save_history(selected)
         
         return selected
+    
+    def _weighted_random_choice(self, candidates: list) -> Optional[dict]:
+        """
+        Select an image using weighted random selection based on rating score.
+        Higher rated images are more likely to be selected.
+        
+        Weight formula:
+        - Base weight: 1.0
+        - Rating modifier: rating_score / 10 (capped at ±1.0)
+        - Final weight: max(0.1, min(3.0, base + modifier))
+        
+        Images with < 5 total ratings get neutral weight (1.0) to avoid
+        extreme bias from few votes.
+        """
+        if not candidates:
+            return None
+        
+        if len(candidates) == 1:
+            return candidates[0]
+        
+        # Calculate weights for each candidate
+        weights = []
+        for img in candidates:
+            rating_score = img.get('rating_score', 0)
+            total_ratings = img.get('total_ratings', 0)
+            
+            # Only apply rating weight if we have enough data
+            if total_ratings >= 5:
+                # Calculate weight modifier from rating score
+                # Score of +10 → weight 2.0 (2x more likely)
+                # Score of 0 → weight 1.0 (neutral)
+                # Score of -10 → weight 0.1 (10x less likely)
+                modifier = rating_score / 10.0
+                weight = max(0.1, min(3.0, 1.0 + modifier))
+            else:
+                # Not enough ratings - use neutral weight
+                weight = 1.0
+            
+            weights.append(weight)
+        
+        # Normalize weights to probabilities
+        total_weight = sum(weights)
+        if total_weight == 0:
+            return random.choice(candidates)
+        
+        probabilities = [w / total_weight for w in weights]
+        
+        # Weighted random selection
+        r = random.random()
+        cumulative = 0
+        for i, prob in enumerate(probabilities):
+            cumulative += prob
+            if r <= cumulative:
+                selected = candidates[i]
+                # Log if rating influenced selection
+                if selected.get('total_ratings', 0) >= 5:
+                    print(f"   ⭐ Rating influence: score={selected.get('rating_score', 0)}, "
+                          f"weight={weights[i]:.2f}")
+                return selected
+        
+        # Fallback (shouldn't reach here)
+        return random.choice(candidates)
     
     def _find_matches(self, weather: str, time_period: str, exclude_ids: set, preferred_activities: list = None) -> list:
         """Find all images matching weather, time, and activity preferences."""
