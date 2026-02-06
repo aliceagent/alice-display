@@ -1,18 +1,18 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-810a-9298-d6e7dbf8d65a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770230994/alice-gallery/anime/006_Alice_Sleeping_-_Cloudy_Night__2.png",
-    "title": "Alice Sleeping - Cloudy Night #2",
+    "id": "2fc41906-4d30-8156-810f-edba50a0af95",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231015/alice-gallery/anime/011_Alice_Sleeping_-_Cloudy_Late_Night__19.png",
+    "title": "Alice Sleeping - Cloudy Late Night #19",
     "description": "",
     "activity": "Sleeping",
     "mood": "",
     "imageWeather": "Cloudy",
-    "imageTimePeriod": "Night",
+    "imageTimePeriod": "Late Night",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 14,
+    "temperature": 13,
     "humidity": 39,
     "description": "overcast clouds",
     "icon": "04n"
@@ -22,6 +22,6 @@
     "hour": 4,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T02:06:47.872289+00:00",
+  "lastUpdated": "2026-02-06T02:22:02.249859+00:00",
   "nextUpdate": "2026-02-06T03:00:00+00:00"
 }
