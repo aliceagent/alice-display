@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81ba-8745-d3c60ca13ea7",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232485/alice-gallery/anime/Alice_Market_Visit_-_Cloudy_Midday.png",
-    "title": "Alice Market Visit - Cloudy Midday",
+    "id": "2fd41906-4d30-810f-804e-e51936a58d36",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231660/alice-gallery/anime/Alice_Bicycle_Ride_-_Cloudy_Midday.png",
+    "title": "Alice Bicycle Ride - Cloudy Midday",
     "description": "",
-    "activity": "Social",
+    "activity": "Exercise",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Midday",
@@ -22,6 +22,6 @@
     "hour": 12,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T10:09:57.238857+00:00",
+  "lastUpdated": "2026-02-06T10:25:09.634514+00:00",
   "nextUpdate": "2026-02-06T11:00:00+00:00"
 }
