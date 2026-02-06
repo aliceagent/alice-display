@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-818a-939c-ded8ef5edff8",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232790/alice-gallery/pixel-art/Alice_Playing_Piano_-_Cloudy_Night.png",
-    "title": "Alice Playing Piano - Cloudy Night",
+    "id": "2fc41906-4d30-8170-83ba-e57567151cad",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231763/alice-gallery/anime/Alice_Coffee_Date__17.png",
+    "title": "Alice Coffee Date #17",
     "description": "",
-    "activity": "Creative",
+    "activity": "Social",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Night",
@@ -12,7 +12,7 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 15,
+    "temperature": 14,
     "humidity": 42,
     "description": "broken clouds",
     "icon": "04n"
@@ -22,6 +22,6 @@
     "hour": 21,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T19:09:59.177316+00:00",
+  "lastUpdated": "2026-02-06T19:25:12.102816+00:00",
   "nextUpdate": "2026-02-06T20:00:00+00:00"
 }
