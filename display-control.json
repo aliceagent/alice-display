@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81e3-bcd2-c582e846f351",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219345/alice-gallery/anime/153_Alice_Digital_Art_Session__9.png",
-    "title": "Alice Digital Art Session #9",
+    "id": "2fc41906-4d30-814c-afc7-df863f5065dc",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232086/alice-gallery/anime/Alice_Drawing_Session__73.png",
+    "title": "Alice Drawing Session #73",
     "description": "",
     "activity": "Creative",
     "mood": "",
@@ -15,13 +15,13 @@
     "temperature": 16,
     "humidity": 45,
     "description": "broken clouds",
-    "icon": "04d"
+    "icon": "04n"
   },
   "time": {
     "period": "Golden Hour",
     "hour": 17,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T15:08:50.992205+00:00",
+  "lastUpdated": "2026-02-06T15:26:13.119639+00:00",
   "nextUpdate": "2026-02-06T16:00:00+00:00"
 }
