@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8107-984c-c13452dd28e7",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232224/alice-gallery/anime/Alice_Gaming_Time__17.png",
-    "title": "Alice Gaming Time #17",
+    "id": "2fc41906-4d30-8198-935d-ebe482224f83",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219415/alice-gallery/anime/Alice_Reading_Time__64.png",
+    "title": "Alice Reading Time #64",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 19,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T17:31:37.786112+00:00",
+  "lastUpdated": "2026-02-06T17:48:53.104743+00:00",
   "nextUpdate": "2026-02-06T18:00:00+00:00"
 }
