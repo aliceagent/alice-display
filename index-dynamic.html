@@ -437,16 +437,23 @@
                 top: 55px; /* Fallback for browsers without env() support */
                 top: max(55px, calc(env(safe-area-inset-top, 0px) + 8px));
                 bottom: auto;
-                left: 20px;
+                left: 12px;
                 right: auto;
                 transform: none;
                 
-                /* More compact for mobile */
+                /* Horizontal bar layout for mobile */
                 min-width: auto;
-                max-width: 200px;
+                max-width: 65vw;
                 width: auto;
-                padding: 12px;
-                border-radius: 12px;
+                padding: 10px 14px;
+                border-radius: 16px;
+                
+                /* Horizontal flex layout */
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 8px;
             }
             
             /* Collapsed state positioning */
@@ -456,56 +463,60 @@
                 left: 20px;
             }
             
-            /* Horizontal layout for the header (icon + temp side by side with condition) */
+            /* Horizontal layout for the header */
             .weather-widget-header {
-                margin-bottom: 6px;
-                gap: 8px;
+                margin-bottom: 0;
+                gap: 6px;
+                flex-shrink: 0;
             }
             
             .weather-widget-icon {
-                font-size: 28px;
+                font-size: 24px;
             }
             
             .weather-widget-temp {
-                font-size: 22px;
+                font-size: 20px;
             }
             
             .weather-widget-temp .unit {
-                font-size: 14px;
+                font-size: 12px;
             }
             
             .weather-widget-condition {
-                font-size: 13px;
-                margin-bottom: 2px;
+                font-size: 12px;
+                margin-bottom: 0;
             }
             
             .weather-widget-description {
-                font-size: 10px;
+                font-size: 9px;
+                display: none; /* Hide description to save space */
             }
             
             .weather-widget-divider {
-                margin: 6px 0;
+                display: none; /* Hide divider in horizontal mode */
             }
             
             .weather-widget-details {
-                font-size: 11px;
+                font-size: 10px;
+                flex-direction: row;
+                gap: 12px;
+                margin-left: auto;
             }
             
             .weather-widget-detail-value {
-                font-size: 13px;
+                font-size: 12px;
             }
             
             .weather-widget-detail-label {
-                font-size: 9px;
+                font-size: 8px;
             }
             
             .weather-widget-time {
-                margin-top: 6px;
-                padding-top: 6px;
+                display: none; /* Clock shown separately on portrait */
             }
             
             .weather-widget-clock {
-                font-size: 18px;
+                font-size: 16px;
             }
             
             .weather-widget-period {
