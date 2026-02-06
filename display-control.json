@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81fc-8f00-ed07d51b654a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233562/alice-gallery/anime/Alice_Writing_Session__62.png",
-    "title": "Alice Writing Session #62",
+    "id": "2fc41906-4d30-8181-9f20-d9b2c0a4001c",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231481/alice-gallery/anime/133_Alice_Writing_Session__46.png",
+    "title": "Alice Writing Session #46",
     "description": "",
     "activity": "Creative",
     "mood": "",
@@ -12,7 +12,7 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 13,
+    "temperature": 15,
     "humidity": 43,
     "description": "broken clouds",
     "icon": "04n"
@@ -22,6 +22,6 @@
     "hour": 17,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T15:41:25.414552+00:00",
+  "lastUpdated": "2026-02-06T15:56:37.837095+00:00",
   "nextUpdate": "2026-02-06T16:00:00+00:00"
 }
