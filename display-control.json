@@ -1,19 +1,19 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8162-95ee-d02d4f1515ab",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232522/alice-gallery/anime/Alice_Martial_Arts_Session__4.png",
-    "title": "Alice Martial Arts Session #4",
+    "id": "2fd41906-4d30-81d5-aba7-fedfcf46a2ed",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219282/alice-gallery/pixel-art/Alice_Park_Walk_-_Cloudy_Morning.png",
+    "title": "Alice Park Walk - Cloudy Morning",
     "description": "",
     "activity": "Exercise",
     "mood": "",
     "imageWeather": "Cloudy",
-    "imageTimePeriod": "Early Morning",
+    "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
     "temperature": 12,
-    "humidity": 40,
+    "humidity": 41,
     "description": "overcast clouds",
     "icon": "04d"
   },
@@ -22,6 +22,6 @@
     "hour": 7,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T05:19:15.214820+00:00",
+  "lastUpdated": "2026-02-06T05:34:27.141006+00:00",
   "nextUpdate": "2026-02-06T06:00:00+00:00"
 }
