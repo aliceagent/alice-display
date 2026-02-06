@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-817e-8d7c-fd0f57c1d48e",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770218842/alice-gallery/pixel-art/Alice_Baking_-_Overcast_Evening.png",
-    "title": "Alice Baking - Overcast Evening",
+    "id": "2fc41906-4d30-81a6-8b87-eec69c897772",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231516/alice-gallery/anime/142_Alice_Debugging_Session__75.png",
+    "title": "Alice Debugging Session #75",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Work",
     "mood": "",
     "imageWeather": "Overcast",
     "imageTimePeriod": "Evening",
@@ -22,6 +22,6 @@
     "hour": 18,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T16:11:59.869936+00:00",
+  "lastUpdated": "2026-02-06T16:28:46.278189+00:00",
   "nextUpdate": "2026-02-06T17:00:00+00:00"
 }
