@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81b2-8fcb-d5d9e9a2dd16",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232808/alice-gallery/pixel-art/Alice_Playing_Piano_-_Overcast_Morning.png",
-    "title": "Alice Playing Piano - Overcast Morning",
+    "id": "2fc41906-4d30-81f9-8cd9-d1902fb27998",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232504/alice-gallery/anime/Alice_Martial_Arts_Session__19.png",
+    "title": "Alice Martial Arts Session #19",
     "description": "",
-    "activity": "Creative",
+    "activity": "Exercise",
     "mood": "",
-    "imageWeather": "Overcast",
-    "imageTimePeriod": "Morning",
+    "imageWeather": "Cloudy",
+    "imageTimePeriod": "Early Morning",
     "imageHoliday": ""
   },
   "weather": {
@@ -19,9 +19,9 @@
   },
   "time": {
     "period": "Early Morning",
-    "hour": 6,
+    "hour": 7,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T04:44:55.467740+00:00",
-  "nextUpdate": "2026-02-06T05:00:00+00:00"
+  "lastUpdated": "2026-02-06T05:01:53.344368+00:00",
+  "nextUpdate": "2026-02-06T06:00:00+00:00"
 }
