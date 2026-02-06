@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-816d-a236-dfbec577f6a6",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232918/alice-gallery/anime/Alice_Puzzles_Time__79.png",
-    "title": "Alice Puzzles Time #79",
+    "id": "2fc41906-4d30-8123-a078-c66043a25498",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231354/alice-gallery/anime/102_Alice_Digital_Art_Session__20.png",
+    "title": "Alice Digital Art Session #20",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Creative",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Afternoon",
@@ -22,6 +22,6 @@
     "hour": 16,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-06T14:05:09.528221+00:00",
+  "lastUpdated": "2026-02-06T14:20:24.134395+00:00",
   "nextUpdate": "2026-02-06T15:00:00+00:00"
 }
