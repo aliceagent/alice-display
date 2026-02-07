@@ -1304,3 +1304,21 @@
         }
     }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   CRITICAL OVERRIDE: iPhone Safari Command Center Position
+   Forces gear button to footer area on all mobile portrait screens
+   70px accounts for Safari's bottom toolbar and home indicator
+   ───────────────────────────────────────────────────────────── */
+@media screen and (max-width: 500px) and (orientation: portrait) {
+    #command-center,
+    .command-center,
+    div.command-center {
+        position: fixed !important;
+        bottom: 70px !important;
+        top: auto !important;
+        right: 20px !important;
+        left: auto !important;
+        transform: none !important;
+    }
+}
