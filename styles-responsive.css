@@ -32,9 +32,10 @@
     }
     
     /* Weather widget - top-left horizontal bar */
+    /* iPhone notch: safe-area-inset-top is ~47px, need extra padding */
     .weather-widget {
-        top: 55px;
-        top: max(55px, calc(env(safe-area-inset-top, 0px) + 8px));
+        top: 60px;
+        top: max(60px, calc(env(safe-area-inset-top, 0px) + 12px));
         bottom: auto;
         left: 12px;
         right: auto;
@@ -52,8 +53,8 @@
     }
     
     .weather-widget.collapsed {
-        top: 55px;
-        top: max(55px, calc(env(safe-area-inset-top, 0px) + 8px));
+        top: 60px;
+        top: max(60px, calc(env(safe-area-inset-top, 0px) + 12px));
         left: 20px;
         width: 50px;
         height: 50px;
@@ -103,8 +104,8 @@
         flex-direction: column;
         align-items: flex-end;
         position: fixed;
-        top: 55px;
-        top: max(55px, calc(env(safe-area-inset-top, 0px) + 8px));
+        top: 60px;
+        top: max(60px, calc(env(safe-area-inset-top, 0px) + 12px));
         right: 15px;
         z-index: var(--z-widget);
         color: white;
@@ -154,10 +155,11 @@
     .status-item .value { font-size: 14px; font-weight: 600; }
     .status-item .label { font-size: 12px; }
     
-    /* Command center - positioned in dark footer area */
+    /* Command center - positioned in dark footer area (below image) */
     .command-center {
         top: auto !important;
-        bottom: 140px !important;
+        bottom: 25px !important;
+        bottom: max(25px, calc(env(safe-area-inset-bottom, 0px) + 15px)) !important;
         right: 20px !important;
         position: fixed !important;
     }
@@ -242,9 +244,9 @@
     }
 }
 
-/* Browser-specific: Safari iOS phone portrait */
+/* Browser-specific: Safari iOS phone portrait - position in dark footer */
 .browser-safari.platform-ios .command-center {
-    bottom: 140px !important;
+    bottom: 25px !important;
 }
 
 /* ─────────────────────────────────────────────────────────────
