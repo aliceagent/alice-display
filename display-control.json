@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81b2-93a5-cc2db656510a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231069/alice-gallery/anime/022_Alice_Sleeping_-_Rainy_Dawn__11.png",
-    "title": "Alice Sleeping - Rainy Dawn #11",
+    "id": "2fc41906-4d30-8100-9bbc-d8c087c63423",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770230988/alice-gallery/anime/004_Alice_Sleeping_-_Rainy_Early_Morning__21.png",
+    "title": "Alice Sleeping - Rainy Early Morning #21",
     "description": "",
     "activity": "Sleeping",
     "mood": "",
     "imageWeather": "Rainy",
-    "imageTimePeriod": "Dawn",
+    "imageTimePeriod": "Early Morning",
     "imageHoliday": ""
   },
   "weather": {
@@ -18,10 +18,10 @@
     "icon": "04n"
   },
   "time": {
-    "period": "Dawn",
-    "hour": 5,
+    "period": "Early Morning",
+    "hour": 6,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T03:45:31.353215+00:00",
-  "nextUpdate": "2026-02-07T04:00:00+00:00"
+  "lastUpdated": "2026-02-07T04:00:45.162649+00:00",
+  "nextUpdate": "2026-02-07T05:00:00+00:00"
 }
