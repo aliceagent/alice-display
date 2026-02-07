@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81ce-8a58-d146ba26ef4e",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233493/alice-gallery/anime/Alice_Umbrella_Walk_-_Rainy_Midday.png",
-    "title": "Alice Umbrella Walk - Rainy Midday",
+    "id": "2fd41906-4d30-81c3-bd2b-e3b3c1cb14a7",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231864/alice-gallery/anime/Alice_Cooking_-_Rainy_Midday.png",
+    "title": "Alice Cooking - Rainy Midday",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -12,7 +12,7 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 17,
+    "temperature": 18,
     "humidity": 36,
     "description": "broken clouds",
     "icon": "04d"
@@ -22,6 +22,6 @@
     "hour": 13,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T11:03:55.834847+00:00",
+  "lastUpdated": "2026-02-07T11:19:07.612434+00:00",
   "nextUpdate": "2026-02-07T12:00:00+00:00"
 }
