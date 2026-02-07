@@ -11,17 +11,17 @@
     "imageHoliday": ""
   },
   "weather": {
-    "condition": "Sunny",
+    "condition": "Partly Cloudy",
     "temperature": 13,
-    "humidity": 61,
-    "description": "clear sky",
-    "icon": "01n"
+    "humidity": 67,
+    "description": "few clouds",
+    "icon": "02n"
   },
   "time": {
     "period": "Late Night",
     "hour": 0,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T22:13:25.022994+00:00",
+  "lastUpdated": "2026-02-07T22:30:50.556919+00:00",
   "nextUpdate": "2026-02-07T23:00:00+00:00"
 }
