@@ -5850,9 +5850,9 @@
                     statusIcon.textContent = '🧹';
                     statusText.textContent = 'Cleaning';
                     statusDiv.classList.add('cleaning');
-                } else if (cleanStatus === 'idle' || cleanStatus === 'stop') {
-                    statusIcon.textContent = '💤';
-                    statusText.textContent = 'Idle';
+                } else if (cleanStatus === 'idle' || cleanStatus === 'stop' || cleanStatus === 'auto') {
+                    statusIcon.textContent = '✅';
+                    statusText.textContent = 'Ready';
                     statusDiv.classList.add('idle');
                 } else if (cleanStatus === 'paused') {
                     statusIcon.textContent = '⏸️';
