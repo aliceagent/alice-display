@@ -1,12 +1,12 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81f5-802b-c6d825f3406b",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231861/alice-gallery/anime/Alice_Cooking_-_Overcast_Morning.png",
-    "title": "Alice Cooking - Overcast Morning",
+    "id": "2fc41906-4d30-81d5-b2d2-f0ac03380cdf",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233620/alice-gallery/anime/Alice_Yoga_Session__30.png",
+    "title": "Alice Yoga Session #30",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Exercise",
     "mood": "",
-    "imageWeather": "Overcast",
+    "imageWeather": "Cloudy",
     "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
@@ -19,9 +19,9 @@
   },
   "time": {
     "period": "Early Morning",
-    "hour": 6,
+    "hour": 7,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T04:47:56.562637+00:00",
-  "nextUpdate": "2026-02-07T05:00:00+00:00"
+  "lastUpdated": "2026-02-07T05:03:07.220731+00:00",
+  "nextUpdate": "2026-02-07T06:00:00+00:00"
 }
