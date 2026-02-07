@@ -1,12 +1,12 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8102-9cea-cdfb7517e9e1",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233178/alice-gallery/anime/Alice_Reading_Time__76.png",
-    "title": "Alice Reading Time #76",
+    "id": "2fd41906-4d30-817e-8d7c-fd0f57c1d48e",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770218842/alice-gallery/pixel-art/Alice_Baking_-_Overcast_Evening.png",
+    "title": "Alice Baking - Overcast Evening",
     "description": "",
     "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Cloudy",
+    "imageWeather": "Overcast",
     "imageTimePeriod": "Evening",
     "imageHoliday": ""
   },
@@ -22,6 +22,6 @@
     "hour": 18,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T16:03:58.745434+00:00",
+  "lastUpdated": "2026-02-07T16:19:09.779076+00:00",
   "nextUpdate": "2026-02-07T17:00:00+00:00"
 }
