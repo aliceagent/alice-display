@@ -586,7 +586,8 @@ body {
     transition: all var(--transition-normal);
 }
 
-.image-control-panel.open {
+.image-control-panel.open,
+.image-control-panel.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
