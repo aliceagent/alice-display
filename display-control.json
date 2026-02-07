@@ -1,12 +1,12 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-814a-8288-f4b159b32d28",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231416/alice-gallery/anime/116_Alice_Crafting_Session__10.png",
-    "title": "Alice Crafting Session #10",
+    "id": "2fc41906-4d30-81e3-bcd2-c582e846f351",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219345/alice-gallery/anime/153_Alice_Digital_Art_Session__9.png",
+    "title": "Alice Digital Art Session #9",
     "description": "",
     "activity": "Creative",
     "mood": "",
-    "imageWeather": "Rainy",
+    "imageWeather": "Cloudy",
     "imageTimePeriod": "Golden Hour",
     "imageHoliday": ""
   },
@@ -22,6 +22,6 @@
     "hour": 17,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T15:00:58.270779+00:00",
+  "lastUpdated": "2026-02-07T15:18:15.201321+00:00",
   "nextUpdate": "2026-02-07T16:00:00+00:00"
 }
