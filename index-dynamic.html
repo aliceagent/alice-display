@@ -271,7 +271,6 @@
         <div class="command-center-popup">
             <button class="command-center-icon lights" id="cmd-lights" title="Lights">💡</button>
             <button class="command-center-icon vacuum" id="cmd-vacuum" title="Vacuum">🤖</button>
-            <button class="command-center-icon report" id="cmd-report" title="Report Issue">🚩</button>
             <button class="command-center-icon image" id="cmd-image" title="Image Controls">🖼️</button>
             <button class="command-center-icon about" id="cmd-about" title="About/Debug">ℹ️</button>
         </div>
@@ -1438,7 +1437,6 @@
                 const commandCenter = document.getElementById('command-center');
                 const commandButton = document.getElementById('command-center-button');
                 const backdrop = document.getElementById('command-center-backdrop');
-                const cmdReport = document.getElementById('cmd-report');
                 const cmdVacuum = document.getElementById('cmd-vacuum');
                 const cmdLights = document.getElementById('cmd-lights');
                 const cmdImage = document.getElementById('cmd-image');
@@ -1452,12 +1450,6 @@
                 // Close on backdrop tap
                 backdrop.addEventListener('click', () => {
                     commandCenter.classList.remove('open');
-                });
-                
-                // Report button → show report modal
-                cmdReport.addEventListener('click', () => {
-                    commandCenter.classList.remove('open');
-                    this.showReportModal();
                 });
                 
                 // Vacuum button → show vacuum panel
