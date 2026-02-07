@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81ec-bc36-d3dcf9a7f869",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233368/alice-gallery/anime/Alice_Stargazing_-_Overcast_Night.png",
-    "title": "Alice Stargazing - Overcast Night",
+    "id": "2fc41906-4d30-8197-9a48-e5e64988441a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232547/alice-gallery/anime/Alice_Movie_Watching_Time__15.png",
+    "title": "Alice Movie Watching Time #15",
     "description": "",
     "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Overcast",
+    "imageWeather": "Cloudy",
     "imageTimePeriod": "Night",
     "imageHoliday": ""
   },
   "weather": {
-    "condition": "Overcast",
+    "condition": "Cloudy",
     "temperature": 15,
     "humidity": 47,
-    "description": "broken clouds",
-    "icon": "04n"
+    "description": "scattered clouds",
+    "icon": "03n"
   },
   "time": {
     "period": "Night",
     "hour": 20,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T18:23:14.580095+00:00",
+  "lastUpdated": "2026-02-07T18:38:26.891973+00:00",
   "nextUpdate": "2026-02-07T19:00:00+00:00"
 }
