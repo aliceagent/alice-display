@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8116-be13-dbf8af385749",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770218863/alice-gallery/anime/Alice_Swimming_Session__25.png",
-    "title": "Alice Swimming Session #25",
+    "id": "2fc41906-4d30-81f8-a0a0-d2488c63453e",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219405/alice-gallery/anime/Alice_Digital_Art_Session__18.png",
+    "title": "Alice Digital Art Session #18",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Creative",
     "mood": "",
-    "imageWeather": "Sunny",
-    "imageTimePeriod": "Early Morning",
+    "imageWeather": "Cloudy",
+    "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
   "weather": {
-    "condition": "Sunny",
-    "temperature": 16,
-    "humidity": 40,
-    "description": "clear sky",
-    "icon": "01d"
+    "condition": "Cloudy",
+    "temperature": 17,
+    "humidity": 38,
+    "description": "scattered clouds",
+    "icon": "03d"
   },
   "time": {
     "period": "Morning",
     "hour": 10,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T08:26:29.960096+00:00",
+  "lastUpdated": "2026-02-07T08:41:47.991298+00:00",
   "nextUpdate": "2026-02-07T09:00:00+00:00"
 }
