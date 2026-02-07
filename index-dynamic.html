@@ -4102,6 +4102,22 @@
         .platform-desktop .image-control-btn:hover {
             filter: brightness(1.15);
         }
+        
+        /* ═══════════════════════════════════════════════════════════════════
+           FINAL OVERRIDE - iPhone Portrait Command Center Position
+           This MUST be the LAST rule to ensure it wins cascade priority.
+           ═══════════════════════════════════════════════════════════════════ */
+        @media screen and (max-width: 480px) and (orientation: portrait) {
+            #command-center {
+                position: fixed !important;
+                top: auto !important;
+                bottom: 140px !important;
+                right: 20px !important;
+                left: auto !important;
+                transform: none !important;
+                z-index: 60 !important;
+            }
+        }
     </style>
 </head>
 <body>
