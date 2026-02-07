@@ -1,19 +1,19 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81b9-b959-fc4d72ab827d",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232266/alice-gallery/anime/Alice_Gaming_Time__73.png",
-    "title": "Alice Gaming Time #73",
+    "id": "2fc41906-4d30-813f-bb93-f469544abe2f",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231147/alice-gallery/anime/046_Alice_Video_Conference_Session__42.png",
+    "title": "Alice Video Conference Session #42",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Work",
     "mood": "",
     "imageWeather": "Cloudy",
-    "imageTimePeriod": "Night",
+    "imageTimePeriod": "Late Night",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Partly Cloudy",
-    "temperature": 15,
-    "humidity": 47,
+    "temperature": 14,
+    "humidity": 49,
     "description": "few clouds",
     "icon": "02n"
   },
@@ -22,6 +22,6 @@
     "hour": 21,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T19:09:33.495677+00:00",
+  "lastUpdated": "2026-02-07T19:24:47.519893+00:00",
   "nextUpdate": "2026-02-07T20:00:00+00:00"
 }
