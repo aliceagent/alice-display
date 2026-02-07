@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81f3-9075-f6b73ca7b9af",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231322/alice-gallery/anime/094_Alice_Video_Conference_Session__36.png",
-    "title": "Alice Video Conference Session #36",
+    "id": "2fd41906-4d30-8160-a6b9-d3e7d20951fa",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231667/alice-gallery/anime/Alice_Bicycle_Ride_-_Overcast_Afternoon.png",
+    "title": "Alice Bicycle Ride - Overcast Afternoon",
     "description": "",
-    "activity": "Work",
+    "activity": "Exercise",
     "mood": "",
     "imageWeather": "Overcast",
     "imageTimePeriod": "Afternoon",
@@ -14,14 +14,14 @@
     "condition": "Overcast",
     "temperature": 17,
     "humidity": 40,
-    "description": "broken clouds",
+    "description": "overcast clouds",
     "icon": "04d"
   },
   "time": {
     "period": "Afternoon",
-    "hour": 14,
+    "hour": 15,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T12:50:57.580619+00:00",
-  "nextUpdate": "2026-02-07T13:00:00+00:00"
+  "lastUpdated": "2026-02-07T13:06:09.490370+00:00",
+  "nextUpdate": "2026-02-07T14:00:00+00:00"
 }
