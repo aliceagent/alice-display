@@ -956,6 +956,7 @@ body {
     right: 24px;
     background: linear-gradient(145deg, rgba(30, 30, 60, 0.95) 0%, rgba(20, 20, 45, 0.98) 100%);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: var(--radius-xl);
     padding: 24px;
     max-width: 340px;
@@ -966,6 +967,7 @@ body {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     z-index: var(--z-controls);
     color: white;
+    display: none;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -973,6 +975,7 @@ body {
 }
 
 .about-panel.show {
+    display: block;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -1813,7 +1816,7 @@ body {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.8);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 300;
@@ -1826,6 +1829,7 @@ body {
 }
 
 .report-modal.show {
+    display: flex;
     opacity: 1;
     visibility: visible;
 }
