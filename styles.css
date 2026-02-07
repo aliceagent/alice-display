@@ -845,6 +845,35 @@ body {
     animation: spin 1s linear infinite;
 }
 
+.vacuum-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.vacuum-actions .vacuum-btn {
+    flex: 1;
+    min-width: 0;
+}
+
+.vacuum-battery {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.vacuum-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--white-70);
+    margin-bottom: 4px;
+}
+
 /* ─────────────────────────────────────────────────────────────
    LIGHTS PANEL
    ───────────────────────────────────────────────────────────── */
