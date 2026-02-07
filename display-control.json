@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81ab-a219-fad11d584bed",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232955/alice-gallery/anime/Alice_Reading_-_Cloudy_Evening.png",
-    "title": "Alice Reading - Cloudy Evening",
+    "id": "2fc41906-4d30-813e-879e-f38b454f749a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232898/alice-gallery/anime/Alice_Puzzles_Time__5.png",
+    "title": "Alice Puzzles Time #5",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 19,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T17:37:28.259768+00:00",
+  "lastUpdated": "2026-02-07T17:52:51.600822+00:00",
   "nextUpdate": "2026-02-07T18:00:00+00:00"
 }
