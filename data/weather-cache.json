@@ -1,8 +1,8 @@
 {
   "temperature": 13,
   "feels_like": 12,
-  "humidity": 50,
-  "wind_speed": 14,
+  "humidity": 48,
+  "wind_speed": 11,
   "weather_id": 803,
   "condition": "Overcast",
   "description": "broken clouds",
@@ -11,6 +11,6 @@
   "sunset_hour": 17,
   "time_period": "Evening",
   "current_hour": 18,
-  "timestamp": "2026-02-07T16:19:09.757999+00:00",
+  "timestamp": "2026-02-07T16:34:21.791347+00:00",
   "source": "OpenWeatherMap"
 }
