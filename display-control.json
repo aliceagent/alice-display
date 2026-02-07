@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-816d-a236-dfbec577f6a6",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232918/alice-gallery/anime/Alice_Puzzles_Time__79.png",
-    "title": "Alice Puzzles Time #79",
+    "id": "2fc41906-4d30-8113-96e5-f2a8f16a89e6",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233289/alice-gallery/anime/Alice_Running_Session__40.png",
+    "title": "Alice Running Session #40",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Exercise",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Afternoon",
@@ -12,7 +12,7 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 17,
+    "temperature": 14,
     "humidity": 51,
     "description": "broken clouds",
     "icon": "04d"
@@ -22,6 +22,6 @@
     "hour": 16,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T14:30:35.334714+00:00",
+  "lastUpdated": "2026-02-07T14:45:47.460604+00:00",
   "nextUpdate": "2026-02-07T15:00:00+00:00"
 }
