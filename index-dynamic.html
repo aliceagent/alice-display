@@ -2807,14 +2807,17 @@
             }
             
             .command-center-popup {
-                bottom: 52px; /* Above 44px button + 8px margin */
-                gap: 6px; /* Tighter spacing on phone */
+                /* Expand horizontally to the left instead of vertically */
+                bottom: 0;
+                right: 52px; /* To the left of 44px button + 8px margin */
+                flex-direction: row;
+                gap: 8px;
             }
             
             .command-center-icon {
-                width: 38px; /* Smaller icons to reduce total height */
-                height: 38px;
-                font-size: 16px;
+                width: 42px;
+                height: 42px;
+                font-size: 18px;
             }
             
             .status-overlay {
