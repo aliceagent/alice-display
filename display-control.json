@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8184-b825-de685564fa53",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232684/alice-gallery/anime/Alice_Photography_-_Overcast_Afternoon.png",
-    "title": "Alice Photography - Overcast Afternoon",
+    "id": "2fc41906-4d30-81f3-9075-f6b73ca7b9af",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231322/alice-gallery/anime/094_Alice_Video_Conference_Session__36.png",
+    "title": "Alice Video Conference Session #36",
     "description": "",
-    "activity": "Creative",
+    "activity": "Work",
     "mood": "",
     "imageWeather": "Overcast",
     "imageTimePeriod": "Afternoon",
@@ -12,7 +12,7 @@
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 18,
+    "temperature": 17,
     "humidity": 40,
     "description": "broken clouds",
     "icon": "04d"
@@ -22,6 +22,6 @@
     "hour": 14,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T12:35:45.031374+00:00",
+  "lastUpdated": "2026-02-07T12:50:57.580619+00:00",
   "nextUpdate": "2026-02-07T13:00:00+00:00"
 }
