@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81d5-aba7-fedfcf46a2ed",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219282/alice-gallery/pixel-art/Alice_Park_Walk_-_Cloudy_Morning.png",
-    "title": "Alice Park Walk - Cloudy Morning",
+    "id": "2fc41906-4d30-81f6-b507-ee0d70038ffd",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231579/alice-gallery/anime/155_Alice_Analyzing_Session__70.png",
+    "title": "Alice Analyzing Session #70",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Work",
     "mood": "",
-    "imageWeather": "Cloudy",
+    "imageWeather": "Overcast",
     "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 13,
-    "humidity": 53,
+    "temperature": 14,
+    "humidity": 54,
     "description": "broken clouds",
     "icon": "04d"
   },
   "time": {
-    "period": "Early Morning",
-    "hour": 7,
+    "period": "Morning",
+    "hour": 8,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T05:52:18.483831+00:00",
-  "nextUpdate": "2026-02-07T06:00:00+00:00"
+  "lastUpdated": "2026-02-07T06:07:30.812680+00:00",
+  "nextUpdate": "2026-02-07T07:00:00+00:00"
 }
