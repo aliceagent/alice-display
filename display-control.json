@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-814a-9916-fd6753afa8bc",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233129/alice-gallery/anime/Alice_Reading_Time__11.png",
-    "title": "Alice Reading Time #11",
+    "id": "2fc41906-4d30-81ad-81b6-f2a187bc86ef",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231249/alice-gallery/anime/076_Alice_Presenting_Session__39.png",
+    "title": "Alice Presenting Session #39",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Work",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Afternoon",
@@ -22,6 +22,6 @@
     "hour": 14,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T12:04:53.077499+00:00",
+  "lastUpdated": "2026-02-07T12:20:24.016477+00:00",
   "nextUpdate": "2026-02-07T13:00:00+00:00"
 }
