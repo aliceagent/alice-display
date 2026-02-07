@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-816a-93e4-ef6148c6cb74",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231023/alice-gallery/anime/013_Alice_Sleeping_-_Cloudy_Night__14.png",
-    "title": "Alice Sleeping - Cloudy Night #14",
+    "id": "2fc41906-4d30-810a-9298-d6e7dbf8d65a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770230994/alice-gallery/anime/006_Alice_Sleeping_-_Cloudy_Night__2.png",
+    "title": "Alice Sleeping - Cloudy Night #2",
     "description": "",
     "activity": "Sleeping",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 22,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T20:41:12.648676+00:00",
+  "lastUpdated": "2026-02-07T20:56:25.245397+00:00",
   "nextUpdate": "2026-02-07T21:00:00+00:00"
 }
