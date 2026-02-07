@@ -948,6 +948,137 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────
+   ABOUT/DEBUG PANEL
+   ───────────────────────────────────────────────────────────── */
+.about-panel {
+    position: fixed;
+    bottom: 130px;
+    right: 24px;
+    background: linear-gradient(145deg, rgba(30, 30, 60, 0.95) 0%, rgba(20, 20, 45, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    max-width: 340px;
+    min-width: 320px;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    border: 1px solid var(--white-15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    z-index: var(--z-controls);
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-normal);
+}
+
+.about-panel.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.about-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--white-10);
+}
+
+.about-panel-title {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-panel-close {
+    background: transparent;
+    border: none;
+    color: var(--white-50);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px;
+    transition: color var(--transition-fast);
+}
+
+.about-panel-close:hover {
+    color: white;
+}
+
+.about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.about-info-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white-80);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--white-10);
+}
+
+.about-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 6px 0;
+    font-size: 13px;
+    gap: 16px;
+}
+
+.about-info-label {
+    color: var(--white-60);
+    flex-shrink: 0;
+    min-width: 100px;
+}
+
+.about-info-value {
+    font-weight: 500;
+    color: white;
+    text-align: right;
+    word-break: break-word;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    background: var(--white-5);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--white-10);
+}
+
+/* Scrollbar styling for about panel */
+.about-panel::-webkit-scrollbar {
+    width: 4px;
+}
+
+.about-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.about-panel::-webkit-scrollbar-thumb {
+    background: var(--white-20);
+    border-radius: 2px;
+}
+
+.about-panel::-webkit-scrollbar-thumb:hover {
+    background: var(--white-30);
+}
+
+/* ─────────────────────────────────────────────────────────────
    UTILITY ELEMENTS
    ───────────────────────────────────────────────────────────── */
 

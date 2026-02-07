@@ -272,6 +272,7 @@
             <button class="command-center-icon vacuum" id="cmd-vacuum" title="Vacuum">🤖</button>
             <button class="command-center-icon report" id="cmd-report" title="Report Issue">🚩</button>
             <button class="command-center-icon image" id="cmd-image" title="Image Controls">🖼️</button>
+            <button class="command-center-icon about" id="cmd-about" title="About/Debug">ℹ️</button>
         </div>
         <button class="command-center-button" id="command-center-button" title="Command Center">⚙️</button>
     </div>
@@ -420,6 +421,79 @@
                     <span class="lights-preset-text">Movie Mode</span>
                     <span class="lights-preset-desc">30% + Blue</span>
                 </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- About/Debug Panel -->
+    <div class="about-panel" id="about-panel">
+        <div class="about-panel-header">
+            <h2 class="about-panel-title">ℹ️ About</h2>
+            <button class="about-panel-close" id="about-panel-close" title="Close">✕</button>
+        </div>
+        <div class="about-info">
+            <div class="about-info-section">
+                <div class="about-info-section-title">Version</div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Commit:</span>
+                    <span class="about-info-value" id="about-version-commit">Loading...</span>
+                </div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Deployed:</span>
+                    <span class="about-info-value" id="about-version-deployed">Loading...</span>
+                </div>
+            </div>
+            
+            <div class="about-info-section">
+                <div class="about-info-section-title">Current Image</div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Filename:</span>
+                    <span class="about-info-value" id="about-image-filename">--</span>
+                </div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Activity:</span>
+                    <span class="about-info-value" id="about-image-activity">--</span>
+                </div>
+            </div>
+            
+            <div class="about-info-section">
+                <div class="about-info-section-title">Context</div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Weather:</span>
+                    <span class="about-info-value" id="about-weather">--</span>
+                </div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Temperature:</span>
+                    <span class="about-info-value" id="about-temperature">--</span>
+                </div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Time Period:</span>
+                    <span class="about-info-value" id="about-time-period">--</span>
+                </div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Last Update:</span>
+                    <span class="about-info-value" id="about-last-update">--</span>
+                </div>
+            </div>
+            
+            <div class="about-info-section">
+                <div class="about-info-section-title">System</div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Screen:</span>
+                    <span class="about-info-value" id="about-screen">--</span>
+                </div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Browser:</span>
+                    <span class="about-info-value" id="about-browser">--</span>
+                </div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Platform:</span>
+                    <span class="about-info-value" id="about-platform">--</span>
+                </div>
+                <div class="about-info-row">
+                    <span class="about-info-label">Connection:</span>
+                    <span class="about-info-value" id="about-connection">--</span>
+                </div>
             </div>
         </div>
     </div>
@@ -923,6 +997,11 @@
                         this.updateWeatherWidget();
                         this.startWidgetClock();
                         
+                        // Update about panel if it's open
+                        if (document.getElementById('about-panel').classList.contains('show')) {
+                            this.updateAboutInfo();
+                        }
+                        
                         // Show update indicator (not on initial load)
                         if (!forceUpdate && this.lastUpdated) {
                             this.showUpdateIndicator();
@@ -1362,6 +1441,7 @@
                 const cmdVacuum = document.getElementById('cmd-vacuum');
                 const cmdLights = document.getElementById('cmd-lights');
                 const cmdImage = document.getElementById('cmd-image');
+                const cmdAbout = document.getElementById('cmd-about');
                 
                 // Toggle Command Center popup
                 commandButton.addEventListener('click', () => {
@@ -1397,6 +1477,12 @@
                     this.showImageControlPanel();
                 });
                 
+                // About button → show about panel
+                cmdAbout.addEventListener('click', () => {
+                    commandCenter.classList.remove('open');
+                    this.showAboutPanel();
+                });
+                
                 // Close on Escape key
                 document.addEventListener('keydown', (e) => {
                     if (e.key === 'Escape' && commandCenter.classList.contains('open')) {
@@ -1421,6 +1507,9 @@
                 
                 // Initialize Image Control Panel
                 this.initializeImageControlPanel();
+                
+                // Initialize About Panel
+                this.initializeAboutPanel();
                 
                 // Close modal when close button clicked
                 reportClose.addEventListener('click', () => {
@@ -2381,6 +2470,134 @@
                 return commands;
             }
             
+            initializeAboutPanel() {
+                const aboutPanel = document.getElementById('about-panel');
+                const aboutClose = document.getElementById('about-panel-close');
+                
+                // Close panel when close button clicked
+                aboutClose.addEventListener('click', () => {
+                    this.hideAboutPanel();
+                });
+                
+                // Close panel when clicking outside
+                aboutPanel.addEventListener('click', (e) => {
+                    if (e.target === aboutPanel) {
+                        this.hideAboutPanel();
+                    }
+                });
+                
+                // Close panel with Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && aboutPanel.classList.contains('show')) {
+                        this.hideAboutPanel();
+                    }
+                });
+                
+                // Load version info on initialization
+                this.loadVersionInfo();
+            }
+            
+            async showAboutPanel() {
+                const panel = document.getElementById('about-panel');
+                
+                // Lock body scroll when panel is open
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+                
+                panel.classList.add('show');
+                
+                // Update info when panel opens
+                this.updateAboutInfo();
+            }
+            
+            hideAboutPanel() {
+                const panel = document.getElementById('about-panel');
+                panel.classList.remove('show');
+                
+                // Restore body scroll
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.width = '';
+            }
+            
+            async loadVersionInfo() {
+                try {
+                    const response = await fetch('version.json');
+                    if (response.ok) {
+                        this.versionInfo = await response.json();
+                    } else {
+                        this.versionInfo = { commit: 'unknown', deployedAt: 'unknown' };
+                    }
+                } catch (error) {
+                    console.warn('Could not load version info:', error);
+                    this.versionInfo = { commit: 'unknown', deployedAt: 'unknown' };
+                }
+                
+                // Update the display if version info is already shown
+                if (document.getElementById('about-panel').classList.contains('show')) {
+                    this.updateAboutInfo();
+                }
+            }
+            
+            updateAboutInfo() {
+                // Version info
+                if (this.versionInfo) {
+                    document.getElementById('about-version-commit').textContent = this.versionInfo.commit || 'unknown';
+                    document.getElementById('about-version-deployed').textContent = this.versionInfo.deployedAt || 'unknown';
+                }
+                
+                // Current image info
+                if (this.currentData && this.currentData.currentImage) {
+                    const imageUrl = this.currentData.currentImage.url || '';
+                    const filename = imageUrl.split('/').pop() || '--';
+                    document.getElementById('about-image-filename').textContent = filename;
+                    document.getElementById('about-image-activity').textContent = this.currentData.currentImage.activity || '--';
+                } else {
+                    document.getElementById('about-image-filename').textContent = '--';
+                    document.getElementById('about-image-activity').textContent = '--';
+                }
+                
+                // Context info
+                if (this.currentData) {
+                    document.getElementById('about-weather').textContent = 
+                        this.currentData.weather?.condition || '--';
+                    document.getElementById('about-temperature').textContent = 
+                        this.currentData.weather?.temperature ? `${Math.round(this.currentData.weather.temperature)}°C` : '--';
+                    document.getElementById('about-time-period').textContent = 
+                        this.currentData.time?.period || '--';
+                    document.getElementById('about-last-update').textContent = 
+                        this.lastUpdated || '--';
+                }
+                
+                // System info
+                document.getElementById('about-screen').textContent = `${window.innerWidth}×${window.innerHeight}`;
+                document.getElementById('about-browser').textContent = this.getBrowserInfo();
+                document.getElementById('about-platform').textContent = this.getPlatformInfo();
+                document.getElementById('about-connection').textContent = 
+                    navigator.onLine ? (this.usingFallback ? 'Fallback' : 'Online') : 'Offline';
+            }
+            
+            getBrowserInfo() {
+                const ua = navigator.userAgent;
+                if (/CriOS/.test(ua)) return 'iOS Chrome';
+                if (/Safari/.test(ua) && !/Chrome/.test(ua)) return 'Safari';
+                if (/Chrome/.test(ua) && !/Edge/.test(ua)) return 'Chrome';
+                if (/Firefox/.test(ua)) return 'Firefox';
+                if (/Edge/.test(ua)) return 'Edge';
+                return 'Unknown';
+            }
+            
+            getPlatformInfo() {
+                const ua = navigator.userAgent;
+                if (/iPad|iPhone|iPod/.test(ua)) return 'iOS';
+                if (/Android/.test(ua)) return 'Android';
+                if (/Mac/.test(ua)) return 'macOS';
+                if (/Win/.test(ua)) return 'Windows';
+                if (/Linux/.test(ua)) return 'Linux';
+                return navigator.platform || 'Unknown';
+            }
+            
             closeAllPanels() {
                 document.getElementById('help-overlay').classList.remove('show');
                 document.getElementById('image-info').classList.remove('show');
@@ -2389,6 +2606,7 @@
                 document.getElementById('lights-panel').classList.remove('show');
                 document.getElementById('image-control-panel').classList.remove('show');
                 document.getElementById('image-control-backdrop').classList.remove('show');
+                document.getElementById('about-panel').classList.remove('show');
                 // Note: status overlay toggle is separate - not included in close all panels
                 this.debugEl.classList.remove('show');
             }
