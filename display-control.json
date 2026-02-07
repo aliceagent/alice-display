@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8188-92a1-e87df72e7776",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233137/alice-gallery/anime/Alice_Reading_Time__26.png",
-    "title": "Alice Reading Time #26",
+    "id": "2fc41906-4d30-815a-bc80-ec61b577294e",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233424/alice-gallery/anime/Alice_Tea_Time_Time__14.png",
+    "title": "Alice Tea Time Time #14",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 13,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T11:34:20.112350+00:00",
+  "lastUpdated": "2026-02-07T11:49:35.031172+00:00",
   "nextUpdate": "2026-02-07T12:00:00+00:00"
 }
