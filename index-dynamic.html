@@ -266,7 +266,8 @@
     
     <!-- Report Issue Button -->
     <!-- Command Center -->
-    <div class="command-center" id="command-center">
+    <!-- Inline style forces position in footer - CSS cache issues on Safari -->
+    <div class="command-center" id="command-center" style="bottom: 70px !important; top: auto !important;">
         <div class="command-center-popup">
             <button class="command-center-icon lights" id="cmd-lights" title="Lights">💡</button>
             <button class="command-center-icon vacuum" id="cmd-vacuum" title="Vacuum">🤖</button>
