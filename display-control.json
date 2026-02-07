@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-814c-afc7-df863f5065dc",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232086/alice-gallery/anime/Alice_Drawing_Session__73.png",
-    "title": "Alice Drawing Session #73",
+    "id": "2fc41906-4d30-81fc-8f00-ed07d51b654a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233562/alice-gallery/anime/Alice_Writing_Session__62.png",
+    "title": "Alice Writing Session #62",
     "description": "",
     "activity": "Creative",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 17,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T15:33:26.886171+00:00",
+  "lastUpdated": "2026-02-07T15:48:38.529359+00:00",
   "nextUpdate": "2026-02-07T16:00:00+00:00"
 }
