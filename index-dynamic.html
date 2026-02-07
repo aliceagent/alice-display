@@ -266,8 +266,8 @@
     
     <!-- Report Issue Button -->
     <!-- Command Center -->
-    <!-- Inline style forces position in footer - matches cloud icon -->
-    <div class="command-center" id="command-center" style="bottom: 20px !important; top: auto !important;">
+    <!-- Inline style forces position in footer -->
+    <div class="command-center" id="command-center" style="bottom: 15px !important; top: auto !important;">
         <div class="command-center-popup">
             <button class="command-center-icon lights" id="cmd-lights" title="Lights">💡</button>
             <button class="command-center-icon vacuum" id="cmd-vacuum" title="Vacuum">🤖</button>
@@ -2716,8 +2716,8 @@
             if (BrowserDetect.isIOS() && window.innerWidth <= 480 && window.innerHeight > window.innerWidth) {
                 const commandCenter = document.getElementById('command-center');
                 if (commandCenter) {
-                    commandCenter.style.cssText = 'position: fixed !important; bottom: 20px !important; top: auto !important; right: 20px !important;';
-                    console.log('📱 iOS Safari portrait fix applied: bottom=20px (matches cloud icon)');
+                    commandCenter.style.cssText = 'position: fixed !important; bottom: 15px !important; top: auto !important; right: 20px !important;';
+                    console.log('📱 iOS Safari portrait fix applied: bottom=15px');
                 }
             }
             
