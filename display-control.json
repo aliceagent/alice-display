@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81fc-8f00-ed07d51b654a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233562/alice-gallery/anime/Alice_Writing_Session__62.png",
-    "title": "Alice Writing Session #62",
+    "id": "2fc41906-4d30-8102-9cea-cdfb7517e9e1",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233178/alice-gallery/anime/Alice_Reading_Time__76.png",
+    "title": "Alice Reading Time #76",
     "description": "",
-    "activity": "Creative",
+    "activity": "Leisure",
     "mood": "",
     "imageWeather": "Cloudy",
-    "imageTimePeriod": "Golden Hour",
+    "imageTimePeriod": "Evening",
     "imageHoliday": ""
   },
   "weather": {
@@ -18,10 +18,10 @@
     "icon": "04n"
   },
   "time": {
-    "period": "Golden Hour",
-    "hour": 17,
+    "period": "Evening",
+    "hour": 18,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T15:48:38.529359+00:00",
-  "nextUpdate": "2026-02-07T16:00:00+00:00"
+  "lastUpdated": "2026-02-07T16:03:58.745434+00:00",
+  "nextUpdate": "2026-02-07T17:00:00+00:00"
 }
