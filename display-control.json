@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81a6-8b87-eec69c897772",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231516/alice-gallery/anime/142_Alice_Debugging_Session__75.png",
-    "title": "Alice Debugging Session #75",
+    "id": "2fd41906-4d30-81dc-8789-e0326592f51a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219375/alice-gallery/pixel-art/Alice_Park_Walk_-_Overcast_Evening.png",
+    "title": "Alice Park Walk - Overcast Evening",
     "description": "",
-    "activity": "Work",
+    "activity": "Exercise",
     "mood": "",
     "imageWeather": "Overcast",
     "imageTimePeriod": "Evening",
@@ -22,6 +22,6 @@
     "hour": 18,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T16:34:21.811296+00:00",
+  "lastUpdated": "2026-02-07T16:49:32.986319+00:00",
   "nextUpdate": "2026-02-07T17:00:00+00:00"
 }
