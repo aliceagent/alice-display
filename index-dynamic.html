@@ -6565,6 +6565,16 @@
             // Apply browser detection classes first
             BrowserDetect.applyClasses();
             
+            // DIRECT FIX: Force command center position on iOS Safari
+            if (BrowserDetect.isIOS() && window.innerWidth <= 480 && window.innerHeight > window.innerWidth) {
+                const commandCenter = document.getElementById('command-center');
+                if (commandCenter) {
+                    commandCenter.style.bottom = '140px';
+                    commandCenter.style.position = 'fixed';
+                    console.log('📱 iOS Safari portrait fix applied: bottom=140px');
+                }
+            }
+            
             // Initialize display
             new AliceDisplay();
         });
