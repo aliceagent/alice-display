@@ -537,7 +537,8 @@ body {
     transition: all var(--transition-normal);
 }
 
-.command-center-popup.open {
+/* JS adds .open to .command-center parent, so use descendant selector */
+.command-center.open .command-center-popup {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
