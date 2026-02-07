@@ -1,19 +1,19 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81ec-95fe-f01328b084c1",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231318/alice-gallery/anime/093_Alice_Writing_Session__17.png",
-    "title": "Alice Writing Session #17",
+    "id": "2fd41906-4d30-81ab-a219-fad11d584bed",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232955/alice-gallery/anime/Alice_Reading_-_Cloudy_Evening.png",
+    "title": "Alice Reading - Cloudy Evening",
     "description": "",
-    "activity": "Work",
+    "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Overcast",
+    "imageWeather": "Cloudy",
     "imageTimePeriod": "Evening",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
     "temperature": 15,
-    "humidity": 49,
+    "humidity": 47,
     "description": "broken clouds",
     "icon": "04n"
   },
@@ -22,6 +22,6 @@
     "hour": 19,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T17:20:03.879798+00:00",
+  "lastUpdated": "2026-02-07T17:37:28.259768+00:00",
   "nextUpdate": "2026-02-07T18:00:00+00:00"
 }
