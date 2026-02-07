@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81cb-90d6-c92f577c4c5d",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232539/alice-gallery/anime/Alice_Martial_Arts_Session__9.png",
-    "title": "Alice Martial Arts Session #9",
+    "id": "2fc41906-4d30-8198-9ffc-e7d9fc59ac55",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231490/alice-gallery/anime/135_Alice_Drawing_Session__44.png",
+    "title": "Alice Drawing Session #44",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Creative",
     "mood": "",
     "imageWeather": "Sunny",
-    "imageTimePeriod": "Early Morning",
+    "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Sunny",
     "temperature": 16,
-    "humidity": 41,
+    "humidity": 43,
     "description": "clear sky",
     "icon": "01d"
   },
   "time": {
     "period": "Morning",
-    "hour": 9,
+    "hour": 10,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T07:54:44.707590+00:00",
-  "nextUpdate": "2026-02-07T08:00:00+00:00"
+  "lastUpdated": "2026-02-07T08:09:55.677601+00:00",
+  "nextUpdate": "2026-02-07T09:00:00+00:00"
 }
