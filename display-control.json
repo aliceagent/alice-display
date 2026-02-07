@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81b2-ac76-db44ffdcf032",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231265/alice-gallery/anime/079_Alice_Coding_Session__15.png",
-    "title": "Alice Coding Session #15",
+    "id": "2fc41906-4d30-8136-a7c9-e6105d126e2a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233218/alice-gallery/anime/Alice_Relaxing_Time__37.png",
+    "title": "Alice Relaxing Time #37",
     "description": "",
-    "activity": "Work",
+    "activity": "Leisure",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Afternoon",
@@ -19,9 +19,9 @@
   },
   "time": {
     "period": "Afternoon",
-    "hour": 15,
+    "hour": 16,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T13:57:31.097524+00:00",
-  "nextUpdate": "2026-02-07T14:00:00+00:00"
+  "lastUpdated": "2026-02-07T14:15:20.413070+00:00",
+  "nextUpdate": "2026-02-07T15:00:00+00:00"
 }
