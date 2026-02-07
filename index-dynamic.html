@@ -2794,27 +2794,27 @@
         /* Mobile Safari toolbar takes ~80px at bottom - position buttons in dark bar below image */
         @media (max-width: 480px) and (orientation: portrait) {
             .command-center {
-                bottom: 20px;
-                bottom: max(20px, calc(env(safe-area-inset-bottom, 0px) + 10px));
+                bottom: 12px;
+                bottom: max(12px, calc(env(safe-area-inset-bottom, 0px) + 6px));
             }
             
             .command-center-button {
-                /* Optimize button size for phone portrait - exactly 50px as per spec */
-                width: 50px;
-                height: 50px;
-                font-size: 22px;
-                box-shadow: 0 4px 15px rgba(100, 100, 180, 0.4);
+                /* Smaller gear button for phone portrait */
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+                box-shadow: 0 3px 12px rgba(100, 100, 180, 0.4);
             }
             
             .command-center-popup {
-                bottom: 60px; /* Above 50px button + 10px margin */
-                gap: 10px; /* Tighter spacing on phone */
+                bottom: 52px; /* Above 44px button + 8px margin */
+                gap: 6px; /* Tighter spacing on phone */
             }
             
             .command-center-icon {
-                width: 44px; /* Minimum 44px touch target */
-                height: 44px;
-                font-size: 18px;
+                width: 38px; /* Smaller icons to reduce total height */
+                height: 38px;
+                font-size: 16px;
             }
             
             .status-overlay {
