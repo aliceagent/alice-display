@@ -1453,25 +1453,33 @@
                 });
                 
                 // Vacuum button → show vacuum panel
-                cmdVacuum.addEventListener('click', () => {
+                cmdVacuum.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    console.log('🤖 Vacuum clicked');
                     commandCenter.classList.remove('open');
                     this.showVacuumPanel();
                 });
                 
                 // Lights button → show lights panel
-                cmdLights.addEventListener('click', () => {
+                cmdLights.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    console.log('💡 Lights clicked');
                     commandCenter.classList.remove('open');
                     this.showLightsPanel();
                 });
                 
                 // Image button → show image control panel
-                cmdImage.addEventListener('click', () => {
+                cmdImage.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    console.log('🖼️ Image clicked');
                     commandCenter.classList.remove('open');
                     this.showImageControlPanel();
                 });
                 
                 // About button → show about panel
-                cmdAbout.addEventListener('click', () => {
+                cmdAbout.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    console.log('ℹ️ About clicked');
                     commandCenter.classList.remove('open');
                     this.showAboutPanel();
                 });
