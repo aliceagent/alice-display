@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81ea-a5da-c2fcdb28e6f2",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231086/alice-gallery/anime/027_Alice_Sleeping_-_Rainy_Dawn__15.png",
-    "title": "Alice Sleeping - Rainy Dawn #15",
+    "id": "2fd41906-4d30-81ca-ac43-e362c42b3b78",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232212/alice-gallery/anime/Alice_Gaming_-_Overcast_Morning.png",
+    "title": "Alice Gaming - Overcast Morning",
     "description": "",
-    "activity": "Sleeping",
+    "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Rainy",
-    "imageTimePeriod": "Dawn",
+    "imageWeather": "Overcast",
+    "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
     "temperature": 12,
-    "humidity": 54,
+    "humidity": 55,
     "description": "broken clouds",
-    "icon": "04n"
+    "icon": "04d"
   },
   "time": {
     "period": "Early Morning",
     "hour": 6,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T04:15:55.272569+00:00",
+  "lastUpdated": "2026-02-07T04:32:45.345343+00:00",
   "nextUpdate": "2026-02-07T05:00:00+00:00"
 }
