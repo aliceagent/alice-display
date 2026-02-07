@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8113-96e5-f2a8f16a89e6",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233289/alice-gallery/anime/Alice_Running_Session__40.png",
-    "title": "Alice Running Session #40",
+    "id": "2fc41906-4d30-814a-8288-f4b159b32d28",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231416/alice-gallery/anime/116_Alice_Crafting_Session__10.png",
+    "title": "Alice Crafting Session #10",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Creative",
     "mood": "",
-    "imageWeather": "Cloudy",
-    "imageTimePeriod": "Afternoon",
+    "imageWeather": "Rainy",
+    "imageTimePeriod": "Golden Hour",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 14,
+    "temperature": 16,
     "humidity": 51,
     "description": "broken clouds",
     "icon": "04d"
   },
   "time": {
-    "period": "Afternoon",
-    "hour": 16,
+    "period": "Golden Hour",
+    "hour": 17,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T14:45:47.460604+00:00",
-  "nextUpdate": "2026-02-07T15:00:00+00:00"
+  "lastUpdated": "2026-02-07T15:00:58.270779+00:00",
+  "nextUpdate": "2026-02-07T16:00:00+00:00"
 }
