@@ -2794,8 +2794,10 @@
         /* Mobile Safari toolbar takes ~80px at bottom - position buttons in dark bar below image */
         @media (max-width: 480px) and (orientation: portrait) {
             .command-center {
-                bottom: 115px;
-                bottom: max(115px, calc(env(safe-area-inset-bottom, 0px) + 100px));
+                top: auto !important;
+                bottom: 140px !important;
+                right: 20px !important;
+                position: fixed !important;
             }
             
             .command-center-button {
@@ -6565,13 +6567,12 @@
             // Apply browser detection classes first
             BrowserDetect.applyClasses();
             
-            // DIRECT FIX: Force command center position on iOS Safari
+            // DIRECT FIX: Force command center position on iOS Safari portrait
             if (BrowserDetect.isIOS() && window.innerWidth <= 480 && window.innerHeight > window.innerWidth) {
                 const commandCenter = document.getElementById('command-center');
                 if (commandCenter) {
-                    commandCenter.style.bottom = '140px';
-                    commandCenter.style.position = 'fixed';
-                    console.log('📱 iOS Safari portrait fix applied: bottom=140px');
+                    commandCenter.style.cssText = 'position: fixed !important; bottom: 140px !important; top: auto !important; right: 20px !important;';
+                    console.log('📱 iOS Safari portrait fix applied: bottom=140px, top=auto');
                 }
             }
             
