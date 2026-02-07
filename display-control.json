@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-813e-879e-f38b454f749a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232898/alice-gallery/anime/Alice_Puzzles_Time__5.png",
-    "title": "Alice Puzzles Time #5",
+    "id": "2fd41906-4d30-81bf-a7cb-cf753892b245",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219214/alice-gallery/pixel-art/Alice_Flower_Picking_-_Overcast_Night.png",
+    "title": "Alice Flower Picking - Overcast Night",
     "description": "",
     "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Cloudy",
-    "imageTimePeriod": "Evening",
+    "imageWeather": "Overcast",
+    "imageTimePeriod": "Night",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
     "temperature": 15,
-    "humidity": 47,
+    "humidity": 48,
     "description": "broken clouds",
     "icon": "04n"
   },
   "time": {
-    "period": "Evening",
-    "hour": 19,
+    "period": "Night",
+    "hour": 20,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T17:52:51.600822+00:00",
-  "nextUpdate": "2026-02-07T18:00:00+00:00"
+  "lastUpdated": "2026-02-07T18:08:02.912334+00:00",
+  "nextUpdate": "2026-02-07T19:00:00+00:00"
 }
