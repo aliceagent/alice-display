@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8136-a7c9-e6105d126e2a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233218/alice-gallery/anime/Alice_Relaxing_Time__37.png",
-    "title": "Alice Relaxing Time #37",
+    "id": "2fc41906-4d30-816d-a236-dfbec577f6a6",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232918/alice-gallery/anime/Alice_Puzzles_Time__79.png",
+    "title": "Alice Puzzles Time #79",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -13,7 +13,7 @@
   "weather": {
     "condition": "Overcast",
     "temperature": 17,
-    "humidity": 45,
+    "humidity": 51,
     "description": "broken clouds",
     "icon": "04d"
   },
@@ -22,6 +22,6 @@
     "hour": 16,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T14:15:20.413070+00:00",
+  "lastUpdated": "2026-02-07T14:30:35.334714+00:00",
   "nextUpdate": "2026-02-07T15:00:00+00:00"
 }
