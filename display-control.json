@@ -12,7 +12,7 @@
   },
   "weather": {
     "condition": "Sunny",
-    "temperature": 11,
+    "temperature": 13,
     "humidity": 62,
     "description": "clear sky",
     "icon": "01n"
@@ -22,6 +22,6 @@
     "hour": 23,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T21:43:00.196745+00:00",
+  "lastUpdated": "2026-02-07T21:58:12.364499+00:00",
   "nextUpdate": "2026-02-07T22:00:00+00:00"
 }
