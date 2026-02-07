@@ -705,7 +705,8 @@ body {
     transition: all var(--transition-normal);
 }
 
-.vacuum-panel.open {
+.vacuum-panel.open,
+.vacuum-panel.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -866,7 +867,8 @@ body {
     transition: all var(--transition-normal);
 }
 
-.lights-panel.open {
+.lights-panel.open,
+.lights-panel.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
