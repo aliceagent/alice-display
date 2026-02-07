@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8190-b83a-d962f4a87b25",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231653/alice-gallery/anime/Alice_Bench_Reading_-_Cloudy_Afternoon.png",
-    "title": "Alice Bench Reading - Cloudy Afternoon",
+    "id": "2fc41906-4d30-81b2-ac76-db44ffdcf032",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231265/alice-gallery/anime/079_Alice_Coding_Session__15.png",
+    "title": "Alice Coding Session #15",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Work",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Afternoon",
@@ -22,6 +22,6 @@
     "hour": 15,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T13:40:07.718791+00:00",
+  "lastUpdated": "2026-02-07T13:57:31.097524+00:00",
   "nextUpdate": "2026-02-07T14:00:00+00:00"
 }
