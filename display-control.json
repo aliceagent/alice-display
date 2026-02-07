@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8128-9f30-c2747a963e20",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231364/alice-gallery/anime/104_Alice_Writing_Session__19.png",
-    "title": "Alice Writing Session #19",
+    "id": "2fd41906-4d30-81d7-8fb0-d9fe86c7046d",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233529/alice-gallery/anime/Alice_Watching_Storm_-_Overcast_Midday.png",
+    "title": "Alice Watching Storm - Overcast Midday",
     "description": "",
-    "activity": "Creative",
+    "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Cloudy",
-    "imageTimePeriod": "Morning",
+    "imageWeather": "Overcast",
+    "imageTimePeriod": "Midday",
     "imageHoliday": ""
   },
   "weather": {
@@ -18,10 +18,10 @@
     "icon": "03d"
   },
   "time": {
-    "period": "Morning",
-    "hour": 10,
+    "period": "Midday",
+    "hour": 11,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T08:56:59.034070+00:00",
-  "nextUpdate": "2026-02-07T09:00:00+00:00"
+  "lastUpdated": "2026-02-07T09:12:11.927809+00:00",
+  "nextUpdate": "2026-02-07T10:00:00+00:00"
 }
