@@ -4007,7 +4007,14 @@
         }
         
         .browser-safari.platform-ios .command-center {
-            bottom: max(140px, calc(env(safe-area-inset-bottom, 0px) + 130px));
+            bottom: max(140px, calc(env(safe-area-inset-bottom, 0px) + 130px)) !important;
+        }
+        
+        /* Extra specificity for iPhone portrait */
+        @media (max-width: 480px) and (orientation: portrait) {
+            .browser-safari.platform-ios .command-center {
+                bottom: max(140px, calc(env(safe-area-inset-bottom, 0px) + 130px)) !important;
+            }
         }
         
         .browser-safari.platform-ios .clock-display {
