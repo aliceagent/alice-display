@@ -1,12 +1,12 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-810f-804e-e51936a58d36",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231660/alice-gallery/anime/Alice_Bicycle_Ride_-_Cloudy_Midday.png",
-    "title": "Alice Bicycle Ride - Cloudy Midday",
+    "id": "2fd41906-4d30-819a-9831-e1fbc0bcf50c",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232941/alice-gallery/anime/Alice_Rain_Window_-_Rainy_Midday.png",
+    "title": "Alice Rain Window - Rainy Midday",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Cloudy",
+    "imageWeather": "Rainy",
     "imageTimePeriod": "Midday",
     "imageHoliday": ""
   },
@@ -22,6 +22,6 @@
     "hour": 12,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-07T10:31:36.608293+00:00",
+  "lastUpdated": "2026-02-07T10:46:54.030128+00:00",
   "nextUpdate": "2026-02-07T11:00:00+00:00"
 }
