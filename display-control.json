@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81ca-ac43-e362c42b3b78",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232212/alice-gallery/anime/Alice_Gaming_-_Overcast_Morning.png",
-    "title": "Alice Gaming - Overcast Morning",
+    "id": "2fd41906-4d30-81f5-802b-c6d825f3406b",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231861/alice-gallery/anime/Alice_Cooking_-_Overcast_Morning.png",
+    "title": "Alice Cooking - Overcast Morning",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 11,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T09:05:12.742751+00:00",
+  "lastUpdated": "2026-02-08T09:05:30.217320+00:00",
   "nextUpdate": "2026-02-08T10:00:00+00:00"
 }
