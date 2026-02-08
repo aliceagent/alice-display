@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81d1-953f-f7571d9501ce",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231303/alice-gallery/anime/088_Alice_Coding_Session__31.png",
-    "title": "Alice Coding Session #31",
+    "id": "2fc41906-4d30-8148-9bfc-cfd56b09887b",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233597/alice-gallery/anime/Alice_Yoga_Session__1.png",
+    "title": "Alice Yoga Session #1",
     "description": "",
-    "activity": "Work",
+    "activity": "Exercise",
     "mood": "",
     "imageWeather": "Sunny",
     "imageTimePeriod": "Early Morning",
@@ -22,6 +22,6 @@
     "hour": 8,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T06:40:14.341955+00:00",
+  "lastUpdated": "2026-02-08T06:57:15.781287+00:00",
   "nextUpdate": "2026-02-08T07:00:00+00:00"
 }
