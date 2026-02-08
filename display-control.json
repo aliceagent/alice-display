@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8130-bc9b-de00582fb2d4",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233587/alice-gallery/pixel-art/Alice_Yoga_-_Overcast_Midday.png",
-    "title": "Alice Yoga - Overcast Midday",
+    "id": "2fd41906-4d30-815f-b569-cc822dd10ce7",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231634/alice-gallery/pixel-art/Alice_Baking_-_Overcast_Midday.png",
+    "title": "Alice Baking - Overcast Midday",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Leisure",
     "mood": "",
     "imageWeather": "Overcast",
     "imageTimePeriod": "Midday",
@@ -22,6 +22,6 @@
     "hour": 11,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T09:40:32.562067+00:00",
+  "lastUpdated": "2026-02-08T09:55:31.625827+00:00",
   "nextUpdate": "2026-02-08T10:00:00+00:00"
 }
