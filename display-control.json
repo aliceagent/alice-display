@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-815f-b569-cc822dd10ce7",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231634/alice-gallery/pixel-art/Alice_Baking_-_Overcast_Midday.png",
-    "title": "Alice Baking - Overcast Midday",
+    "id": "2fd41906-4d30-81d8-b66e-ef6f3d1fe6e6",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232678/alice-gallery/anime/Alice_Photography_-_Cloudy_Midday.png",
+    "title": "Alice Photography - Cloudy Midday",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Creative",
     "mood": "",
-    "imageWeather": "Overcast",
+    "imageWeather": "Cloudy",
     "imageTimePeriod": "Midday",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
     "temperature": 20,
-    "humidity": 31,
+    "humidity": 32,
     "description": "broken clouds",
     "icon": "04d"
   },
   "time": {
     "period": "Midday",
-    "hour": 11,
+    "hour": 12,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T09:55:31.625827+00:00",
-  "nextUpdate": "2026-02-08T10:00:00+00:00"
+  "lastUpdated": "2026-02-08T10:05:04.360122+00:00",
+  "nextUpdate": "2026-02-08T11:00:00+00:00"
 }
