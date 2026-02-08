@@ -12,7 +12,7 @@
   },
   "weather": {
     "condition": "Cloudy",
-    "temperature": 13,
+    "temperature": 12,
     "humidity": 70,
     "description": "scattered clouds",
     "icon": "03n"
@@ -22,6 +22,6 @@
     "hour": 2,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T00:03:38.453392+00:00",
+  "lastUpdated": "2026-02-08T00:18:50.798937+00:00",
   "nextUpdate": "2026-02-08T01:00:00+00:00"
 }
