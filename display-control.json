@@ -1,12 +1,12 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81f6-8d21-dead7f24bbc8",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231326/alice-gallery/anime/095_Alice_Writing_Session__5.png",
-    "title": "Alice Writing Session #5",
+    "id": "2fd41906-4d30-81ca-ac43-e362c42b3b78",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232212/alice-gallery/anime/Alice_Gaming_-_Overcast_Morning.png",
+    "title": "Alice Gaming - Overcast Morning",
     "description": "",
-    "activity": "Work",
+    "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Cloudy",
+    "imageWeather": "Overcast",
     "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
@@ -18,10 +18,10 @@
     "icon": "04d"
   },
   "time": {
-    "period": "Morning",
-    "hour": 10,
+    "period": "Midday",
+    "hour": 11,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T08:40:31.783689+00:00",
-  "nextUpdate": "2026-02-08T09:00:00+00:00"
+  "lastUpdated": "2026-02-08T09:05:12.742751+00:00",
+  "nextUpdate": "2026-02-08T10:00:00+00:00"
 }
