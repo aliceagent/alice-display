@@ -268,10 +268,26 @@ class ImageSelector:
             print("📎 Relaxing recent restriction to find match")
             return self.select(weather, time_period, hour=hour, avoid_recent=False, save_history=save_history)
         
-        # Ultimate fallback: any image WITH CDN URL
+        # Ultimate fallback: any image WITH CDN URL, but respect activity restrictions
         if not candidates:
-            print("📎 Using random CDN image as ultimate fallback")
+            print("📎 Using CDN image fallback with activity filter")
             cdn_images = [img for img in self.images if img.get("cloudinary_url") and img.get("cloudinary_url").strip()]
+            
+            # During sleeping hours (22-07), only allow sleeping/waking activities in fallback
+            if hour is not None and (hour >= 22 or hour <= 7):
+                sleeping_activities = ["sleeping", "waking up", "morning routine"]
+                filtered = []
+                for img in cdn_images:
+                    img_activity = img.get("activity", "").lower()
+                    img_title = img.get("title", "").lower()
+                    for act in sleeping_activities:
+                        if act in img_activity or act in img_title:
+                            filtered.append(img)
+                            break
+                if filtered:
+                    print(f"   🛏️ Filtered to {len(filtered)} sleeping/waking images for hour {hour}")
+                    cdn_images = filtered
+            
             if cdn_images:
                 candidates = cdn_images
             else:
