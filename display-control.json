@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-816c-8ff5-cd0c97b2098e",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231196/alice-gallery/anime/060_Alice_Debugging_Session__27.png",
-    "title": "Alice Debugging Session #27",
+    "id": "2fc41906-4d30-8157-9cfe-dc2d508d89d2",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233187/alice-gallery/anime/Alice_Reading__2.png",
+    "title": "Alice Reading #2",
     "description": "",
-    "activity": "Work",
+    "activity": "Learning",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Afternoon",
@@ -22,6 +22,6 @@
     "hour": 12,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T10:05:22.651939+00:00",
+  "lastUpdated": "2026-02-08T10:05:34.298499+00:00",
   "nextUpdate": "2026-02-08T11:00:00+00:00"
 }
