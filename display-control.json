@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81a4-af9e-dc780f92f8d5",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231061/alice-gallery/anime/020_Alice_Sleeping_-_Rainy_Early_Morning__23.png",
-    "title": "Alice Sleeping - Rainy Early Morning #23",
+    "id": "2fc41906-4d30-81a8-a48b-f0a199a788ae",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231064/alice-gallery/anime/021_Alice_Sleeping_-_Rainy_Early_Morning__16.png",
+    "title": "Alice Sleeping - Rainy Early Morning #16",
     "description": "",
     "activity": "Sleeping",
     "mood": "",
@@ -13,8 +13,8 @@
   "weather": {
     "condition": "Overcast",
     "temperature": 13,
-    "humidity": 71,
-    "description": "overcast clouds",
+    "humidity": 67,
+    "description": "broken clouds",
     "icon": "04n"
   },
   "time": {
@@ -22,6 +22,6 @@
     "hour": 5,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T03:28:57.235313+00:00",
+  "lastUpdated": "2026-02-08T03:44:09.530952+00:00",
   "nextUpdate": "2026-02-08T04:00:00+00:00"
 }
