@@ -1,16 +1,16 @@
 {
   "temperature": 21,
-  "feels_like": 20,
-  "humidity": 29,
-  "wind_speed": 26,
+  "feels_like": 19,
+  "humidity": 27,
+  "wind_speed": 27,
   "weather_id": 803,
   "condition": "Overcast",
   "description": "broken clouds",
   "icon": "04d",
   "sunrise_hour": 6,
   "sunset_hour": 17,
-  "time_period": "Midday",
-  "current_hour": 13,
-  "timestamp": "2026-02-08T11:05:35.491915+00:00",
+  "time_period": "Afternoon",
+  "current_hour": 14,
+  "timestamp": "2026-02-08T12:05:05.859489+00:00",
   "source": "OpenWeatherMap"
 }
