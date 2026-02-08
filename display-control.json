@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81ce-8a58-d146ba26ef4e",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233493/alice-gallery/anime/Alice_Umbrella_Walk_-_Rainy_Midday.png",
-    "title": "Alice Umbrella Walk - Rainy Midday",
+    "id": "2fd41906-4d30-81c3-bd2b-e3b3c1cb14a7",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231864/alice-gallery/anime/Alice_Cooking_-_Rainy_Midday.png",
+    "title": "Alice Cooking - Rainy Midday",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 13,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T11:05:05.201285+00:00",
+  "lastUpdated": "2026-02-08T11:05:23.438276+00:00",
   "nextUpdate": "2026-02-08T12:00:00+00:00"
 }
