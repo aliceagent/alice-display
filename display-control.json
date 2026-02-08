@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81b1-b1c7-c53bc232e28a",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232662/alice-gallery/anime/Alice_Painting_Session__64.png",
-    "title": "Alice Painting Session #64",
+    "id": "2fc41906-4d30-81b6-a321-c7e173a25df9",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231524/alice-gallery/anime/144_Alice_Pottery_Session__47.png",
+    "title": "Alice Pottery Session #47",
     "description": "",
     "activity": "Creative",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 10,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T08:05:58.735204+00:00",
+  "lastUpdated": "2026-02-08T08:10:31.269706+00:00",
   "nextUpdate": "2026-02-08T09:00:00+00:00"
 }
