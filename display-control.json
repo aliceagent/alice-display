@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8188-92a1-e87df72e7776",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233137/alice-gallery/anime/Alice_Reading_Time__26.png",
-    "title": "Alice Reading Time #26",
+    "id": "2fd41906-4d30-81d7-872f-ee91e1267c4a",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231628/alice-gallery/pixel-art/Alice_Baking_-_Cloudy_Afternoon.png",
+    "title": "Alice Baking - Cloudy Afternoon",
     "description": "",
     "activity": "Leisure",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 13,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T11:05:35.511749+00:00",
+  "lastUpdated": "2026-02-08T11:10:48.551870+00:00",
   "nextUpdate": "2026-02-08T12:00:00+00:00"
 }
