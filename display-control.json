@@ -1,12 +1,12 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8195-bdb5-d0eb1d19157e",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232493/alice-gallery/anime/Alice_Market_Visit_-_Overcast_Afternoon.png",
-    "title": "Alice Market Visit - Overcast Afternoon",
+    "id": "2fc41906-4d30-81b2-ac76-db44ffdcf032",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231265/alice-gallery/anime/079_Alice_Coding_Session__15.png",
+    "title": "Alice Coding Session #15",
     "description": "",
-    "activity": "Social",
+    "activity": "Work",
     "mood": "",
-    "imageWeather": "Overcast",
+    "imageWeather": "Cloudy",
     "imageTimePeriod": "Afternoon",
     "imageHoliday": ""
   },
@@ -22,6 +22,6 @@
     "hour": 14,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T12:05:05.875035+00:00",
+  "lastUpdated": "2026-02-08T12:05:24.967947+00:00",
   "nextUpdate": "2026-02-08T13:00:00+00:00"
 }
