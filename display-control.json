@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81f5-802b-c6d825f3406b",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231861/alice-gallery/anime/Alice_Cooking_-_Overcast_Morning.png",
-    "title": "Alice Cooking - Overcast Morning",
+    "id": "2fc41906-4d30-817b-95da-c9c23aa08933",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232703/alice-gallery/anime/Alice_Photography_Session__58.png",
+    "title": "Alice Photography Session #58",
     "description": "",
-    "activity": "Leisure",
+    "activity": "Creative",
     "mood": "",
-    "imageWeather": "Overcast",
-    "imageTimePeriod": "Morning",
+    "imageWeather": "Cloudy",
+    "imageTimePeriod": "Afternoon",
     "imageHoliday": ""
   },
   "weather": {
@@ -22,6 +22,6 @@
     "hour": 11,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T09:05:30.217320+00:00",
+  "lastUpdated": "2026-02-08T09:05:40.273812+00:00",
   "nextUpdate": "2026-02-08T10:00:00+00:00"
 }
