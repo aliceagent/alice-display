@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8112-a89a-f23d2d567761",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231108/alice-gallery/anime/035_Alice_Writing_Session__43.png",
-    "title": "Alice Writing Session #43",
+    "id": "2fc41906-4d30-81cf-862e-c1ede97e19cc",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233282/alice-gallery/anime/Alice_Running_Session__39.png",
+    "title": "Alice Running Session #39",
     "description": "",
-    "activity": "Work",
+    "activity": "Exercise",
     "mood": "",
-    "imageWeather": "Overcast",
+    "imageWeather": "Cloudy",
     "imageTimePeriod": "Early Morning",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
     "temperature": 13,
-    "humidity": 64,
+    "humidity": 65,
     "description": "broken clouds",
     "icon": "04d"
   },
   "time": {
     "period": "Early Morning",
-    "hour": 6,
+    "hour": 7,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T04:45:29.367583+00:00",
-  "nextUpdate": "2026-02-08T05:00:00+00:00"
+  "lastUpdated": "2026-02-08T05:03:40.756216+00:00",
+  "nextUpdate": "2026-02-08T06:00:00+00:00"
 }
