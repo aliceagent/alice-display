@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-8157-9cfe-dc2d508d89d2",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233187/alice-gallery/anime/Alice_Reading__2.png",
-    "title": "Alice Reading #2",
+    "id": "2fc41906-4d30-81a5-8a75-d889106beba7",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232429/alice-gallery/anime/Alice_Language_Study__19.png",
+    "title": "Alice Language Study #19",
     "description": "",
     "activity": "Learning",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 12,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T10:05:34.298499+00:00",
+  "lastUpdated": "2026-02-08T10:10:31.193379+00:00",
   "nextUpdate": "2026-02-08T11:00:00+00:00"
 }
