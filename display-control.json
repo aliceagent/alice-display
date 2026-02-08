@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81b2-ac76-db44ffdcf032",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231265/alice-gallery/anime/079_Alice_Coding_Session__15.png",
-    "title": "Alice Coding Session #15",
+    "id": "2fc41906-4d30-815a-bc80-ec61b577294e",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233424/alice-gallery/anime/Alice_Tea_Time_Time__14.png",
+    "title": "Alice Tea Time Time #14",
     "description": "",
-    "activity": "Work",
+    "activity": "Leisure",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Afternoon",
@@ -22,6 +22,6 @@
     "hour": 14,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T12:05:24.967947+00:00",
+  "lastUpdated": "2026-02-08T12:05:37.391292+00:00",
   "nextUpdate": "2026-02-08T13:00:00+00:00"
 }

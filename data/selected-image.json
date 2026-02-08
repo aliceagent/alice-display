@@ -1,15 +1,15 @@
 {
-  "id": "2fc41906-4d30-81d5-b2d2-f0ac03380cdf",
-  "name": "Alice Yoga Session #30",
-  "filename": "Alice_Yoga_Session__30",
-  "row_number": null,
+  "id": "2fc41906-4d30-81ad-81b6-f2a187bc86ef",
+  "name": "Alice Presenting Session #39",
+  "filename": "076_Alice_Presenting_Session__39",
+  "row_number": 76,
   "weather": "Cloudy",
-  "time_period": "Morning",
-  "activity": "Exercise",
-  "location": "Yoga space with proper equipment and motivating atmosphere",
-  "style_notes": "Anime style with dynamic energy, cloudy lighting, athletic atmosphere",
+  "time_period": "Afternoon",
+  "activity": "Work",
+  "location": "Modern home office with large windows and city view",
+  "style_notes": "Anime style with professional atmosphere, afternoon lighting",
   "holiday": "",
   "verified": true,
   "generated": true,
-  "cloudinary_url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233620/alice-gallery/anime/Alice_Yoga_Session__30.png"
+  "cloudinary_url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231249/alice-gallery/anime/076_Alice_Presenting_Session__39.png"
 }

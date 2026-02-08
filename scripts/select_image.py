@@ -14,6 +14,7 @@ import sys
 import json
 import random
 import argparse
+import requests
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
@@ -435,6 +436,68 @@ class ImageSelector:
         }
 
 
+def increment_display_count(selected_image: dict) -> None:
+    """
+    Increment the Display Count for the selected image in Notion.
+    Non-blocking: logs warning if fails but doesn't affect image selection.
+    """
+    page_id = selected_image.get("id") or selected_image.get("page_id")
+    if not page_id:
+        print("⚠️ Display Count: No page ID found, skipping counter increment", file=sys.stderr)
+        return
+    
+    # Notion API configuration - uses environment variable only (no hardcoded fallback)
+    notion_token = os.getenv("NOTION_API_KEY")
+    if not notion_token:
+        print("Warning: NOTION_API_KEY not set, Display Count will not be updated", file=sys.stderr)
+        return  # Exit early if no token
+    api_version = "2022-06-28"
+    
+    try:
+        # First, get current Display Count value
+        headers = {
+            "Authorization": f"Bearer {notion_token}",
+            "Notion-Version": api_version
+        }
+        
+        response = requests.get(
+            f"https://api.notion.com/v1/pages/{page_id}",
+            headers=headers,
+            timeout=5
+        )
+        
+        if response.status_code != 200:
+            print(f"⚠️ Display Count: Failed to read current count (HTTP {response.status_code})", file=sys.stderr)
+            return
+        
+        data = response.json()
+        current_count = data.get("properties", {}).get("Display Count", {}).get("number", 0) or 0
+        new_count = current_count + 1
+        
+        # Update with incremented count
+        headers["Content-Type"] = "application/json"
+        update_data = {
+            "properties": {
+                "Display Count": {"number": new_count}
+            }
+        }
+        
+        response = requests.patch(
+            f"https://api.notion.com/v1/pages/{page_id}",
+            headers=headers,
+            json=update_data,
+            timeout=5
+        )
+        
+        if response.status_code == 200:
+            print(f"📊 Display Count: {current_count} → {new_count}")
+        else:
+            print(f"⚠️ Display Count: Failed to update count (HTTP {response.status_code})", file=sys.stderr)
+            
+    except Exception as e:
+        print(f"⚠️ Display Count: Update failed - {str(e)}", file=sys.stderr)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Select Alice image based on conditions")
     parser.add_argument("--weather", type=str, help="Weather condition override")
@@ -502,6 +565,9 @@ def main():
             with open(output_path, "w") as f:
                 json.dump(selected, f, indent=2)
             print(f"📁 Saved to: {output_path}")
+            
+            # Increment Display Count in Notion (non-blocking)
+            increment_display_count(selected)
         
         return selected
     else:
