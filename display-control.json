@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-817d-8f95-f25ced396a76",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231960/alice-gallery/anime/Alice_Dancing_Session__7.png",
-    "title": "Alice Dancing Session #7",
+    "id": "2fd41906-4d30-81b2-8fcb-d5d9e9a2dd16",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232808/alice-gallery/pixel-art/Alice_Playing_Piano_-_Overcast_Morning.png",
+    "title": "Alice Playing Piano - Overcast Morning",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Creative",
     "mood": "",
-    "imageWeather": "Sunny",
-    "imageTimePeriod": "Early Morning",
+    "imageWeather": "Overcast",
+    "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
   "weather": {
-    "condition": "Sunny",
+    "condition": "Overcast",
     "temperature": 17,
-    "humidity": 50,
-    "description": "clear sky",
-    "icon": "01d"
+    "humidity": 40,
+    "description": "broken clouds",
+    "icon": "04d"
   },
   "time": {
     "period": "Morning",
     "hour": 9,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T07:14:57.134312+00:00",
+  "lastUpdated": "2026-02-08T07:30:08.462051+00:00",
   "nextUpdate": "2026-02-08T08:00:00+00:00"
 }
