@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-8184-b825-de685564fa53",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232684/alice-gallery/anime/Alice_Photography_-_Overcast_Afternoon.png",
-    "title": "Alice Photography - Overcast Afternoon",
+    "id": "2fd41906-4d30-8160-a6b9-d3e7d20951fa",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231667/alice-gallery/anime/Alice_Bicycle_Ride_-_Overcast_Afternoon.png",
+    "title": "Alice Bicycle Ride - Overcast Afternoon",
     "description": "",
-    "activity": "Creative",
+    "activity": "Exercise",
     "mood": "",
     "imageWeather": "Overcast",
     "imageTimePeriod": "Afternoon",
@@ -22,6 +22,6 @@
     "hour": 13,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T11:40:32.878165+00:00",
+  "lastUpdated": "2026-02-08T11:55:32.457018+00:00",
   "nextUpdate": "2026-02-08T12:00:00+00:00"
 }
