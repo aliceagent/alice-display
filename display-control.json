@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-817b-95da-c9c23aa08933",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232703/alice-gallery/anime/Alice_Photography_Session__58.png",
-    "title": "Alice Photography Session #58",
+    "id": "2fc41906-4d30-81fe-8f69-dd14c2df31aa",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232090/alice-gallery/anime/Alice_Drawing_Session__76.png",
+    "title": "Alice Drawing Session #76",
     "description": "",
     "activity": "Creative",
     "mood": "",
@@ -22,6 +22,6 @@
     "hour": 11,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T09:05:40.273812+00:00",
+  "lastUpdated": "2026-02-08T09:10:31.392653+00:00",
   "nextUpdate": "2026-02-08T10:00:00+00:00"
 }
