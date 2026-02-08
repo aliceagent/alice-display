@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81c3-bd2b-e3b3c1cb14a7",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231864/alice-gallery/anime/Alice_Cooking_-_Rainy_Midday.png",
-    "title": "Alice Cooking - Rainy Midday",
+    "id": "2fc41906-4d30-8188-92a1-e87df72e7776",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233137/alice-gallery/anime/Alice_Reading_Time__26.png",
+    "title": "Alice Reading Time #26",
     "description": "",
     "activity": "Leisure",
     "mood": "",
-    "imageWeather": "Rainy",
-    "imageTimePeriod": "Midday",
+    "imageWeather": "Cloudy",
+    "imageTimePeriod": "Afternoon",
     "imageHoliday": ""
   },
   "weather": {
@@ -22,6 +22,6 @@
     "hour": 13,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T11:05:23.438276+00:00",
+  "lastUpdated": "2026-02-08T11:05:35.511749+00:00",
   "nextUpdate": "2026-02-08T12:00:00+00:00"
 }
