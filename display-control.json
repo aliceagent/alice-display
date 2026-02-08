@@ -1,8 +1,8 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81d0-8f54-d33773cf8f33",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233575/alice-gallery/pixel-art/Alice_Yoga_-_Cloudy_Morning.png",
-    "title": "Alice Yoga - Cloudy Morning",
+    "id": "2fc41906-4d30-8147-80a3-d2904e91074c",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233600/alice-gallery/anime/Alice_Yoga_Session__22.png",
+    "title": "Alice Yoga Session #22",
     "description": "",
     "activity": "Exercise",
     "mood": "",
@@ -11,17 +11,17 @@
     "imageHoliday": ""
   },
   "weather": {
-    "condition": "Overcast",
-    "temperature": 13,
-    "humidity": 65,
-    "description": "broken clouds",
-    "icon": "04d"
+    "condition": "Cloudy",
+    "temperature": 14,
+    "humidity": 59,
+    "description": "scattered clouds",
+    "icon": "03d"
   },
   "time": {
     "period": "Early Morning",
     "hour": 7,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T05:20:12.827089+00:00",
+  "lastUpdated": "2026-02-08T05:36:35.606637+00:00",
   "nextUpdate": "2026-02-08T06:00:00+00:00"
 }
