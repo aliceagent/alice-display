@@ -1,13 +1,13 @@
 {
   "currentImage": {
-    "id": "2fc41906-4d30-81cf-862e-c1ede97e19cc",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233282/alice-gallery/anime/Alice_Running_Session__39.png",
-    "title": "Alice Running Session #39",
+    "id": "2fc41906-4d30-81d5-b2d2-f0ac03380cdf",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770233620/alice-gallery/anime/Alice_Yoga_Session__30.png",
+    "title": "Alice Yoga Session #30",
     "description": "",
     "activity": "Exercise",
     "mood": "",
     "imageWeather": "Cloudy",
-    "imageTimePeriod": "Early Morning",
+    "imageTimePeriod": "Morning",
     "imageHoliday": ""
   },
   "weather": {
@@ -22,6 +22,6 @@
     "hour": 7,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T05:03:40.756216+00:00",
+  "lastUpdated": "2026-02-08T05:10:13.918013+00:00",
   "nextUpdate": "2026-02-08T06:00:00+00:00"
 }
