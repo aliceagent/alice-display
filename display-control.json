@@ -1,10 +1,10 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81d5-aba7-fedfcf46a2ed",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770219282/alice-gallery/pixel-art/Alice_Park_Walk_-_Cloudy_Morning.png",
-    "title": "Alice Park Walk - Cloudy Morning",
+    "id": "2fc41906-4d30-81f6-8d21-dead7f24bbc8",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231326/alice-gallery/anime/095_Alice_Writing_Session__5.png",
+    "title": "Alice Writing Session #5",
     "description": "",
-    "activity": "Exercise",
+    "activity": "Work",
     "mood": "",
     "imageWeather": "Cloudy",
     "imageTimePeriod": "Morning",
@@ -13,7 +13,7 @@
   "weather": {
     "condition": "Overcast",
     "temperature": 19,
-    "humidity": 41,
+    "humidity": 35,
     "description": "broken clouds",
     "icon": "04d"
   },
@@ -22,6 +22,6 @@
     "hour": 10,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T08:25:32.506310+00:00",
+  "lastUpdated": "2026-02-08T08:40:31.783689+00:00",
   "nextUpdate": "2026-02-08T09:00:00+00:00"
 }
