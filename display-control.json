@@ -1,27 +1,27 @@
 {
   "currentImage": {
-    "id": "2fd41906-4d30-81b2-8fcb-d5d9e9a2dd16",
-    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770232808/alice-gallery/pixel-art/Alice_Playing_Piano_-_Overcast_Morning.png",
-    "title": "Alice Playing Piano - Overcast Morning",
+    "id": "2fc41906-4d30-812f-8e17-dd446002a618",
+    "url": "https://res.cloudinary.com/dfzowmhfp/image/upload/v1770231382/alice-gallery/anime/107_Alice_Presenting_Session__68.png",
+    "title": "Alice Presenting Session #68",
     "description": "",
-    "activity": "Creative",
+    "activity": "Work",
     "mood": "",
     "imageWeather": "Overcast",
-    "imageTimePeriod": "Morning",
+    "imageTimePeriod": "Early Morning",
     "imageHoliday": ""
   },
   "weather": {
     "condition": "Overcast",
-    "temperature": 17,
+    "temperature": 18,
     "humidity": 40,
     "description": "broken clouds",
     "icon": "04d"
   },
   "time": {
     "period": "Morning",
-    "hour": 9,
+    "hour": 10,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T07:30:08.462051+00:00",
-  "nextUpdate": "2026-02-08T08:00:00+00:00"
+  "lastUpdated": "2026-02-08T08:03:10.712430+00:00",
+  "nextUpdate": "2026-02-08T09:00:00+00:00"
 }
