@@ -13,7 +13,7 @@
   "weather": {
     "condition": "Overcast",
     "temperature": 12,
-    "humidity": 74,
+    "humidity": 70,
     "description": "overcast clouds",
     "icon": "04n"
   },
@@ -22,6 +22,6 @@
     "hour": 4,
     "timezone": "Asia/Hebron"
   },
-  "lastUpdated": "2026-02-08T02:25:26.491632+00:00",
+  "lastUpdated": "2026-02-08T02:41:25.620737+00:00",
   "nextUpdate": "2026-02-08T03:00:00+00:00"
 }
