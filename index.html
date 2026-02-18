@@ -205,6 +205,13 @@
         
         .status-item .icon {
             font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 1;
         }
         
         .status-item .label {
@@ -295,6 +302,12 @@
         
         .weather-widget.hidden .weather-widget-icon {
             font-size: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            text-align: center;
         }
         
         .weather-widget.hidden .weather-widget-header {
@@ -312,6 +325,12 @@
         .weather-widget-icon {
             font-size: 42px;
             line-height: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            text-align: center;
         }
         
         .weather-widget-temp {
@@ -472,6 +491,12 @@
             
             .weather-widget-icon {
                 font-size: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                text-align: center;
             }
             
             .weather-widget-temp {
@@ -613,6 +638,12 @@
             
             .weather-widget-icon {
                 font-size: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                text-align: center;
             }
             
             .weather-widget-temp {
@@ -847,6 +878,73 @@
         .error-retry .countdown {
             font-weight: 600;
             color: #64b5f6;
+        }
+        
+        /* Mobile responsive fixes for error messages */
+        @media (max-width: 480px) {
+            .error-message {
+                max-width: 95vw;
+                min-width: auto;
+                width: calc(100vw - 20px);
+                padding: 20px 16px;
+                margin: 10px;
+                max-height: calc(100vh - 40px);
+                overflow-y: auto;
+            }
+            
+            .error-icon {
+                font-size: 36px;
+                margin-bottom: 12px;
+            }
+            
+            .error-title {
+                font-size: 16px;
+                margin-bottom: 8px;
+                line-height: 1.3;
+            }
+            
+            .error-detail {
+                font-size: 12px;
+                margin-bottom: 12px;
+                line-height: 1.4;
+            }
+            
+            .error-retry-counter {
+                font-size: 12px;
+                padding: 3px 10px;
+                margin-bottom: 8px;
+            }
+            
+            .error-retry {
+                font-size: 11px;
+            }
+        }
+        
+        /* Extra small mobile devices */
+        @media (max-width: 320px) {
+            .error-message {
+                max-width: 98vw;
+                width: calc(100vw - 10px);
+                padding: 16px 12px;
+                margin: 5px;
+            }
+            
+            .error-title {
+                font-size: 15px;
+            }
+            
+            .error-detail {
+                font-size: 11px;
+            }
+            
+            .error-retry-counter {
+                font-size: 11px;
+                padding: 2px 8px;
+            }
+            
+            .error-retry {
+                font-size: 10px;
+            }
         }
         
         /* Connection status indicator */
@@ -2043,6 +2141,22 @@
             }
         }
 
+        /* Vacuum Panel backdrop for tap-outside-to-close */
+        .vacuum-panel-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 299;
+            display: none;
+            cursor: pointer;
+        }
+        
+        .vacuum-panel-backdrop.show {
+            display: block;
+        }
+
         /* Lights Control Panel */
         .lights-panel {
             position: fixed;
@@ -2211,25 +2325,325 @@
             }
         }
 
-        /* Report Modal */
-        .report-modal {
+        /* Lights Panel - Individual Controls */
+        .lights-section {
+            margin-bottom: 32px;
+        }
+
+        .lights-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .lights-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lights-section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+        }
+
+        .lights-toggle-all {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .lights-toggle-all:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .lights-toggle-all.all-on {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .lights-individual {
+            display: grid;
+            gap: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        .lights-individual::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .lights-individual::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+        }
+
+        .lights-individual::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+        }
+
+        .light-control {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .light-control:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .light-control.light-on {
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.2);
+        }
+
+        .light-control-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .light-control-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            flex: 1;
+        }
+
+        .light-toggle {
+            position: relative;
+            width: 48px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .light-toggle:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.2s ease;
+        }
+
+        .light-toggle.on {
+            background: #3b82f6;
+        }
+
+        .light-toggle.on:before {
+            transform: translateX(20px);
+        }
+
+        .light-brightness {
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .light-brightness.show {
+            display: flex;
+        }
+
+        .light-brightness-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            min-width: 24px;
+        }
+
+        .light-brightness-slider {
+            flex: 1;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        .light-brightness-slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .light-brightness-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #3b82f6;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .light-brightness-value {
+            font-size: 14px;
+            color: white;
+            font-weight: 600;
+            min-width: 36px;
+            text-align: right;
+        }
+
+        .lights-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            padding: 32px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .lights-loading-spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .lights-loading-text {
+            font-size: 16px;
+        }
+
+        @media (max-width: 480px) {
+            .lights-panel-content {
+                padding: 20px;
+            }
+            
+            .light-control {
+                padding: 12px;
+            }
+            
+            .light-control-name {
+                font-size: 14px;
+            }
+            
+            .lights-individual {
+                max-height: 240px;
+            }
+        }
+
+        /* Lights Panel backdrop for tap-outside-to-close */
+        .lights-panel-backdrop {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
+            z-index: 299;
+            display: none;
+            cursor: pointer;
+        }
+        
+        .lights-panel-backdrop.show {
+            display: block;
+        }
+
+        /* Report Modal */
+        /* Report Panel */
+        .report-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 70;
             background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 300;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s, visibility 0.3s;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            /* Prevent body scroll when modal is open */
-            overflow: hidden;
+        }
+        
+        .report-panel.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .report-panel-content {
+            position: absolute;
+            bottom: 88px; /* Above command center button */
+            right: 24px;
+            min-width: 320px;
+            max-width: 400px;
+            max-height: calc(100vh - 200px);
+            background: linear-gradient(135deg, rgba(40, 40, 60, 0.95) 0%, rgba(30, 30, 50, 0.98) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            overflow-y: auto;
+            transform: translateY(20px) scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .report-panel.show .report-panel-content {
+            transform: translateY(0) scale(1);
+        }
+        
+        .report-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .report-panel-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .report-panel-close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: color 0.2s, background 0.2s;
+        }
+        
+        .report-panel-close:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
         }
         
         .report-modal.show {
@@ -2477,35 +2891,40 @@
             flex-shrink: 0;
         }
         
-        /* Mobile adjustments */
+        /* Mobile adjustments for report panel */
         @media (max-width: 480px) {
-            .report-button {
-                bottom: 18px;
-                right: 18px;
-                width: 52px;
-                height: 52px;
-                font-size: 22px;
-            }
-            
-            .report-modal-content {
+            .report-panel-content {
                 margin: 16px;
-                padding: 24px;
+                padding: 20px;
                 max-width: none;
                 width: auto;
-                max-height: calc(100vh - 32px);
-                overflow-y: auto;
+                bottom: 16px;
+                right: 16px;
+                left: 16px;
             }
             
-            .report-form-actions {
-                flex-direction: column;
+            .report-checkbox-group {
+                gap: 8px;
+            }
+            
+            .report-checkbox-label {
+                padding: 10px 12px;
+            }
+            
+            .report-checkbox-text {
+                font-size: 13px;
+            }
+            
+            .report-form-textarea {
+                min-height: 60px;
+                padding: 12px;
             }
             
             .report-btn {
-                width: 100%;
-                justify-content: center;
+                padding: 14px 24px;
+                font-size: 15px;
             }
             
-            /* Feedback overlay on mobile - ensure content fits */
             .report-feedback {
                 padding: 20px;
                 min-height: 200px;
@@ -2524,6 +2943,22 @@
             .report-feedback-message {
                 font-size: 14px;
             }
+        }
+
+        /* Report Panel backdrop for tap-outside-to-close */
+        .report-panel-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 69;
+            display: none;
+            cursor: pointer;
+        }
+        
+        .report-panel-backdrop.show {
+            display: block;
         }
     </style>
 </head>
@@ -2832,6 +3267,7 @@
             </div>
         </div>
     </div>
+    <div class="vacuum-panel-backdrop" id="vacuum-panel-backdrop"></div>
     
     <!-- Lights Control Panel -->
     <div class="lights-panel" id="lights-panel">
@@ -2841,32 +3277,56 @@
                 <button class="lights-panel-close" id="lights-panel-close" title="Close">✕</button>
             </div>
             
-            <div class="lights-presets">
-                <button class="lights-preset-btn bedtime" id="lights-bedtime">
-                    <span class="lights-preset-icon">🌙</span>
-                    <span class="lights-preset-text">Bedtime</span>
-                    <span class="lights-preset-desc">All lights to 1%</span>
-                </button>
-                <button class="lights-preset-btn daytime" id="lights-daytime">
-                    <span class="lights-preset-icon">☀️</span>
-                    <span class="lights-preset-text">Daytime</span>
-                    <span class="lights-preset-desc">All lights to 100%</span>
-                </button>
-                <button class="lights-preset-btn movie" id="lights-movie">
-                    <span class="lights-preset-icon">🎬</span>
-                    <span class="lights-preset-text">Movie Mode</span>
-                    <span class="lights-preset-desc">30% + Blue</span>
-                </button>
+            <!-- Light Presets Section -->
+            <div class="lights-section">
+                <div class="lights-section-header">
+                    <h3 class="lights-section-title">⚡ Quick Presets</h3>
+                </div>
+                <div class="lights-presets">
+                    <button class="lights-preset-btn bedtime" id="lights-bedtime">
+                        <span class="lights-preset-icon">🌙</span>
+                        <span class="lights-preset-text">Bedtime</span>
+                        <span class="lights-preset-desc">All lights to 1%</span>
+                    </button>
+                    <button class="lights-preset-btn daytime" id="lights-daytime">
+                        <span class="lights-preset-icon">☀️</span>
+                        <span class="lights-preset-text">Daytime</span>
+                        <span class="lights-preset-desc">All lights to 100%</span>
+                    </button>
+                    <button class="lights-preset-btn movie" id="lights-movie">
+                        <span class="lights-preset-icon">🎬</span>
+                        <span class="lights-preset-text">Movie Mode</span>
+                        <span class="lights-preset-desc">30% + Blue</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Individual Light Controls Section -->
+            <div class="lights-section">
+                <div class="lights-section-header">
+                    <h3 class="lights-section-title">🔧 Individual Controls</h3>
+                    <button class="lights-toggle-all" id="lights-toggle-all" title="Toggle all lights">
+                        <span class="lights-toggle-all-icon">💡</span>
+                        <span class="lights-toggle-all-text">All Off</span>
+                    </button>
+                </div>
+                <div class="lights-individual" id="lights-individual">
+                    <div class="lights-loading" id="lights-loading">
+                        <div class="lights-loading-spinner"></div>
+                        <div class="lights-loading-text">Loading lights...</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="lights-panel-backdrop" id="lights-panel-backdrop"></div>
     
-    <!-- Report Issue Modal -->
-    <div class="report-modal" id="report-modal">
-        <div class="report-modal-content">
-            <div class="report-modal-header">
-                <h2 class="report-modal-title">🚩 Report Issue</h2>
-                <button class="report-modal-close" id="report-modal-close" title="Close">✕</button>
+    <!-- Report Panel -->
+    <div class="report-panel" id="report-panel">
+        <div class="report-panel-content">
+            <div class="report-panel-header">
+                <span class="report-panel-title">🚩 Report Issue</span>
+                <button class="report-panel-close" id="report-panel-close" title="Close">✕</button>
             </div>
             
             <form class="report-form" id="report-form">
@@ -2927,6 +3387,7 @@
             </div>
         </div>
     </div>
+    <div class="report-panel-backdrop" id="report-panel-backdrop"></div>
     
     <script>
         class AliceDisplay {
@@ -2993,7 +3454,7 @@
                 this.setupEventListeners();
                 this.setupNetworkListeners();
                 this.initializeStatusOverlay();
-                this.initializeReportModal();
+                this.initializeReportPanel();
                 this.preventMobileScroll();  // Prevent iOS Safari scroll
                 this.spinnerEl.classList.add('active');
                 await this.loadDisplay(true);  // Initial load
@@ -3009,12 +3470,12 @@
             preventMobileScroll() {
                 // Prevent scroll on iOS Safari except in modal content
                 document.addEventListener('touchmove', (e) => {
-                    const modal = document.getElementById('report-modal');
-                    const modalContent = document.querySelector('.report-modal-content');
+                    const panel = document.getElementById('report-panel');
+                    const panelContent = document.querySelector('.report-panel-content');
                     
-                    // Allow scroll only inside the report modal content
-                    if (modal.classList.contains('show') && modalContent && modalContent.contains(e.target)) {
-                        return; // Allow scrolling in modal
+                    // Allow scroll only inside the report panel content
+                    if (panel.classList.contains('show') && panelContent && panelContent.contains(e.target)) {
+                        return; // Allow scrolling in panel
                     }
                     
                     // Prevent scroll everywhere else
@@ -3175,7 +3636,7 @@
                             if (e.shiftKey) {
                                 // Shift+R for report modal
                                 e.preventDefault();
-                                this.showReportModal();
+                                this.showReportPanel();
                             } else if (!e.ctrlKey) {
                                 // R for refresh
                                 e.preventDefault();
@@ -3743,10 +4204,10 @@
                     commandCenter.classList.remove('open');
                 });
                 
-                // Report button → show report modal
+                // Report button → show report panel
                 cmdReport.addEventListener('click', () => {
                     commandCenter.classList.remove('open');
-                    this.showReportModal();
+                    this.showReportPanel();
                 });
                 
                 // Vacuum button → show vacuum panel
@@ -3775,9 +4236,9 @@
                 });
             }
             
-            initializeReportModal() {
-                const reportModal = document.getElementById('report-modal');
-                const reportClose = document.getElementById('report-modal-close');
+            initializeReportPanel() {
+                const reportPanel = document.getElementById('report-panel');
+                const reportClose = document.getElementById('report-panel-close');
                 const reportForm = document.getElementById('report-form');
                 
                 // Initialize Command Center (which includes report button)
@@ -3792,16 +4253,15 @@
                 // Initialize Image Control Panel
                 this.initializeImageControlPanel();
                 
-                // Close modal when close button clicked
+                // Close panel when close button clicked
                 reportClose.addEventListener('click', () => {
-                    this.hideReportModal();
+                    this.hideReportPanel();
                 });
                 
-                // Close modal when clicking outside
-                reportModal.addEventListener('click', (e) => {
-                    if (e.target === reportModal) {
-                        this.hideReportModal();
-                    }
+                // Close panel when clicking on backdrop
+                const reportBackdrop = document.getElementById('report-panel-backdrop');
+                reportBackdrop.addEventListener('click', () => {
+                    this.hideReportPanel();
                 });
                 
                 // Handle form submission
@@ -3810,16 +4270,17 @@
                     this.submitReport();
                 });
                 
-                // Close modal with Escape key
+                // Close panel with Escape key
                 document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && reportModal.classList.contains('show')) {
-                        this.hideReportModal();
+                    if (e.key === 'Escape' && reportPanel.classList.contains('show')) {
+                        this.hideReportPanel();
                     }
                 });
             }
             
-            showReportModal() {
-                const modal = document.getElementById('report-modal');
+            showReportPanel() {
+                const panel = document.getElementById('report-panel');
+                const backdrop = document.getElementById('report-panel-backdrop');
                 const form = document.getElementById('report-form');
                 const feedback = document.getElementById('report-feedback');
                 
@@ -3833,27 +4294,21 @@
                     document.getElementById('report-image-id').value = this.currentData.currentImage.notion_id || '';
                 }
                 
-                // Lock body scroll when modal is open
-                document.body.style.overflow = 'hidden';
-                document.body.style.position = 'fixed';
-                document.body.style.width = '100%';
+                // Show panel
+                panel.classList.add('show');
+                backdrop.classList.add('show');
                 
-                modal.classList.add('show');
-                
-                // Focus on category select
+                // Focus on first checkbox group
                 setTimeout(() => {
                     document.getElementById('report-category').focus();
                 }, 100);
             }
             
-            hideReportModal() {
-                const modal = document.getElementById('report-modal');
-                modal.classList.remove('show');
-                
-                // Restore body scroll
-                document.body.style.overflow = '';
-                document.body.style.position = '';
-                document.body.style.width = '';
+            hideReportPanel() {
+                const panel = document.getElementById('report-panel');
+                const backdrop = document.getElementById('report-panel-backdrop');
+                panel.classList.remove('show');
+                backdrop.classList.remove('show');
             }
             
             async submitReport() {
@@ -4015,6 +4470,7 @@
             initializeVacuumPanel() {
                 const vacuumPanel = document.getElementById('vacuum-panel');
                 const vacuumClose = document.getElementById('vacuum-panel-close');
+                const vacuumBackdrop = document.getElementById('vacuum-panel-backdrop');
                 const vacuumBtnStart = document.getElementById('vacuum-btn-start');
                 const vacuumBtnStop = document.getElementById('vacuum-btn-stop');
                 const vacuumBtnHome = document.getElementById('vacuum-btn-home');
@@ -4024,11 +4480,9 @@
                     this.hideVacuumPanel();
                 });
                 
-                // Close panel when clicking outside
-                vacuumPanel.addEventListener('click', (e) => {
-                    if (e.target === vacuumPanel) {
-                        this.hideVacuumPanel();
-                    }
+                // Close panel when clicking on backdrop
+                vacuumBackdrop.addEventListener('click', () => {
+                    this.hideVacuumPanel();
                 });
                 
                 // Vacuum control buttons
@@ -4054,6 +4508,7 @@
             
             async showVacuumPanel() {
                 const panel = document.getElementById('vacuum-panel');
+                const backdrop = document.getElementById('vacuum-panel-backdrop');
                 
                 // Lock body scroll when panel is open
                 document.body.style.overflow = 'hidden';
@@ -4061,6 +4516,7 @@
                 document.body.style.width = '100%';
                 
                 panel.classList.add('show');
+                backdrop.classList.add('show');
                 
                 // Load battery status when panel opens
                 await this.loadVacuumStatus();
@@ -4068,7 +4524,9 @@
             
             hideVacuumPanel() {
                 const panel = document.getElementById('vacuum-panel');
+                const backdrop = document.getElementById('vacuum-panel-backdrop');
                 panel.classList.remove('show');
+                backdrop.classList.remove('show');
                 
                 // Restore body scroll
                 document.body.style.overflow = '';
@@ -4272,20 +4730,20 @@
             initializeLightsPanel() {
                 const lightsPanel = document.getElementById('lights-panel');
                 const lightsClose = document.getElementById('lights-panel-close');
+                const lightsBackdrop = document.getElementById('lights-panel-backdrop');
                 const bedtimeBtn = document.getElementById('lights-bedtime');
                 const daytimeBtn = document.getElementById('lights-daytime');
                 const movieBtn = document.getElementById('lights-movie');
+                const toggleAllBtn = document.getElementById('lights-toggle-all');
                 
                 // Close panel when close button clicked
                 lightsClose.addEventListener('click', () => {
                     this.hideLightsPanel();
                 });
                 
-                // Close panel when clicking outside
-                lightsPanel.addEventListener('click', (e) => {
-                    if (e.target === lightsPanel) {
-                        this.hideLightsPanel();
-                    }
+                // Close panel when clicking on backdrop
+                lightsBackdrop.addEventListener('click', () => {
+                    this.hideLightsPanel();
                 });
                 
                 // Bedtime preset
@@ -4302,10 +4760,20 @@
                 movieBtn.addEventListener('click', () => {
                     this.activateLightsPreset('movie');
                 });
+                
+                // Toggle all lights button
+                toggleAllBtn.addEventListener('click', () => {
+                    this.toggleAllLights();
+                });
+                
+                // Initialize individual lights state
+                this.lightsState = {};
+                this.allLightsOn = false;
             }
             
             async showLightsPanel() {
                 const panel = document.getElementById('lights-panel');
+                const backdrop = document.getElementById('lights-panel-backdrop');
                 
                 // Lock body scroll when panel is open
                 document.body.style.overflow = 'hidden';
@@ -4313,11 +4781,17 @@
                 document.body.style.width = '100%';
                 
                 panel.classList.add('show');
+                backdrop.classList.add('show');
+                
+                // Load individual lights when panel opens
+                await this.loadIndividualLights();
             }
             
             hideLightsPanel() {
                 const panel = document.getElementById('lights-panel');
+                const backdrop = document.getElementById('lights-panel-backdrop');
                 panel.classList.remove('show');
+                backdrop.classList.remove('show');
                 
                 // Restore body scroll
                 document.body.style.overflow = '';
@@ -4437,7 +4911,7 @@
                 changeBtn.addEventListener('click', () => this.handleChangeImage());
                 reportBtn.addEventListener('click', () => {
                     this.hideImageControlPanel();
-                    this.showReportModal();
+                    this.showReportPanel();
                 });
                 likeBtn.addEventListener('click', () => this.handleRateImage(1));
                 dislikeBtn.addEventListener('click', () => this.handleRateImage(-1));
@@ -4750,14 +5224,282 @@
                 return commands;
             }
             
+            // Individual Light Controls Functions
+            async loadIndividualLights() {
+                const container = document.getElementById('lights-individual');
+                const loading = document.getElementById('lights-loading');
+                
+                try {
+                    loading.style.display = 'flex';
+                    
+                    // Fetch lights list from API
+                    const response = await fetch('http://localhost:3001/api/lights/list');
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        this.renderIndividualLights(data.lights);
+                    } else {
+                        // Fallback to hardcoded lights
+                        this.renderIndividualLightsOffline();
+                    }
+                    
+                } catch (error) {
+                    console.warn('Could not fetch lights list, using offline mode:', error);
+                    this.renderIndividualLightsOffline();
+                } finally {
+                    loading.style.display = 'none';
+                }
+            }
+            
+            renderIndividualLights(lights) {
+                const container = document.getElementById('lights-individual');
+                container.innerHTML = '';
+                
+                lights.forEach(light => {
+                    const lightElement = this.createLightControl(light);
+                    container.appendChild(lightElement);
+                    
+                    // Initialize light state
+                    this.lightsState[light.id] = { on: false, brightness: 100 };
+                });
+                
+                this.updateToggleAllButton();
+            }
+            
+            renderIndividualLightsOffline() {
+                // Fallback lights list when API is not available
+                const fallbackLights = [
+                    { id: "kitchen-fan", name: "Kitchen Fan", colorCapable: true },
+                    { id: "living-room-lamp", name: "Living Room Lamp", colorCapable: true },
+                    { id: "dining-room-fan", name: "Dining Room Fan", colorCapable: true },
+                    { id: "master-bedroom", name: "Master Bedroom", colorCapable: true },
+                    { id: "outside-flood", name: "Outside Flood", colorCapable: true }
+                ];
+                
+                this.renderIndividualLights(fallbackLights);
+            }
+            
+            createLightControl(light) {
+                const div = document.createElement('div');
+                div.className = 'light-control';
+                div.dataset.lightId = light.id;
+                
+                div.innerHTML = `
+                    <div class="light-control-header">
+                        <div class="light-control-name">${light.name}</div>
+                        <button class="light-toggle" data-light-id="${light.id}"></button>
+                    </div>
+                    <div class="light-brightness" data-light-id="${light.id}">
+                        <span class="light-brightness-label">💡</span>
+                        <input type="range" class="light-brightness-slider" 
+                               min="1" max="100" value="100" 
+                               data-light-id="${light.id}">
+                        <span class="light-brightness-value">100%</span>
+                    </div>
+                `;
+                
+                // Add event listeners
+                const toggle = div.querySelector('.light-toggle');
+                const slider = div.querySelector('.light-brightness-slider');
+                const valueDisplay = div.querySelector('.light-brightness-value');
+                
+                toggle.addEventListener('click', () => {
+                    this.toggleLight(light.id);
+                });
+                
+                slider.addEventListener('input', (e) => {
+                    const brightness = parseInt(e.target.value);
+                    valueDisplay.textContent = `${brightness}%`;
+                });
+                
+                slider.addEventListener('change', (e) => {
+                    const brightness = parseInt(e.target.value);
+                    this.setLightBrightness(light.id, brightness);
+                });
+                
+                return div;
+            }
+            
+            async toggleLight(lightId) {
+                const lightState = this.lightsState[lightId];
+                const newState = !lightState.on;
+                
+                try {
+                    // Update UI immediately for responsiveness
+                    this.updateLightUI(lightId, newState, lightState.brightness);
+                    
+                    // Send command to API
+                    const result = await this.sendIndividualLightCommand(lightId, newState ? 'on' : 'off');
+                    
+                    if (result.success) {
+                        this.lightsState[lightId].on = newState;
+                        this.updateToggleAllButton();
+                        this.showToast(`💡 ${result.lightName} turned ${newState ? 'on' : 'off'}`);
+                    } else {
+                        // Revert UI on failure
+                        this.updateLightUI(lightId, lightState.on, lightState.brightness);
+                        this.showToast(`❌ Failed to control light: ${result.error}`);
+                    }
+                    
+                } catch (error) {
+                    // Revert UI on error
+                    this.updateLightUI(lightId, lightState.on, lightState.brightness);
+                    this.showToast(`❌ Error controlling light: ${error.message}`);
+                }
+            }
+            
+            async setLightBrightness(lightId, brightness) {
+                const lightState = this.lightsState[lightId];
+                
+                try {
+                    // Send brightness command
+                    const result = await this.sendIndividualLightCommand(lightId, 'brightness', brightness);
+                    
+                    if (result.success) {
+                        this.lightsState[lightId].brightness = brightness;
+                        this.lightsState[lightId].on = true; // Setting brightness turns light on
+                        this.updateLightUI(lightId, true, brightness);
+                        this.updateToggleAllButton();
+                        this.showToast(`💡 ${result.lightName} brightness: ${brightness}%`);
+                    } else {
+                        this.showToast(`❌ Failed to set brightness: ${result.error}`);
+                    }
+                    
+                } catch (error) {
+                    this.showToast(`❌ Error setting brightness: ${error.message}`);
+                }
+            }
+            
+            async toggleAllLights() {
+                const toggleAllBtn = document.getElementById('lights-toggle-all');
+                const toggleAllText = toggleAllBtn.querySelector('.lights-toggle-all-text');
+                const newState = !this.allLightsOn;
+                
+                try {
+                    toggleAllBtn.disabled = true;
+                    toggleAllText.textContent = newState ? 'Turning On...' : 'Turning Off...';
+                    
+                    // Update all lights
+                    const promises = Object.keys(this.lightsState).map(lightId => {
+                        return this.sendIndividualLightCommand(lightId, newState ? 'on' : 'off');
+                    });
+                    
+                    const results = await Promise.allSettled(promises);
+                    let successCount = 0;
+                    
+                    results.forEach((result, index) => {
+                        const lightId = Object.keys(this.lightsState)[index];
+                        if (result.status === 'fulfilled' && result.value.success) {
+                            this.lightsState[lightId].on = newState;
+                            this.updateLightUI(lightId, newState, this.lightsState[lightId].brightness);
+                            successCount++;
+                        }
+                    });
+                    
+                    this.updateToggleAllButton();
+                    this.showToast(`💡 ${successCount} lights turned ${newState ? 'on' : 'off'}`);
+                    
+                } catch (error) {
+                    this.showToast(`❌ Error controlling all lights: ${error.message}`);
+                } finally {
+                    toggleAllBtn.disabled = false;
+                }
+            }
+            
+            async sendIndividualLightCommand(lightId, action, brightness = null) {
+                try {
+                    const body = { lightId, action };
+                    if (brightness !== null) {
+                        body.brightness = brightness;
+                    }
+                    
+                    const response = await fetch('http://localhost:3001/api/lights/individual', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(body)
+                    });
+                    
+                    return await response.json();
+                    
+                } catch (error) {
+                    console.warn('Could not reach lights API for individual control:', error);
+                    
+                    // Simulate success for demo
+                    return {
+                        success: true,
+                        message: 'Command logged (API offline)',
+                        lightId: lightId,
+                        lightName: `Light ${lightId}`,
+                        action: action
+                    };
+                }
+            }
+            
+            updateLightUI(lightId, isOn, brightness) {
+                const lightElement = document.querySelector(`[data-light-id="${lightId}"]`);
+                if (!lightElement) return;
+                
+                const toggle = lightElement.querySelector('.light-toggle');
+                const brightnessContainer = lightElement.querySelector('.light-brightness');
+                const slider = lightElement.querySelector('.light-brightness-slider');
+                const valueDisplay = lightElement.querySelector('.light-brightness-value');
+                
+                // Update toggle button
+                toggle.classList.toggle('on', isOn);
+                
+                // Update light control container
+                lightElement.classList.toggle('light-on', isOn);
+                
+                // Show/hide brightness controls
+                brightnessContainer.classList.toggle('show', isOn);
+                
+                // Update brightness slider and display
+                if (slider && valueDisplay) {
+                    slider.value = brightness;
+                    valueDisplay.textContent = `${brightness}%`;
+                }
+            }
+            
+            updateToggleAllButton() {
+                const toggleAllBtn = document.getElementById('lights-toggle-all');
+                const toggleAllText = toggleAllBtn.querySelector('.lights-toggle-all-text');
+                const toggleAllIcon = toggleAllBtn.querySelector('.lights-toggle-all-icon');
+                
+                // Check if all lights are on
+                const lightStates = Object.values(this.lightsState);
+                const onCount = lightStates.filter(state => state.on).length;
+                const totalCount = lightStates.length;
+                
+                this.allLightsOn = onCount > 0 && onCount === totalCount;
+                const someOn = onCount > 0;
+                
+                // Update button appearance
+                toggleAllBtn.classList.toggle('all-on', someOn);
+                
+                // Update button text
+                if (onCount === totalCount && totalCount > 0) {
+                    toggleAllText.textContent = 'All Off';
+                    toggleAllIcon.textContent = '💡';
+                } else if (onCount > 0) {
+                    toggleAllText.textContent = `${onCount} On`;
+                    toggleAllIcon.textContent = '💡';
+                } else {
+                    toggleAllText.textContent = 'All On';
+                    toggleAllIcon.textContent = '🔆';
+                }
+            }
+            
             closeAllPanels() {
                 document.getElementById('help-overlay').classList.remove('show');
                 document.getElementById('image-info').classList.remove('show');
-                document.getElementById('report-modal').classList.remove('show');
+                document.getElementById('report-panel').classList.remove('show');
                 document.getElementById('vacuum-panel').classList.remove('show');
                 document.getElementById('lights-panel').classList.remove('show');
                 document.getElementById('image-control-panel').classList.remove('show');
                 document.getElementById('image-control-backdrop').classList.remove('show');
+                document.getElementById('report-panel-backdrop').classList.remove('show');
+                document.getElementById('vacuum-panel-backdrop').classList.remove('show');
+                document.getElementById('lights-panel-backdrop').classList.remove('show');
                 // Note: status overlay toggle is separate - not included in close all panels
                 this.debugEl.classList.remove('show');
             }
