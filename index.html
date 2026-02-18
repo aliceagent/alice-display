@@ -69,6 +69,22 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             /* Ken Burns base - slightly larger to allow movement */
             transform-origin: center center;
+            /* Blur-up preloading transitions */
+            transition: filter 0.8s ease-out, opacity 0.3s ease-in-out;
+            /* Touch gesture support */
+            will-change: transform;
+            backface-visibility: hidden;
+        }
+
+        /* Blur-up preloading states */
+        .image-layer img.blur-placeholder {
+            filter: blur(20px);
+            opacity: 0.7;
+        }
+        
+        .image-layer img.sharp-loading {
+            filter: blur(0px);
+            opacity: 1;
         }
         
         /* Ken Burns effect animations */
@@ -92,21 +108,170 @@
             100% { transform: scale(1.02) translate(-0.5%, 0.5%); }
         }
         
+        /* Enhanced Ken Burns variants with more sophisticated movement */
+        @keyframes kenburns-5 {
+            0% { transform: scale(1.0) translate(0, 0) rotate(0deg); }
+            50% { transform: scale(1.04) translate(0.8%, -0.3%) rotate(0.3deg); }
+            100% { transform: scale(1.09) translate(-0.5%, 1%) rotate(-0.2deg); }
+        }
+        
+        @keyframes kenburns-6 {
+            0% { transform: scale(1.06) translate(-1%, 0.8%); }
+            30% { transform: scale(1.03) translate(0.2%, -0.4%); }
+            70% { transform: scale(1.01) translate(0.6%, 0.2%); }
+            100% { transform: scale(1.0) translate(0, 0); }
+        }
+        
+        @keyframes kenburns-7 {
+            0% { transform: scale(1.0) translate(0, 0); }
+            25% { transform: scale(1.02) translate(-0.4%, -0.6%); }
+            75% { transform: scale(1.06) translate(0.8%, 0.3%); }
+            100% { transform: scale(1.1) translate(1.2%, -0.8%); }
+        }
+        
+        /* Ambient Particle Effects */
+        .particle-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 5; /* Above images, below UI elements */
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+        
+        .particle-overlay.active {
+            opacity: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+        }
+        
+        /* Dust mote particles */
+        .particle.dust {
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            animation: float-dust linear infinite;
+        }
+        
+        /* Sparkle particles */
+        .particle.sparkle {
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 215, 0, 0.4);
+            animation: float-sparkle linear infinite;
+        }
+        
+        /* Floating orb particles */
+        .particle.orb {
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.15);
+            animation: float-orb linear infinite;
+        }
+        
+        @keyframes float-dust {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(20px);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes float-sparkle {
+            0% {
+                transform: translateY(100vh) translateX(0px) scale(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(80vh) translateX(5px) scale(1);
+            }
+            80% {
+                opacity: 1;
+                transform: translateY(20vh) translateX(-10px) scale(1);
+            }
+            100% {
+                transform: translateY(-10vh) translateX(-15px) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes float-orb {
+            0% {
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.6;
+            }
+            85% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(-30px);
+                opacity: 0;
+            }
+        }
+        
         .image-layer.active img.kenburns {
             animation-duration: 20s;
             animation-timing-function: ease-in-out;
             animation-fill-mode: forwards;
         }
         
+        /* Variants with different durations for more variety */
+        .image-layer.active img.kenburns-5,
+        .image-layer.active img.kenburns-6 {
+            animation-duration: 25s;
+            animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .image-layer.active img.kenburns-7 {
+            animation-duration: 18s;
+            animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
         .image-layer.active img.kenburns-1 { animation-name: kenburns-1; }
         .image-layer.active img.kenburns-2 { animation-name: kenburns-2; }
         .image-layer.active img.kenburns-3 { animation-name: kenburns-3; }
         .image-layer.active img.kenburns-4 { animation-name: kenburns-4; }
+        .image-layer.active img.kenburns-5 { animation-name: kenburns-5; }
+        .image-layer.active img.kenburns-6 { animation-name: kenburns-6; }
+        .image-layer.active img.kenburns-7 { animation-name: kenburns-7; }
         
-        /* Pause Ken Burns when user prefers reduced motion */
+        /* Pause Ken Burns and particles when user prefers reduced motion */
         @media (prefers-reduced-motion: reduce) {
-            .image-layer.active img.kenburns {
+            .image-layer.active img.kenburns,
+            .image-layer.active img.kenburns-5,
+            .image-layer.active img.kenburns-6,
+            .image-layer.active img.kenburns-7 {
                 animation: none;
+            }
+            
+            .particle {
+                animation: none !important;
+                display: none !important;
+            }
+            
+            .particle-overlay {
+                display: none !important;
             }
         }
         
@@ -622,6 +787,195 @@
         }
         
         /* ═══════════════════════════════════════════════════════════
+           ♠️ METADATA OVERLAY
+           ═══════════════════════════════════════════════════════════ */
+        
+        .metadata-overlay {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(30,30,50,0.9) 100%);
+            backdrop-filter: blur(20px);
+            color: white;
+            padding: 0;
+            border-radius: 16px;
+            max-width: 350px;
+            width: 350px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            z-index: 15;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+            font-size: 14px;
+        }
+        
+        .metadata-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .metadata-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 20px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+        
+        .metadata-icon {
+            font-size: 20px;
+            line-height: 1;
+        }
+        
+        .metadata-title {
+            font-size: 16px;
+            font-weight: 600;
+            flex: 1;
+        }
+        
+        .metadata-close {
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+            line-height: 1;
+            padding: 0 4px;
+        }
+        
+        .metadata-close:hover {
+            opacity: 1;
+        }
+        
+        .metadata-content {
+            padding: 20px;
+        }
+        
+        .metadata-section {
+            margin-bottom: 20px;
+        }
+        
+        .metadata-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .metadata-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .metadata-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .metadata-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-width: 80px;
+            flex-shrink: 0;
+        }
+        
+        .metadata-value {
+            font-size: 14px;
+            color: rgba(255,255,255,0.9);
+            text-align: right;
+            line-height: 1.4;
+            word-wrap: break-word;
+            flex: 1;
+        }
+        
+        .metadata-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .metadata-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 12px;
+            opacity: 0.3;
+            transition: opacity 0.2s ease;
+        }
+        
+        .metadata-badge.verified {
+            background: rgba(46, 160, 67, 0.2);
+            color: #4CAF50;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            opacity: 1;
+        }
+        
+        .metadata-badge.generated {
+            background: rgba(33, 150, 243, 0.2);
+            color: #2196F3;
+            border: 1px solid rgba(33, 150, 243, 0.3);
+            opacity: 1;
+        }
+        
+        .metadata-info {
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+            margin-left: auto;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .metadata-overlay {
+                right: 12px;
+                left: 12px;
+                width: auto;
+                max-width: none;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 13px;
+            }
+            
+            .metadata-header {
+                padding: 16px;
+            }
+            
+            .metadata-content {
+                padding: 16px;
+            }
+            
+            .metadata-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            
+            .metadata-label {
+                min-width: auto;
+            }
+            
+            .metadata-value {
+                text-align: left;
+            }
+        }
+        
+        @media (max-height: 600px) {
+            .metadata-overlay {
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+        }
+        
+        /* ═══════════════════════════════════════════════════════════
            MOBILE LANDSCAPE LAYOUT
            On landscape phones, the square image fills the viewport
            height, leaving dead space on left and right. We shift
@@ -841,6 +1195,135 @@
             opacity: 1;
             transform: scale(1.1);
         }
+
+        /* Enhanced Fullscreen Controls */
+        #fullscreen-controls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+        }
+
+        .fullscreen-controls-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: all;
+        }
+
+        #fullscreen-controls.visible .fullscreen-controls-container {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fs-control-btn {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .fs-control-btn:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.1);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .fs-control-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Fullscreen Transition Animations */
+        body.entering-fullscreen {
+            animation: fullscreen-enter 0.4s ease-out forwards;
+        }
+
+        body.exiting-fullscreen {
+            animation: fullscreen-exit 0.4s ease-out forwards;
+        }
+
+        @keyframes fullscreen-enter {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.9;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fullscreen-exit {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.02);
+                opacity: 0.95;
+            }
+        }
+
+        /* Fullscreen active state adjustments */
+        body.fullscreen-active {
+            overflow: hidden;
+        }
+
+        body.fullscreen-active .fullscreen-btn {
+            opacity: 0.2;
+        }
+
+        body.fullscreen-active .fullscreen-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Mobile fullscreen optimizations */
+        @media (max-width: 768px) {
+            .fullscreen-controls-container {
+                top: 15px;
+                right: 15px;
+                gap: 8px;
+            }
+
+            .fs-control-btn {
+                width: 44px;
+                height: 44px;
+                border-radius: 22px;
+                font-size: 18px;
+            }
+
+            /* Touch-friendly hover states */
+            .fs-control-btn:active {
+                background: rgba(0, 0, 0, 0.9);
+                transform: scale(1.05);
+            }
+        }
+
+        /* PWA and iOS Safari fullscreen enhancements */
+        @media (display-mode: standalone) {
+            body.fullscreen-active {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
         
         /* Error state */
         .error-message {
@@ -1018,9 +1501,16 @@
             50% { opacity: 0.3; }
         }
         
-        /* Fallback image styling */
+        /* Fallback and error image styling */
         .fallback-active .image-layer img {
             filter: grayscale(30%) brightness(0.8);
+        }
+        
+        /* Error placeholder styling */
+        .image-layer img.error-placeholder {
+            filter: grayscale(50%) brightness(0.6);
+            opacity: 0.8;
+            border: 2px solid rgba(255, 82, 82, 0.5);
         }
         
         .fallback-badge {
@@ -1670,11 +2160,98 @@
         .command-center.open .command-center-icon:nth-child(4) {
             transition-delay: 0.2s;
         }
+        .command-center.open .command-center-icon:nth-child(5) {
+            transition-delay: 0.25s;
+        }
+        .command-center.open .command-center-icon:nth-child(6) {
+            transition-delay: 0.3s;
+        }
+        .command-center.open .command-center-icon:nth-child(7) {
+            transition-delay: 0.35s;
+        }
+        .command-center.open .command-center-icon:nth-child(8) {
+            transition-delay: 0.4s;
+        }
         
         /* Image Control button in Command Center */
         .command-center-icon.image {
             background: linear-gradient(135deg, rgba(139, 92, 246, 0.9) 0%, rgba(109, 40, 217, 0.95) 100%);
             box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+        
+        /* Particle Effects button in Command Center */
+        .command-center-icon.particles {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.9) 0%, rgba(255, 140, 0, 0.95) 100%);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        /* Ambient Sound button in Command Center */
+        .command-center-icon.ambient-sound {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.9) 0%, rgba(21, 128, 61, 0.95) 100%);
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+        }
+        
+        /* Night Mode button in Command Center */
+        .command-center-icon.night-mode {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.9) 0%, rgba(255, 100, 0, 0.95) 100%);
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        /* Night mode active state */
+        .command-center-icon.night-mode.active {
+            background: linear-gradient(135deg, rgba(255, 200, 100, 0.9) 0%, rgba(255, 160, 80, 0.95) 100%);
+            box-shadow: 0 4px 20px rgba(255, 200, 100, 0.6), 0 0 30px rgba(255, 140, 0, 0.3);
+            transform: scale(1.05);
+        }
+        
+        /* Picture-in-Picture button in Command Center */
+        .command-center-icon.pip {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(67, 56, 202, 0.95) 100%);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        /* PiP active state */
+        .command-center-icon.pip.active {
+            background: linear-gradient(135deg, rgba(129, 140, 248, 0.9) 0%, rgba(99, 102, 241, 0.95) 100%);
+            box-shadow: 0 4px 20px rgba(129, 140, 248, 0.6), 0 0 30px rgba(99, 102, 241, 0.3);
+            transform: scale(1.05);
+        }
+        
+        /* Picture-in-Picture mode specific styles */
+        @media (display-mode: picture-in-picture) {
+            body {
+                background: linear-gradient(135deg, #0a0a1a 0%, #101020 100%);
+            }
+            
+            .display-container {
+                padding: 8px;
+            }
+            
+            .image-layer img {
+                border-radius: 8px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            }
+            
+            /* Hide UI elements that aren't useful in PiP mode */
+            .command-center,
+            .command-center-backdrop,
+            .fullscreen-btn,
+            .status-overlay,
+            .fallback-badge,
+            .particles-container,
+            .particle-overlay {
+                display: none !important;
+            }
+            
+            /* Simplify image info display for PiP */
+            .image-info {
+                font-size: 11px;
+                padding: 6px 10px;
+                background: rgba(0, 0, 0, 0.8);
+                border-radius: 6px;
+            }
         }
         
         /* ═══════════════════════════════════════════════════════════
@@ -1887,6 +2464,242 @@
             display: block;
         }
         
+        /* ═══════════════════════════════════════════════════════════
+           AMBIENT SOUND PANEL
+           Panel that appears when ambient sound button is clicked
+           Contains: Toggle, Volume slider, Sound type selector
+           ═══════════════════════════════════════════════════════════ */
+        
+        .ambient-sound-panel {
+            position: fixed;
+            bottom: 100px;
+            bottom: max(100px, calc(86px + env(safe-area-inset-bottom, 14px)));
+            left: 24px;
+            background: linear-gradient(145deg, rgba(30, 50, 30, 0.95) 0%, rgba(20, 35, 20, 0.98) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 20px;
+            z-index: 65;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            min-width: 280px;
+        }
+        
+        .ambient-sound-panel.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        
+        .ambient-sound-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .ambient-sound-title {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .ambient-sound-close {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+        
+        .ambient-sound-close:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .ambient-sound-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .ambient-sound-row {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        /* Toggle Switch */
+        .ambient-sound-toggle-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        
+        .ambient-sound-toggle-input {
+            display: none;
+        }
+        
+        .ambient-sound-toggle-slider {
+            position: relative;
+            width: 44px;
+            height: 24px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .ambient-sound-toggle-slider::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: white;
+            top: 3px;
+            left: 3px;
+            transition: transform 0.3s ease;
+        }
+        
+        .ambient-sound-toggle-input:checked + .ambient-sound-toggle-slider {
+            background-color: rgba(34, 197, 94, 0.8);
+        }
+        
+        .ambient-sound-toggle-input:checked + .ambient-sound-toggle-slider::after {
+            transform: translateX(20px);
+        }
+        
+        .ambient-sound-toggle-text {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Volume Slider */
+        .ambient-sound-slider-label {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .ambient-sound-slider-text {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .ambient-sound-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .ambient-sound-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(34, 197, 94, 0.9);
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .ambient-sound-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(34, 197, 94, 0.9);
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .ambient-sound-slider:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .ambient-sound-volume-value {
+            color: rgba(34, 197, 94, 0.9);
+            font-size: 12px;
+            font-weight: 600;
+            align-self: flex-end;
+        }
+        
+        /* Sound Type Select */
+        .ambient-sound-select-label {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .ambient-sound-select-text {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .ambient-sound-select {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 8px;
+            color: white;
+            padding: 8px 12px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .ambient-sound-select:focus {
+            border-color: rgba(34, 197, 94, 0.6);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .ambient-sound-select:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .ambient-sound-select option {
+            background-color: #1a1a2e;
+            color: white;
+        }
+        
+        /* Ambient sound panel backdrop */
+        .ambient-sound-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 62;
+            display: none;
+        }
+        
+        .ambient-sound-backdrop.show {
+            display: block;
+        }
+        
         /* Mobile responsive adjustments */
         @media (max-width: 480px) and (orientation: portrait) {
             .image-control-panel {
@@ -1917,7 +2730,7 @@
             display: none; /* Hidden - replaced by Command Center */
         }
         
-        /* Vacuum Control Panel */
+        /* Enhanced Vacuum Control Panel */
         .vacuum-panel {
             position: fixed;
             top: 0;
@@ -1945,13 +2758,14 @@
             background: linear-gradient(145deg, #2d2d44 0%, #1a1a2e 100%);
             border-radius: 20px;
             padding: 32px;
-            max-width: 400px;
+            max-width: 450px;
             width: 90%;
             color: white;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
             animation: modalSlideIn 0.4s ease-out;
-            text-align: center;
+            max-height: 90vh;
+            overflow-y: auto;
         }
         
         .vacuum-panel-header {
@@ -1959,6 +2773,8 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .vacuum-panel-title {
@@ -1985,13 +2801,66 @@
             background: rgba(255, 255, 255, 0.1);
         }
         
+        /* Device Selection Tabs */
+        .vacuum-device-selector {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .vacuum-device-tab {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .vacuum-device-tab:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .vacuum-device-tab.active {
+            background: rgba(76, 175, 80, 0.2);
+            border-color: rgba(76, 175, 80, 0.4);
+            color: white;
+        }
+        
+        .vacuum-device-icon {
+            font-size: 24px;
+        }
+        
+        .vacuum-device-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .vacuum-device-name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .vacuum-device-location {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        /* Enhanced Battery Display */
         .vacuum-battery {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 32px;
-            padding: 16px 20px;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 16px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.08);
             border-radius: 12px;
             cursor: pointer;
@@ -1999,67 +2868,178 @@
         }
         
         .vacuum-battery:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
         }
         
         .vacuum-battery:active {
             transform: scale(0.98);
         }
         
+        .vacuum-battery-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
         .vacuum-battery-icon {
             font-size: 32px;
         }
         
-        .vacuum-battery-text {
-            font-size: 18px;
-            font-weight: 600;
+        .vacuum-battery-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
         
-        .vacuum-battery-loading {
-            font-size: 16px;
-            opacity: 0.7;
+        .vacuum-battery-level {
+            font-size: 20px;
+            font-weight: 700;
+            color: #4caf50;
         }
         
-        .vacuum-status {
+        .vacuum-battery-state {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .vacuum-battery-bar {
+            width: 80px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .vacuum-battery-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        
+        .vacuum-battery-fill.low {
+            background: linear-gradient(90deg, #ff5252 0%, #ff9800 100%);
+        }
+        
+        .vacuum-battery-fill.charging {
+            background: linear-gradient(90deg, #2196f3 0%, #00bcd4 100%);
+            animation: charging-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes charging-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Connection Status */
+        .vacuum-connection {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
+            gap: 12px;
             padding: 12px 20px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 12px;
             margin-bottom: 16px;
         }
         
-        .vacuum-status-icon {
-            font-size: 20px;
+        .vacuum-connection-icon {
+            font-size: 18px;
         }
         
-        .vacuum-status-text {
+        .vacuum-connection.connected {
+            background: rgba(76, 175, 80, 0.15);
+            color: #4caf50;
+        }
+        
+        .vacuum-connection.disconnected {
+            background: rgba(255, 82, 82, 0.15);
+            color: #ff5252;
+        }
+        
+        /* Enhanced Status Display */
+        .vacuum-status {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .vacuum-status-icon {
+            font-size: 24px;
+        }
+        
+        .vacuum-status-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .vacuum-status-main {
             font-size: 16px;
-            font-weight: 500;
+            font-weight: 600;
             text-transform: capitalize;
         }
         
-        .vacuum-status.cleaning .vacuum-status-text {
-            color: #4ade80;
+        .vacuum-status-sub {
+            font-size: 14px;
+            opacity: 0.7;
         }
         
-        .vacuum-status.charging .vacuum-status-text {
-            color: #60a5fa;
+        .vacuum-status.cleaning {
+            background: rgba(76, 175, 80, 0.15);
         }
         
-        .vacuum-status.idle .vacuum-status-text {
-            color: #fbbf24;
+        .vacuum-status.cleaning .vacuum-status-main {
+            color: #4caf50;
         }
         
+        .vacuum-status.charging {
+            background: rgba(33, 150, 243, 0.15);
+        }
+        
+        .vacuum-status.charging .vacuum-status-main {
+            color: #2196f3;
+        }
+        
+        .vacuum-status.idle {
+            background: rgba(255, 193, 7, 0.15);
+        }
+        
+        .vacuum-status.idle .vacuum-status-main {
+            color: #ffc107;
+        }
+        
+        /* Last Updated Display */
+        .vacuum-last-updated {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+        
+        /* Control Buttons */
         .vacuum-actions {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
+            margin-bottom: 20px;
         }
         
         .vacuum-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
             padding: 16px 24px;
             border-radius: 12px;
             font-size: 16px;
@@ -2067,20 +3047,16 @@
             cursor: pointer;
             transition: all 0.2s;
             border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
             min-height: 56px;
+            position: relative;
         }
         
         .vacuum-btn:disabled {
-            opacity: 0.7;
+            opacity: 0.6;
             cursor: not-allowed;
         }
         
         .vacuum-btn.loading {
-            position: relative;
             pointer-events: none;
         }
         
@@ -2100,15 +3076,6 @@
         
         @keyframes vacuum-spin {
             to { transform: rotate(360deg); }
-        }
-        
-        .vacuum-btn.loading .vacuum-btn-icon {
-            animation: vacuum-pulse 1s ease-in-out infinite;
-        }
-        
-        @keyframes vacuum-pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
         }
         
         .vacuum-btn-start {
@@ -2152,6 +3119,42 @@
             font-size: 20px;
         }
         
+        /* Refresh Button */
+        .vacuum-footer {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .vacuum-refresh-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        
+        .vacuum-refresh-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .vacuum-refresh-icon {
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+        
+        .vacuum-refresh-btn.loading .vacuum-refresh-icon {
+            animation: vacuum-spin 1s linear infinite;
+        }
+        
+        /* Mobile Responsiveness */
         @media (max-width: 480px) {
             .vacuum-panel-content {
                 margin: 16px;
@@ -2160,8 +3163,27 @@
                 width: auto;
             }
             
-            .vacuum-actions {
+            .vacuum-device-selector {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .vacuum-device-tab {
+                padding: 12px;
+            }
+            
+            .vacuum-battery {
+                flex-direction: column;
+                align-items: flex-start;
                 gap: 12px;
+            }
+            
+            .vacuum-battery-bar {
+                width: 100%;
+            }
+            
+            .vacuum-actions {
+                gap: 10px;
             }
             
             .vacuum-btn {
@@ -3003,6 +4025,9 @@
         </div>
     </div>
     
+    <!-- Ambient Particle Effects Overlay -->
+    <div class="particle-overlay" id="particle-overlay"></div>
+    
     <div class="title-overlay" id="title-overlay"></div>
     
     <!-- Weather Widget Overlay -->
@@ -3031,6 +4056,56 @@
         <div class="weather-widget-time">
             <span class="weather-widget-clock" id="widget-clock">--:--</span>
             <span class="weather-widget-period" id="widget-period">--</span>
+        </div>
+    </div>
+
+    <!-- Image Metadata Overlay -->
+    <div class="metadata-overlay" id="metadata-overlay">
+        <div class="metadata-header">
+            <span class="metadata-icon">ℹ️</span>
+            <span class="metadata-title">Image Details</span>
+            <span class="metadata-close" onclick="alice.toggleMetadataOverlay()">×</span>
+        </div>
+        <div class="metadata-content">
+            <div class="metadata-section">
+                <div class="metadata-item">
+                    <span class="metadata-label">Title</span>
+                    <span class="metadata-value" id="metadata-name">--</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Activity</span>
+                    <span class="metadata-value" id="metadata-activity">--</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Weather</span>
+                    <span class="metadata-value" id="metadata-weather">--</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Time Period</span>
+                    <span class="metadata-value" id="metadata-time-period">--</span>
+                </div>
+            </div>
+            <div class="metadata-section">
+                <div class="metadata-item">
+                    <span class="metadata-label">Location</span>
+                    <span class="metadata-value" id="metadata-location">--</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Style</span>
+                    <span class="metadata-value" id="metadata-style">--</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="metadata-label">Holiday</span>
+                    <span class="metadata-value" id="metadata-holiday">None</span>
+                </div>
+            </div>
+            <div class="metadata-section">
+                <div class="metadata-status">
+                    <span class="metadata-badge" id="metadata-verified">Verified</span>
+                    <span class="metadata-badge" id="metadata-generated">Generated</span>
+                    <span class="metadata-info" id="metadata-row">#--</span>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -3158,33 +4233,58 @@
                 <span class="help-key">R</span>
                 <span class="help-desc">Refresh display</span>
                 
+                <span class="help-key">Shift+R</span>
+                <span class="help-desc">Report issue with image</span>
+                
                 <span class="help-key">F</span>
                 <span class="help-desc">Toggle fullscreen</span>
-                
-                <span class="help-key">S</span>
-                <span class="help-desc">Toggle status overlay</span>
                 
                 <span class="help-key">Space</span>
                 <span class="help-desc">Pause/resume auto-refresh</span>
                 
+                <span class="help-key">H / ?</span>
+                <span class="help-desc">Show/hide this help</span>
+                
                 <span class="help-key">I</span>
                 <span class="help-desc">Show image info</span>
                 
-                <span class="help-key">W</span>
-                <span class="help-desc">Toggle status overlay</span>
+                <span class="help-key">C</span>
+                <span class="help-desc">Copy image URL to clipboard</span>
+                
+                <span class="help-key">M</span>
+                <span class="help-desc">Toggle metadata overlay</span>
+                
+                <span class="help-key">← →</span>
+                <span class="help-desc">Navigate images (left/right arrows)</span>
                 
                 <span class="help-key">Ctrl+D</span>
                 <span class="help-desc">Toggle debug panel</span>
                 
-                <span class="help-key">H / ?</span>
-                <span class="help-desc">Show this help</span>
-                
-                <span class="help-key">Shift+R</span>
-                <span class="help-desc">Report issue with image</span>
-                
                 <span class="help-key">Esc</span>
-                <span class="help-desc">Close panels</span>
+                <span class="help-desc">Close all panels</span>
+                
+                <span class="help-key">S</span>
+                <span class="help-desc">Status controls (use Command Center)</span>
+                
+                <span class="help-key">W</span>
+                <span class="help-desc">Weather controls (use Command Center)</span>
             </div>
+            
+            <div class="help-title">👆 Touch Gestures</div>
+            <div class="help-shortcuts">
+                <span class="help-key">👈 👉</span>
+                <span class="help-desc">Swipe left/right to change images</span>
+                
+                <span class="help-key">🤏</span>
+                <span class="help-desc">Pinch to zoom in/out</span>
+                
+                <span class="help-key">👆👆</span>
+                <span class="help-desc">Double tap to toggle zoom</span>
+                
+                <span class="help-key">👆⏰</span>
+                <span class="help-desc">Long press for image controls</span>
+            </div>
+            
             <div class="help-close">Press any key to close</div>
         </div>
     </div>
@@ -3226,10 +4326,14 @@
     <!-- Command Center -->
     <div class="command-center" id="command-center">
         <div class="command-center-popup">
+            <button class="command-center-icon pip" id="cmd-pip" title="Picture-in-Picture">📺</button>
+            <button class="command-center-icon night-mode" id="cmd-night-mode" title="Night Mode">🌙</button>
             <button class="command-center-icon lights" id="cmd-lights" title="Lights">💡</button>
             <button class="command-center-icon vacuum" id="cmd-vacuum" title="Vacuum">🤖</button>
             <button class="command-center-icon report" id="cmd-report" title="Report Issue">🚩</button>
             <button class="command-center-icon image" id="cmd-image" title="Image Controls">🖼️</button>
+            <button class="command-center-icon particles" id="cmd-particles" title="Particle Effects">✨</button>
+            <button class="command-center-icon ambient-sound" id="cmd-ambient" title="Ambient Sounds">🎵</button>
         </div>
         <button class="command-center-button" id="command-center-button" title="Command Center">⚙️</button>
     </div>
@@ -3264,36 +4368,138 @@
     </div>
     <div class="image-control-backdrop" id="image-control-backdrop"></div>
     
-    <!-- Vacuum Control Panel -->
+    <!-- Ambient Sound Panel -->
+    <div class="ambient-sound-panel" id="ambient-sound-panel">
+        <div class="ambient-sound-header">
+            <span class="ambient-sound-title">🎵 Ambient Sounds</span>
+            <button class="ambient-sound-close" id="ambient-sound-close" title="Close">✕</button>
+        </div>
+        <div class="ambient-sound-controls">
+            <!-- Master Toggle -->
+            <div class="ambient-sound-row">
+                <label class="ambient-sound-toggle-label">
+                    <input type="checkbox" id="ambient-sound-enabled" class="ambient-sound-toggle-input">
+                    <span class="ambient-sound-toggle-slider"></span>
+                    <span class="ambient-sound-toggle-text">Enable Ambient Sounds</span>
+                </label>
+            </div>
+            
+            <!-- Volume Control -->
+            <div class="ambient-sound-row">
+                <label class="ambient-sound-slider-label">
+                    <span class="ambient-sound-slider-text">🔊 Volume</span>
+                    <input type="range" id="ambient-sound-volume" class="ambient-sound-slider" 
+                           min="0" max="100" value="50" disabled>
+                    <span class="ambient-sound-volume-value">50%</span>
+                </label>
+            </div>
+            
+            <!-- Sound Type Selector -->
+            <div class="ambient-sound-row">
+                <label class="ambient-sound-select-label">
+                    <span class="ambient-sound-select-text">🌿 Sound Type</span>
+                    <select id="ambient-sound-type" class="ambient-sound-select" disabled>
+                        <option value="rain">🌧️ Rain</option>
+                        <option value="forest">🌲 Forest</option>
+                        <option value="ocean">🌊 Ocean Waves</option>
+                        <option value="wind">💨 Gentle Wind</option>
+                        <option value="birds">🐦 Birds Chirping</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="ambient-sound-backdrop" id="ambient-sound-backdrop"></div>
+    
+    <!-- Enhanced Vacuum Control Panel -->
     <div class="vacuum-panel" id="vacuum-panel">
         <div class="vacuum-panel-content">
+            <!-- Header with device selector -->
             <div class="vacuum-panel-header">
-                <h2 class="vacuum-panel-title">🤖 Yiko Vacuum</h2>
+                <h2 class="vacuum-panel-title">
+                    <span class="vacuum-panel-icon">🤖</span>
+                    <span class="vacuum-panel-title-text">Vacuum Control</span>
+                </h2>
                 <button class="vacuum-panel-close" id="vacuum-panel-close" title="Close">✕</button>
             </div>
             
-            <div class="vacuum-battery" id="vacuum-battery">
-                <span class="vacuum-battery-icon" id="vacuum-battery-icon">🔋</span>
-                <span class="vacuum-battery-text" id="vacuum-battery-text">Loading...</span>
+            <!-- Device Selection Tabs -->
+            <div class="vacuum-device-selector">
+                <button class="vacuum-device-tab active" data-device="1" id="device-tab-1">
+                    <span class="vacuum-device-icon">🏠</span>
+                    <div class="vacuum-device-info">
+                        <div class="vacuum-device-name">Yiko</div>
+                        <div class="vacuum-device-location">Main House</div>
+                    </div>
+                </button>
+                <button class="vacuum-device-tab" data-device="0" id="device-tab-0">
+                    <span class="vacuum-device-icon">🏊</span>
+                    <div class="vacuum-device-info">
+                        <div class="vacuum-device-name">Yeko</div>
+                        <div class="vacuum-device-location">Pool Room</div>
+                    </div>
+                </button>
             </div>
             
-            <div class="vacuum-status" id="vacuum-status">
-                <span class="vacuum-status-icon" id="vacuum-status-icon">📍</span>
-                <span class="vacuum-status-text" id="vacuum-status-text">--</span>
+            <!-- Device Status Display -->
+            <div class="vacuum-device-status">
+                <!-- Battery Status -->
+                <div class="vacuum-battery" id="vacuum-battery">
+                    <div class="vacuum-battery-left">
+                        <span class="vacuum-battery-icon" id="vacuum-battery-icon">🔋</span>
+                        <div class="vacuum-battery-info">
+                            <div class="vacuum-battery-level" id="vacuum-battery-level">--</div>
+                            <div class="vacuum-battery-state" id="vacuum-battery-state">Loading...</div>
+                        </div>
+                    </div>
+                    <div class="vacuum-battery-bar">
+                        <div class="vacuum-battery-fill" id="vacuum-battery-fill"></div>
+                    </div>
+                </div>
+                
+                <!-- Connection Status -->
+                <div class="vacuum-connection" id="vacuum-connection">
+                    <span class="vacuum-connection-icon" id="vacuum-connection-icon">📶</span>
+                    <span class="vacuum-connection-text" id="vacuum-connection-text">Checking...</span>
+                </div>
+                
+                <!-- Cleaning Status -->
+                <div class="vacuum-status" id="vacuum-status">
+                    <span class="vacuum-status-icon" id="vacuum-status-icon">📍</span>
+                    <div class="vacuum-status-info">
+                        <div class="vacuum-status-main" id="vacuum-status-main">--</div>
+                        <div class="vacuum-status-sub" id="vacuum-status-sub">--</div>
+                    </div>
+                </div>
+                
+                <!-- Last Updated -->
+                <div class="vacuum-last-updated" id="vacuum-last-updated">
+                    <span class="vacuum-updated-icon">🕐</span>
+                    <span class="vacuum-updated-text" id="vacuum-updated-text">Never updated</span>
+                </div>
             </div>
             
+            <!-- Control Actions -->
             <div class="vacuum-actions">
                 <button class="vacuum-btn vacuum-btn-start" id="vacuum-btn-start">
                     <span class="vacuum-btn-icon">▶️</span>
-                    <span>Start Cleaning</span>
+                    <span class="vacuum-btn-text">Start Cleaning</span>
                 </button>
                 <button class="vacuum-btn vacuum-btn-stop" id="vacuum-btn-stop">
                     <span class="vacuum-btn-icon">⏹️</span>
-                    <span>Stop</span>
+                    <span class="vacuum-btn-text">Stop</span>
                 </button>
                 <button class="vacuum-btn vacuum-btn-home" id="vacuum-btn-home">
                     <span class="vacuum-btn-icon">🏠</span>
-                    <span>Go Home</span>
+                    <span class="vacuum-btn-text">Return Home</span>
+                </button>
+            </div>
+            
+            <!-- Refresh Button -->
+            <div class="vacuum-footer">
+                <button class="vacuum-refresh-btn" id="vacuum-refresh-btn">
+                    <span class="vacuum-refresh-icon">🔄</span>
+                    <span class="vacuum-refresh-text">Refresh Status</span>
                 </button>
             </div>
         </div>
@@ -3487,6 +4693,8 @@
                 this.initializeStatusOverlay();
                 this.initializeReportPanel();
                 this.preventMobileScroll();  // Prevent iOS Safari scroll
+                this.initializeTouchGestures();  // Initialize touch gesture controls
+                this.initFullscreenManager();  // Initialize enhanced fullscreen functionality
                 this.spinnerEl.classList.add('active');
                 await this.loadDisplay(true);  // Initial load
                 this.startPolling();
@@ -3510,6 +4718,16 @@
                     // Prevent scroll everywhere else
                     e.preventDefault();
                 }, { passive: false });
+            }
+            
+            initializeTouchGestures() {
+                // Initialize touch gesture manager for swipe, pinch, double-tap, long press
+                if (window.TouchGestureManager) {
+                    this.touchGestureManager = new TouchGestureManager(this);
+                    console.log('🤏 Touch gesture controls initialized');
+                } else {
+                    console.warn('TouchGestureManager not available');
+                }
             }
             
             initializeStatusOverlay() {
@@ -3699,11 +4917,17 @@
                             break;
                         case 'arrowleft':
                             e.preventDefault();
-                            this.showToast('⏮️ Previous (not implemented)');
+                            this.showToast('⏮️ Previous: Changing image...');
+                            this.handleChangeImage();
                             break;
                         case 'arrowright':
                             e.preventDefault();
-                            this.showToast('⏭️ Next (not implemented)');
+                            this.showToast('⏭️ Next: Changing image...');
+                            this.handleChangeImage();
+                            break;
+                        case 'm':
+                            e.preventDefault();
+                            this.toggleMetadataOverlay();
                             break;
                     }
                 });
@@ -3932,11 +5156,24 @@
                     document.getElementById('activity').textContent = currentImage.activity;
                 }
                 
+                // Update metadata overlay if visible
+                const metadataOverlay = document.getElementById('metadata-overlay');
+                if (metadataOverlay.classList.contains('visible')) {
+                    this.updateMetadataOverlay();
+                }
+                
                 this.spinnerEl.classList.remove('active');
             }
             
-            crossfadeImage(url, title, animate = true) {
+            crossfadeImage(url, title, animate = true, retryAttempt = 0, maxRetries = 3) {
                 return new Promise((resolve) => {
+                    // Initialize retry state if not exists
+                    if (!this.imageRetryState) {
+                        this.imageRetryState = new Map();
+                    }
+                    
+                    const retryKey = url + '|' + title;
+                    
                     // Determine which layer to load into
                     const nextLayer = this.activeLayer === 'a' ? 'b' : 'a';
                     const nextLayerEl = nextLayer === 'a' ? this.layerA : this.layerB;
@@ -3945,88 +5182,360 @@
                     const nextSkeleton = nextLayerEl.querySelector('.loading-skeleton');
                     const currentSkeleton = currentLayerEl.querySelector('.loading-skeleton');
                     
-                    // Show loading skeleton immediately
-                    nextSkeleton.classList.add('active');
+                    // Hide skeleton immediately - we're using blur-up instead
+                    nextSkeleton.classList.remove('active');
+                    currentSkeleton.classList.remove('active');
                     
-                    // Preload the image with timeout
-                    const preloader = new Image();
-                    const loadTimeout = setTimeout(() => {
-                        console.warn('Image load timeout:', url);
-                        // Hide skeleton on timeout
-                        nextSkeleton.classList.remove('active');
-                        this.handleImageError(url, 'timeout');
-                        resolve();
-                    }, 30000);  // 30s timeout for image load
+                    // Show retry indicator if this is a retry attempt
+                    if (retryAttempt > 0) {
+                        this.showImageRetryIndicator(retryAttempt, maxRetries);
+                    }
                     
-                    preloader.onload = () => {
-                        clearTimeout(loadTimeout);
-                        nextImg.src = url;
+                    // Step 1: Create and load low-quality placeholder
+                    const placeholderUrl = this.createPlaceholderUrl(url);
+                    const placeholderLoader = new Image();
+                    
+                    // Enhanced placeholder loading with better error handling
+                    const placeholderTimeout = setTimeout(() => {
+                        console.warn('Placeholder load timeout:', placeholderUrl);
+                        // Skip placeholder and go directly to full image
+                        this.loadFullQualityImageWithRetry(url, title, animate, nextImg, resolve, retryAttempt, maxRetries);
+                    }, 5000); // 5s timeout for placeholder
+                    
+                    placeholderLoader.onload = () => {
+                        clearTimeout(placeholderTimeout);
+                        // Show placeholder with blur immediately
+                        nextImg.src = placeholderUrl;
                         nextImg.alt = title || 'Alice';
+                        nextImg.classList.remove('sharp-loading', 'error-placeholder');
+                        nextImg.classList.add('blur-placeholder');
                         
-                        // Apply random Ken Burns effect
-                        const kbVariants = ['kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4'];
-                        const randomKB = kbVariants[Math.floor(Math.random() * kbVariants.length)];
-                        
-                        // Remove old Ken Burns classes and add new one
-                        nextImg.classList.remove('kenburns', 'kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4');
-                        nextImg.classList.add('kenburns', randomKB);
-                        
-                        // Also remove from the old layer's image to reset it
-                        const currentImg = currentLayerEl.querySelector('img');
-                        currentImg.classList.remove('kenburns', 'kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4');
-                        
-                        // Hide skeleton before crossfade
-                        nextSkeleton.classList.remove('active');
-                        currentSkeleton.classList.remove('active');
-                        
-                        // Crossfade: show new layer, hide old
+                        // Start crossfade to show blurred placeholder
                         nextLayerEl.classList.remove('inactive');
                         nextLayerEl.classList.add('active');
                         currentLayerEl.classList.remove('active');
                         currentLayerEl.classList.add('inactive');
-                        
                         this.activeLayer = nextLayer;
-                        this.spinnerEl.classList.remove('active');
-                        resolve();
+                        
+                        // Step 2: Load full-quality image in background with retry logic
+                        this.loadFullQualityImageWithRetry(url, title, animate, nextImg, resolve, retryAttempt, maxRetries);
                     };
                     
-                    preloader.onerror = () => {
-                        clearTimeout(loadTimeout);
-                        console.error('Failed to load image:', url);
-                        // Hide skeleton on error
-                        nextSkeleton.classList.remove('active');
-                        this.handleImageError(url, 'load');
-                        resolve();
+                    placeholderLoader.onerror = (error) => {
+                        clearTimeout(placeholderTimeout);
+                        console.warn('Placeholder load failed:', placeholderUrl, error);
+                        // Try alternative placeholder strategies
+                        this.tryAlternativePlaceholder(url, title, animate, nextImg, nextLayerEl, currentLayerEl, resolve, retryAttempt, maxRetries);
                     };
                     
-                    preloader.src = url;
+                    placeholderLoader.src = placeholderUrl;
                 });
             }
             
-            handleImageError(url, reason) {
-                console.warn(`Image error (${reason}):`, url);
-                
-                // Try fallback image if main image fails
-                if (!this.usingFallback && url !== this.fallbackImageUrl) {
-                    console.log('Attempting fallback image...');
-                    this.usingFallback = true;
-                    this.fallbackBadgeEl.textContent = '⚠️ Image unavailable';
-                    this.fallbackBadgeEl.classList.add('show');
-                    
-                    // Try fallback
-                    if (this.lastGoodData && this.lastGoodData.currentImage) {
-                        this.crossfadeImage(
-                            this.lastGoodData.currentImage.url,
-                            this.lastGoodData.currentImage.title + ' (cached)',
-                            true
-                        );
-                    } else {
-                        this.crossfadeImage(this.fallbackImageUrl, 'Alice (Fallback)', true);
-                    }
+            createPlaceholderUrl(originalUrl) {
+                // Generate a low-quality version URL for blur-up effect
+                // For Cloudinary URLs, add quality and size transformations
+                if (originalUrl.includes('cloudinary.com')) {
+                    // Insert blur and quality transformations
+                    const transformedUrl = originalUrl.replace(
+                        '/upload/',
+                        '/upload/q_10,w_50,e_blur:800/'
+                    );
+                    return transformedUrl;
+                } else if (originalUrl.includes('res.cloudinary.com')) {
+                    // Handle res.cloudinary.com URLs
+                    const transformedUrl = originalUrl.replace(
+                        '/image/upload/',
+                        '/image/upload/q_10,w_50,e_blur:800/'
+                    );
+                    return transformedUrl;
                 } else {
-                    // Even fallback failed - show error state
-                    this.handleError('image', 'Unable to load images');
+                    // For non-Cloudinary images, use the original (fallback behavior)
+                    // In a real implementation, you might generate thumbnails server-side
+                    return originalUrl;
                 }
+            }
+            
+            loadFullQualityImageWithRetry(url, title, animate, targetImg, resolve, retryAttempt = 0, maxRetries = 3) {
+                const fullQualityLoader = new Image();
+                
+                // Adaptive timeout based on retry attempt (shorter for retries)
+                const baseTimeout = retryAttempt === 0 ? 30000 : 15000; // 30s first try, 15s for retries
+                const timeoutMs = Math.max(baseTimeout - (retryAttempt * 5000), 10000); // Minimum 10s
+                
+                const loadTimeout = setTimeout(() => {
+                    console.warn(`Full quality image load timeout (attempt ${retryAttempt + 1}):`, url);
+                    this.handleImageErrorWithRetry(url, title, 'timeout', targetImg, resolve, retryAttempt, maxRetries);
+                }, timeoutMs);
+                
+                fullQualityLoader.onload = () => {
+                    clearTimeout(loadTimeout);
+                    
+                    // Success! Clear retry state
+                    this.clearImageRetryState(url + '|' + title);
+                    this.hideImageRetryIndicator();
+                    
+                    // Replace placeholder with full-quality image
+                    targetImg.src = url;
+                    targetImg.alt = title || 'Alice';
+                    
+                    // Apply random Ken Burns effect with enhanced variants
+                    const kbVariants = ['kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4', 'kenburns-5', 'kenburns-6', 'kenburns-7'];
+                    const randomKB = kbVariants[Math.floor(Math.random() * kbVariants.length)];
+                    
+                    // Remove old Ken Burns classes and add new one
+                    targetImg.classList.remove('kenburns', 'kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4', 'kenburns-5', 'kenburns-6', 'kenburns-7', 'error-placeholder');
+                    targetImg.classList.add('kenburns', randomKB);
+                    
+                    // Also remove from the old layer's image to reset it
+                    const currentLayerEl = this.activeLayer === 'a' ? this.layerB : this.layerA;
+                    const currentImg = currentLayerEl.querySelector('img');
+                    currentImg.classList.remove('kenburns', 'kenburns-1', 'kenburns-2', 'kenburns-3', 'kenburns-4', 'kenburns-5', 'kenburns-6', 'kenburns-7');
+                    
+                    // Transition from blur to sharp
+                    targetImg.classList.remove('blur-placeholder');
+                    targetImg.classList.add('sharp-loading');
+                    
+                    this.spinnerEl.classList.remove('active');
+                    resolve();
+                };
+                
+                fullQualityLoader.onerror = (error) => {
+                    clearTimeout(loadTimeout);
+                    console.error(`Failed to load full quality image (attempt ${retryAttempt + 1}):`, url, error);
+                    
+                    // Determine error type from the error object
+                    let errorReason = 'load';
+                    if (error && error.type === 'error') {
+                        // Could be network error, 404, etc.
+                        errorReason = 'network';
+                    }
+                    
+                    this.handleImageErrorWithRetry(url, title, errorReason, targetImg, resolve, retryAttempt, maxRetries);
+                };
+                
+                fullQualityLoader.src = url;
+            }
+            
+            handleImageErrorWithRetry(url, title, reason, targetImg, resolve, retryAttempt = 0, maxRetries = 3) {
+                console.warn(`Image error (${reason}) - attempt ${retryAttempt + 1}/${maxRetries + 1}:`, url);
+                
+                // If we haven't exceeded max retries, try again with exponential backoff
+                if (retryAttempt < maxRetries) {
+                    const backoffDelay = Math.min(1000 * Math.pow(2, retryAttempt), 10000); // Max 10s delay
+                    console.log(`Retrying image load in ${backoffDelay}ms...`);
+                    
+                    // Show retry countdown if this isn't the first retry
+                    if (retryAttempt > 0) {
+                        this.showImageRetryCountdown(backoffDelay / 1000, retryAttempt + 1, maxRetries + 1);
+                    }
+                    
+                    setTimeout(() => {
+                        // Try again with incremented retry count
+                        this.loadFullQualityImageWithRetry(url, title, true, targetImg, resolve, retryAttempt + 1, maxRetries);
+                    }, backoffDelay);
+                    
+                    return; // Don't resolve yet, we're retrying
+                }
+                
+                // All retries exhausted - try fallback strategies
+                console.warn(`All retries exhausted for ${url}, trying fallback strategies...`);
+                this.hideImageRetryIndicator();
+                this.tryFallbackStrategies(url, title, targetImg, resolve);
+            }
+            
+            tryFallbackStrategies(originalUrl, title, targetImg, resolve) {
+                console.log('Trying fallback strategies...');
+                
+                // Strategy 1: Try cached/last good image
+                if (this.lastGoodData && this.lastGoodData.currentImage && 
+                    this.lastGoodData.currentImage.url !== originalUrl) {
+                    console.log('Fallback strategy 1: Using cached image');
+                    this.usingFallback = true;
+                    this.showFallbackBadge('📱 Using cached image');
+                    
+                    // Recursive call with cached image (no retries for fallback)
+                    this.crossfadeImage(
+                        this.lastGoodData.currentImage.url,
+                        this.lastGoodData.currentImage.title + ' (cached)',
+                        true,
+                        0, // no retries for fallback
+                        0
+                    ).then(resolve);
+                    return;
+                }
+                
+                // Strategy 2: Try predefined fallback image
+                if (!this.usingFallback && originalUrl !== this.fallbackImageUrl) {
+                    console.log('Fallback strategy 2: Using default fallback');
+                    this.usingFallback = true;
+                    this.showFallbackBadge('⚠️ Using fallback image');
+                    
+                    this.crossfadeImage(this.fallbackImageUrl, 'Alice (Fallback)', true, 0, 0).then(resolve);
+                    return;
+                }
+                
+                // Strategy 3: Show error placeholder with diagnostic info
+                console.log('Fallback strategy 3: Showing error placeholder');
+                this.showErrorPlaceholder(originalUrl, title, targetImg);
+                this.showFallbackBadge('❌ Image unavailable');
+                
+                // Finally resolve the promise
+                resolve();
+            }
+            
+            showErrorPlaceholder(url, title, targetImg) {
+                // Create a visual error placeholder
+                targetImg.src = this.createErrorPlaceholderDataUrl(title);
+                targetImg.alt = title + ' (Error)';
+                targetImg.classList.remove('blur-placeholder', 'sharp-loading');
+                targetImg.classList.add('error-placeholder');
+                
+                // Show error state in the UI
+                this.showToast('🖼️ Failed to load image: ' + (title || 'Unknown'));
+            }
+            
+            createErrorPlaceholderDataUrl(title) {
+                // Create a simple error placeholder as a data URL
+                const canvas = document.createElement('canvas');
+                canvas.width = 800;
+                canvas.height = 600;
+                const ctx = canvas.getContext('2d');
+                
+                // Background gradient
+                const gradient = ctx.createLinearGradient(0, 0, 800, 600);
+                gradient.addColorStop(0, '#1a1a2e');
+                gradient.addColorStop(1, '#16213e');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, 800, 600);
+                
+                // Error icon and text
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '48px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('🖼️', 400, 200);
+                
+                ctx.font = '24px sans-serif';
+                ctx.fillText('Image Unavailable', 400, 300);
+                
+                if (title) {
+                    ctx.font = '18px sans-serif';
+                    ctx.fillStyle = '#aaaaaa';
+                    ctx.fillText(title, 400, 350);
+                }
+                
+                ctx.font = '14px sans-serif';
+                ctx.fillText('Please try refreshing or report this issue', 400, 400);
+                
+                return canvas.toDataURL();
+            }
+            
+            tryAlternativePlaceholder(url, title, animate, nextImg, nextLayerEl, currentLayerEl, resolve, retryAttempt, maxRetries) {
+                // Try solid color placeholder as absolute fallback
+                console.log('Using solid color placeholder');
+                
+                nextImg.src = this.createSolidColorPlaceholder();
+                nextImg.alt = title || 'Alice (Loading)';
+                nextImg.classList.remove('sharp-loading', 'error-placeholder');
+                nextImg.classList.add('blur-placeholder');
+                
+                // Start crossfade to show solid placeholder
+                nextLayerEl.classList.remove('inactive');
+                nextLayerEl.classList.add('active');
+                currentLayerEl.classList.remove('active');
+                currentLayerEl.classList.add('inactive');
+                this.activeLayer = nextLayerEl === this.layerA ? 'a' : 'b';
+                
+                // Continue with full quality load
+                this.loadFullQualityImageWithRetry(url, title, animate, nextImg, resolve, retryAttempt, maxRetries);
+            }
+            
+            createSolidColorPlaceholder() {
+                // Create a simple solid color data URL as ultimate fallback
+                const canvas = document.createElement('canvas');
+                canvas.width = 400;
+                canvas.height = 300;
+                const ctx = canvas.getContext('2d');
+                
+                // Subtle gradient background
+                const gradient = ctx.createLinearGradient(0, 0, 400, 300);
+                gradient.addColorStop(0, '#2a2a4a');
+                gradient.addColorStop(1, '#1a1a3a');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, 400, 300);
+                
+                return canvas.toDataURL();
+            }
+            
+            showImageRetryIndicator(attempt, maxAttempts) {
+                // Update existing loading indicator or create new retry indicator
+                if (!this.retryIndicator) {
+                    this.retryIndicator = document.createElement('div');
+                    this.retryIndicator.id = 'image-retry-indicator';
+                    this.retryIndicator.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: rgba(255, 165, 0, 0.9);
+                        color: white;
+                        padding: 8px 16px;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        z-index: 20;
+                        transition: opacity 0.3s;
+                    `;
+                    document.body.appendChild(this.retryIndicator);
+                }
+                
+                this.retryIndicator.textContent = `🔄 Retrying image... (${attempt}/${maxAttempts})`;
+                this.retryIndicator.style.opacity = '1';
+            }
+            
+            showImageRetryCountdown(seconds, attempt, maxAttempts) {
+                if (this.retryIndicator) {
+                    let remaining = Math.ceil(seconds);
+                    this.retryIndicator.textContent = `🔄 Retry ${attempt}/${maxAttempts} in ${remaining}s...`;
+                    
+                    const countdownInterval = setInterval(() => {
+                        remaining--;
+                        if (remaining > 0) {
+                            this.retryIndicator.textContent = `🔄 Retry ${attempt}/${maxAttempts} in ${remaining}s...`;
+                        } else {
+                            this.retryIndicator.textContent = `🔄 Retrying image... (${attempt}/${maxAttempts})`;
+                            clearInterval(countdownInterval);
+                        }
+                    }, 1000);
+                }
+            }
+            
+            hideImageRetryIndicator() {
+                if (this.retryIndicator) {
+                    this.retryIndicator.style.opacity = '0';
+                    setTimeout(() => {
+                        if (this.retryIndicator && this.retryIndicator.parentNode) {
+                            this.retryIndicator.parentNode.removeChild(this.retryIndicator);
+                            this.retryIndicator = null;
+                        }
+                    }, 300);
+                }
+            }
+            
+            showFallbackBadge(message) {
+                this.fallbackBadgeEl.textContent = message;
+                this.fallbackBadgeEl.classList.add('show');
+                document.body.classList.add('fallback-active');
+            }
+            
+            clearImageRetryState(key) {
+                if (this.imageRetryState && this.imageRetryState.has(key)) {
+                    this.imageRetryState.delete(key);
+                }
+            }
+            
+            // Legacy function for backwards compatibility - now delegates to enhanced version
+            handleImageError(url, reason) {
+                console.warn(`Legacy handleImageError called - delegating to enhanced version`);
+                this.handleImageErrorWithRetry(url, 'Unknown Title', reason, null, () => {}, 0, 3);
             }
             
             showUpdateIndicator() {
@@ -4046,16 +5555,190 @@
                 this.debugContent.textContent = JSON.stringify(debugInfo, null, 2);
             }
             
+            /**
+             * Enhanced Fullscreen Manager with smooth transitions and persistent controls
+             */
+            initFullscreenManager() {
+                // Cross-browser fullscreen API support
+                this.fullscreenAPI = {
+                    request: 
+                        document.documentElement.requestFullscreen ||
+                        document.documentElement.webkitRequestFullscreen ||
+                        document.documentElement.mozRequestFullScreen ||
+                        document.documentElement.msRequestFullscreen,
+                    exit:
+                        document.exitFullscreen ||
+                        document.webkitExitFullscreen ||
+                        document.mozCancelFullScreen ||
+                        document.msExitFullscreen,
+                    element:
+                        () => document.fullscreenElement ||
+                               document.webkitFullscreenElement ||
+                               document.mozFullScreenElement ||
+                               document.msFullscreenElement,
+                    change:
+                        'fullscreenchange' in document ? 'fullscreenchange' :
+                        'webkitfullscreenchange' in document ? 'webkitfullscreenchange' :
+                        'mozfullscreenchange' in document ? 'mozfullscreenchange' :
+                        'MSFullscreenChange'
+                };
+
+                // Fullscreen state
+                this.isTransitioning = false;
+                this.controlsTimeout = null;
+                this.controlsVisible = false;
+
+                // Create persistent fullscreen controls
+                this.createFullscreenControls();
+
+                // Listen for fullscreen changes
+                document.addEventListener(this.fullscreenAPI.change, () => {
+                    this.handleFullscreenChange();
+                });
+
+                // Keyboard shortcuts
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'F11') {
+                        e.preventDefault();
+                        this.toggleFullscreen();
+                    } else if (e.key === 'Escape' && this.fullscreenAPI.element()) {
+                        this.exitFullscreen();
+                    }
+                });
+
+                console.log('🖥️ Enhanced fullscreen manager initialized');
+            }
+
+            createFullscreenControls() {
+                // Create fullscreen controls overlay
+                const controlsOverlay = document.createElement('div');
+                controlsOverlay.id = 'fullscreen-controls';
+                controlsOverlay.innerHTML = `
+                    <div class="fullscreen-controls-container">
+                        <button class="fs-control-btn" id="fs-exit-btn" title="Exit Fullscreen">
+                            <span>⭘</span>
+                        </button>
+                        <button class="fs-control-btn" id="fs-prev-btn" title="Previous Image">
+                            <span>⬅</span>
+                        </button>
+                        <button class="fs-control-btn" id="fs-next-btn" title="Next Image">
+                            <span>➡</span>
+                        </button>
+                        <button class="fs-control-btn" id="fs-settings-btn" title="Settings">
+                            <span>⚙</span>
+                        </button>
+                    </div>
+                `;
+                document.body.appendChild(controlsOverlay);
+
+                // Add controls event listeners
+                document.getElementById('fs-exit-btn').addEventListener('click', () => this.exitFullscreen());
+                document.getElementById('fs-prev-btn').addEventListener('click', () => this.previousImage());
+                document.getElementById('fs-next-btn').addEventListener('click', () => this.nextImage());
+                document.getElementById('fs-settings-btn').addEventListener('click', () => this.toggleCommandCenter());
+
+                // Show/hide controls on mouse movement and touch
+                let mouseMoveHandler = () => this.showFullscreenControls();
+                document.addEventListener('mousemove', mouseMoveHandler);
+                document.addEventListener('touchstart', mouseMoveHandler);
+                document.addEventListener('click', mouseMoveHandler);
+            }
+
             toggleFullscreen() {
-                if (!document.fullscreenElement) {
-                    document.documentElement.requestFullscreen().catch(err => {
-                        console.log('Fullscreen error:', err);
-                    });
-                    this.showToast('🖥️ Fullscreen');
+                if (this.isTransitioning) return;
+                
+                if (!this.fullscreenAPI.element()) {
+                    this.enterFullscreen();
                 } else {
-                    document.exitFullscreen();
-                    this.showToast('🪟 Windowed');
+                    this.exitFullscreen();
                 }
+            }
+
+            async enterFullscreen() {
+                if (this.isTransitioning) return;
+                this.isTransitioning = true;
+
+                try {
+                    // Add transition class for smooth animation
+                    document.body.classList.add('entering-fullscreen');
+                    
+                    // Request fullscreen with cross-browser support
+                    if (this.fullscreenAPI.request) {
+                        await this.fullscreenAPI.request.call(document.documentElement);
+                    } else {
+                        throw new Error('Fullscreen API not supported');
+                    }
+                    
+                    this.showToast('🖥️ Fullscreen Mode');
+                } catch (error) {
+                    console.warn('Fullscreen request failed:', error);
+                    this.showToast('⚠️ Fullscreen not available');
+                    document.body.classList.remove('entering-fullscreen');
+                }
+                
+                this.isTransitioning = false;
+            }
+
+            async exitFullscreen() {
+                if (this.isTransitioning) return;
+                this.isTransitioning = true;
+
+                try {
+                    document.body.classList.add('exiting-fullscreen');
+                    
+                    if (this.fullscreenAPI.exit) {
+                        await this.fullscreenAPI.exit.call(document);
+                    }
+                    
+                    this.showToast('🪟 Windowed Mode');
+                } catch (error) {
+                    console.warn('Exit fullscreen failed:', error);
+                }
+                
+                this.isTransitioning = false;
+            }
+
+            handleFullscreenChange() {
+                const isFullscreen = !!this.fullscreenAPI.element();
+                
+                // Update UI state
+                document.body.classList.toggle('fullscreen-active', isFullscreen);
+                document.body.classList.remove('entering-fullscreen', 'exiting-fullscreen');
+                
+                // Update fullscreen button icon
+                const fsBtn = document.getElementById('fullscreen-btn');
+                if (fsBtn) {
+                    fsBtn.innerHTML = isFullscreen ? '⭘' : '⛶';
+                    fsBtn.title = isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen';
+                }
+
+                // Show/hide fullscreen controls
+                const fsControls = document.getElementById('fullscreen-controls');
+                if (fsControls) {
+                    fsControls.style.display = isFullscreen ? 'block' : 'none';
+                    if (isFullscreen) {
+                        this.showFullscreenControls();
+                    }
+                }
+
+                console.log('🖥️ Fullscreen state changed:', isFullscreen ? 'active' : 'inactive');
+            }
+
+            showFullscreenControls() {
+                if (!this.fullscreenAPI.element()) return;
+
+                const controls = document.getElementById('fullscreen-controls');
+                if (!controls) return;
+
+                controls.classList.add('visible');
+                this.controlsVisible = true;
+
+                // Auto-hide after 3 seconds of inactivity
+                clearTimeout(this.controlsTimeout);
+                this.controlsTimeout = setTimeout(() => {
+                    controls.classList.remove('visible');
+                    this.controlsVisible = false;
+                }, 3000);
             }
             
             /**
@@ -4136,6 +5819,56 @@
                     this.showToast('🌤️ Tap icon to expand');
                 } else {
                     this.showToast('🌤️ Tap to collapse');
+                }
+            }
+            
+            toggleMetadataOverlay() {
+                const metadataOverlay = document.getElementById('metadata-overlay');
+                const isVisible = metadataOverlay.classList.contains('visible');
+                
+                if (isVisible) {
+                    metadataOverlay.classList.remove('visible');
+                    this.showToast('ℹ️ Metadata hidden');
+                } else {
+                    metadataOverlay.classList.add('visible');
+                    this.updateMetadataOverlay();
+                    this.showToast('ℹ️ Metadata shown');
+                }
+            }
+            
+            updateMetadataOverlay() {
+                if (!this.currentData?.currentImage) return;
+                
+                const image = this.currentData.currentImage;
+                
+                // Update basic info
+                document.getElementById('metadata-name').textContent = image.name || image.title || '--';
+                document.getElementById('metadata-activity').textContent = image.activity || '--';
+                document.getElementById('metadata-weather').textContent = image.weather || '--';
+                document.getElementById('metadata-time-period').textContent = image.time_period || '--';
+                document.getElementById('metadata-location').textContent = image.location || '--';
+                document.getElementById('metadata-style').textContent = image.style_notes || '--';
+                document.getElementById('metadata-holiday').textContent = image.holiday || 'None';
+                document.getElementById('metadata-row').textContent = image.row_number ? `#${image.row_number}` : '--';
+                
+                // Update status badges
+                const verifiedBadge = document.getElementById('metadata-verified');
+                const generatedBadge = document.getElementById('metadata-generated');
+                
+                if (image.verified) {
+                    verifiedBadge.classList.add('verified');
+                    verifiedBadge.textContent = 'Verified ✓';
+                } else {
+                    verifiedBadge.classList.remove('verified');
+                    verifiedBadge.textContent = 'Unverified';
+                }
+                
+                if (image.generated) {
+                    generatedBadge.classList.add('generated');
+                    generatedBadge.textContent = 'AI Generated';
+                } else {
+                    generatedBadge.classList.remove('generated');
+                    generatedBadge.textContent = 'Original';
                 }
             }
             
@@ -4935,6 +6668,16 @@
                 backdrop.classList.remove('show');
             }
             
+            showAmbientSoundPanel() {
+                // Use the ambient sound manager if available
+                if (window.ambientSoundManager && typeof window.ambientSoundManager.showPanel === 'function') {
+                    window.ambientSoundManager.showPanel();
+                } else {
+                    console.warn('Ambient Sound Manager not available');
+                    this.showToast('🔧 Ambient sounds not ready yet');
+                }
+            }
+            
             updateRatingButtonStates() {
                 const likeBtn = document.getElementById('img-like');
                 const dislikeBtn = document.getElementById('img-dislike');
@@ -5488,10 +7231,12 @@
                 document.getElementById('vacuum-panel').classList.remove('show');
                 document.getElementById('lights-panel').classList.remove('show');
                 document.getElementById('image-control-panel').classList.remove('show');
+                document.getElementById('ambient-sound-panel').classList.remove('show');
                 document.getElementById('image-control-backdrop').classList.remove('show');
                 document.getElementById('report-panel-backdrop').classList.remove('show');
                 document.getElementById('vacuum-panel-backdrop').classList.remove('show');
                 document.getElementById('lights-panel-backdrop').classList.remove('show');
+                document.getElementById('ambient-sound-backdrop').classList.remove('show');
                 // Note: status overlay toggle is separate - not included in close all panels
                 this.debugEl.classList.remove('show');
             }
@@ -5528,6 +7273,140 @@
                 
                 console.log('🦜 Alice Display initialized');
                 console.log(`📡 Auto-refresh every ${this.pollInterval / 1000 / 60} minutes`);
+                
+                // Initialize particle effects system
+                this.initParticleEffects();
+            }
+            
+            // Particle Effects System
+            initParticleEffects() {
+                this.particleContainer = document.getElementById('particle-overlay');
+                this.particles = [];
+                this.particleEnabled = localStorage.getItem('aliceParticleEffects') === 'true';
+                this.maxParticles = 12;
+                this.particleTypes = ['dust', 'sparkle', 'orb'];
+                
+                // Set initial state
+                if (this.particleEnabled) {
+                    this.startParticleEffects();
+                }
+                
+                console.log(`✨ Particle effects ${this.particleEnabled ? 'enabled' : 'disabled'}`);
+            }
+            
+            toggleParticleEffects() {
+                this.particleEnabled = !this.particleEnabled;
+                localStorage.setItem('aliceParticleEffects', this.particleEnabled.toString());
+                
+                if (this.particleEnabled) {
+                    this.startParticleEffects();
+                    this.showToast('✨ Particle effects enabled');
+                } else {
+                    this.stopParticleEffects();
+                    this.showToast('🚫 Particle effects disabled');
+                }
+                
+                console.log(`✨ Particle effects ${this.particleEnabled ? 'enabled' : 'disabled'}`);
+            }
+            
+            startParticleEffects() {
+                if (!this.particleContainer) return;
+                
+                // Check for reduced motion preference
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    console.log('✨ Particle effects disabled due to reduced motion preference');
+                    return;
+                }
+                
+                this.particleContainer.classList.add('active');
+                
+                // Create initial particles
+                this.createParticleBatch();
+                
+                // Set interval for new particles
+                this.particleInterval = setInterval(() => {
+                    if (this.particles.length < this.maxParticles) {
+                        this.createParticle();
+                    }
+                }, 2000 + Math.random() * 3000); // Every 2-5 seconds
+            }
+            
+            stopParticleEffects() {
+                if (!this.particleContainer) return;
+                
+                this.particleContainer.classList.remove('active');
+                
+                // Clear interval
+                if (this.particleInterval) {
+                    clearInterval(this.particleInterval);
+                    this.particleInterval = null;
+                }
+                
+                // Remove all particles
+                this.particles.forEach(particle => particle.element.remove());
+                this.particles = [];
+            }
+            
+            createParticleBatch() {
+                const initialCount = 3 + Math.floor(Math.random() * 4); // 3-6 particles
+                for (let i = 0; i < initialCount; i++) {
+                    setTimeout(() => this.createParticle(), i * 500);
+                }
+            }
+            
+            createParticle() {
+                if (!this.particleEnabled || !this.particleContainer) return;
+                
+                const particle = document.createElement('div');
+                particle.className = `particle ${this.getRandomParticleType()}`;
+                
+                // Random horizontal position
+                const xPos = Math.random() * 100;
+                particle.style.left = `${xPos}vw`;
+                
+                // Random animation duration
+                const duration = 15000 + Math.random() * 20000; // 15-35 seconds
+                particle.style.animationDuration = `${duration}ms`;
+                
+                // Random delay start
+                const delay = Math.random() * 2000;
+                particle.style.animationDelay = `${delay}ms`;
+                
+                // Add to DOM
+                this.particleContainer.appendChild(particle);
+                
+                // Track particle
+                const particleObj = {
+                    element: particle,
+                    createdAt: Date.now()
+                };
+                this.particles.push(particleObj);
+                
+                // Auto-remove after animation
+                setTimeout(() => {
+                    this.removeParticle(particleObj);
+                }, duration + delay + 1000);
+            }
+            
+            getRandomParticleType() {
+                const weights = { dust: 50, sparkle: 30, orb: 20 }; // Weighted probability
+                const total = Object.values(weights).reduce((sum, weight) => sum + weight, 0);
+                let random = Math.random() * total;
+                
+                for (const [type, weight] of Object.entries(weights)) {
+                    random -= weight;
+                    if (random <= 0) return type;
+                }
+                
+                return 'dust'; // fallback
+            }
+            
+            removeParticle(particleObj) {
+                const index = this.particles.indexOf(particleObj);
+                if (index > -1) {
+                    particleObj.element.remove();
+                    this.particles.splice(index, 1);
+                }
             }
         }
         
@@ -5798,7 +7677,22 @@
         }
     </script>
     
+    <!-- Enhanced Vacuum Control (CMD-2-1) -->
+    <script src="vacuum-control-enhanced.js"></script>
+    
+    <!-- Touch Gesture Controls (DSP-6-1) -->
+    <script src="touch-gestures.js"></script>
+    
     <!-- Enhanced Command Center State Management (CMD-1-3) -->
     <script src="enhanced-command-center.js"></script>
+    
+    <!-- Ambient Sound Manager (DSP-4-2) -->
+    <script src="ambient-sound-manager.js"></script>
+    
+    <!-- Time-of-Day Theme Adaptation (DSP-5-1) -->
+    <script src="theme-adaptation.js"></script>
+    
+    <!-- Night Mode Controller (DSP-5-2) -->
+    <script src="night-mode-controller.js"></script>
 </body>
 </html>
